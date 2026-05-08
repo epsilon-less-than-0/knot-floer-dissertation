@@ -1,0 +1,216 @@
+\chapter{Tight Splitting and Jointless Tracks}
+\label{chap:tight_splitting}
+
+For the purpose of classifying all pseudo-Anosov braids on $D_6$ in the strata $(3;1^6;3)$ and $(2;1^6;3^2)$ which lift to fixed-point-free pseudo-Anosov maps, we utilize the \texttt{autofolder} program to output all standard train track isomorphism classes for these strata. For each of these isomorphism classes, the program provides one standard train track representative; thus, for each of the two strata, we obtain a finite list of standard train tracks (encoded as \texttt{StandardTrainTrack} objects). By Proposition \ref{prop:every_pA_carried_by_standard_track}, every pseudo-Anosov 6-braid $\beta$ in each stratum is carried by one of these standard train tracks.
+
+We can further reduce the number of standard train tracks to consider by invoking a result of Farber, Reinoso, and Wang \sidecite{farber2024fixed}, which states that in most strata, every pseudo-Anosov map is conjugate to one carried by what they term ``jointless'' train tracks. A \emph{joint} on a standard train track is a switch located at a marked monogon with more than one adjacent real edge. To demonstrate this, they developed the notion of an operation called \emph{tight splitting} on standard train tracks. As mentioned previously, there is a more general operation of splitting, due to Penner and Harer \sidecite{penner1992combinatorics}, which can be viewed as the geometric inverse of folding. The tight splitting of Farber-Reinoso-Wang is a specific instance of splitting—precisely the inverse of the elementary folding defined in Chapter \ref{chap:folding_automata}.
+
+Crucially, a tight splitting guarantees that the resultant train track carries the same train track map as the original (up to conjugation by a braid). Using tight splittings, Farber, Reinoso, and Wang show that all joints of a standard train track $\tau$ carrying a train track map $f$ can be removed via a finite sequence of tight splittings. This process produces a jointless train track $\tau'$ that still carries $f$, up to conjugation.
+
+We utilize this strategy to reduce the number of standard train tracks to consider from the \texttt{autofolder} output. We demonstrate that for the majority of standard train tracks in the list, a finite sequence of tight splittings leads to a select subset of tracks. Consequently, up to conjugation, any pseudo-Anosov braid is carried by this smaller set of train tracks. Furthermore, for the purpose of identifying the knot monodromy $h$ associated with the braid via the Birman-Hilden correspondence, we may consider braids up to mirroring. This allows for a further reduction by identifying pairs of standard jointless train tracks that are mirror images of one another and selecting a single representative from each pair.
+
+\section{Splitting Standard Train Tracks}
+\label{sec:splitting-standard}
+
+The goal of tight splitting is to reverse the elementary folding process (Definition \ref{def:elementary_folding_map}) in a manner that preserves the property of carrying a specific pseudo-Anosov map. To achieve this, we first rigorously define the local coordinates and orientation at a switch.
+
+\subsection{Branches at a switch}
+\label{subsec:local-coordinates}
+
+To formalize the splitting operation, we require precise notation for the local geometry of the train track $\tau \subset D_n$ near a switch.
+
+\begin{definition}[Incoming Real Edges]
+Let $v$ be a switch of $\tau$. We adopt the convention that real edges incident to $v$ are oriented \textbf{towards} $v$. We denote the set of incoming real edges at $v$ by $R(v)$. Since $\tau$ is standardly embedded in the oriented disk $D_n$, the set $R(v)$ admits a natural linear ordering induced by the counter-clockwise orientation of the tangent space at $v$. This linear ordering is a subset of the ordering described in the definition of the combinatorial structure $\mathcal{C}(\tau) = (G,\mathcal{O},\ell)$ of $\tau$, where $\mathcal{O}$ records the cyclic ordering at each switch (both infinitesimal and real).
+\end{definition}
+
+\begin{definition}[Left and Right Edges]
+Let $v$ be a switch with $R(v) \neq \emptyset$.
+\begin{enumerate}
+    \item We define $l(v) \in R(v)$ to be the minimal element of $R(v)$ with respect to the local ordering. We refer to $l(v)$ as the \textbf{leftmost incoming edge} at $v$.
+    \item We define $r(v) \in R(v)$ to be the maximal element of $R(v)$. We refer to $r(v)$ as the \textbf{rightmost incoming edge} at $v$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Source Switches and Composite Notation]
+For the distinguished edges $l(v)$ and $r(v)$, we denote their source vertices as follows:
+\begin{itemize}
+    \item Let $v_l$ denote the source vertex of $l(v)$ (i.e., $l(v)$ is directed from $v_l$ to $v$).
+    \item Let $v_r$ denote the source vertex of $r(v)$ (i.e., $r(v)$ is directed from $v_r$ to $v$).
+\end{itemize}
+Consequently, the notation $r(v_l)$ refers to the rightmost incoming edge at the switch $v_l$, and $l(v_r)$ refers to the leftmost incoming edge at the switch $v_r$.
+\end{definition}
+
+\subsection{Tight Splitting and Stability}
+
+With these local coordinates established, we define the tight splitting operation.
+
+\begin{definition}[Tight Splitting]
+\label{def:tight-splitting}
+Let $\tau \hookrightarrow D_n$ be a standardly embedded train track, let $v$ be a switch of $\tau$, and fix a train track map $f \colon \tau \to \tau$.
+We say that $v$ \textbf{splits tightly to the left} (or \textbf{\textit{l}-splits}) if for every real edge $x \subseteq \tau$, the following conditions hold regarding the image path $f(x)$:
+\begin{enumerate}
+    \item Whenever the edge $l(v)$ appears in the train path $f(x)$, it is immediately followed by the edge $r(v_l)$ (traversed against its orientation).
+    \item Whenever the edge $l(v)$ appears in the train path $f(x)$, it is immediately preceded by the edge $r(v_l)$ (traversed along its orientation).
+\end{enumerate}
+Similarly, we say that $v$ \textbf{splits tightly to the right} (or \textbf{\textit{r}-splits}) if the analogous conditions hold with the roles of ``left'' and ``right'' reversed (i.e., replacing $l(v)$ with $r(v)$ and $r(v_l)$ with $l(v_r)$).
+\end{definition}
+
+If a switch $v$ splits tightly, we construct a new train track $\tau_v^l$ (in the case of an $l$-split) which maps to $\tau$ via an elementary folding map. We use the notation $\tau_v^t$ to refer generically to the result of either an $l$-split or an $r$-split.
+
+\paragraph{Construction of the Split Track $\tau_v^l$.}
+Suppose $v$ $l$-splits. We define $\tau_v^l$ to be the standardly embedded train track obtained from $\tau$ by deleting the edge $l(v)$ and replacing it with a new real edge $\alpha$ satisfying the following conditions:
+\begin{enumerate}
+    \item As a directed edge, the source and target of $\alpha$ are given by $\alpha(0) = l(v)(0)$ and $\alpha(1) = r(v_l)(1)$.
+    \item The edge $\alpha$ forms a bigon (a two-cusped disk) with the train path $l(v) \cdot \overline{r(v_l)}$, and there is an isotopy relative to the punctures of $D_n$ such that $\alpha$ lies transverse to the measured foliation.
+\end{enumerate}
+The construction of $\tau_v^r$ (when $v$ $r$-splits) is symmetric.
+
+This construction is the precise geometric inverse of the elementary folding operation described in Chapter \ref{chap:folding_automata}. Specifically, the transformation $\tau \to \tau_v^l$ corresponds to the inverse of the elementary folding map
+\[
+p\colon \tau_v^l \to \tau,
+\]
+where the folding operation maps the edge $\alpha$ onto $l(v)$ and $r(v_l)$ (effectively folding the ``new'' branch back into the ``old'' branch).
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures/splitting.png}
+    \caption{An $l$-split at the vertex $v$. Notice this is the exact inverse of the folding operation $p$ of Figure \ref{fig:folding}.}
+    \label{fig:splitting}
+\end{figure}
+
+\begin{remark}
+    While the geometric construction of the split track $\tau_v^t$ can be performed at any switch $v$ with sufficient valence, the definition of a \emph{tight} splitting requires the existence of a compatible train track map $f \colon \tau \to \tau$ that respects the local folding structure.
+\end{remark}
+
+\subsection{Dynamics and the Transition Matrix}
+
+The primary utility of tight splitting is encapsulated in the following results, which ensure that the dynamic properties of the map (such as the dilatation) are preserved.
+
+\begin{prop}
+    Let $(\tau, \psi, f)$ be the data of a pseudo-Anosov map $\psi$ on $D_n$, where $\tau$ is a standard train track. Suppose $\tau$ splits tightly to the left at a switch $v$ to produce the train track $\tau_v^l$. Then, up to conjugacy by a braid, $\psi$ is carried by $\tau_v^l$. We denote the associated train track map on $\tau_v^l$ by
+    \[
+    f_{v}^{l} \colon \tau_{v}^{l} \to \tau_{v}^{l}.
+    \]
+    An analogous result holds if $\tau$ splits tightly to the right.
+\end{prop}
+
+In the language of folding automata, a tight splitting implies that traversing a cycle representing a pseudo-Anosov map corresponds to a reverse traversal of elementary foldings. The transition matrices of the split and original tracks are related by conjugation via the folding matrix.
+
+\begin{prop}
+\label{prop:transition_matrix_split}
+Suppose that $\tau$ \textit{l}-splits at $v$. Let $M$ and $M_{v}$ be the transition matrices of $f \colon \tau \to \tau$ and $f_{v}^{l} \colon \tau_{v}^{l} \to \tau_{v}^{l}$ respectively. Then the transition matrices satisfy the relation 
+\[
+MP = PM_v
+\]
+(or equivalently $M_v = P^{-1}MP$ if $P$ is invertible on the relevant subspace), where $P$ is the transition matrix of the elementary folding map
+\[
+p \colon \tau_{v}^{l} \to \tau
+\]
+associated with the inverse of the tight splitting.
+\end{prop}
+
+The tight splitting condition imposes a strict inequality on the invariant measure (the weights) of the branches involved.
+
+\begin{prop}
+\label{prop:weight_inequality}
+Let $(\tau, \psi, f)$ be the data of a pseudo-Anosov map carried by a standardly embedded train track. Let $M$ be the transition matrix for $f \colon \tau \to \tau$, and let $\lambda$ be the dilatation of $f$. Fix a positive right $\lambda$-eigenvector $\mu$ of $M$ representing the transverse measure. If $v$ \textit{l}-splits, then $\mu_{v}=P^{-1}\mu$ is a positive right $\lambda$-eigenvector of $M_{v}$. Consequently, the weights satisfy the inequality:
+\[
+\mu(l(v)) < \mu(r(v_l)).
+\]
+Similarly, if $v$ \textit{r}-splits, then $\mu(r(v)) < \mu(l(v_r))$.
+\end{prop}
+
+The utility of Proposition \ref{prop:weight_inequality} becomes apparent when analyzing a tight splitting at a \emph{loop switch}—a switch situated at a marked monogon—where the operation yields a train track in the same isomorphism class.
+
+\begin{corollary}
+\label{cor:weight_reduction}
+    Suppose a loop switch $v$ of a train track $\tau$ \textit{l}-splits, such that the resulting train track $\tau_v^l$ is isomorphic to $\tau$. Let $\iota \colon \tau_v^l \to \tau$ be the isomorphism (given by a braid). Then the weight of the branch corresponding to $r(v_l)$ strictly decreases. That is, if $\mu$ is the invariant measure on $\tau$ and $\mu_v$ is the measure on $\tau_v^l$, then:
+    \[
+    \mu_v(r(v_l)_{new}) < \mu(r(v_l)_{old}).
+    \]
+\end{corollary}
+
+\begin{proof}
+    Let $p \colon \tau_v^l \to \tau$ be the elementary folding map associated with the tight splitting. This map identifies the new edge $\alpha$ with $l(v)$ and the new branch $r(v_l)_{new}$ with $r(v_l)_{old}$. The relationship between the transverse measures is given by the pullback of $p$, which satisfies the additivity equation:
+    \[
+    \mu(r(v_l)_{old}) = \mu_v(r(v_l)_{new}) + \mu_v(\alpha).
+    \]
+    By Proposition \ref{prop:weight_inequality}, the eigenvector $\mu_v$ is well-defined and positive. Furthermore, the proposition establishes that for the splitting to be valid (tight), the weights must satisfy the strict inequality $\mu(l(v)) < \mu(r(v_l)_{old})$.
+    
+    Since the splitting operation assigns the weight of the removed edge $l(v)$ to the new edge $\alpha$ (i.e., $\mu_v(\alpha) = \mu(l(v))$), and since $\mu$ is a positive eigenvector for a pseudo-Anosov map, we have $\mu_v(\alpha) > 0$.
+    
+    Substituting this back into the additivity equation yields:
+    \[
+    \mu_v(r(v_l)_{new}) = \mu(r(v_l)_{old}) - \mu(l(v)).
+    \]
+    Because $\mu(l(v))$ is strictly positive, it follows immediately that:
+    \[
+    \mu_v(r(v_l)_{new}) < \mu(r(v_l)_{old}).
+    \]
+    Thus, under the isomorphism $\iota$ which maps the edge $r(v_l)_{new}$ back to $r(v_l)_{old}$, the weight associated with this edge orbit strictly decreases.
+\end{proof}
+
+\begin{corollary}
+\label{cor:termination}
+    Let $\tau$ be a standard train track and $f \colon \tau \to \tau$ a train track map induced by a pseudo-Anosov map $\psi$. Suppose a switch $v$ of $\tau$ \textit{l}-splits (or \textit{r}-splits) to a track $\tau_v^t$ that is isomorphic to $\tau$. Then this same splitting cannot be repeated infinitely many times.
+\end{corollary}
+
+\begin{theorem}[Termination of Tight Splitting]
+\label{thm:splitting_termination}
+    Let $(\tau, \psi, f)$ be a pseudo-Anosov map on $D_n$ carried by a standard train track $\tau$. There exists no infinite sequence of tight splittings at loop switches starting from $\tau$.
+\end{theorem}
+
+\begin{proof}
+    Let $\lambda$ be the dilatation of the pseudo-Anosov map $\psi$. Suppose, for the sake of contradiction, that there exists an infinite sequence of tight splittings
+    \[
+    \tau = \tau_0 \to \tau_1 \to \tau_2 \to \dots
+    \]
+    where each transition is a tight split at a loop switch. Since tight splitting preserves the conjugacy class of the pseudo-Anosov map, the dilatation $\lambda$ remains constant throughout the sequence. Furthermore, the number of edges in a standard train track on $D_n$ is bounded (depending only on $n$).
+    
+    By a result of Reinoso \cite[Lemma~6.3.3]{reinoso2024pseudo}, for a fixed size $N$ and spectral radius $\lambda$, there are only finitely many Perron-Frobenius matrices. Since the transition matrix $M_k$ of each track $\tau_k$ belongs to this finite set (up to permutation), the sequence of matrices must eventually cycle.
+    
+    Therefore, there exist indices $k < m$ such that $\tau_k \cong \tau_m$. This implies that the sequence enters a cycle of train track isomorphism classes. By identifying $\tau_m$ with $\tau_k$, we can view the subsequence $\tau_k \to \dots \to \tau_m$ as a sequence of splittings that returns to an isomorphic track. 
+    
+    However, by Corollary \ref{cor:weight_reduction}, each tight split at a loop switch strictly reduces the weight of the associated branch orbit. Over the course of the cycle from $\tau_k$ to $\tau_m$, the composition of these reductions implies that the weight vector $\mu_m$ is a strictly scaled-down version of $\mu_k$ (i.e., $\mu_m = \rho \mu_k$ with $\rho < 1$).
+    
+    Iterating this cycle infinitely would drive the invariant weights to zero, contradicting the existence of the unstable foliation. Thus, the sequence of tight splittings must terminate.
+\end{proof}
+
+\section{Switch Rigidity and Existence of Splits}
+\label{sec:switch-rigidity}
+
+The following proposition of Farber-Reinoso-Wang is instrumental in their proof that every train track map is carried by a jointless train track, essentially showing that any joint at a loop switch can be split. 
+
+\begin{prop}[Existence of Splittable Switches, {\cite[Corollary~6.2.9]{reinoso2024pseudo}}]
+\label{prop:reinoso_6.2.9_splittable}
+Let $n_k$ denote the maximal real valence of a switch at an infinitesimal $k$-gon of $\tau$, where $k \ge 1$. If $n_k > 1$, then there exists a switch of valence $n_k$ at such a $k$-gon which $l$-splits or $r$-splits. In particular, if the train track has any switch with valence greater than 1, there exists at least one switch that $l$-splits or $r$-splits.
+\end{prop}
+
+For our purposes, the result provides a sufficient condition to guarantee a switch can be split. This provides the inductive step for our reduction procedure: at every $k$-gon, a unique switch of maximal valence can always be split.
+
+\subsection*{Splitting Diagram}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures_splitting/1 Splitting-2.jpg}
+    \sidecaption{This splitting diagram shows that train track (1.) eventually splits to train track (12.) or (0.).}
+    \label{fig:split_diagram_example}
+\end{figure}
+
+Figure \ref{fig:split_diagram_example} shows a sequence of splittings starting from the standard jointless train track labeled (1.). We implicitly assume that there is a train track map carried by this train track (1.). Consider the triangle, i.e., the $3$-gon, on the left of this train track. The maximal real valence of a switch at this infinitesimal $3$-gon is 2. Specifically, the switch $v$ is the unique switch of maximal real valence. 
+
+By Proposition \ref{prop:reinoso_6.2.9_splittable}, $v$ must either $l$-split or $r$-split. If it $l$-splits, we traverse to the left-hand side of the diagram to a standard train track with a joint labeled $v$ again. Invoking Proposition \ref{prop:reinoso_6.2.9_splittable} once more, this train track either $l$-splits or $r$-splits. For the $r$-split case, we arrive at a train track labeled (12.). For the $l$-split case, we arrive at a train track at the bottom left of the diagram, which is isomorphic to the original train track (1.). 
+
+Going back to the initial splitting of (1.), the $r$-split scenario yields a train track which $l$-splits to itself, and $r$-splits to the train track (0.). 
+
+In this diagram, at each bifurcation, Proposition \ref{prop:reinoso_6.2.9_splittable} guarantees that at least one of an $l$-split or an $r$-split occurs, but not necessarily both. On the other hand, Corollary \ref{cor:termination} disallows infinite repeating sequences of splittings of a train track back to itself (or a train track isomorphic to itself); in other words, any sequence of tight splittings on the diagram must eventually result in train track (12.) or train track (0.). Otherwise, such a sequence would include infinite revisits of the same train track. Therefore, Figure \ref{fig:split_diagram_example} demonstrates that given any train track map $f$ carried by train track (1.), $f$ is also carried by train track (12.) or (0.), up to an action by a braid.
+
+We call a diagram such as Figure \ref{fig:split_diagram_example} a \textbf{splitting diagram}. In our analysis of the non-orientable strata $(3;1^6;3)$ and $(2;1^6;3^2)$, we aim to classify all train track maps in these strata lifting to fixed-point-free pseudo-Anosov maps. As will be shown, we make use of these splitting diagrams to drastically reduce the number of candidate train tracks to consider in our final topological analysis.
+
+\section{Conclusion}
+
+In this chapter, we addressed the massive proliferation of redundant states inherent in the unrestricted folding automaton. Because the \texttt{autofolder} algorithm exhaustively executes every valid elementary fold at every available cusp, it generates a state space that grows exponentially, populated by valid but topologically redundant standard train tracks—specifically those burdened by joints. By deploying the tight splitting operation to systematically identify and split loop switches of maximal real valence, we established a rigorous reduction procedure to mathematically prune this overgrown state space for our non-orientable strata.
+
+As guaranteed by the termination of tight splitting (Theorem \ref{thm:splitting_termination}), this reduction process is both finite and exhaustive. In the following chapter, we will execute this procedure, utilizing comprehensive splitting diagrams to systematically collapse the raw output of our \texttt{autofolder} algorithm. 
+
+Through this exhaustive reduction, we will demonstrate that any pseudo-Anosov mapping class belonging to the strata $(3;1^6;3)$ or $(2;1^6;3^2)$ on $D_6$ must, up to braid conjugation and mirroring, be carried by a small, manageable number of jointless standard train tracks. Once this finite collection is established, we will apply the Trace Lemma. By explicitly computing their transition matrices, we will algebraically restrict their possible dilatations, thereby eliminating the final candidates and completing the proof of our main detection theorem.

@@ -1,0 +1,2633 @@
+\chapter[Train Track Case Analysis: Track 1]{Train Track Case Analysis: Track 1}
+\label{app:case analysis track1}
+
+\section{Case A: Triangles fixed} \label{CaseATrack1}
+
+Let us assume the triangles are fixed by $f_\beta$, hence $\fbd$ and $\fbdb$ both pass over $d$ or $\dbar$ after an even
+number of letters. We will call this \emph{Assumption A}. We know $\fbd$ does not start at $d$ or $o$, as both instances would cause $\fbb$ and $\fbr$ to trace. We also know $\fbdb$ does not start at $\dbar$, as that would cause $\fbp$ and at least one of $\fbs$ and $\fbi$ to trace. Therefore, $\fbd$ must start at $b$, or $r$; and $\fbdb$ must start at $i$, $s$, or $p$.
+
+
+\subsection{VIE} \label{VIE}
+Suppose $\fbd$ starts at $b$, and $\fbdb$ starts at $i$. Then $\fbd$ must start with $b^-$, as starting with $b^+$ would force the next letter to be $d$, thereby violating Assumption A. In addition, Assumption A necessitates that $\fbd$ eventually crossing $d$ right after $r^-$, possibly after some twisting between $b$, $o$, and $r$. This is because it is impossible to cross over $d$ right after $b$ after an even number of letters, assuming that $\fbd$ starts at $b$. 
+
+This is VIE1.
+
+But here notice that if there were in fact initial twists by $\fbdb$, it must be of the form $\fbd = b^- r^+ b^*...$, which would mean that it takes $\fbb$ with it and therefore cause it to trace. Thus $\fbd$ cannot have initial twists.
+
+Consider $\fbdb$. It must start with $i^+$ to not violate Assumption A. The next letter must then be $p^*$. So we have
+\[
+\fbdb = i^+ p^*...
+\]
+It must also cross $\dbar$ right after $p^+$ to not violate Assumption A as well. Similar to the situation for $\fbd$ above, suppose that $\fbdb$ were to have initial twists before $...p^+\dbar...$, in this case they would be twists between $p$, $s$, or $i$. Then it must be of the form $\fbdb = i^+ p^-...$, and the next letter is $s^*$ or $i^*$. However, this forces $\fbs$ and $\fbi$ to start with $p^-$ and then to $s^*$ or $i^*$ together, thereby tracing. This is a contradiction. Thus $\fbdb$ cannot have initial twists. 
+
+This is VIE2.
+
+Consider $\fbr$. It can start with $d$ or $o$. If it were to start with $d$, then it can either do so while going above $\fbp$ or below $\fbp$. If it went above $\fbp$, then $\fbp$ will trace:
+\[
+\fbp = \dbar b^- r^- d p^\times
+\]
+If instead $\fbr$ were to go below $\fbp$, then itself would trace:
+\[
+\fbr = d i^+ p^+ \dbar r^\times
+\]
+Therefore, $\fbr$ cannot start with $d$, so it must start with $o$. In fact, it must start and end there immediately:
+\[
+\fbr = o^\circ
+\]
+Indeed, if it did not and started with $o^+$ instead, then it will trace:
+\[
+\fbr = o^+ r^\times
+\]
+Similarly if it started with $o^-$:
+\[
+\fbr = o^- b^- r^\times
+\]
+
+This is VIE3.
+
+Here if the dotted lines can join, or if they do not, $\fbd$ on the left can go either below or above $\fbdb$ on the right.
+
+\subsubsection{Iris} \label{Iris}
+Suppose the dotted lines join in the middle. 
+
+This is Iris1.
+
+Consider $\fbb$. We can either have
+\[
+\fbb = r^\circ
+\]
+or
+\[
+\fbb = r^-...
+\]
+
+\subsubsubsection{Flute} \label{Flute}
+Suppose
+\[
+\fbb = r^\circ
+\]
+
+This forces $\fbp$ to continue with $r+$:
+\[
+\fbp = \dbar \hat{r}^+ b^*...
+\]
+
+This forces $\fbo$ to start with $b^-$ and to the right of $\fbp$. Otherwise, $\fbp$ will be forced to continue with $b^+$, and be absorbed between $\fbd$ and $\fbo$. Thus we must have
+\[
+\fbo = b^- r^- d p^*...
+\]
+
+This is Flute1.
+
+Here $\fbo$ must continue with $p^-$ and to the right of $\fbs$ and $\fbi$. Otherwise, $\fbs$ and $\fbi$ will be forced to start with $p^+$ and to the left of $\fbo$, in which case they will be absorbed between $\fbd$ and $\fbo$:
+\[
+\fbs = \fbi = p^+ \dbar r^+ b^+ \Abso{\fbd}{o}
+\]
+
+Thus we must have:
+\[
+\fbo = b^- r^- d \hat{p^}^- i^*...
+\]
+
+This is Flute2.
+
+Here $\fbi$ can start and end at $p^\circ$, or it can start with $p^+$. It cannot start with $p^-$ as that would cause it to trace immediately.
+
+Suppose 
+\[
+\fbi = p^\circ
+\]
+
+Then this forces
+\[
+\fbs = p^- i^*...
+\]
+
+This is Flute3.
+
+Consider $\fbo$. If it continued with $i^\circ$ or $i^+$, then $\fbs$ is forced to continue with $i^+$ and to the left of $\fbo$. But then $\fbs$ will be absorbed:
+\[
+\fbs = p^- \hat{i}^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+On the other hand, if $\fbo$ were to continue with $i^-$, then if it did so to the left of $\fbs$ then $\fbs$ will still be absorbed in the same manner; but if $\fbo$ went to the right of $\fbs$, it will be absorbed itself:
+\[
+\fbo = b^- r^- d p^- \hat{i}^- p^+ \Abso{\fbs}{\fbi}
+\]
+
+This is a contradiction. Thus in the situation depicted in Flute2, $\fbi$ cannot start and end at $p^\circ$. So suppose instead it starts with $p^+$. Then we have
+\[
+\fbi = p^+ \dbar r^+ b^*...
+\]
+
+This is Flute4.
+
+Here $\fbi$ must continue with $b^+$ and to the right of $\fbp$. Otherwise, $\fbp$ will be forced to continue with $b^-$ and to the right of $\fbi$, in which case it will trace:
+\[
+\fbp = \dbar r^+ \hat{b}^- r^- d p^\times
+\]
+
+Thus we must have:
+\[
+\fbi = p^+ \dbar r^+ \hat{b}^+ r^-...
+\]
+
+This is Flute5.
+
+Here $\fbi$ can continue with $d$ or $o^-$. If it were to continue with $d$, it will trace:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- \hat{d} i^\times
+\]
+
+Thus it must continue with $o^-$:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- \hat{o}^- b^- r^- d p^- s^*...
+\]
+
+This is Flute6.
+
+Here consider $\fbp$. It must end here at $b^\circ$. Indeed, if it were to continue with $b^+$, it will trace:
+\[
+\fbp = \dbar r^+ \hat{b}^+ r^- d i^+ p^\times
+\]
+or
+\[
+\fbp = \dbar r^+ \hat{b}^+ r^- b^- b^- r^- d  p^\times
+\]
+
+On the other hand, if it were to continue with $b^-$, it also traces:
+\[
+\fbp = \dbar r^+ \hat{b}^- r^- d p^\times
+\]
+
+Thus we must have
+\[
+\fbp = \dbar r^+ \hat{b}^\circ
+\]
+
+
+Consider $\fbo$. It must end here at $i^\circ$. Indeed, if instead it were to continue with $i^+$, then:
+\[
+\fbo = b^- r^- d p^- \hat{i}^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+While if instead it were to continue with $i^-$, we have:
+\[
+\fbo = b^- r^- d p^- \hat{i}^- p^+ \dbar r^+ b^+ r^- o^\times
+\]
+
+Thus we must have
+\[
+\fbo = b^- r^- d p^- \hat{i}^\circ
+\]
+
+This is Flute7.
+
+Here let us consider $\fbs$. It must start and end at $p^\circ$. Indeed, if it were to start with $p^+$, then it continues, either
+\[
+\fbs = \hat{p}^+ \dbar r^+ b^+ r^- d i^+ p^+ \dbar r^+ b^+ o^+ r^+ b^- r^- d p^- i^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+or
+\[
+\fbs = \hat{p}^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- s^\times
+\]
+
+Hence we must have
+\[
+\fbs = p^\circ
+\]
+
+This is Flute8.
+
+Here we claim that $\fbi$ must end at $s^\circ$. Indeed, suppose it were to continue with $s^+$, then
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- \hat{s}^+ p^+ \dbar r^+ b^+ o^+ r^+ b^- r^- d p^- \Abso{\fbs}{ \fbi}
+\]
+
+While if it were to continue with $s^-$, we have
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- \hat{s}^- p^+ \dbar r^+ b^+ o^+ r^+ b^- r^- d p^- i^\times
+\]
+
+Thus we must have
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- \hat{s}^\circ
+\]
+
+This is Flute9, and this is our Candidate 1.
+
+
+\subsubsubsection{Plump} \label{Plump}
+Back to the end of Iris \ref{Iris}, suppose
+\[
+\fbb = r^-...
+\]
+
+Then it must do so while going to the right of $\fbp$, otherwise it will trace:
+\[
+\fbb = r^- d i^+ p^+ \dbar r^+ b^\times
+\]
+
+Thus we have
+\[
+\fbb = r^- d p^*...
+\]
+
+Consider $\fbp$. It must end here at $r^\circ$. Indeed, if it were to continue with $r^+$, then we have
+\[
+\fbp = \dbar r^+ d i^+ p^\times
+\]
+or
+\[
+\fbp = \dbar r^+ o^- b^+ r^- d p^\times
+\]
+
+While if it were to continue with $r^-$, we have
+\[
+\fbp = \dbar r^- d p^\times
+\]
+
+Thus we must have
+\[
+\fbp = \dbar r^\circ
+\]
+
+This is Plump1.
+
+Here $\fbb$ must either end at $p^\circ$, or continue with $p^-$ and into 1., or 2. Note that $p^+$ is not possible as it would eventually trace.
+
+\subsubsubsubsection{Muscle} \label{Muscle}
+Suppose $\fbb$ ends at $p^\circ$, so we have
+\[
+\fbb = r^- d \hat{p}^\circ
+\]
+
+Then $\fbs$ and $\fbi$ will start with $p^+$. So we have
+\[
+\fbs = p^+ \dbar r^+ b^*...
+\]
+and
+\[
+\fbi = p^+ \dbar r^+ b^*...
+\]
+
+This is Muscle1.
+
+Here $\fbo$ is forced to start with $b^-$ and to the right of $\fbs$ and $\fbi$. Otherwise $\fbs$ and $\fbi$ will be immediately absorbed between $\fbd$ and $\fbo$.
+
+This is Muscle2.
+
+Here $\fbi$ can continue with $b^\circ$ or $b^+$. Note that $b^-$ is not possible as that would cause it to trace:
+\[
+\fbi = p^+ \dbar r^+ \hat{b}^- r^- d p^- i^\times
+\]
+
+So suppose it continues with $b^\circ$:
+\[
+\fbi = p^+ \dbar r^+ \hat{b}^\circ
+\]
+
+Then $\fbs$ continues with $b^-$:
+\[
+\fbs = p^+ \dbar r^+ \hat{b}^- r^- d p^- i^*...
+\]
+
+This is Muslce3.
+
+Here $\fbo$ must continue with $i^-$ and to the right of $\fbs$. Otherwise, $\fbs$ will be forced to continue with $i^+$ and to the left of $\fbo$, in which case it will be absorbed:
+\[
+\fbs = p^+ \dbar r^+ b^- r^- d p^- \hat{i}^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+Thus $\fbo$ must continue with $i^-$. But now it will be absorbed:
+\[
+\fbo = b^- r^- d p^- \hat{i}^- p^+ \dbar r^+ b^+ r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+This is depicted in Muscle4.
+
+This is a contradiction. Thus in the situation depicted in Muscle2, $\fbi$ cannot end at $b^\circ$. So $\fbi$ must continue with $b^+$ there.
+
+This is Muscle5.
+
+Here $\fbi$ can go into 1, or 2. 
+
+\subsubsubsubsubsection{Dolphin} \label{Dolphin}
+Suppose it goes into 1. Then it continues:
+\[
+\fbi = p^+ \dbar r^+ \hat{b}^+ r^- d p^- \dbar r^+... 
+\]
+This is Dolphin1.
+
+Here it cannot continue with $d$, or it will trace:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ \hat{d} i^\times
+\]
+
+Thus it must continue with $o^-$:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ \hat{o}^- b^- r^- d p^- s^*...
+\]
+
+This is Dolphin2.
+
+Here $\fbo$ must end here at $i^\circ$. Indeed, if it were to continue with $i^+$, then we will have:
+\[
+\fbo = b^- r^- d p^- \hat{i}^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+While if it were to continue with $i^-$, we will have:
+\[
+\fbo = b^- r^- d p^- \hat{i}^- p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ o^\times
+\]
+
+Thus we must have $\fbo$ ending at $i^\circ$.
+
+This is Dolphin3.
+
+Similarly, $\fbs$ must end here at $b^\circ$. Indeed, if it were to continue with $b^+$, then we will have:
+\[
+\fbs = p^+ \dbar r^+ \hat{b}^+ r^- d p^-\dbar r^+...
+\]
+and here the next letter cannot be $o^-$ or it will escape to the outer perimeter, and due to the position of $\fbi$, it will trace. Thus here the next letter must be $d$:
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- d p^-\dbar r^+ \hat{d} t^+ p^+ \dbar r^+ b^+ o^+ r^- d p^+ \dbar r^+ b^- r^- d p^- i^+ p^+\dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+While if $\fbs$ were to continue with $b^-$, we will have:
+\[
+\fbs = p^+ \dbar r^+ \hat{b}^- r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+Thus we must have $\fbs$ ending at $b^\circ$.
+
+This is Dolphin4.
+
+Here $\fbi$ is forced to end at $s^\circ$. Indeed, if instead it were to continue with $s^+$, then we will have:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ o^- b^- r^- d p^- \hat{s}^+ p^+ \dbar r^+ b^+ o^+ r^- d p^+ \dbar r^+ b^- r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+]While if it were to continue with $s^-$, then we will have:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ o^- b^- r^- d p^- \hat{s}^- p^+ \dbar r^+ b^+ o^+ r^- d p^+ \dbar r^+ b^- r^- d p^- i^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+Thus we must have
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ o^- b^- r^- d p^- \hat{s}^\circ
+\]
+
+This is Candidate Train Track map 2, depicted in Dolphin5.
+
+\subsubsubsubsubsection{Cottage} \label{Cottage}
+Back to the end of Muscle \ref{Muscle}. Suppose $\fbi$ goes into 2. Then it will trace:
+\[
+\fbi = p^+ \dbar r^+ \hat{b}^+ r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+This is depicted in Cottage1.
+
+This is a contradiction.
+
+\subsubsubsubsection{Magpie} \label{Magpie}
+Back to the end of Plump \ref{Plump}. Suppose $\fbb$ continues with $p^-$.
+
+This is Magpie1.
+
+Here it can continue into 1, or 2. Suppose it continues into 1, then it will trace:
+\[
+\fbb = r^- d \hat{p}^- \dbar r^+...
+\]
+
+Here the next letter cannot be $o^-$, since the letter following that would be $b$. Thus here the next letter must be $d$:
+\[
+\fbb = r^- d p^- \dbar r^+ \hat{d} i^+ p^+ \dbar r^+ b^\times
+\]
+
+This is Magpie2.
+
+
+So it must continue into 2. This is Magpie3.
+
+Here $\fbb$ must end at $i$ or $p$, possibly after some number of twisting between the two. It can never escape this region since any such behavior would cause it to trace, even if it escaped to the outer perimeter. For the following argument that leads to the Candidate Train Track family 2a, we will assume $\fbb$ ends at $i$, with the understanding that the general family can have more twists, and and other edge path that goes through this region will have the appropriate amount of twisted added.
+
+This is Magpie4.
+
+Here suppose $\fbs$ were to begin with $p^-$ and to the right of $\fbi$. Then it continues:
+\[
+\fbs = p^- i^+ p^+ \dbar r^+ b^*...
+\]
+
+This forces $\fbo$ to begin with $b^-$ and to the right of $\fbs$:
+\[
+\fbo = b^- r^- d p^- i^- p^*...
+\]
+
+This is Magpie5.
+
+This forces $\fbi$ to begin with $p^-$ and to the right of $\fbo$, which will cause it to immediately trace. This is a contradiction. Thus in the situation depicted in Magpie4, $\fbs$ cannot begin with $p^-$ and to the right of $\fbi$. This means that $\fbi$ must begin with $p^+$ and to the left of $\fbs$. It then continues:
+\[
+\fbi = p^+ \dbar r^+ o^- b^- r^- d p^- s^*...
+\]
+
+This is Magpie6.
+
+Here $\fbo$ os forced to begin and end with $b^\circ$. Otherwise, it will trace:
+\[
+\fbo = b^- r^- d p^- i^- p^+ \dbar r^+ o^\times
+\]
+
+So we must have
+\[
+\fbo = b^\circ
+\]
+
+Then this also forces $\fbs$ to begin and end with $p^\circ$. Indeed, if it did not, then it will be absorbed:
+\[
+\fbs = p^+ \dbar r^+ d i^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+Finally, $\fbi$ is forced to end at $s^\circ$. Indeed, if it were to continue with $s^+$, then we will have:
+\[
+\fbi = p^+ \dbar r^+ o^- b^- r^- d p^- \hat{s}^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+While if it were to continue with $s^-$, we will have
+\[
+\fbi = p^+ \dbar r^+ o^- b^- r^- d p^- \hat{s}^- p^+ \dbar r^+ b^+ o^+ r^- d p^- i^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+Thus we must have 
+\[
+\fbi = p^+ \dbar r^+ o^- b^- r^- d p^- \hat{s}^\circ
+\]
+
+This gives us the Train Track Map Candidate depicted in Magpie7, which is part of the Train Track Map Candidates 3, with no twists from $\fbb$. In general, this Candidate Family includes $k$ twists from $\fbb$. In Magpie8, we have illustrated a train track map from this candidate with one twist from $\fbb$.
+
+
+\subsubsection{Ruby}\label{Ruby} 
+Back to the end of VIE \ref{VIE}. Suppose dotted lines do not join, so $\fbd$ on the left can go either below or above $\fbdb$ on the right. If $\fbd$ went above $\fbd$, then $\fbd$ will enter Situation $\beta$. Thus this cannot happen. Therefore $\fbd$ must go below $\fbdb$. Furthermore, it must go below $\fbp$ as well, or else it will enter Situation $\beta$. It then continues:
+\[
+\fbd = b^- r^- \hat{d} i^+ p^+ \dbar r^+ b^+ o^+ r^*...
+\]
+
+This is Ruby2.
+
+Now it enters Situation $\beta$. This is a contradiction.
+
+\subsection{GRR} \label{GRR}
+Back to the end of Case A \ref{CaseATrack1}, triangles fixed. Suppose $\fbd$ starts at $b$, and $\fbdb$ starts at $s$. Using the same argument used in VIE \ref{VIE}, we can conclude that neither $\fbd$, nor $\fbdb$ can have initial twists.
+
+This is GRR1.
+
+Here $\fbr$ can start with $d$ or start with $o^*$. 
+
+\subsubsection{Bree} \label{Bree}
+
+Suppose $\fbr$ starts with $d$. This is shown in Bree1.
+
+Here $\fbr$ must go below $\fbp$. Otherwise, $\fbp$ will trace:
+\[
+\fbp = \dbar b^- r^- d p^\times
+\]
+
+Continuing, $\fbr$ must go to $i^*$ after crossing, as the other option, $s^+$, would cause it to trace:
+\[
+\fbr = d \hat{s}^+ p^+ \dbar r^\times
+\]
+
+So we must have
+\[
+\fbr = d i^*...
+\]
+
+Here it must in fact end at $i^\circ$, as both $i^+$ and $i^-$ would cause it to trace:
+\[
+\fbr = d \hat{i}^+ \dbar r^\times
+\]
+\[
+\fbr = d \hat{i}^- \dbar b^- r^\times
+\]
+
+Thus we must have
+\[
+\fbr = d i^\circ
+\]
+
+This is Bree2.
+
+Here consider $\fbi$. It must begin with $p^+$ and to the left of $\fbs$. Otherwise, $\fbs$ will be forced to begin with $p^-$ and to the right of $\fbi$, in which case it will immediately trace.
+
+This is Bree3.
+
+Here $\fbi$ must go below $\fbd$ since if it were to go above, then it will trace:
+\[
+\fbi = p^+ \hat{\dbar} r^+ b^+ d  i^\times
+\]
+
+So now we have the situation depicted in Bree4.
+
+Now here $\fbi$ must continue with $r^+$ and to the left of $\fbp$. Otherwise $\fbp$ will be forced to continue with $r^-$, in which case it will immediately trace after crossing $d$. 
+
+This is Bree5.
+
+Here $\fbi$ can go into 1, or 2. But if it were to go into 2, it will eventually trace:
+\[
+\fbi = p^+ \dbar \hat{r}^+ d i^\times
+\]
+or
+\[
+\fbi = p^+ \dbar \hat{r}^+ d s^+ p^+ \dbar r^+ b^+ d i^\times
+\]
+
+So it must go into 1. So we have
+\[
+\fbi = p^+ \dbar \hat{r}^+  b^*...
+\]
+
+This forces $\fbo$ to begin with $b^-$, and continue:
+\[
+\fbo = b^- r^- d p^- s^*...
+\]
+
+This is Bree6.
+
+Note that here $\fbo$ cannot go above $\fbdb$ as it crosses $d$, as that would immediately put $\fbdb$ in Situation $\beta$.
+
+Now consider $\fbp$. It can either end here at $r^\circ$, or continue with $r^+$. while $r^-$ would cause it to immediately trace after crossing $d$. So suppose it ends here at $r^\circ$:
+\[
+\fbp = \dbar r^\circ
+\]
+
+Then $\fbb$ will begin with $r^-$:
+\[
+\fbb = r^- d p^*...
+\]
+
+This then forces $\fbs$ to begin with $p^+$ and to the left of $\fbb$:
+\[
+\fbs = p^+ \dbar r^+ o^*...
+\]
+
+This is Bree7.
+
+Here notice that the dotted lines have to join. Otherwise, either going below or above the other would place at least one of $\fbd$ or $\fbdb$ in Situation $\beta$.
+
+But now we have a counterclockwise path mill, with edge paths $\fbs$, $\fbi$, and $\fbb$; situated at edges $b$ and $p$.  
+
+Spo going back to the situation depicted in Bree6, suppose $\fbp$ does not end there and continues with $r^+$. Then we have
+\[
+\fbp = \dbar r^+ b^*...
+\]
+
+This is Bree8.
+
+Here $\fbi$ must continue with $b^+$ and to the left of $\fbp$. Otherwise, $\fbp$ will be forced to continue with $b^-$ and to the right of $\fbi$, in which case it will trace:
+\[
+\fbp = \dbar r^+ \hat{b}^-r^- d p^\times
+\]
+
+So we must have
+\[
+\fbi = p^+ \dbar r^+ b^+ r^*...
+\]
+
+This is Bree9. Here $\fbi$ must continue with $r^-$ and to the right of $\fbb$. Otherwise, $\fbb$ will be forced to begin with $r^+$, and it will immediately trace. But now $\fbi$ will eventually trace:
+\[
+\fbi = p^+ \dbar r^+ b^+ \hat{r}^- d i^\times
+\]
+or
+\[
+\fbi = p^+ \dbar r^+ b^+ \hat{r}^- d s^+ p^+ \dbar r^+ b^+ d i^\times
+\]
+
+This is a contradiction.
+
+\subsubsection{Scud}\label{Scud}
+Back to the end of GRR \ref{GRR}. Suppose $\fbr$ starts with $o^*$. Then in fact it must also end there or it will trace:
+\[
+\fbr = o^+ r^\times
+\]
+\[
+\fbr = o^- b^- r^\times
+\]
+
+Thus we must have
+\[
+\fbr = o^\circ
+\]
+
+This is Scud1.
+
+Here the dotted lines can either join, or if not, the only possibility would be if $\fbd$ went below $\fbp$. If instead $\fbd$ went above $\fbp$ but below $\fbdb$, then it will be in Situation $\beta$; if it went above $\fbdb$, then $\fbdb$ will be in Situation $\beta$.
+
+So suppose the dotted lines join. Consider $\fbi$. It must begin with $p^+$, and to the left of $\fbs$. Otherwise, $\fbs$ will be forced to begin with $p^-$ and to the right of $\fbi$, in which case it will immediately trace. So we must have
+\[
+\fbi = p^+ \dbar r^*...
+\]
+
+This is Scud2.
+
+Here $\fbi$ must continue with $r^+$ and into 1, or 2. If it did not, $\fbp$ will be forced to continue with $r^-$ and to the right of $\fbi$, in which case it will trace immediately after crossing $d$.
+
+\subsubsubsection{Swale} \label{Swale}
+Suppose $\fbi$ goes into 1. Then $\fbb$ is forced to begin with $r^-$, and it continues:
+\[
+\fbb = r^- d p^- s^*...
+\]
+
+This is Swale1.
+
+Here $\fbb$ can continue with $s^-$ or $s^\circ$. It cannot continue with $s^+$ as that would cause it to trace:
+\[
+\fbb = r^- d p^- \hat{s}^+ p^+ \dbar r^+ b^\times
+\]
+
+
+\subsubsubsubsection{Bezoar}
+Suppose $\fbb$ continues with $s^-$. Then it continues:
+\[
+\fbb = r^- d p^- \hat{s}^- p^+ \dbar r^+...
+\]
+
+This is Bezoar1.
+
+Here $\fbb$ cannot continue with $o^-$, or it will trace immediately. Thus it must continue with $d$. The next letter after $d$ must be $i^*$, and not $s^+$, as that would make it traverse counterclockwise at the outer perimeter, thereby tracing. Thus we have:
+\[
+\fbb = r^- d p^- s^- p^+ \dbar r^+ \hat{d} i^*...
+\]
+
+This is Bezoar2.
+
+Here $\fbi$ is forced to continue with $d$, and continues:
+\[
+\fbi = p^+ \dbar r^+ \hat{d} s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- s^*...
+\]
+
+Consider $\fbp$. It must end here at $r^\circ$. Indeed, if not then it will trace:
+\[
+\fbp = \dbar \hat{r}^+ d s^+ p^\times
+\]
+or
+\[
+\fbp = \dbar \hat{r}^- d p^\times
+\]
+
+So we must have
+\[
+\fbp = \dbar r^\circ
+\]
+
+This is Bezoar3.
+
+Consider $\fbs$. It must end her eat $p^\circ$. Indeed, if not, then it must begin with $p^+$, in which case it will trace:
+\[
+\fbs = p^+ \dbar r^+ d s^\times
+\]
+
+So we must have
+\[
+\fbs = p^\circ
+\]
+
+This is Bezoar4.
+
+Consider $\fbi$. It cannot continue with $s^+$, as that would cause it to be absorbed:
+\[
+\fbi = p^+ \dbar r^+ d s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- \hat{s}^+ p^+ \dbar r^+ o^- b^- r^- d p^- s^- \dbar r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+So it must either continue with $s^-$ or $s^\circ$. Suppose it continues with $s^-$, then it continues
+\[
+\fbi = p^+ \dbar r^+ d s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- \hat{s}^- p^+ \dbar r^+ b^*...
+\]
+
+This forces $\fbo$ to begin with $b^-$ and to the right of the incoming $\fbi$. But now it will trace:
+\[
+\fbp = b^- r^- d p^- s^- p^+ \dbar r^+ d s^+ p^+ \dbar r^+ b^+ o^\times
+\]
+
+Thus $\fbi$ must end at $s^\circ$:
+\[
+\fbi = p^+ \dbar r^+ d s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- \hat{s}^\circ
+\]
+
+This is Bezoar5.
+
+Here consider $\fbb$. If it did not end here at $i^\circ$, it will trace:
+\[
+\fbb = r^- d p^- s^- p^+ \dbar r^+ d \hat{i}^+ \dbar r^- d p^- s^+ p^+ \dbar r^+ b^\times
+\]
+or
+\[
+\fbb = r^- d p^- s^- p^+ \dbar r^+ d \hat{i}^- \dbar r^- d p^- s^+ p^+ \dbar r^+ o^- b^\times
+\]
+
+Thus we must have
+\[
+\fbb = r^- d p^- s^- p^+ \dbar r^+ d \hat{i}^\circ
+\]
+
+Now consider $\fbo$. If it were to not begin and end immediately at $b^\circ$, it will trace:
+\[
+\fbo = b^- r^- d p^- s^- p^+ \dbar r^+ d s^+ p^+ \dbar r^+ b^+ o^\times
+\]
+or
+\[
+\fbo = b^- r^- d p^- s^- p^+ \dbar r^+ d i^- \dbar r^- d p^- s^+ p^+ \dbar r^+ o^\times
+\]
+
+So we must have
+\[
+\fbo = b^\circ
+\]
+
+This establishes candidate train track map 4. Shown in Bezoar6.
+
+
+\subsubsubsubsection{Efface}\label{Efface}
+Back to the end of Swale \ref{Swale}, suppose $\fbb$ continues with $s^\circ$:
+\[
+\fbb = r^- d p^- \hat{s}^\circ
+\]
+
+This is Efface1.
+
+Here $\fbi$ can continue with $o^-$ or $d$.
+
+\subsubsubsubsubsection{Abscond}
+Suppose $\fbi$ continues with $o^-$. Then it continues:
+\[
+\fbi = p^+ \dbar r^+ \hat{o}^- b^- r^- d p^- s^- \dbar r^*...
+\]
+
+Then this forces $\fbo$ to begin and end immediately at $b^\circ$. If it did not, then it will trace:
+\[
+\fbo = b^- r^- d p^- s^- p^+ \dbar r^+ o^\times
+\]
+
+This is Abscond1.
+
+Here $\fbs$ can either begin (and end with) $p^\circ$, or $p^+$. Suppose it were the former:
+\[
+\fbs = p^\circ
+\]
+
+Then $\fbp$ must continue with $r^+$ and to the left of $\fbi$, otherwise $\fbi$ will be forced to continue with $r^-$ and to the right of $\fbp$ in which case it will be absorbed between $\fbs$ and $\fbi$. So we must have
+\[
+\fbp = \dbar r^+ d i^*...
+\]
+
+This is Abscond2.
+
+Now $\fbi$ must end at $r^\circ$. Indeed, if it were to continue with $r^+$, we would have:
+\[
+\fbi = p^+ \dbar r^+ o^- b^- r^- d p^- s^- \dbar \hat{r}^+ d s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+On the other hand, if it were to continue with $r^-$, then we would have:
+\[
+\fbi = p^+ \dbar r^+ o^- b^- r^- d p^- s^- \dbar \hat{r}^- d s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- s^+ p^+\dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+So we must have
+\[
+\fbi = p^+ \dbar r^+ o^- b^- r^- d p^- s^- \dbar \hat{r}^\circ
+\]
+
+This then forces $\fbp$ to also end at $\fbi$, or else it will trace:
+\[
+\fbp = \dbar r^+ d \hat{i}^+ \dbar r^- d s^+ p^\times
+\]
+or
+\[
+\fbp = \dbar r^+ d \hat{i}^- \dbar r^- d p^\times
+\]
+
+So we must have
+\[
+\fbp = \dbar r^+ d \hat{i}^\circ
+\]
+
+This establishes a Train Track Map Candidate, depicted in Abscond3. We will call this Candidate 5.
+
+Going back to the situation depicted in Abscond1, suppose $\fbs$ were to begin instead with $p^+$.
+
+Here $\fbp$ either ends at $r^\circ$, or continue with $r^+d i^*...$. It must end at either $i$ or $r$ at some point, possibly after twisting $k$ times between the two. Here, as soon as $\fbp$ ends, $\fbi$ must also end, as otherwise it would escape to the outer perimeter and trace. Thus $\fbs$ must also end.
+
+
+This is Candidate Family 6. Absocond6 shows $\fbp$ ending immediately at $r$.
+
+
+\subsubsubsubsubsection{Fervent}
+Back to the end of Efface \ref{Efface}, suppose $\fbi$ continues with $d$. Then it continues:
+\[
+\fbi = p^+ \dbar r^+ \hat{d} s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- s^- p^+ \dbar r^+ b^*...
+\]
+
+This is Fervent1.
+
+This forces $\fbo$ to begin with $b^-$:
+\[
+\fbo = b^- r^- d p^- s^- p^+ \dbar r^+ d i^*...
+\]
+
+Now consider $\fbs$. It must begin and end at $p^\circ$. Indeed, if it were to begin instead with $p^+$, then:
+\[
+\fbs = p^+ \dbar r^+ d s^\times
+\]
+
+Thus we must have
+\[
+\fbs = p^\circ
+\]
+
+This is Fervent2.
+
+Here consider $\fbi$. We claim that it must end here at $b^\circ$. Indeed, otherwise we would have
+\begin{align*}
+    \fbi = &p^+ \dbar r^+ \hat{d} s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- s^- p^+ \dbar r^+ \hat{b}^+\\
+    & r^- d p^- s^- p^+ \dbar r^+ o^- b^- r^- d p^- s^- \dbar r^- d p^- \Abso{\fbs}{\fbi}
+\end{align*}
+\begin{align*}
+    \fbi =& p^+ \dbar r^+ \hat{d} s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- s^- p^+ \dbar r^+ \hat{b}^- r^- d p^- s^- p^+\\
+    &\dbar r^+ o^- b^- r^- d p^- s^- \dbar r^- d p^- s^+ p^+\dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\end{align*}
+or
+
+Thus we must have
+\[
+\fbi = p^+ \dbar r^+ \hat{d} s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- s^- p^+ \dbar r^+ \hat{b}^\circ
+\]
+
+This then forces $\fbo$ to also end at $i^\circ$. Indeed, if it continued with $i^-$ it would trace:
+\[
+\fbo = b^- r^- d p^- s^- p^+ \dbar r^+ d \hat{i}^- \dbar r^- d p^- s^+ p^+ \dbar r^+ b^+ r^- d p^- s^- p^+ \dbar r^+ o^\times
+\]
+
+While if it were to continue with $i^+$, it would be absorbed:
+\[
+\fbo = b^- r^- d p^- s^- p^+ \dbar r^+ d \hat{i}^+ \dbar r^- d p^- s^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+This gives us Candidate 7, depicted in Fervent3.
+
+\subsubsubsection{Ombre} \label{Ombre}
+Back to the end of Scud \ref{Scud}. Suppose $\fbi$ goes into 2. 
+
+This then forces $\fbo$ to begin with $b^-$:
+\[
+\fbo = b^- r^- d p^- s^*...
+\]
+
+This is Ombre1.
+
+Here $\fbb$ can begin with $r^\circ$ or $r^-$. 
+
+\subsubsubsubsection{Satire} \label{Satire}
+Suppose $\fbb$ begins with $r^\circ$. This then forces $\fbp$ to continue with $r^+$:
+\[
+\fbp = \dbar r^+ b^*...
+\]
+
+This is Satire1.
+
+Here $\fbi$ must continue with $b^+$ and to the left of $\fbp$. Otherwise, $\fbp$ will be forced to continue with $b^-$ and to the right of $\fbi$, in which case it will trace after crossing $d$.
+
+So we must have
+\[
+\
+\fbi = p^+ \dbar r^+ \hat{b}^+ r^-...
+\]
+
+This is Satire2.
+
+Here $\fbi$ can continue with $o^-$ or $d$.
+
+\subsubsubsubsubsection{Abdomen} \label{Abdomen}
+Suppose $\fbi$ continues with $o^-$. Then it continues:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- \hat{o}^- b^- r^- d p^- s^- \dbar r^+ b^*...
+\]
+
+
+
+Here consider $\fbo$. We claim it must end here at $s^\circ$. Indeed, if instead it were to continue with $s^+$, it would be absorbed:
+\[
+\fbo = b^- r^- d p^- \hat{s}^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+While if instead it were to continue with $s^-$, it would trace:
+\[
+\fbo = b^- r^- d p^- \hat{s}^- p^+ \dbar r^+ b^+ r^- o^\times
+\]
+
+Thus we must have
+\[
+\fbo = b^- r^- d p^- \hat{s}^\circ
+\]
+
+This is Abdomen1.
+
+Now consider $\fbp$. It can continue with $b^\circ$ or $b^+$.
+
+\subsubsubsubsubsubsection{Panorama}
+Suppose $\fbp$ continues with $b^\circ$. Then $\fbi$ continues with $b^-$:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- s^- \dbar r^+ \hat{b}^- r^- d p^*...
+\]
+
+This is Panorama1.
+
+Here $\fbs$ is forced to begin with $p^+$ and to the left of the incoming $\fbi$:
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- d i^*...
+\]
+
+This is Panorama2.
+
+Here we claim that $\fbi$ must end at $p^\circ$. Indeed, if instead it were to continue with $p^+$, then we have:
+\begin{align*}
+    \fbi =& p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- s^- \dbar r^+ b^- r^- d \hat{p}^+ \dbar r^+ b^+ r^- d s^+ p^+\\
+    &\dbar r^+ b^+ o^+ r^+ b^- r^- d p^+ \Abso{\fbs}{\fbi}
+\end{align*}
+
+On the other hand, if it were to continue with $p^-$, then we have
+
+\begin{align*}
+    \fbi =& p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- s^- \dbar r^+ b^- r^- d \hat{p}^- \dbar r^+ b^+ r^- d s^+ p^+\\
+    &\dbar r^+ b^+ o^+ r^+b^- r^- d p^- s^+ p^+\dbar r^+b^+ \Abso{\fbd}{\fbo}
+\end{align*}
+
+Thus we must have
+\[
+\fbi =p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- s^- \dbar r^+ b^- r^- d \hat{p}^\circ
+\]
+
+This then forces $\fbs$ to also end at $i^\circ$, as one can check if it did not it would either trace:
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- d \hat{i}^+ \dbar r^+ b^- r^- d p^- \dbar r^+ b^+ r^- d s^\times
+\]
+or be absorbed:
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- d \hat{i}^- \dbar r^+ b^- r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+Thus we must have
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- d \hat{i}^\circ
+\]
+
+This gives us Candidate 8, shown in Panorama5.
+
+\subsubsubsubsubsubsection{Pristine}
+Back to the end of Abdomen \ref{Abdomen}. Suppose $\fbp$ continues with $b^+$. Then it must do so by going to the left of $\fbi$. Otherwise, it would trace. So we must have
+\[
+\fbp = \dbar r^+ \hat{b}^+ r^- d i^*...
+\]
+
+This is Pristine1.
+
+Here we claim that $\fbi$ must end at $b^\circ$. Indeed, if instead it were to continue with $b^-$, then
+\begin{align*}
+    \fbi =& p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- s^- \dbar r^+ \hat{b}^- r^- d s^+ p^+ \dbar r^+ b^+ o^+ r^+ b^-\\
+     &r^- d p^- s^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\end{align*}
+
+On the other hand, if it were to continue with $b^+$, then we would have:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- s^- \dbar r^+ \hat{b}^+ r^- d s^+ p^+ \dbar r^+ b^+ o^+ r^+ b^- r^- d p^*... 
+\]
+
+and this forces $\fbs$ to begin with $p^+$ and to the left of the incoming $\fbi$:
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- s^\times
+\]
+
+Thus we must have
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- s^- \dbar r^+ \hat{b}^\circ
+\]
+
+This is Pristine2.
+
+Here consider $\fbp$. We claim it must end here at $i^\circ$. Indeed, if instead it were to continue with $i^+$, then we would have:
+\[
+\fbp = \dbar r^+ b^+ r^- d \hat{i}^+ \dbar r^+ b^- r^- d s^+ p^\times
+\]
+
+If instead it were to continue with $i^-$, then we would have:
+\[
+\fbp = \dbar r^+ b^+ r^- d \hat{i}^- \dbar r^+ b^- r^- d p^\times
+\]
+
+Thus we must have
+\[
+\fbp = \dbar r^+ b^+ r^- d \hat{i}^\circ
+\]
+
+Now consider $\fbs$. It must begin/end at $p^\circ$. Indeed if it did not, then it must begin with $p^+$:
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- d i^+ \dbar r^+ b^- r^- d s^\times
+\]
+
+Thus we must have
+\[
+\fbs = p^\circ
+\]
+
+This gives us Candidate Family 9.
+
+\subsubsubsubsubsection{Gingham}
+Back to the end of Satire \ref{Satire}. Suppose $\fbi$ continues with $d$. Then it continues:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- \hat{d} s^+ p^+ \dbar r^+ b^+ o^+ r^+ b^- r^- d p^- s^*...
+\]
+
+This is Gingham1.
+
+Here $\fbo$ must continue with $s^-$ and to the right of the incoming $\fbi$. Indeed, otherwise $\fbi$ will be forced to continue with $s^+$ and to the left of $\fbo$, in which case it will be absorbed:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d s^+ p^+ \dbar r^+ b^+ o^+ r^+ b^- r^- d p^- \hat{s}^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+Thus we must have
+\[
+\fbo = b^- r^- d p^- \hat{s}^- p^+ \dbar r^+ b^+ r^- d i^*...
+\]
+
+This is Gingham2.
+
+Here $\fbp$ has to end here at $b^\circ$, as both continuing with $b^+$ or $b^-$ causes it to trace.
+
+Here $\fbs$ has to also end at $p^\circ$. Indeed, if it did not, then it has to begin with $p^+$, in which case it will trace:
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- d s^\times
+\]
+
+Thus we must have
+\[
+\fbs = p^\circ
+\]
+
+This is Gingham3.
+
+Here $\fbi$ must end at $s^\circ$. Indeed, if it did not, then we would have
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d s^+ p^+ \dbar r^+ b^+ o^+ r^+ b^- r^- d p^- \hat{s}^+ p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- s^- \dbar r^+ b^- r^- d p^- \Abso{\fbs}{\fbi}
+\]
+or
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d s^+ p^+ \dbar r^+ b^+ o^+ r^+ b^- r^- d p^- \hat{s}^- p^+ \dbar r^+ b^+ r^- d i^\times
+\]
+
+Thus we must have
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d s^+ p^+ \dbar r^+ b^+ o^+ r^+ b^- r^- d p^- \hat{s}^\circ
+\]
+
+This is Gingham4. 
+
+Here $\fbo$ must end at $i^\circ$. Indeed, if it did not, then we would have
+\[
+\fbo = b^- r^- d p^- s^- p^+ \dbar r^+ b^+ r^- d \hat{i}^+ \dbar r^+ b^- r^- d p^- s^+ p^+ \dbar r^+ b^+ r^- o^\times
+\]
+or
+\[
+\fbo = b^- r^- d p^- s^- p^+ \dbar r^+ b^+ r^- d \hat{i}^- \dbar r^+ b^- r^- d p^- s^+ p^+ \dbar r^+ b^+ r^- o^\times
+\]
+
+Thus we must have
+\[
+\fbo = b^- r^- d p^- s^- p^+ \dbar r^+ b^+ r^- d \hat{i}^\circ
+\]
+
+This is Gingham5. This is Candidate 10.
+
+\subsubsubsubsection{Kismet}\label{Kismet}
+Back to the end of Ombre \ref{Ombre}. Suppose $\fbb$ begins with $r^-$. 
+
+This is Kismet1.
+
+Here $\fbb$ can go into 1 or 2.
+
+\subsubsubsubsubsection{Dossier}
+Suppose $\fbb$ goes into 1. Then it must continue with $d$ and not $o^-$, or else it would trace:
+\[
+\fbb = r^- d i^*,,,
+\]
+
+Now $\fbp$ is forced to continue with $r^+$ so we have
+\[
+\fbp = \dbar r^+ b^*...
+\]
+
+This is Dossier1.
+
+Here $\fbi$ must continue with $b^+$ and to the left of $\fbp$, otherwise $\fbp$ will be forced to continue with $b^-$ and to the right of $\fbi$, in which case it will trace:
+\[
+\fbp = \dbar r^+ b^- r^- d p^\times
+\]
+
+Thus we must have
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d s^+ p^+ \dbar r^+ b^+ o^+ r^*...
+\]
+
+This is Dossier2.
+
+Here $\fbp$ must end at $b^\circ$. Indeed, otherwise we would have either
+\[
+\fbp = \dbar r^+ \hat{b}^+ r^- d s^+ p\times
+\]
+or
+\[
+\fbp = \dbar r^+ \hat{b}^- r^- d p^\times
+\]
+
+Thus we must have
+\[
+\fbp = \dbar r^+ \hat{b}^\circ
+\]
+
+This forces $\fbs$ to begin and end at $p^\circ$. Indeed, otherwise, we would have
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- d s^\times
+\]
+
+Thus we must have
+\[
+\fbs = p^\circ
+\]
+
+Now consider $\fbi$. If it did not end here at $r^\circ$, and suppose it continued with $r^+$, we would have
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d s^+ p^+ \dbar r^+ b^+ o^+ \hat{r}^+ o^- b^- r^- d p^- s^- \dbar r^+ b^- r^- d p^- \Abso{\fbs}{\fbi}
+\]
+If instead it were to continue with $r^-$, then we would have:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d s^+ p^+ \dbar r^+ b^+ o^+ \hat{r}^- o^- b^- r^- d p^- s^- \dbar r^+ b^- r^- d r^+ b^- r^- d p^- s^*...
+\]
+
+This is Dossier3.
+ 
+Now here $\fbi$ cannot continue with $s^+$, or it will eventually be absorbed between $\fbd$ and $\fbo$. This means it must either end there at $s^\circ$ or $s^-$, in either case this forces $\fbo$ to continue with $s^-$, but this will lead to it tracing:
+\[
+\fbo = b^- r^- d p^- s^- p^+ \dbar r^+ b^+ r^- o^\times
+\]
+
+Thus, we must have
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d s^+ p^+ \dbar r^+ b^+ o^+ \hat{r}^\circ
+\]
+after all.
+
+This is Dossier4.
+
+Now here $\fbb$ must end at $i^\circ$ or it will trace:
+\[
+\fbb = r^- \dbar \hat{i}^+ \dbar r^+ b^\times
+\]
+or
+\[
+\fbb = r^- \dbar \hat{i}^- \dbar r^+ b^- b^\times
+\]
+
+Thus we must have
+\[
+\fbb = r^- \dbar \hat{i}^\circ
+\]
+
+And finally, this also forces $\fbo$ to end at $s^\circ$, otherwise we would have:
+\[
+\fbo = b^- r^- d p^- \hat{s}^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+or
+\[
+\fbo = b^- r^- d p^- \hat{s}^- p^+ \dbar r^+ b^+ r^- d i^- r^+ o^\times
+\]
+
+Thus we must have
+\[
+\fbo = b^- r^- d p^- \hat{s}^\circ
+\]
+
+
+This is Candidate 11, shown in Dossier 5.
+
+\subsubsubsubsubsection{Perplex}\label{Perplex}
+Back to the end of Kismet \ref{Kismet}. Suppose $\fbb$ goes into 2. Then it continues:
+\[
+\fbb = r^- d p^*...
+\]
+This is Perlpex1.
+
+This forces $\fbs$ to begin with $p^+$ and to the left of the incoming $\fbb$, otherwise $\fbb$ will be absorbed. Thus we have
+\[
+\fbs = p^+ \dbar r^+ b^*...
+\]
+
+This is Perplex2.
+
+Here $\fbi$ must continue with $b^+$ and to the left of the incoming $\fbs$, otherwise $\fbs$ will be forced to continue with $b^-$ and to the right of $\fbi$, in which case it will trace:
+\[
+\fbs = p^+ \dbar r^+ \hat{b}^- r^- d p^- s^\times
+\]
+
+Thus we must have
+\[
+\fbi = p^+ \dbar r^+ \hat{b}^+ r^- d p^*... 
+\]
+
+This is Perplex3.
+
+Here $\fbi$ must continue with $p^-$ and to the right of $\fbb$, otherwise, $\fbb$ will be forced to continue with $p^+$ and to the left of the incoming $\fbi$, in which case it will trace:
+\[
+\fbb = r^- d \hat{p}^+ \dbar r^+ b^\times
+\]
+
+Thus we must have
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d \hat{p}^- \dbar r^*...
+\]
+
+This is Perplex4.
+
+Here $\fbp$ can either end at $p^\circ$, or continue with $r^+$. It is not possible for it to continue with $r^-$, as then it would trace immediately after crossing $d$.
+
+\subsubsubsubsubsubsection{Zugzwang}\label{Zugzwang}
+Suppose $\fbp$ end here at $p^\circ$. This forces $\fbi$ to continue with $r^+$:
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d p^- \dbar \hat{r}^+...
+\]
+
+Here $\fbo$ can either end at $s^\circ$ or continue with $s^-$. It cannot continue with $s^+$ as that would cause it to be absobed between $\fbd$ and $\fbo$.
+
+\subsubsubsubsubsubsubsection{Querulous}
+Suppose $\fbo$ ends at $s^\circ$. This is Querelous1.
+
+Here $\fbs$ can either continue with $b^+$, or end at $b^\circ$. Continuing with $b^-$ is not possible as then it would be absorbed:
+\[
+\fbs = p^+ \dbar r^+ \hat{b}^- r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+So suppose it continues with $b^+$:
+\[
+\fbs = p^+ \dbar r^+ \hat{b}^+ r^- d p^- \dbar r^+...
+\]
+
+This is Querulous2.
+
+Consider $\fbb$. It must end here at $p^\circ$. Indeed, if it were to continue with $p^+$, it would trace:
+\[
+\fbb = r^- d \hat{p}^+ \dbar r^+ b^\times
+\]
+Whereas if it were to continue with $p^-$, we would have
+\[
+\fbb = r^- d \hat{p}^- \dbar r^+ d i^*...
+\]
+and here this forces $\fbi$ and $\fbs$ to both continue with $d$, and in order for $\fbi$ to not trace, they both then continue with $s$, but that forces $s$ to trace.
+
+Thus we must have
+\[
+\fbb = r^- d \hat{p}^\circ
+\]
+
+This is Querulous3.
+
+Now consider $\fbi$. If it continued with $d$, then it will force $s$ to trace, as before. So it must continue with $o^-$, and $\fbs$ must continue with $di...$, to not trace. So we must have
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ d i^*...
+\]
+and
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ \hat{o}^- b^- r^- d p^- s^- \dbar r^- d p^+ \dbar r^+ b^*...
+\]
+
+This is Querulous4.
+
+Here $\fbi$ must end at $b^\circ$. Indeed, if not then we either have
+\[
+\fbi =  ... \hat{b}^- r^- d p\dbar r^+ d s^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+or
+\[
+\fbi =  ... \hat{b}^+ r^- d p^- \dbar r^+ d s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^+ \dbar r^+ b^- r^- r^+ d p^- \Abso{\fbs}{\fbi}
+\]
+
+Thus we must have
+\[
+\fbi = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ \hat{o}^- b^- r^- d p^- s^- \dbar r^- d p^+ \dbar r^+ \hat{b}^\circ
+\]
+
+This forces $\fbs$ to end at $i^\circ$, Indeed, other we would have either
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ d \hat{i}^- \dbar r^- d p^+ \dbar r^+ b^- r^- d p^- \Abso{\fbs}{\fbi}
+\]
+or
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ d \hat{i}^+ \dbar r^- d p^+ \dbar r^+ b^- r^- d p^- \dbar r^+ d s^\times
+\]
+
+Thus we must have
+\[
+\fbs = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ d \hat{i}^\circ
+\]
+
+This gives us Candidate 12, shown in Querulous5.
+
+Back to the situation depicted in Querulous1. Suppose $\fbs$ ends at $b^\circ$.
+
+This is Querulous6.
+
+Then $\fbi$ cannot continue with $o^-$, or it will be absorbed:
+\[
+\fbi = ...\hat{o}^- b^- b^- r^- d p^- s^- \dbar r^- d p^+ \dbar r^+ b^- r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+Thus $\fbi$ must continue with $d$:
+\[
+\fbi = ...\hat{d} s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^*...
+\]
+
+This is Querulous7.
+
+Consider $\fbb$ here. We claim it must continue with $p^-$. Indeed, if it conitnued with $p^+$ then it will trace:
+\[
+\fbb = r^- d \hat{p}^+ \dbar r^+ b^\times
+\]
+
+On the other hand, suppose it ended at $p^\circ$:
+\[
+\fbb = r^- d \hat{p}^\circ
+\]
+
+Then this forces $\fbi$ to continue with $p^+$:
+\[
+\fbi = ... \hat{p}^+ \dbar r^+ b^-r^- d p^- s^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+This is a contradiction. Thus $\fbb$ must continue with $p^-$, and to the right of $\fbi$:
+\[
+\fbb = r^- d \hat{p}^- \dbar r^+ d i^*...
+\]
+
+This is Querulous8.
+
+
+Now consider $\fbi$. We claim it must end here at $p^\circ$. Indeed, if not we would either have
+\[
+\fbi =...\hat{p}^- \dbar r^+ o^- b^- r^- d p^- s^- \dbar r^- d p^+ \dbar r^+ b^- r^- d p^- s^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+or
+\[
+\fbi =...\hat{p}^+ \dbar r^+ o^- b^- r^- d p^- s^- \dbar r^+ d s^+ p^+ \dbar b^- r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+Thus we must have
+\[
+\fbi =...\hat{p}^\circ
+\]
+
+Next, consider $\fbb$. Here $\fbb$ must end at $i^\circ$. Indeed, if it were to continue with either $i^+$ or $i^-$, it would trace:
+\[
+\fbb =...\hat{i}^+ \dbar r^- d p^+ \dbar r^+ b^\times
+\]
+\[
+\fbb =...\hat{i}^- \dbar r^- d p^+ r^+ o^- b^\times
+\]
+
+Thus we must have
+\[
+\fbb =...\hat{i}^\circ
+\]
+
+This gives Candidate 13, shown in Querulous9.
+
+\subsubsubsubsubsubsubsection{Sybaritic}
+Back to the end of Zugzwang \ref{Zugzwang}. Suppose $\fbo$ continues with $s^-$. Then it continues:
+\[
+\fbo = ...\hat{s}^- p^+ \dbar r^+ b^+ r^- d p^*...
+\]
+
+This is Sybaritic1.
+
+Here $\fbo$ must continue with $p^-$ and to the right of the incoming $\fbb$. Indeed, otherwise $\fbb$ will be forced to continue with $p^+$ and to the left of the incoming $\fbo$, in which case $\fbb$ will trace:
+\[
+\fbb = r^- d \hat{p}^+ \dbar r^+ b^\times
+\]
+
+Thus we must have
+\[
+\fbo =...\hat{p}^- \dbar r^+ d i^*...
+\]
+
+This forces $\fbi$ to continue with $d$:
+\[
+\fbi =...\hat{d} s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^*... 
+\]
+
+This is Sybaritic2.
+
+Consider $\fbs$. It must end here at $b^\circ$. Indeed, otherwise we would have either
+\[
+\fbs = p^+ \dbar r^+ \hat{b}^+ r^- d p^- \dbar r^+ d s^\times
+\]
+or
+\[
+\fbs = p^+ \dbar r^+ \hat{b}^- r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+Thus we must have
+\[
+\fbs = p^+ \dbar r^+ \hat{b}^\circ
+\]
+
+This is Sybaritic3.
+
+Here $\fbb$ can either end at $p^\circ$ or continue with $p^-$. Suppose it ends here at $p^\circ$.
+
+Then $\fbi$ is forced to continue with $p^+$:
+\[
+\fbi = ...\hat{p}^+ \dbar r^+ b^- r^- d p^- s^*...
+\]
+
+This is Sybaritic4. 
+
+Here $\fbi$ is forced to end at $s^\circ$. Indeed, otherwise we either have
+\begin{align*}
+    \fbi =& ...\hat{s}^+ p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ o^- b^- r^- d p^- s^- \dbar r^- d p^+ \dbar\\
+    &r^+ b^- r^- d p^- \Abso{\fbs}{\fbi}
+\end{align*}
+or
+\begin{align*}
+    \fbi =& ...\hat{s}^- p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ o^- b^- r^- d p^- s^- \dbar r^- d p^+ \dbar r^+\\
+    &b^- r^- d p^- s^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\end{align*}
+
+Thus we must have
+\[
+\fbo = ...\hat{s}^\circ
+\]
+
+This then forces $\fbo$ to end at $i^\circ$. Indeed, otherwise we either have
+\[
+\fbo = ...\hat{i}^+ \dbar r^- d p^+ \dbar r^+ b^- r^- d p^- s^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+or
+\[
+\fbo = ...\hat{i}^- \dbar r^- d p^+ \dbar r^+ b^- r^- d p^- s^+ p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ o^\times
+\]
+
+Thus we must have
+\[
+\fbo = ...\hat{i}^\circ
+\]
+
+This is Sybaritic5.
+
+This is Candidate 14.
+
+Back to the situation depicted in Sybaritic3. Suppose $\fbb$ continues with $p^-$. Then it must do so to the right of $\fbi$, otherwise it will trace:
+\[
+\fbb = ... \hat{p}^- \dbar r^+ o^- b^\times
+\]
+
+Thus it continues to the right of $\fbi$:
+\[
+\fbb = ...\hat{p}^- \dbar r^+ d i^*...
+\]
+
+This is Sybaritic6.
+
+Consider $\fbi$. If it were to continue with $p^+$ here, then it will be absorbed:
+\[
+\fbi = ...\hat{p}^+ \dbar r^+ b^- b^- r^- d p^- s^- \dbar r^- d p^+ \dbar r^+ b^- r^- d p^- \Abso{\fbs}{\fbi}
+\]
+
+While if it were to continue with $p^-$, then it will again be absorbed:
+\begin{align*}
+    \fbi =& ...\hat{p}^- \dbar r^+ o^- b^- r^- d p^- s^- r^- d p^+ \dbar r^+ b^- r^- d p^- s^+ p^+\\
+    &\dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\end{align*}
+Thus we must have 
+\[
+\fbi = ... \hat{p}^\circ
+\]
+
+This is Sybaritic7.
+
+Consider $\fbo$. It must continue with $i^-$ and to the right of $\fbb$. Otherwise, $\fbb$ will be forced to continue with $i^+$ and to the left of $\fbo$, in which case it will trace:
+\[
+\fbb = ...\hat{i}^+ \dbar r^- d p^+ \dbar r^+ b^\times
+\]
+
+Thus $\fbo$ must continue with $i^-$ and to the right of $\fbb$, but then it will trace:
+\[
+\fbo = ...i^-\dbar r^- d p^+ \dbar r^+ o^\times
+\]
+
+This is a contradiction.
+
+\subsubsubsubsubsubsection{Leverage}\label{Leverage}
+Back to the end of Perplex \ref{Perplex}. Suppose $\fbp$ continues with $r^+$. Then it continues with $d$, and not $o^-$, or it will trace. Thus we must have
+\[
+\fbp = \dbar \hat{r}^+ d i^*...
+\]
+
+This is Leverage1.
+
+This forces $\fbi$ to continue with $r^+$:
+\[
+\fbi =...\hat{r}^+ o^- b^- r^- d p^- s^- \dbar r^*...
+\]
+
+This is Leverage2.
+
+Consider $\fbp$. It can either continue with $i^+$, or $i^\circ$; while $i^-$ will cause it to trace:
+\[
+\fbp = \dbar r^+ d \hat{i}^- \dbar r^- d p^\times
+\]
+
+So suppose it continues with $i^+$. Then we have
+\[
+\fbp = \dbar r^+ d \hat{i}^+ \dbar r^*...
+\]
+
+Here it must continue with $r^-$ and to the right of $\fbi$, otherwise $\fbi$ will be forced to continue with $r^+$ and to the left of the incoming $\fbp$, in which case $\fbi$ will immediately trace after crossing $d$. Thus we must have
+\[
+\fbp = \dbar r^+ d i^+ \dbar \hat{r}^- d p^\times
+\]
+
+Thus it must be the case that $\fbp$ ends at $i^\circ$:
+\[
+\fbp = \dbar r^+ d \hat{i}^\circ
+\]
+
+This is Leverage3.
+
+Here consider $\fbb$. It must end here at $p^\circ$. Indeed, otherwise it will trace:
+\[
+\fbb = r^- d \hat{p}^+ \dbar r^+ b^\times
+\]
+or
+\[
+\fbb = r^- d \hat{p}^- \dbar r^+ o^- b^\times
+\]
+
+Thus we must have
+\[
+\fbb = r^- d \hat{p}^\circ
+\]
+
+This is Leverage4.
+
+Here consider $\fbo$. It must end here at $s^\circ$. Indeed, otherwise we would either have
+\[
+\fbo = ...\hat{s}^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+or
+\[
+\fbo = ...\hat{s}^- p^+ \dbara r^+ b^+ r^- d p^- \dbar r^+ o^\times
+\]
+
+Thus we must have
+\[
+\fbo = b^- r^- d p^- \hat{s}^\circ
+\]
+
+This is Leverage5.
+
+Here consider $\fbi$. It can only continue with $r^+$ or $r^\circ$, otherwise it will trace immediately after crossing $d$. So suppose it continues with $r^+$. Then we have
+\[
+\fbi = ...r^+ d s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^+ \dbar r^+ b^*...
+\]
+This is Leverage6.
+
+Here $\fbi$ must continue with $b^-$ and to the right of $\fbs$. Otherwise, $\fbs$ will be forced to continue with $b^+$ and to the left of $\fbi$, which would force it to eventually trace:
+\[
+\fbs = ...b^+ r^- d p^- \dbar r^+ o^- r^- r^- d p^- s^\times
+\]
+But then we must have
+\[
+\fbi = ...b^- r^- d p^- \Abso{\fbs}{\fbi}
+\]
+Hence in the situated depicted in Leverage5, $\fbi$ must end at $b^\circ$.
+
+Here $\fbs$ is forced to end at $b^\circ$. Indeed, otherwise it will be absorbed:
+\[
+\fbs = ...b^- r^- d \Abso{\fbs}{\fbi}
+\]
+or trace:
+\[
+\fbs = ...b^+ r^- d p^- \dbar r^+ o^- r^- r^- d p^- s^\times
+\]
+\[
+\fbs = ...b^+ r^- d p^- \dbar r^+ d i^+ \dbar r^- d s^\times
+\]
+
+This gives Candidate Train Track Map 15, shown in Leverage7.
+
+
+\subsubsubsection{Jumar}
+Back to the situation depicted in Scud1, and suppose the dotted lines do not join. Then $\fbd$ on the left hand side must go under $\fbp$ on the right hand side. Then we have
+\[
+\fbp = \dbar r^+ b^+ o^+ r^*...
+\]
+
+This is Jamar2.
+
+We also must have 
+
+\[
+\fbd = b^- r^- d s^+ p^+ \dbar r^+ b^+ o^+ r^*...
+\]
+and
+\[
+\fbdb = s^+ p^+ \dbar r^+ b^+ o^+ r^*...
+\]
+
+This is Jamar3.
+
+Here both $\fbd$ and $\fbdb$ must continue with $r^-$. Otherwise, continuing with $r^+$ will force either of them to violate Rule F1. But then they either circle the perimeter counterclockwise and back at $r^*$ again, and repeat, or they both go up to $i^*$. But in that case, they both violate Rule F! since after $i$ they must cross $\dbar$. This is a contradiction.
+
+\subsection{IPC}\label{IPC}
+Back to the end of Case A \ref{CaseATrack1}, triangles fixed. Suppose $\fbd$ starts at $b$, and $\fbdb$ starts at $p$.
+
+If $\fbd$ were to have any initial twists, and it does so starting with $b^+$, then $\fbo$ will immediately trace. If the initial twists starts wit $b^-$, then it must be
+\[
+\fbd = b^- r^+ b^+ o^- b^- r^-...
+\]
+But in this case, $\fbb$ is forced to follow $\fbd$, which will force it to trace. Thus $\fbd$ cannot have any initial twists. Thus we must have
+\[
+\fbd = b^- r^- d...
+\]
+
+This is IPC1.
+
+Here $\fbdb$ can begin with no initial twists, which has two possibilities:
+\[
+\fbdb = p^- s^-...
+\]
+or 
+\[
+\fbdb = p^- i^-...
+\]
+It can also begin with initial twists, in which case it must be
+\[
+\fbdb = p^- s^- (p^-s^+)^n p^+ i^- \dbar...
+\]
+f
+On the other hand, $\fbdb$ in the middle can go under $\fbr$, above $\fbd$, or join with $\fbd$. It cannot go in between $\fbd$ and $\fbr$ or it will violate Rule F1.
+
+\subsubsection{Etui}
+Suppose $\fbdb$ goes under $\fbr$. 
+
+This is Etui1. Here regardless of whether $\fbdb$ has any initial twists, the pair $\fbd$ and $\fbdb$ on the left must go above the pair $\fbi$ and $\fbs$. Indeed, otherwise both $\fbd$ and $\fbdb$ will violate Rule F1. But now we are in situation $\alpha$. This is a contradiction.
+
+\subsubsection{Snee}
+Back to the end of IPC. Suppose $\fbdb$ on the right goes above $\fbd$. Then we have
+\[
+\fbdb = ...\dbar r^+ b^+ d...
+\]
+and 
+\[
+\fbs = \dbar r^+ b^+ d...
+\]
+and 
+\[
+\fbi = \dbar r^+ b^+ d...
+\]
+
+This is Snee1.
+
+Here at least one of $\fbs$ and $\fbi$ will trace immediately after crossing $d$, regardless of whether $\fbdb$ has any initial twists or not. This is a contradiction.
+
+\subsubsection{Zarf}\label{Zarf}
+Back to the end of IPC \ref{IPC}. Suppose the dotted lines join in the middle. Then we have
+\[
+\fbs = \dbar r^+ b^+...
+\]
+\[
+\fbi = \dbar r^+ b^+ o^*...
+\]
+and
+\[
+\fbr = d i^*...
+\]
+
+Here $\fbr$ must go up $i$ and not $s$ since in that case, regardless whether $\fbdb$ has any initial twists, $\fbr$ will be forced to continue with
+\[
+...s^+ p6+ \dbar r^\times
+\]
+Hence it must go up to $i^*...$. 
+
+This is Zarf1.
+
+Here we claim that $\fbdb$ cannot have any initial twists. Indeed, if it did, then $\fbs$ cannot cross $d$ to the right hand side, otherwise it will trace due to the twisting. So $\fbs$ must continue with $o^*...$. But now $\fbi$ cannot end at $o^\circ$ or continue with $o^-$ because that would then force $\fbs$ to continue with $o^-$, and it will trace:
+\[
+\fbi = \dbar r^+ b^+ \hat{o}^- b^- r^- d p^- s^\times
+\]
+
+Hence $\fbi$ must continue with $o^+$, but then it will either be absorbed:
+\[
+\fbi = \dbar r^+ b^+ \hat{o}^+ b^- r^- d \Abso{\fbi}{\fbs}
+\]
+or trace:
+\[
+\fbi = \dbar r^+ b^+ \hat{o}^+ b^- r^- d i^\times
+\]
+
+This shows that $\fbdb$ cannot have any initial twists. In which case we must have
+\[
+\fbdb = p^- s^- \dbar r- b^-
+\]
+and not
+\[
+\fbdb = p^- i^-...
+\]
+because in this case $\fbd$ will be forced to go up $i$ and violate Rule F1.
+
+This means we are in the situation depicted in Zarf2.
+
+Here $\fbr$ must end at $i^\circ$ or it will trace:
+\[
+\fbr = d i^+ \dbar r^\times
+\]
+or
+\[
+\fbr = d i^- \dbar b^- r^\times
+\]
+Thus we must have
+\[
+\fbr = d i^\circ
+\]
+
+Now $\fbs$ can either continue with $d$ or $o^*$.
+
+\subsubsubsection{Xebec}
+Suppose $\fbs$ continues with $d$. Then we have
+\[
+\fbs = \dbar r^+ b^+ \hat{d} i^+ \dbar r^*...
+\]
+
+This is Xebec1.
+
+Here $\fbs$ must continue with $r^+$ and to the left of $\fbb$. Otherwise, $\fbb$ must begin with $r^-$ and to the right of $\fbs$, in which case it will trace:
+\[
+\fbb = r^- d i^- \dbar b^\times
+\]
+or
+\[
+\fbb = r^- d s^+ p^+ \dbar r^+ b^\times
+\]
+
+Thus we must have
+\[
+\fbs = ...r^+ b^*...
+\]
+which immediately forces $\fbo$ to begin with $b^-$ and to the right of the incoming $\fbs$. But now it either is absorbed or traces:
+\[
+\fbp = b^- r^- d i^- \dbar b^- r^- d \Abso{\fbi}{\fbs}
+\]
+or
+\[
+\fbo = b^- r^- d s^+ p^+ \dbar r^+ b^+ o^\times
+\]
+This is a contradiction.
+
+\subsubsubsection{Vuggy}\label{Vuggy}
+Back to the end of Zarf \ref{Zarf}. We must have $\fbs$ continues with $o^*...$. 
+
+This is Vuggy1.
+
+In fact, it must end here at $o^\circ$. Indeed, otherwise it traces:
+\[
+\fbs = \dbar r^+ b^+ \hat{o}^+ b^- r^- d s^\times
+\]
+or
+\[
+\fbs = \dbar r^+ b^+ \hat{o}^- b^- r^- d p^- s^\times
+\]
+Or it is absorbed:
+\[
+\fbs = \dbar r^+ b^+ \hat{o}^+ b^- r^- d \Abso{\fbi}{\fbs}
+\]
+
+Thus we must have
+\[
+\fbs = \dbar r^+ b^+ \hat{o}^\circ
+\]
+Which forces:
+\[
+\fbi = \dbar r^+ b^+ \hat{o}^+ b^- r^- d s^*...
+\]
+
+This is Vuggy2.
+
+Here $\fbb$ must end immediately at $r^\circ$. Indeed, otherwise it traces:
+\[
+\fbb = r^- d i^- b^\times
+\]
+or
+\[
+\fbb = r^- d s^+ p^+ \dbar r^+ b^\times
+\]
+Thus we must have
+\[
+\fbb = r^\circ
+\]
+
+Here $\fbo$ can either end with $b^\cric$ or begin with $b^-$. 
+
+\subsubsubsubsection{Guddle}
+Suppose 
+\[
+\fbo = b^\circ
+\]
+Consider $\fbi$. It must continue with $s^+$ and to the left of $\fbp$. Otherwise, $\fbp$ will be forced to continue with $s^-$ and to the right of $\fbi$, in which case it will either trace:
+\[
+\fbp = s^- \dbar r^+ b^+ o^- b^- r^- d p^\times
+\]
+or be absorbed:
+\[
+\fbp = s^- \dbar r^+ b^+ d i^+ r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+Thus we must have
+\[
+\fbi = ... s^+...
+\]
+and here $\fbp$ must end at $s^\circ$. Otherwise it will be absorbed:
+\[
+\fbp = s^- \dbar r^+ b^+ o^- r^- r^- d \Abso{\fbi}{\fbs}
+\]
+Thus we must have
+\[
+\fbp = s^\circ
+\]
+
+This is Guddle1.
+
+Here $\fbi$ must end at $p^\circ$. Otherwise, it will be absorbed:
+\[
+\fbi = ...p^- s^- \dbar r^+ b^+ d i^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+or
+\[
+\fbi = ...p^+ s^- \dbar r^+ b^+ o^+ b^- r^- d \Abso{\fbi}{\fbs}
+\]
+
+This gives us Candidate Train Track map 16, shown in Guddle2. 
+
+\subsubsubsubsection{Fipple}\label{Fipple}
+Back to the end of Vuggy \ref{Vuggy}. Suppose $\fbi$ begins with $b^-$. Thus we have
+\[
+\fbo = b^- r^- d i^- \dbar b^- r^- d s^*...
+\]
+
+This is Fipple1.
+
+Here $\fbp$ can either end at $s^\circ$, or begin with $s^-$ and into 1., 2., or 3.
+
+\subsubsubsubsubsection{Macumba}\label{Macumba}
+Suppose $\fbp$ ends at $s^\circ$. Then we have the situation depicted in Macumba1.
+
+Here $\fbi$ must continue with $p^-$ and to the right of $\fbo$. Otherwise, $\fbo$ will be forced to continue with $p^+$ and to the left of $\fbi$, in which case it will trace:
+\[
+\fbo = ...p^+ s^- \dbar r^+ b^+ o^\times
+\]
+
+Thus $\fbi$ must continue with $p^-$ and to the right of $\fbo$. But then it will eventually trace:
+\[
+\fbi = ... p^- s^- \dbar r^+ b^+ d i^\times
+\]
+
+\subsubsubsubsubsection{Fopdoodle}
+Back to the end of Fipple \ref{Fipple}. Suppose $\fbp$ beings with $s^-$, and suppose it enters into 1. Then it reduces to the same argument concerning $\fbi$ and $\fbo$ in Macumba \ref{Macumba}, which leads to a contradiction. So suppose it goes into 2. Then it will be absorbed:
+\[
+\fbp = s^- \dbar r^+ b^+ d i^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
+\]
+
+So suppose it goes into 3, then we have
+\[
+\fbp = s^- \dbar r^+ b^+ d i^+ \dbar r^+ b^*...
+\]
+
+This is Fopdoodle1.
+
+Here $\fbi$ must continue with $s^-$ and to the right of $\fbo$. Otherwise, $\fbo$ will be forced to continue with $s^+$ and the left of $\fbi$, in which case it will trace:
+\[
+\fbo = ... s^+ \dbar r^+ b^+ o^times
+\]
+But then we have
+\[
+\fbi = ...d^- \dbar r^+ b^+ d i^\times 
+\]
+
+\subsection{LYR}\label{LYR}
+Back to the end of Case A \ref{CaseATrack1}, triangles fixed. Suppose $\fbd$ starts at $r$, and $\fbdb$ starts at $i$.
+
+The situation is depicted in LYR1.
+
+Here $\fbdb$ cannot go in between $\fbd$ and $\fbb$ or it will violate Rule F1; nor can it go in between $\fbd$ and $\fbo$ or it will be absorbed between $\fbd$ and $\fbo$. So it must go into 1., 2., or join with $\fbd$ in the middle.
+
+\subsubsection{Froe}
+Suppose $\fbdb$ goes into 1. Then we haave
+\[
+\fbdb = i^+ p^+ \dbar r^+ b^+ d...
+\]
+
+This is Froe1.
+
+Here the pair $\fbd$ and $\fbdb$, and $\fbo$ in between them on the left hand side are in Situation $\alpha$. This is a contradiction.
+
+\subsubsection{Moxa}
+Back to the end of \label{LYR}. Suppose $\fbdb$ goes into 2. Then we have
+\[
+\fbdb = i^+ p^+ \dbar b^- r^- d...
+\]
+
+This is Moxa1.
+
+Here $\fbp$ will trace:
+\[
+\fbp = \dbar b^- r^- d p^\times
+\]
+
+\subsubsection{Erne}
+Back to the end of \label{LYR}. Suppose the dotted lines join in the middle.
+
+This is Erne1. 
+
+But now $\fbp$ must continue nuder $\fbo$ or be absorbed between $\fbd$ and $\fbo$; but then it traces:
+\[
+\fbp = \dbar b^- r^- d p^\times
+\]
+
+\subsection{USH}\label{USH}
+Back to the end of Case A \ref{CaseATrack1}, triangles fixed. Suppose $\fbd$ starts at $r$, and $\fbdb$ starts at $s$.
+
+The situation is depicted in USH1.
+
+Here $\fbdb$ cannot go into 2., or it will be in situation $\beta$. It cannot go into 3., or it will be absorbed between $\fbd$ and $\fbo$. So $\fbdb$ can only go into 1., 4., or join with $\fbd$ in the middle.
+
+\subsubsection{Torc}
+Suppose $\fbdb$ goes into 1. 
+
+This is Torc1.
+
+Here the pair $\fbd$ and $\fbdb$, together with $\fbo$ in between them, are in Situation $\alpha$.
+
+\subsubsection{Yegg}
+Back to the end of USH \ref{USH}. Suppose $\fbdb$ goes into 4. But now $\fbp$ traces, as depicted in Vegg1.
+
+\subsubsection{Kief}
+Back to the end of USH \ref{USH}. Suppose $\fbdb$ and $\fbd$ join in the middle. But now $\fbb$ will trace:
+\[
+\fbb = d p^- s^- \dbar b^\times
+\]
+as shown in Kief1.
+
+\subsection{LXA}\label{LXA}
+Back to the end of Case A \ref{CaseATrack1}, triangles fixed. Suppose $\fbd$ starts at $r$, and $\fbdb$ starts at $p$.
+
+This is LXA1.
+
+Here $\fbdb$ will cross $\dbar$ right after it comes down via $s^-$, or $i^-$, possibly with initial twists. 
+
+Suppose it comes down on $s^-$ before crossing. Then it cannot have any initial twisting. This is shown in LXA2.
+
+Here if $\fbb$ were to go above the pair $\fbi$ and $\fbs$ on the right, then it will trace:
+\[
+\fbb = d p^- s^- \dbar b^\times
+\]
+While if instead the pair $\fbi$ and $\fbs$ were to go above $\fbb$ on the left, then after they cross again:
+\[
+\fbi = \dbar r^+ b^+ d...
+\]
+and 
+\[
+\fbs = \dbar r^+ b^+ d...
+\]
+at least one of them will trace. This is a contradiction.
+
+Thus, $\fbdb$ must go down via $i$ before crossing. Then $\fbdb$ can either have no initial twists or have initial twists.
+
+\subsubsection{Xama}\label{Xama}
+Suppose $\fbdb$ has no initial twists. The situation is depicted in Xama1.
+
+Here $\fbdb$ can go into 1, 2., or join with $\fbd$. It cannot go in between $\fbb$ and $\fbd$ as that would be Situation $\beta$; and it cannot go in between $\fbd$ and $\fbo$ or it will be absorbed between the two.
+
+Suppose it goes into 1. This is Xama2. Here $\fbd$ and $\fbdb$, together with $\fbo$ in between them, are in situation $\alpha$.
+
+So suppose $\fbdb$ goes into 2. This is Xama2. Here $\fbdb$ has to go above the pair $\fbi$ and $\fbs$, or it will go into Situation $\beta$. Similarly, $\fbd$ has to go above the pair, and therefore $\fbb$ as well. 
+
+This is Xama3.
+
+Here the pair $\fbd$ and $\fbdb$, together with $\fbb$ in between them, are in situation $\alpha$. This is a contradiction.
+
+So suppose in the situation depicted in Xama1, the dotted lines joint in the middle.
+
+This is Xama4.
+
+Here $\fbb$ can only go into 1., or 2. If it were to go in between $\fbo$ and $\fbi$ then it will eventually trace after crossing $\dbar$.
+
+If it goes into 2., then $\fbi$, $\fbs$, and $\fbo$ go above $\fbb$. Then we have
+\[
+\fbi = \dbar r^+ b^+ o^*...
+\]
+Here it cannot go $\fbi = \fbar r^+ b^+ d...$ a the next letter would trace. But now $\fbo$ traces;
+\[
+\fbo = r^+ b^+ d i^+ p^+ \dbar r^+ b^+ o^\times
+\]
+
+THis is Xama5.
+
+Thus going back to the situation depicted in Xama4, $\fbb$ must go into 1. Then we must have
+\[
+\fbb = d p^- s^\circ
+\]
+It must end here at $s^\circ$ since either $s^+$ and $s^-$ would lead it to eventually trace.
+
+This is Xama6.
+
+Here $\fbr$ can either end at $\b^\circ$, or begin with $b^+$.
+
+\subsubsubsection{Zaxes}
+Suppose $\fbr$ ends at $b^\circ$:
+\[
+\fbr = b^\cric
+\]
+
+Then we have 
+\[
+\fbi = \dbar b^- r^*...
+\]
+and
+\[
+\fbs = \dbar b^- r^*...
+\]
+Now $\fbi$ must continue with $r^+$ and to the left of $\fbs$. otherwise $\fbs$ will be forced to continue with $r^-$ and to the right of $\fbi$, which would force it to trace:
+\[
+\fbs = \dbar b^- \hat{r}^-b^+ d p^- i^- \dbar b^- r^- d p^- s^\times
+\]
+
+But now we have
+\[
+\fbi = \dbar b^- \hat{r}^+ d i^\times
+\]
+
+This is Zaxes1.
+
+\subsubsubsection{Qophs}
+Back to the end of Xama \ref{Xama}. Suppose 
+\[
+\fbr = b^+ d i^*...
+\]
+
+This is Qophs1.
+
+Here $\fbs$ must continue with $b^-$ and to the right of $\fbi$ and $\fbo$. Otherwise, $\fbi$ will be forced to continue iwth $b^+$ and trace immediately after scrossing $d$. It must go to the right of $\fbo$ as well since if it were t ogo in between $\fbi$ and $\fbo$ (i.e. to the left of $\fbo$), then it will be absorbed:
+\[
+\fbs = \dbar b^- d p^- i^- \dbar b^- r^- \Abso{\fbd}{\fbo}
+\]
+
+But no it is still forced to trace:
+\[
+\fbs = \dbar b^- d p^- i^- \dbar b^- r^- d p^- s^\times
+\]
+
+\subsubsection{Zoea}
+Back to the end of LXA\ref{LXA}. Suppose $\fbdb$ has initial twisting, and comes down on $i$ right before crossing $\dbar$.
+
+This is Zoea1, where we've depicted one twisting between $s$ and $p$ before going to $i^-$ and crossing $\dbar$.
+
+Here $\fbs$ must continue with $b^-$ and to the right of $\fbr$. Otherwise $\fbi$ will be forced to continue with $b^+$ and to the left of $\fbs$, in which case it will immediately trace after crossing $d$. Further, $\fbs$ must go to the right of $\fbr$ or it will trace:
+\[
+\fbs = \dbar b^- d p^-s^\times
+\]
+
+Thus we must continue with the situation depicted in Zoea2.
+
+Here $\fbs$ must continue with $r^-$ and to the right of $\fbi$. Otherwise, $\fbi$ will be forced to continue with $r^+$ and immediately trace right after crossing $d$. 
+
+Thus we have the situation depicted in Zoea3. Here again $\fbs$ is forced to continue with $b^+$ and to the left of $\fbr$. Otherwise, $\fbr$ will immediately trace.
+
+But now $\fbs$ will trace:
+\[
+\fbs = ... b^+ d p^- s^\times
+\]
+
+This is a contradiction.
+
+\section{Case B,C,D: Triangles Swapped} \label{CaseBCDTrack1}
+Now we assume the triangles are swapped by $f_\beta$. Hence at least one of $\fbd$ or $\fbdb$ passes over $d$ or $\dbar$ after an odd number of letters.
+
+We first assume $\fbdb$ passes over $d$ after an odd number of letters. 
+
+\subsection{OMG}\label{OMG}
+Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $o$, and $\fbd$ starts at $p$.
+
+But in this situation $\fbr$ traces, as shown in OMG1.
+
+\subsection{SUX}\label{SUX}
+Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $o$, and $\fbd$ starts at $s$.
+
+This is SUX1.
+
+Here both $\fbs$ and $\fbi$ must continue with $r^-$ and to the right of $\fbb$. Otherwise, $\fbb$ will trace.
+
+This is SUX2.
+
+Here again both $\fbs$ and $\fbi$ must continue with $p^-$ and to the right of $\fbr$. Otherwise $\fbr$ will trace immediately after crossing $\dbar$. But now $\fbs$ traces.
+
+\subsection{DIE}\label{DIE}
+Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $o$, and $\fbd$ starts at $i$.
+
+The same argument in SUX \ref{SUX} shows this cannot happen. Except at the very last step, $\fbi$ traces in stead of $\fbs$.
+
+\subsection{ULN}\label{ULN}
+Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $o$, and $\fbd$ starts at $\dbar$.
+
+This is ULN1.
+
+Here $\fbd$ must continue with $r^+$ and to the left of $\fbs$ and $\fbi$. Otherwise, both $\fbi$ and $\fb$ cross $d$, and then continue with $p^-$ (or $\fbb$ will trace after crossing $\dbar$). But then at least one of $\fbs$ or $\fbi$ will trace. So we must have
+\[
+\fbs = \dbar r^+ b^+ o^*...
+\]
+
+This is ULN2.
+
+Now consider $\fbo$. It must continue with $r^+$ and to the left of $\fbs$ and $\fbi$. Otherwise the two will be abssorbed between $\fbi$ and $\fbo$. Now we have the situation depicted in ULN3.
+
+Here $\fbo$ must continue with $b^+$ and to the left of $\fbp$. Otherwise $\fbp$ also woud be absorbed. But now $\fbo$ traces. 
+
+This is a contradiction.
+
+\subsection{ULN}\label{ULN}
+Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $b$, and $\fbd$ starts at $p$.
+
+Consider $\fbr = \dbar...$. The next letter must be $b$ or else it will trace:
+\[
+\fbr = \dbar b^*...
+\]
+
+This forces both $\fbi$ and $\fbs$ to begin with $d$:
+\[
+\fbs = d p^*...
+\]
+\[
+\fbi = d p^*...
+\]\
+
+This is NAN1.
+
+Here $\fbd$ must begin with $p^+$ otherwise either $\fbs$ or $\fbi$ will trace. This gives NAN2.
+
+Both $\fbd$ and $\fbo$ must continue with $r^+$ otherwise $\fbp$ will trace immediately after crossing $d$. This gives NAN3.
+
+Here $\fbo$ must continue with $b^+$ and to the left of $\fbr$. Otherwise, $\fbr$ will trace. This gives NAN4.
+
+Here $\fbd$ and $\fbdb$ cannot join or $\fbr$ will trace. Thus they both must continue with $b^+$ and to the left of $\fbr$. But now $\fbd$ and $\fbdb$ are in Situation $\alpha$. 
+
+This is a contradiction.
+
+\subsection{GOH}\label{GOH}
+Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $b$, and $\fbd$ starts at $s$.
+
+his is GOH1.
+
+Here $\fbb$ must go above $\fbs$ and $\fbi$. Otherwise it will tace immediately after crossing $\dbar$. but now either $\fbs$ or $\fbi$ will trace immediately after crossing $d$.
+
+This is a contradiction.
+
+\subsection{PPT}\label{PPT}
+Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $b$, and $\fbd$ starts at $i$.
+
+The same argument as that of GOH \ref{GOH} gives a contradiction.
+
+
+\subsection{BOD}\label{BOD}
+Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $b$, and $\fbd$ starts at $\dbar$.
+
+This is BOD1.
+
+Here $\fbs$ and $\fbi$ must go above $\fbo$. Otherwise, either $\fbs$ or $\fbi$ will trace immediately after crossing $d$. 
+
+
+This is BOD2.
+
+Here $\fbb$ must being with $\p^+$ and to the left of $\fbs$ and $\fbi$. Otherwise, again either of those would trace. Then after crossing $\fbdb$, $\fbb$ must continue with $r^+$ and to the left of $\fbp$ otherwise $\fbp$ will trace right after crossing $d$. But now $\fbb$ traces;
+\[
+\fbb = p^+ \dbar r^+ b^\times
+\]
+
+\subsection{MAA}\label{MAA}
+Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $r$, and $\fbd$ starts at $p$.
+
+This is MAA1.
+
+Here $\fbr$ must go below $\fbp$ otherwise $\fbr$ will trace immediately after crossing $\dbar$. But now $\fbp$ will trace immediately right after crossing $d$.
+
+This is a contradiction.
+
+\subsection{XNB}\label{XNB}
+Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $r$, and $\fbd$ starts at $s$.
+
+This is XNB1.
+
+Here $\fbdb$ must come down on $r$ before crossing $d$, and it cannot have any initial twists otherwise $\fbd$ will be forced to cross $d$ with it, and thereby trace. So we must have
+\[
+\fbdb = r^- d...
+\]
+
+Here it must go above $\fbb$. Otherwise $\fbb$ will trace. On the other hand $\fbb$ must go above $\fbp$ otherwise $\fbp$ will trace. 
+
+This is XNB2.
+
+Here $\fbi$ must begin with $b^+$ and to the left of $\fbs$. Otherwise $\fbs$ is forced to begin with $b^-$, and thereby trace:
+\[
+\fbs = b^- r^- d p^- s^\times
+\]
+
+In fact $\fbi$ must then continue with $o^*$ otherwise it would force $\fbp$ to cross with it and then go up $s$, which would force $\fbp$ to trace.
+
+This is XNB3.
+
+Here $\fbdb$ either join with $\fbd$, or $\fbdb$ must continue with $s^-$ and to the right of $\fbp$.
+
+
+\subsubsection{Qadi}\label{Qadi}
+Suppose the dotted lines join. 
+
+This is Qadi1.
+
+Here $\fbp$ can continue with $d$ or $o^*$. Suppose it were to continue with $d$. Then
+\[
+\fbp = d o^*...
+\]
+
+This forces $\fbo$ to begin with $i^-$ and to the right of $\fbp$. So we have
+\[
+\fbo = i^- \dbar b^*...
+\]
+
+This is Qadi2.
+
+This forces $s\fbs$ to go $b^+$ and to the left of the incoming $\fbp$:
+\[ 
+\fbs = b^+ o^*...
+\]
+Which thereby forces $\fbi$ to continue with $o^+$ and to the left of $\fbs$. Otherwise $\fbs$ would trace:
+\[
+\fbs = b^+ o^- b^- r^- d p^- s^\times
+\]
+
+Thus we must have
+\[
+\fbi = b^+ \hat{o}^+ b^*...
+\]
+
+This is Qadi3.
+
+Here $\fbi$ must continue with $b^-$ and to the right of $\fbo$. Otherwise, $\fbo$ would immediately trace. But now $\fbi$ will trace:
+\[
+\fbi = b^+ o^+ \hat{b}^- d i^\times
+\]
+
+
+Back to the situation depicted in Qadi1. SUppose $\fbp$ continues with $o^*$.
+
+This is Qadi4.
+
+Here $\fbo$ can continue with $i^-$ or $i^\circ$.
+
+\subsubsubsection{Agora}\label{Agora}
+Suppose $\fbo$ continues with $i^-$. So we have
+\[
+\fbo = o^- \dbar r^*...
+\]
+
+This is Agora1.
+
+Here $\fbi$ must continue with $r^-$ and to the right of the incoming $\fbo$. Otherwise $\fbo$ would be forced to continue with $r^+$ and to the left of $\fbi$, and would immediately trace.
+
+So we have
+\[
+\fbi = ... r^- d p^*... 
+\]
+and it must continue with $p^-$ and to the right of $\fbr$. Otherwise, $\fbr$ would trace immediately after crossing $\dbar$. 
+
+This is Agora2.
+
+Here $\fbo$ is forced to continue with $r^-$ and to the right of $\fbb$. Otherwise $\fbb$ is forced to continue with $r^+$ and either gets absorbed:
+\[
+\fbb = \dbar \hat{r}^+ d i^+ \Abso{\fbd}{\fbo}
+\]
+or trace:
+\[
+\fbb = \dbar \hat{r}^+ o^- b^\times
+\]
+
+Thus we must have
+\[
+\fbo = ...r^- d p^- s^*...
+\]
+
+This is Agora3.
+
+Here $\fbi$ must continue with $s^-$ and to the right of $\fbo$. 
+
+This is Agora4.
+
+Here both $\fbp$ and $\fbs$ must end immediately or they would both eventually trace. So we have
+\[
+\fbp = o^\circ
+\]
+and 
+\[
+\fbs = b^\circ
+\]
+
+This is Agora5.
+
+Here $\fbr$ and either continue with $p^\circ$ or $p^-$.
+
+\subsubsubsubsection{Byssus}
+Suppose
+\[
+\fbr = p^\circ
+\]
+This is Byssus1.
+
+This forces $\fbi$ to continue
+\[
+\fbi = ...p^+ \dbar r^*...
+\]
+
+But now $\fbi$, $\fbb$, and $\fbo$ are in a clockwise path mill. this is a contradiction.
+
+\subsubsubsubsection{Zareba}
+Back to the end of Agora \ref{Agora}. Suppose $\fbr$ continue with $p^-$. 
+
+This is Zareba1.
+
+Here $\fbr$, $\fbo$, and $\fbi$ are in a clockwise path mill between $s$ and $p$.
+
+This is a contradiction.
+
+
+\subsubsubsection{Bokeh}\label{Bokeh}
+Back to the end of Qadi \ref{Qadi}. Suppose 
+\[
+\fbo = i^\circ
+\]
+
+This is Bokeh1.
+
+Here $\fbs$ can begin with $b^\circ$ or $b^+$.
+
+\subsubsubsubsection{Popjoy}
+Suppose 
+\[
+\fbs = b^\circ
+\]
+
+This is Popjoy1.
+
+Here $\fbp$ can either begin with $o^\circ$ or $o^+$. Suppose
+\[
+\fbp = o^\circ
+\]
+
+Then $\fbi$ is forced to continue with $r^-$ and to the right of $\fbb$. Otherwise $\fbb$ would be forced to be absorbed between $\fbs$ and $\fbi$. After crossing $d$, it must go $p^-$ and to the right of $\fbr$, or $\fbr$ will trace. So we have
+
+\[
+\fbi = r^+ o^+ \hat{r}^- p^- s^*...
+\]
+
+This is Popjoy2.
+
+Here $\fbr$ must end at $p$ or $s$ after possibly twisting $k$ times between the two. Then $\fbi$ and $\fbb$ twist $m$  times between $s$ and $r$, and end there.
+
+
+This is Candidate Train Track Map Family 17.
+
+\subsubsubsubsection{Archon}
+Back to the end of Bokeh \ref{Bokeh}. suppose
+\[
+\fbs = b^+ o^*...
+\]
+
+This is Arhcon1.
+
+Here $\fbs$ is forced to continue with $o^+$ and to the left of $\fbp$. Otherwise $\fbp$ will be absorbed.
+
+This is Archon2.
+
+Here $\fbb$ is forced to continue with $r^+$ and to the left of $\fbs$. Otherwise, $\fbs$ is forced to continue with $r^-$ and after crossing $d$, $p^-$ and to the right of $\fbr$ (otherwise $\fbr$ will trace), but then $\fbs$ itself traces.
+
+This is Archon3.
+
+Here $\fbi$, $\fbb$, $\fbp$, and $\fbs$ are in a four-strand counterclockwise path mill between $o$ and $r$.
+
+This is a contradiction.
+
+\subsubsection{Iwis}
+Back to the end of XNB \ref{XNB}. Suppose $\fbdb$ does not join with $\fbd$ in the situation depicted in XNB3, but instead continue with $s^-$ and to the right of $\fbp$. Then it continues as shown in Iwis1.
+
+here $\fbs$ must begin with $b^+$ and to the left of the incoming $\fbdb$.
+
+This is Iwis2.
+
+Here $\fbi$ must continue with $o^+$ and to the left of $\fbdb$. Otherwise, $\fbs$ will be forced to continue with $o^-$ and eventually trace.
+
+This is Iwis3.
+
+Here $\fbdb$, $\fbs$, and $\fbi$ are in a counter clockwise path mill between $o$ and $b$.
+
+This is a contradiction.
+
+
+\subsection{QRO}\label{QRO}
+Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $r$, and $\fbd$ starts at $i$.
+
+This is QRO1.
+
+Here $\fbd$ can either begin with $p^+$ or $p^-$.
+
+\subsubsection{Birl}
+Suppose 
+\[
+\fbd = p^+...
+\]
+
+Here $\fbp$ must begin with $o^*$. Otherwise, it would trace:
+\[
+\fbp = d i^+ p^\times
+\]
+Thus we must have
+\[
+\fbp = o^*...
+\]
+Now consider $\fbi$. It must continue with $o^+$ and to the left of the incoming $\fbp$. Otherwise, $\fbp$ will be forced to continue with $o^-$ and to the right of $\fbi$, in which case it will trace immediately after crossing $d$. So we have
+\[
+\fbi = ... o^+ r^*...
+\]
+
+Here $\fbi$ must continue with $r^-$ and to the right of $\fbb$. If not, then $\fbb$ will be forced to continue with $r^+$, which would put $\fbb$, $\fbp$, $\fbi$ in a conuter clockwise path mill between $o$ and $r$, as depicted in Birl1.
+
+Thus we must have the situation depicted in Birl2.
+
+Here we claim that $\fbi$ must continue with $p^-$ and then $s^*$, as depicted in Birl3. Indeed, if it continues instead with $p^\circ$ or $p^+$, then $\fbr$ is forced to begin with $p^+$ and to the left of $\fbi$, in which case it will trace immediately after crossing $\dbar$.
+
+Thus we are in the situation depicted in Birl2. But now $\fbdb$ must continue with $s^-$ and to the right of $\fbi$, and not $s^+$; otherwise, it would violate Rule F1. But then we have the situation depicted in Birl4.
+
+Here $\fbr$ must begin with $p^-$ and continue in between $\fbi$ and $\fbdb$, as depicted in Birl5.
+
+Here $\fbi$ must continue with $s^-$ and to the right of $\fbr$. Otherwise, $\fbr$ will be forcde to continue with $s^+$ and to the left of $\fbi$, in which case it will trace after crossing $\dbar$. 
+
+This is Birl6.
+
+Now $\fbr$, $\fbi$, and the triplet $\fbd$/$\fbo$/$\fbdb$ are in a clockwise path mill between $p$ and $s$.
+
+This is a contradiction.
+
+\subsubsection{Kyat}
+Back to the end of QRO \ref{QRO}. Suppose
+\[
+\fbd = p^-...
+\]
+
+This is Kyat1.
+
+Here $\fbd$ must continue with $b^+$. Otherwise, if it went to $r^*$, or $b^-$, it would violate Rule F1. Thus we must have
+\[
+\fbd = i^- \dbar \hat{b}^+ o^*...
+\]
+
+This forces 
+\[
+\fbs = b^+ o^*...
+\]
+and
+\[
+\fbp = d i^*...
+\]
+
+This is Kyat2.
+
+Here $\fbo$ is forced to begin with $i^-$ and to the right of $\fbp$. But now it will trace:
+\[
+\fbo = i^- \dbar b^+ o^\times 
+\]
+
+As depicted in Kyat3.
+
+This is a contradiction.
+
+
+\subsection{WVB}\label{WVB}
+Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $r$, and $\fbd$ starts at $\dbar$.
+
+This is WVB1.
+
+Here $\fbdb$ can have no initial twists, or have initial twists with $b$.
+
+\subsubsection{Nard}
+Suppose $\fbdb$ has no initial twists. Then we have
+\[
+\fbdb = r^- d...
+\]
+
+This is Nard1.
+
+Here $\fbd$ on the right hand side can either go above $\fbd$ on the left hand side, or go below, or the two can join in the middle.
+
+Suppose $\fbd$ goes above $\fbdb$. Then this forces the situation depicted in Nard2.
+
+Here $\fbd$ must continue with $b^+$ and to the left of $\fbs$ and $\fbi$. Otherwise $b^-$ would cause $\fbd$ to violate Rule F1. Then $\fbd$ must then cross $d$, again to not violate Rule F1. At the same time $\fbo$ follows $\fbdb$ to not trace.
+
+This is Nard3.
+
+Here the pair $\fbd$ and $\fbdb$ sandwich $\fbp$ in between them. Now the pair cannot continue with $s^+$ or $i^+$, as that would either bring $p$ to trace, or vilate Rule F1. However, neither can the pair continue with $s^-$ or $i^-$ as those choices immediately violate Rule F1. 
+
+This is a contradiction.
+
+
+\subsubsection{Drek}
+back to the end of WVB \ref{WVB}. Suppose $\fbdb$ has initial twists. 
+
+This is Drek1
+
+Then the initial twists cannot include $o$, such as depicted in Drek2. Here either $\fbo$ will be forced to trace, or $\fbp$ will be forced to trace.
+
+Thus the initial twists can only occur between $r$ and $b$, such as the one depicted in Drek3, which depicts one twist.
+
+Here the pair $\fbs$ and $\fbi$ either continue below the pair $\fbo$ and $\fbd$, in which case at least one of $\fbs$ or $\fbi$ will immediately trace; or the pair $\fbs$ and $\fbi$ go above the pair $\fbo$ and $\fbd$, in which case they must continue with $p^-$ and to the right of $\fbb$, otherwise $\fbb$ will trace. But now $\fbi$ or $\fbs$ will trace. This is depicted in Drek4.
+
+This is a contradiction.
+
+
+\subsection{ZFB}\label{ZFB}
+Now we assume $\fbdb$ passes over $d$ after an even number of letters, in which case $\fbd$ must cross $\dbar$ after an odd number of letters.
+
+In order to go over an even number of letters before crossing, the only possible places to start for $\fbdb$ is $o$ or $b$.
+
+Let us assume $\fbdb$ starts at $o$. Then the only possibility for $\fbdb$ to go over an even number of letters is 
+\[
+\fbdb = o^+ (r^+ b^-)^k r^- d...
+\]
+where $k$ is some number of twisting, Figure ZFB1 shows $k=1$.
+
+Indeed, if $\fbdb$ were to begin with $o^-$ instead, then the following is forced:
+\[
+\fbdb = o^- b^- r^-...
+\]
+as shown in ZFB2. 
+
+But it cannot cross $d$ here, so it must continue with $b^*...$ But now it is in situation ???? (bagged serpent)
+
+
+Regardless of the number of twisting, neither $b$ nor $r$ can start at $\dbar$, or they will trace after crossing. Hence $\fbd$ can only start at $\dbar$.
+
+This is ZFB3.
+
+Here the dotted lines can either join or $\fbd$ on the right must go above $\fbdb$ on the left.
+
+\subsubsection{Aery}
+Suppose the dotted lines join. 
+
+This is Aery1.
+
+Here if $\fbdb$ had no twists, i.e.
+\[
+\fbdb = o^+ r^- d^\circ
+\]
+then this forces
+\[
+\fbo = \dbar r^+ b^*...
+\]
+
+which forces both $\fbs$ and $\fbi$ both to begin with $b^-$ and to the right of the incoming $\fbo$, otherwise $\fbo$ will trace.
+
+Then we have
+\[
+\fbi = b^- r^- d p^-...
+\]
+and
+\[
+\fbs = b^- r^- d p^-...
+\]
+Here both must go with $p^-$ and to the right of $\fbb$ or $\fbb$ will trace immediately after crossing $\fbdb$. But now at least one of $\fbi$ or $\fbs$ must trace.
+
+Hence $\fbdb$ must have twisting. However, the situation is the same, as $\fbs$ and $\fbi$ are still forced to begin with
+\[
+\fbi = b^- r^- d p^-...
+\]
+and
+\[
+\fbs = b^- r^- d p^-...
+\]
+
+This is a contradiction.

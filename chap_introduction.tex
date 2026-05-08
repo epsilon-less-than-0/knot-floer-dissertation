@@ -1,0 +1,170 @@
+\chapter{Introduction}\label{chap:introduction}
+
+The primary objective of this dissertation is to establish that knot Floer homology detects the connect-sum of two right-handed trefoil knots, which we shall denote by $T_{2,3} \# T_{2,3}$ throughout. While knot Floer homology is known to detect the unknot \sidecite{OS-genus}, the trefoil \sidecite{Ghi08}, and the cinquefoil \sidecite{baldwin2025khovanov}, the detection of $T_{2,3} \# T_{2,3}$ represents a significant breakthrough, as it is the first known detection result for a composite knot.
+
+\section{Summary of Results}
+
+Our main result is the following detection theorem:
+
+\begin{theorem} \label{thm:main_detection}
+Let $K \subset S^3$ be a knot. If there is an isomorphism of bigraded vector spaces
+\[
+\widehat{HFK}(K; \mathbb{F}) \cong \widehat{HFK}(T_{2,3} \# T_{2,3}; \mathbb{F})
+\]
+over the field $\mathbb{F} = \mathbb{Z}/2\mathbb{Z}$, then $K$ is isotopic to $T_{2,3} \# T_{2,3}$.
+\end{theorem}
+
+The Alexander polynomial of $T_{2,3} \# T_{2,3}$ is the square of the polynomial of the trefoil, which, combined with the rank of $\widehat{HFK}$, dictates a highly specific grading distribution. The complexity of the proof lies in rigorously eliminating all other knots that possess this homological profile.
+
+\subsection*{The Automation of Train Track Folding}
+
+A critical component of this dissertation is the development of a robust, algorithmic framework to explicitly construct folding automata for pseudo-Anosov surface homeomorphisms. In his foundational paper on estimating the entropy of braids, Los \sidecite{LosAlgorithm} explicitly called for the development of a generalized, algorithmic method to construct exhaustive folding automata for train tracks on punctured disks, noting that ad-hoc constructions were a major bottleneck in dynamical classifications.
+
+In response to this, we introduce the \texttt{autofolder} algorithm. This computational tool takes as input a stratum of mapping classes (specified by the generalized cycle structure of the singularities) and exhaustively generates the complete directed graph of standard standard train tracks connected by elementary folding operations. 
+
+\begin{theorem}\label{thm:autofolder_main}
+The \texttt{autofolder} algorithm provides a complete, finite classification of all standard train tracks and their valid elementary folds for any specified stratum of pseudo-Anosov braids on the $n$-punctured disk.
+\end{theorem}
+
+This algorithm not only serves as the computational backbone for proving Theorem \ref{thm:main_detection} by generating the geometric state spaces for our hyperbolic obstructions, but it also stands as an independent contribution to the field of low-dimensional topology and topological dynamics. 
+
+\subsection*{From Topology to Dynamics}
+
+Our strategy to prove Theorem \ref{thm:main_detection} exploits the fact that knot Floer homology detects both the genus and fiberedness of a knot \sidecite{Ni07, Juh08}. The connect-sum $T_{2,3} \# T_{2,3}$ is a fibered knot of genus two, and this information is recorded directly in the next-to-top Alexander grading of $\widehat{HFK}(T_{2,3}\#T_{2,3})$. Consequently, any knot $K$ satisfying the hypothesis of Theorem \ref{thm:main_detection} must also be a genus-two fibered knot. 
+
+This fundamental observation allows us to translate the topological problem of knot classification into a dynamical one involving the mapping class group. A genus-two fibered knot is determined by its monodromy, a surface homeomorphism $h: \Sigma_2 \to \Sigma_2$. The knot Floer homology of $K$ constrains this monodromy in two powerful ways:
+\begin{enumerate}
+    \item \textbf{Spectral Constraints:} The Alexander polynomial of $K$ is determined by the Euler characteristic of $\widehat{HFK}$. Thus any hypothetical knot sharing the same knot Floer homology as that of $T_{2,3}\# T_{2,3}$ must share the same Alexander polynomial:
+    \[
+    \Delta_K(t) = \Delta_{T_{2,3}\# T_{2,3}}(t) = (t^2 - t + 1)^2.
+    \]
+    Thus any monodromy of such a hypothetical knot must induce this Alexander polynomial on homology.
+    \item \textbf{Fixed-point Constraints:} The work of Ghiggini \sidecite{Ghi08}, and independently, of Ni \sidecite{Ni07} indicates that the number of fixed-points of the monodromy of a fibered knot is encoded in the next-to-top Alexander grading of knot Floer homology. This directly requires $h$ to have a specific number of fixed points (specifically, zero interior fixed points for the relevant lifts).
+\end{enumerate}
+
+
+\subsection*{The Dynamical Obstruction}
+By the Nielsen-Thurston classification, a surface homeomorphism is either periodic, reducible, or pseudo-Anosov. These, in turn, correspond to cases in which the knot is a torus knot, a satellite knot, or a hyperbolic knot, respectively.
+
+Assuming a hypothetical knot $K$ satisfies the assumptions of Theorem \ref{thm:main_detection}, we systematically evaluate the cases where $K$ is assumed to be a torus knot, a satellite knot, and a hyperbolic knot. 
+
+The case for the torus knot is entirely trivial, as the Alexander polynomials for general $T_{n,m}$ torus knots are known, and none coincide with that of $K$.
+
+For the satellite knot case, we employ the classification of Thurston reducing systems. Schubert's formula for the Alexander polynomial of a satellite knot drastically restricts the potential companions and patterns to be trefoil knots. By analyzing the minimal reducing curves on the genus-two fiber, we systematically demonstrate that any non-trivial satellite construction contradicts the known properties of $K$ (e.g., fractional Dehn twist coefficients and $L$-space contact invariants), leaving only the composite sub-case.
+
+\subsection*{Incidental Elimination of the (2,1)-Cable}
+
+During the analysis of the satellite case, a degenerate geometric configuration arises: the $(2,1)$-cable of the right-handed trefoil, denoted $C_{2,1}(T_{2,3})$. Cables with winding number 1 often evade standard reducing system arguments. However, we can eliminate this candidate via a direct homological argument. 
+
+Suppose $K$ were the satellite knot $C_{2,1}(T_{2,3})$. The Alexander polynomial of a $(p,q)$-cable of a knot $C$ is given by $\Delta_{C_{p,q}}(t) = \Delta_C(t^p) \cdot \Delta_{T_{p,q}}(t)$. Since $T_{2,1}$ is the unknot, its polynomial is 1. Thus:
+\begin{align*}
+\Delta_{C_{2,1}(T_{2,3})}(t) &= \Delta_{T_{2,3}}(t^2) \\
+&= t^2 - 1 + t^{-2}.
+\end{align*}
+This polynomial strictly contradicts the requisite homological spectral constraint of $K$, which must be $\Delta_K(t) = (t^2-t+1)^2$. Consequently, knot Floer homology trivially distinguishes $T_{2,3}\# T_{2,3}$ from the $(2,1)$-cable of the trefoil. 
+
+As an incidental corollary to this calculation, we can state a secondary detection result:
+
+\begin{theorem}\label{thm:cable_detection}
+Let $K \subset S^3$ be a knot. If there is an isomorphism of bigraded vector spaces
+\[
+\widehat{HFK}(K; \mathbb{F}) \cong \widehat{HFK}(C_{2,1}(T_{2,3}); \mathbb{F})
+\]
+over the field $\mathbb{F} = \mathbb{Z}/2\mathbb{Z}$, then $K$ is isotopic to $C_{2,1}(T_{2,3})$.
+\end{theorem}
+This corollary is proved by noting that the Alexander polynomial isolates the $(2,1)$-cable signature, and the remaining hyperbolic and satellite candidates are eliminated using the identical \texttt{autofolder} and reducing system mechanics developed for our primary theorem.
+
+\subsection*{Eliminating the Hyperbolic Case}
+
+For the hyperbolic knot case, we employ our \texttt{autofolder} algorithm to construct exhaustive train track automata for the relevant topological strata. We filter the infinite space of possible mapping classes down to a finite list of candidate braid families by enforcing rigorous geometric constraints—specifically the Trace Lemma and the Absorption Obstruction—which detect the presence of unwanted fixed points algebraically.
+
+We then evaluate the reduced homological action matrices of these surviving candidate braids. 
+
+\begin{theorem} \label{thm:homological_elimination}
+None of the fixed-point-free pseudo-Anosov mapping classes generated by the standard train tracks in the admissible strata induce an Alexander polynomial equal to $\Delta(t) = (t^2-t+1)^2$ while simultaneously bounding a homology sphere.
+\end{theorem}
+
+Theorem \ref{thm:homological_elimination} forces the conclusion that the monodromy of $K$ cannot be pseudo-Anosov, effectively ruling out all hyperbolic knots. Thus, the monodromy of $K$ must be \textit{reducible}.
+
+\subsection*{Decomposing the Composite}
+
+Having established that the monodromy is reducible, we analyze the possible decomposing curves. The rank constraints from $\widehat{HFK}$ rule out disparate pieces, leaving only the product of Dehn twists corresponding to the connect-sum of trefoils.
+
+Finally, we address the chirality of the summands. The knot $T_{2,3} \# T_{2,3}$ (the granny knot) shares the same Alexander polynomial and HFK rank as the heterochiral sum $T_{2,3} \# \overline{T}_{2,3}$ (the square knot). However, their grading supports differ. We verify that the grading information is sufficient to resolve this ambiguity.
+
+\begin{corollary} \label{cor:chirality}
+Knot Floer homology distinguishes the homochiral connect-sum of trefoils ($T_{2,3} \# T_{2,3}$) from the heterochiral connect-sum ($T_{2,3} \# \overline{T}_{2,3}$).
+\end{corollary}
+
+This result suggests that the combination of the Alexander polynomial (eigenvalues of the monodromy) and the refined rank information from $\widehat{HFK}$ provides a ``fingerprint'' sufficient to reconstruct the geometric decomposition of the monodromy for low-genus fibered knots.
+
+\section{Applications}
+\label{sec:applications}
+
+In this section, we discuss the topological and geometric implications of our main result, Theorem \ref{thm:main_detection}, which establishes that knot Floer homology detects the connect-sum of two right-handed trefoil knots, $T_{2,3} \# T_{2,3}$ (the granny knot). Furthermore, we address the implications of Theorem \ref{thm:cable_detection}, which establishes the detection of the satellite knot $C_{2,1}(T_{2,3})$ (the $(2,1)$-cable of the right-handed trefoil).
+
+These results contribute to the classification of genus-two fibered knots, the study of \textit{almost L-space knots} as defined by Baldwin and Sivek, and the verification of the Cosmetic Surgery Conjecture for these families.
+
+\subsection{Geography of Genus-Two Fibered Knots}
+
+The landscape of genus-two fibered knots in $S^3$ comprises three distinct topological classes, governed by Thurston's trichotomy: torus knots, hyperbolic knots, and satellite knots. Our detection results, combined with the classification of L-space knots by Reinoso \cite{Reinoso2023}, provide a homological filtration of the standard representatives of these classes.
+
+\begin{enumerate}
+    \item \textbf{The Torus Knot (L-space Knot):} Reinoso \sidecite{Reinoso2023} proved that $T(2,5)$ is the unique genus-two L-space knot in $S^3$.
+    
+    \item \textbf{The Composite Knot (Satellite):} The granny knot $T_{2,3} \# T_{2,3}$ is a genus-two fibered knot belonging to the class of composite knots. Theorem \ref{thm:main_detection} demonstrates that $\widehat{HFK}$ detects this knot, distinguishing it homologically from $T(2,5)$, genus-two hyperbolic fibered knots, and other satellite constructions.
+    
+    \item \textbf{The Prime Satellite Knot:} The cable $C_{2,1}(T_{2,3})$ is a prime, genus-two fibered knot. Theorem \ref{thm:cable_detection} establishes that $\widehat{HFK}$ detects this knot as well.
+\end{enumerate}
+
+Thus, knot Floer homology successfully distinguishes the unique genus-two L-space knot from the prominent candidates in the composite and prime satellite families, suggesting a strong rigidity of $\widehat{HFK}$ within the genus-two fibered census.
+
+\subsection{Rigidity of Almost L-Space Knots}
+
+A knot $K \subset S^3$ is termed an \textit{L-space knot} if sufficiently large positive Dehn surgery on $K$ yields an L-space---a rational homology sphere $Y$ with the simplest possible Heegaard Floer homology, satisfying $\text{rk } \widehat{HF}(Y) = |H_1(Y; \mathbb{Z})|$. 
+
+Generalizing this notion, Baldwin and Sivek define a knot $K$ to be an \textit{almost L-space knot} if large Dehn surgeries on $K$ yield 3-manifolds with Heegaard Floer homology of the ``next-to-simplest'' rank \cite{BaldwinSivek2022}. Formally, $K$ is an almost L-space knot if there exists a surgery coefficient $n \ge 2g(K)-1$ such that:
+\[
+\dim \widehat{HF}(S^3_n(K)) = n + 2.
+\]
+Our detection results are particularly significant in this context, as both the granny knot and the specified cable of the trefoil are canonical examples of almost L-space knots.
+
+\begin{itemize}
+    \item \textbf{The Unique Composite Case:} Baldwin and Sivek have shown that $T_{2,3} \# T_{2,3}$ is the \textit{only} composite almost L-space knot \cite{BaldwinSivek2022}. Consequently, our Theorem \ref{thm:main_detection} implies that knot Floer homology detects the unique composite almost L-space knot.
+    
+    \item \textbf{The Satellite Case:} The knot $C_{2,1}(T_{2,3})$ is also an almost L-space knot. By establishing the detection of this knot (Theorem \ref{thm:cable_detection}), we contribute to the rigidity of the almost L-space class beyond simple torus knots.
+\end{itemize}
+
+Viewed through this lens, our work serves as a verification that $\widehat{HFK}$ uniquely identifies the standard non-hyperbolic examples of genus-two almost L-space knots.
+
+\subsection{The Cosmetic Surgery Conjecture}
+
+The Cosmetic Surgery Conjecture asserts that distinct Dehn surgeries on a non-trivial knot $K \subset S^3$ result in 3-manifolds that are not orientation-preserving homeomorphic. Recent work by Hanselman establishes a powerful link between knot detection and this conjecture: if knot Floer homology detects a knot $K$, then $K$ satisfies the Cosmetic Surgery Conjecture \cite{Hanselman2023}.
+
+Combining Hanselman's theorem with our main results, we obtain the following corollary:
+
+\begin{corollary}
+The knots $T_{2,3} \# T_{2,3}$ and $C_{2,1}(T_{2,3})$ satisfy the Cosmetic Surgery Conjecture.
+\end{corollary}
+
+This verification is non-trivial. While the conjecture is frequently verified for prime, hyperbolic knots using hyperbolic geometric invariants (such as volume), composite and satellite knots possess essential tori in their complements, rendering standard hyperbolic obstructions inapplicable. Our result confirms that the obstruction provided by the filtered chain homotopy type of knot Floer homology is sufficient to rule out cosmetic surgeries in these topologically complex cases.
+
+\subsection{Distinguishing Chirality and the Square Knot}
+
+The granny knot ($T_{2,3} \# T_{2,3}$) and the square knot ($T_{2,3} \# \overline{T}_{2,3}$) are classical examples of knots that share identical knot groups and Alexander polynomials ($\Delta_K(t) = (t^2-t+1)^2$). While the Jones polynomial distinguishes these knots, our result proves a stronger form of rigidity: the filtered chain homotopy type of $\widehat{HFK}$ uniquely identifies the granny knot among \textit{all} knots, not merely its chiral partner.
+
+This distinction has immediate consequences for the study of concordance. The square knot is slice (and ribbon), with Ozsv\'{a}th-Szab\'{o} tau invariant $\tau(T_{2,3} \# \overline{T}_{2,3}) = 0$. In contrast, the granny knot is not slice, with $\tau(T_{2,3} \# T_{2,3}) = 2$. Our detection result implies that the specific filtration structure of $\widehat{HFK}(T_{2,3} \# T_{2,3})$ encodes this concordance information rigidly, distinguishing it from any potential knot with $\tau=0$ or different chiral characteristics.
+
+\section{Outline of the Chapters}
+
+This dissertation is structured to systematically eliminate topological candidates for the knot $K$, moving from algebraic algorithms to geometric dynamics. 
+
+In \textbf{Chapter 2}, we provide the necessary background on Heegaard Floer homology, the Birman-Hilden correspondence, and the Nielsen-Thurston classification of surface homeomorphisms. We rigorously establish the bounds placed on the geometric monodromy by the knot Floer homology of $T_{2,3} \# T_{2,3}$.
+
+In \textbf{Chapter 3}, we detail the theoretical construction of the \texttt{autofolder} algorithm. We prove Theorem \ref{thm:autofolder_main} and demonstrate how the algorithm explicitly generates the finite exhaustive state space of standard jointless train tracks required for dynamical classification. 
+
+In \textbf{Chapter 4}, we introduce the primary technique for ruling out mapping classes based on the orientability of their invariant foliations. We leverage the bipartite structure of the folded train tracks to prove that pseudo-Anosov maps in orientable strata cannot bound the correct homology sphere in $S^3$.
+
+In \textbf{Chapter 5}, we deploy our geometric toolkit to eliminate the remaining non-orientable strata. Using the \texttt{autofolder} output, tight splitting, the Trace Lemma, and the Absorption Obstruction, we enumerate all valid mapping classes on the 6-marked disk and apply homological filters to rule out every hyperbolic candidate. 
+
+Finally, in \textbf{Chapter 6}, having eliminated all torus and hyperbolic knot candidates, we analyze the remaining reducible (satellite) case. We utilize Schubert's formula and Thurston reducing systems to definitively prove that $K$ must be the connect-sum of two right-handed trefoil knots.

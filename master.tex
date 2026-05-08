@@ -1,0 +1,104 @@
+
+\documentclass[working]{tuftebook}
+
+
+\input{preamble.tex}
+\input{symbols.tex}
+\usepackage{pdfpages}
+
+\usepackage{lipsum}
+\usepackage{parskip}
+\usepackage{titletoc}
+
+
+
+\newcommand\circled[1]{
+    \begin{tikzpicture}[baseline=(char.base)]%
+        \node[circle,draw,inner sep=1pt] (char) {\textsf{#1}};%
+\end{tikzpicture}}
+% minicircle for in figures!
+\newcommand\mc[1]{\footnotesize\circled{#1}}
+
+% \usepackage{cmbright} %sarif font
+\usepackage{bm}
+
+% \usepackage{eso-pic}                % put things into background 
+% \usepackage{lipsum}                 % for sample text
+
+% \definecolor{reallylightgray}{HTML}{FAFAFA}
+% \AddToShipoutPicture{% from package eso-pic: put something to the background
+%     \ifthenelse{\isodd{\thepage}}{
+%           % ODD page: left bar
+%           \AtPageLowerLeft{% start the bar at the left bottom of the page
+%             \put(\LenToUnit{\dimexpr\paperwidth-222pt},0){% move it to the top right
+%                 \color{reallylightgray}\rule{222pt}{297mm}%
+%               }%
+%           }%
+%       }%
+%       {%
+%         \AtPageLowerLeft{% put it at the left bottom of the page
+%           \color{reallylightgray}\rule{222pt}{297mm}%
+%         }%
+%    }%
+% }
+
+\title{Folding Automata, Knot Floer Homology, and the Connect-Sum of Trefoils}
+\date{Academic year 2025--2026}
+\begin{document}
+    
+    \renewcommand{\thepage}{\roman{page}}
+    % \includepdf[pages=1, fitpaper=true]{./kuleuven-template/covers.pdf}
+    % --- ADDED CLASSIC BC TITLE PAGE ---
+    \input{bc_title.tex}
+    % -----------------------------------
+
+    \thispagestyle{empty}
+    \input{copyright.tex}
+    \pagestyle{plain}
+    \setcounter{page}{0}
+    \input{preface.tex}
+        % --- INSERT RENAISSANCE TITLE HERE ---
+    \cleardoublepage                 % <--- Optional: ensures it starts on a right-hand page
+    \input{renaissance_title.tex}    % <--- ADD THIS LINE
+    % -------------------------------------
+    \input{summary.tex}
+    \listofsymbols
+    \tableofcontents
+    \input{acknowledgements}
+    \cleardoublepage
+    \renewcommand{\thepage}{\arabic{page}}
+    \setcounter{page}{1}
+    \pagestyle{normal}
+    \input{chap_introduction}
+    \input{chap_preliminaries}
+    % \input{chap1.tex}
+    \input{chaptraintracks}
+    \input{chapstrataoriented}
+    \input{chapautomata}
+    \input{chapsplitting}
+    \input{chaps_stratum_candelabra}
+    \input{chapsatellite}
+    \appendix
+    \input{appendixsplittingbigstratum}
+    \input{appendixcaseanalysisexplain}
+    \input{appendixtrackcandelabra}
+    \input{appendixtrack0}
+    \input{appendixtrack1}
+    \input{appendixtrack8}
+    \input{appendixtrack12}
+    \input{appendixtrack13}
+    \input{appendixtrack17}
+    \input{appendix_braid_candelabra}
+    \input{appendix_braid_track_0}
+    \input{appendix_braid_track_1}
+    \input{appendix_braid_track_8}
+    \input{appendix_braid_track_13}
+    \input{appendix_braid_track_17}
+    % \input{todo.tex}
+    \input{conclusion.tex}
+    % \input{chap-outlook.tex}
+
+
+    \printbibliography
+    \includepdf[pages=2, fitpaper=true]{./kuleuven-template/covers.pdf}
+\end{document}
