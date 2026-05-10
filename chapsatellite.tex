@@ -1,23 +1,25 @@
 \chapter{The Satellite Case}
 \label{chap:satellite}
+
 In this chapter, we establish the following result:
 
 \begin{theorem}\label{theorem:satellite}
     Suppose $K$ is a satellite knot satisfying the assumptions of Theorem \ref{thm:main_detection}, that is, there is an isomorphism of bigraded vector spaces
     \[
-    \widehat{HFK}(K;\mathbb{F}) \cong \widehat{HFK}(T(2,3),T(2,3);\mathbb{F}).
+    \widehat{HFK}(K;\mathbb{F}) \cong \widehat{HFK}(T(2,3) \# T(2,3);\mathbb{F}).
     \]
     Then $K$ is isotopic to $T(2,3) \# T(2,3)$.
 \end{theorem}
 
+The argument proceeds in several stages. We first apply Schubert's formula to constrain the Alexander polynomials of the pattern and companion of $K$, forcing both to be trefoils and the algebraic winding number to be one (Lemma \ref{lem:satellite_trefoils_windingnumber_1}). We then invoke the Thurston reducing system framework to classify the canonical reducing curves of the monodromy $h$, isolating two non-trivial possibilities (Case A: $\Sigma_0$ is a pair of pants; Case B: $\Sigma_0$ is genus one with one reducing curve, in Lemma \ref{lem:satellite_CaseACaseB}). For each of these cases, we systematically eliminate sub-cases using a combination of Baldwin-Sivek's classification of periodic outer maps, the fractional Dehn twist coefficient bound of Hedden-Mark, and the Honda-Kazez-Matić right-veering criterion, leaving only the connect-sum of two right-handed trefoils. Finally, we briefly address the degenerate $(2,1)$-cable configuration via a direct Alexander polynomial calculation.
 
-We begin by reviewing the definition of a satellite knot. 
+We begin by reviewing the definition of a satellite knot.
 
-Let 
+Let
 \[
 P \subset S^1 \times D^2
 \]
-be a knot in $S^3$ lying non-trivially inside an unknotted solid torus, by which we mean that $P$ is not allowed to be inside a 3-ball in the solid torus, and $P$ is not allowed to be isotopic to the core curve of the solid torus. This knot $P$ is called the \textbf{pattern} of the satellite knot. Fix an embedding 
+be a knot in $S^3$ lying non-trivially inside an unknotted solid torus, by which we mean that $P$ is not allowed to be inside a 3-ball in the solid torus, and $P$ is not allowed to be isotopic to the core curve of the solid torus. This knot $P$ is called the \textbf{pattern} of the satellite knot. Fix an embedding
 \[
 f\colon  S^1 \times D^2 \to S^3.
 \]
@@ -25,11 +27,11 @@ The satellite knot $K$ is defined to be the knot $f(P)$. The core curve of the s
 
 The \textbf{winding number} of the satellite knot $P(C)$ is the winding number of the pattern inside the solid torus:
 \begin{definition}
-    Let $K = P(C)$ be a satellite knot, where 
+    Let $K = P(C)$ be a satellite knot, where
     \[
     P \subset V = S^1 \times D^2,
     \]
-    an unknotted solid torus. The \textbf{(algebraic) winding number} $w$ of $K$ is the algebraic intersection number of $P$ with a meridional disk of $V$. The \textbf{wrapping number} (or \textbf{geometric winding number}) $m$ of $K$ is the minimum number of geometric intersection points between $P$ with a meridional disk of $V$,  where the minimum is taken over all ambient isotopies of $P$ within $V$. It is clear that
+    an unknotted solid torus. The \textbf{(algebraic) winding number} $w$ of $K$ is the algebraic intersection number of $P$ with a meridional disk of $V$. The \textbf{wrapping number} (or \textbf{geometric winding number}) $m$ of $K$ is the minimum number of geometric intersection points between $P$ with a meridional disk of $V$, where the minimum is taken over all ambient isotopies of $P$ within $V$. It is clear that
     \[
     m \geq |w|.
     \]
@@ -49,7 +51,7 @@ Let $K$ be a satellite knot with companion knot $C$ and pattern knot $P$, and le
         \Delta_K(t) \doteq \Delta_P(t) \cdot \Delta_C(t^w)
     \end{equation}
     where $\doteq$ denotes equality up to multiplication by a unit $\pm t^k$ in the ring of Laurent polynomials $\mathbb{Z}[t, t^{-1}]$.
-    
+
     \item The Seifert genus $g$ satisfies the inequalities
     \[
     g(K) \geq g(P(U)) + m \cdot g(C) \geq g(P(U)) + |w| \cdot g(C).
@@ -79,17 +81,17 @@ Since $K$ is fibered, the algebraic winding number is non-zero, so we may assume
 \]
 Because $C$ is a fibered knot, the maximum degree of its symmetrized Alexander polynomial strictly equals its Seifert genus $g(C)$. Consequently, $\Delta_C(t^w)$ is a nontrivial polynomial with maximum degree $|w| \cdot g(C) \geq 1$.
 
-Now $\Delta_K(t)$ can only be factored either trivially, i.e., $\Delta_{P(U)}(t) = 1$; or it must split symmetrically, i.e., $\Delta_{P(U)}(t) = \Delta_C(t^w) = t - 1 + t^{-1}$. 
+Now $\Delta_K(t)$ can only be factored either trivially, i.e., $\Delta_{P(U)}(t) = 1$; or it must split symmetrically, i.e., $\Delta_{P(U)}(t) = \Delta_C(t^w) = t - 1 + t^{-1}$.
 
 Suppose it is the former case. Since $P(U)$ is fibered, $\Delta_{P(U)}(t) = 1$ occurs only when $P(U)$ is the unknot. On the other hand, we now have
 \[
 \Delta_K(t) = \Delta_C(t^w).
 \]
-Since $\Delta_K(t)$ has degree $2$, $\Delta_C(t^w)$ must also have degree $2$, meaning $|w| \cdot g(C) = 2$. This leaves two possibilities: $|w|=1$ (and $g(C)=2$) or $|w|=2$ (and $g(C)=1$). 
+Since $\Delta_K(t)$ has degree $2$, $\Delta_C(t^w)$ must also have degree $2$, meaning $|w| \cdot g(C) = 2$. This leaves two possibilities: $|w|=1$ (and $g(C)=2$) or $|w|=2$ (and $g(C)=1$).
 
-If $|w|=2$, then $\Delta_C(t)$ has degree $1$, meaning $\Delta_C(t) = at + b + at^{-1}$. Substituting $t^2$ yields $\Delta_C(t^2) = at^2 + b + at^{-2}$, which has zero coefficients for the $t^{\pm 1}$ terms. This contradicts our explicit formula for $\Delta_K(t)$, which contains $-2t$ and $-2t^{-1}$. This strictly forces $|w|=1$. 
+If $|w|=2$, then $\Delta_C(t)$ has degree $1$, meaning $\Delta_C(t) = at + b + at^{-1}$. Substituting $t^2$ yields $\Delta_C(t^2) = at^2 + b + at^{-2}$, which has zero coefficients for the $t^{\pm 1}$ terms. This contradicts our explicit formula for $\Delta_K(t)$, which contains $-2t$ and $-2t^{-1}$. This strictly forces $|w|=1$.
 
-Since the winding number is one and $P(U)$ is the unknot, a result of Hirasawa, Murasugi, and Silver \sidecite[Corollary 1]{HirasawaMurasugiSilver2008} states that $K = P(C)$ can only be fibered if $P$ is isotopic to the core $S^1 \times \{0\} \subset S^1 \times D^2$. But this implies $K$ is isotopic to $C$, contradicting the assumption that $K$ is a non-trivial satellite knot. 
+Since the winding number is one and $P(U)$ is the unknot, a result of Hirasawa, Murasugi, and Silver \sidecite[Corollary 1]{HirasawaMurasugiSilver2008} states that $K = P(C)$ can only be fibered if $P$ is isotopic to the core $S^1 \times \{0\} \subset S^1 \times D^2$. But this implies $K$ is isotopic to $C$, contradicting the assumption that $K$ is a non-trivial satellite knot.
 
 Thus, it must be that $\Delta_K(t)$ splits symmetrically, i.e.,
 \[
@@ -115,25 +117,25 @@ Thus $P(U)$ must either be genus zero or genus one. If it were genus zero, it wo
 \section{Thurston Reducing System}
 The previously mentioned Thurston's classification of surface homeomorphisms (Theorem \ref{theorem:nielsen-thruston classification}) has in fact a more refined statement in terms of ``reducing systems''. Wherein the surface can be divided into pieces by a finite set of curves, and the map restricted to each piece can be classified. More precisely:
 
-\begin{theorem}[Thurston\sidenotemark]
+\begin{theorem}[Thurston]\label{theorem:thurston_reducing_system}
+\sidenote{\fullcite{Thurston1988}}
 Let $h \colon \Sigma \to \Sigma$ be a homeomorphism of a compact oriented surface with possibly empty boundary. The map $h$ is isotopic rel boundary to a map $\phi_h \colon \Sigma \to \Sigma$ such that
 \begin{enumerate}
     \item there exists a possibly empty reducing system $\Gamma \subset \Sigma$ consisting of a finite disjoint union of simple closed curves which is fixed setwise by $\phi_h$;
     \item if $S$ is a component of $\Sigma \setminus \Gamma$ and $n$ is the smallest positive integer such that $\phi_h^n(S) = S$, then $\phi_h^n|_S$ is freely isotopic to a periodic or pseudo-Anosov map. When $n = 1$, we refer to this map and $S$ as a periodic or pseudo-Anosov component of $h$ or $\Sigma \setminus \Gamma$, accordingly.
 \end{enumerate}
 \end{theorem}
-\sidenotetext{\fullcite{Thurston1988}}
 
 As explained in Thurston's work, we may, and will assume that $\Gamma$ is minimal with respect to inclusion, in which case it is unique up to isotopy \sidecite[Theorem C]{birman1983abelian} and is called the \textbf{canonical reducing system} for $h$. We refer to the pair $(\phi_h, \Gamma)$
-as the \textbf{Nielsen–Thurston form of $h$}.
+as the \textbf{Nielsen-Thurston form of $h$}.
 
-Let us now consider the case where 
+Let us now consider the case where
 \[
-h \colon \Sigma_{2,1} \to \Sigma_{2,1}
+h \colon \Sigma_2^1 \to \Sigma_2^1
 \]
-is the monodromy of a genus-two fibered satellite knot $K$, and suppose $(\phi_h,\Gamma)$ its Nielsen-Thurston form.
+is the monodromy of a genus-two fibered satellite knot $K$, and suppose $(\phi_h,\Gamma)$ is its Nielsen-Thurston form.
 
-Following Baldwin-Sivek\cite{baldwin2025lspaces}, let $\Sigma_0$ be the component of $\Sigma_{2,1} \setminus \Gamma$ containing $\partial \Sigma_{2,1}$. We call $\Sigma_0$ the \textbf{outermost component} of $\Sigma \setminus \Gamma$. Note that $\phi_h$ fixes $\Sigma_0$ set-wise, and its restriction to $\Sigma_0$ is freely isotopic to a map 
+Following Baldwin-Sivek\cite{baldwin2025lspaces}, let $\Sigma_0$ be the component of $\Sigma_2^1 \setminus \Gamma$ containing $\partial \Sigma_2^1$. We call $\Sigma_0$ the \textbf{outermost component} of $\Sigma \setminus \Gamma$. Note that $\phi_h$ fixes $\Sigma_0$ set-wise, and its restriction to $\Sigma_0$ is freely isotopic to a map
 \[
 \phi_0 \colon \Sigma_0 \to \Sigma_0
 \]
@@ -142,9 +144,9 @@ which is either periodic or pseudo-Anosov.
 \begin{lemma}\label{lem:satellite_CaseACaseB}
 Suppose
 \[
-h \colon \Sigma_{2,1} \to \Sigma_{2,1}
+h \colon \Sigma_2^1 \to \Sigma_2^1
 \]
-is the monodromy of a genus-two fibered knot $K$, and $(\phi_h, \Gamma)$ the Nielsen–Thurston form of $h$. Then up to homeomorphism of the surface and isotopy of $\Gamma$, the only possibilities of $\Gamma$ are 
+is the monodromy of a genus-two fibered knot $K$, and $(\phi_h, \Gamma)$ the Nielsen-Thurston form of $h$. Then up to homeomorphism of the surface and isotopy of $\Gamma$, the only possibilities of $\Gamma$ are
 \begin{enumerate}
     \item $\Gamma = \emptyset$;
     \item Case A: $\Gamma = \gamma_1 \cup \gamma_2$. The outer surface $\Sigma_0$ is a pair of pants with boundary components $K, \gamma_1$, and $\gamma_2$; or
@@ -160,32 +162,32 @@ Case A and Case B are shown in Figure \ref{fig:two_satellite_cases}.
 \end{figure}
 
 \begin{myproof}
-    By a result of Baldwin and Sivek \sidecite{baldwin2025lspaces}, for a fibered knot in an L-space, every curve in the canonical reducing system $\Gamma$ is separating. Furthermore, by definition, $\Gamma$ is a minimal collection of disjoint, essential, and non-boundary-parallel simple closed curves. 
-    
-    The surface $\Sigma_{2,1}$ has genus $g=2$ and one boundary component $\partial \Sigma = K$. We analyze the possible components of $\Sigma_{2,1} \setminus \Gamma$ based on the number of curves in $\Gamma$.
-    
-    Suppose $\Gamma \neq \emptyset$, and let $\gamma \in \Gamma$. Because $\gamma$ is separating, cutting $\Sigma_{2,1}$ along $\gamma$ yields two disconnected subsurfaces, $S_1$ and $S_2$. Since the original surface has exactly one boundary component $K$, exactly one of these subsurfaces must contain $K$. Let $S_1$ be the subsurface containing $K$, meaning $\partial S_1 = K \cup \gamma$. The other subsurface, $S_2$, has exactly one boundary component, $\partial S_2 = \gamma$.
-    
-    The sum of the genera of the subsurfaces must equal the genus of the original surface, so $g(S_1) + g(S_2) = g(\Sigma_{2,1}) = 2$. We can rigorously determine the genera of these pieces:
+    By a result of Baldwin and Sivek \sidecite{baldwin2025lspaces}, for a fibered knot in an L-space, every curve in the canonical reducing system $\Gamma$ is separating. Furthermore, by definition, $\Gamma$ is a minimal collection of disjoint, essential, and non-boundary-parallel simple closed curves.
+
+    The surface $\Sigma_2^1$ has genus $g=2$ and one boundary component $\partial \Sigma = K$. We analyze the possible components of $\Sigma_2^1 \setminus \Gamma$ based on the number of curves in $\Gamma$.
+
+    Suppose $\Gamma \neq \emptyset$, and let $\gamma \in \Gamma$. Because $\gamma$ is separating, cutting $\Sigma_2^1$ along $\gamma$ yields two disconnected subsurfaces, $S_1$ and $S_2$. Since the original surface has exactly one boundary component $K$, exactly one of these subsurfaces must contain $K$. Let $S_1$ be the subsurface containing $K$, meaning $\partial S_1 = K \cup \gamma$. The other subsurface, $S_2$, has exactly one boundary component, $\partial S_2 = \gamma$.
+
+    The sum of the genera of the subsurfaces must equal the genus of the original surface, so $g(S_1) + g(S_2) = g(\Sigma_2^1) = 2$. We can rigorously determine the genera of these pieces:
     \begin{itemize}
         \item Since $\gamma$ is an essential curve, it cannot bound a disk. Therefore, the one-boundary surface $S_2$ cannot be a disk, which strictly forces $g(S_2) \geq 1$.
         \item Since $\gamma$ is not boundary-parallel to $K$, the two-boundary surface $S_1$ cannot be an annulus. Therefore, $g(S_1) \neq 0$, which strictly forces $g(S_1) \geq 1$.
     \end{itemize}
-    The only integer solution to $g(S_1) + g(S_2) = 2$ given these constraints is $g(S_1) = 1$ and $g(S_2) = 1$. Consequently, any single separating curve $\gamma \in \Gamma$ must decompose $\Sigma_{2,1}$ into $S_1 \cong \Sigma_{1,2}$ (a genus-one surface with two boundaries) and $S_2 \cong \Sigma_{1,1}$ (a once-punctured torus). 
-    
+    The only integer solution to $g(S_1) + g(S_2) = 2$ given these constraints is $g(S_1) = 1$ and $g(S_2) = 1$. Consequently, any single separating curve $\gamma \in \Gamma$ must decompose $\Sigma_2^1$ into $S_1 \cong \Sigma_1^2$ (a genus-one surface with two boundaries) and $S_2 \cong \Sigma_1^1$ (a once-punctured torus).
+
     We now classify $\Gamma$ by its size:
-    
-    \textbf{Case 1: $|\Gamma| = 1$.} 
-    If $\Gamma = \{\gamma\}$, the outermost component $\Sigma_0$ is precisely the subsurface containing $K$. As shown above, $\Sigma_0 = S_1 \cong \Sigma_{1,2}$. Thus, the outer surface is genus one with boundary components $K$ and $\gamma$. This corresponds exactly to \textbf{Case B}.
 
-    \textbf{Case 2: $|\Gamma| = 2$.} 
-    Suppose $\Gamma = \{\gamma_1, \gamma_2\}$. The curves are disjoint, so $\gamma_2$ must lie entirely within $S_1$ or $S_2$ (defined by cutting along $\gamma_1$). It is a standard topological fact that a once-punctured torus ($\Sigma_{1,1}$) contains no essential, non-boundary-parallel separating curves; any separating curve on $\Sigma_{1,1}$ must bound a disk or be parallel to the boundary puncture. Therefore, $S_2$ cannot contain $\gamma_2$. 
-    
-    Thus, $\gamma_2$ must lie inside $S_1$. Since $\gamma_2 \in \Gamma$, it is also a separating curve for the global surface $\Sigma_{2,1}$, meaning it must cut off another once-punctured torus ($\Sigma_{1,1}$) from $S_1$. 
-    By cutting the genus-one surface $S_1$ along $\gamma_2$, we subtract a genus-one piece, leaving a remainder of genus zero. This remaining outermost component $\Sigma_0$ now contains three boundaries: the knot $K$, the cut $\gamma_1$, and the cut $\gamma_2$. A genus-zero surface with three boundaries is a pair of pants ($\Sigma_{0,3}$). This corresponds exactly to \textbf{Case A}.
+    \textbf{Case 1: $|\Gamma| = 1$.}
+    If $\Gamma = \{\gamma\}$, the outermost component $\Sigma_0$ is precisely the subsurface containing $K$. As shown above, $\Sigma_0 = S_1 \cong \Sigma_1^2$. Thus, the outer surface is genus one with boundary components $K$ and $\gamma$. This corresponds exactly to \textbf{Case B}.
 
-    \textbf{Case 3: $|\Gamma| \geq 3$.} If there were a third curve $\gamma_3$, it would have to reside within one of the components of $\Sigma_{2,1} \setminus \{\gamma_1, \gamma_2\}$. Those components are two once-punctured tori and one pair of pants. None of these subsurfaces can contain an essential, non-boundary-parallel simple closed curve. Thus, $\Gamma$ can contain at most two curves.
-    
+    \textbf{Case 2: $|\Gamma| = 2$.}
+    Suppose $\Gamma = \{\gamma_1, \gamma_2\}$. The curves are disjoint, so $\gamma_2$ must lie entirely within $S_1$ or $S_2$ (defined by cutting along $\gamma_1$). It is a standard topological fact that a once-punctured torus ($\Sigma_1^1$) contains no essential, non-boundary-parallel separating curves; any separating curve on $\Sigma_1^1$ must bound a disk or be parallel to the boundary puncture. Therefore, $S_2$ cannot contain $\gamma_2$.
+
+    Thus, $\gamma_2$ must lie inside $S_1$. Since $\gamma_2 \in \Gamma$, it is also a separating curve for the global surface $\Sigma_2^1$, meaning it must cut off another once-punctured torus ($\Sigma_1^1$) from $S_1$.
+    By cutting the genus-one surface $S_1$ along $\gamma_2$, we subtract a genus-one piece, leaving a remainder of genus zero. This remaining outermost component $\Sigma_0$ now contains three boundaries: the knot $K$, the cut $\gamma_1$, and the cut $\gamma_2$. A genus-zero surface with three boundaries is a pair of pants ($\Sigma_0^3$). This corresponds exactly to \textbf{Case A}.
+
+    \textbf{Case 3: $|\Gamma| \geq 3$.} If there were a third curve $\gamma_3$, it would have to reside within one of the components of $\Sigma_2^1 \setminus \{\gamma_1, \gamma_2\}$. Those components are two once-punctured tori and one pair of pants. None of these subsurfaces can contain an essential, non-boundary-parallel simple closed curve. Thus, $\Gamma$ can contain at most two curves.
+
     Therefore, up to homeomorphism, the only possibilities for $\Gamma$ are the empty set, Case A, or Case B.
 \end{myproof}
 
@@ -203,18 +205,18 @@ If $\phi_0$ is periodic, then either
             \item $K$ is a $(p, q)$-cable knot of some other knot in $S^3$ and $\Sigma_0$ has genus $g(T_{p,q})$
         \end{itemize}
     \end{itemize}
-    In each case above, $q \geq 2$ and $gcd(p, q) = 1$.
+    In each case above, $q \geq 2$ and $\gcd(p, q) = 1$.
 \end{prop}
 
 We shall need one more proposition before we are ready to prove the main result of this chapter.
 
 \begin{prop}\label{prop:capping_trefoil}
-    Let $K = P(C)$ be a fibered satellite knot with Seifert genus $g(K) = 2$ and algebraic winding number $w=1$, where the companion $C$ and the pattern knot in the unknot $P(U)$ are both trefoils. Let $h \colon \Sigma \to \Sigma$ be the monodromy of $K$. 
+    Let $K = P(C)$ be a fibered satellite knot with Seifert genus $g(K) = 2$ and algebraic winding number $w=1$, where the companion $C$ and the pattern knot in the unknot $P(U)$ are both trefoils. Let $h \colon \Sigma \to \Sigma$ be the monodromy of $K$.
     Suppose the Nielsen-Thurston form of $h$ is Case B as in Lemma \ref{lem:satellite_CaseACaseB}. The outer map
     \[
     \phi_0 \colon \Sigma_0 \to \Sigma_0
     \]
-    can be capped off at the boundary component $\gamma$ with a disk. The resulting map on the surface $\widehat{\Sigma}_0 \cong \Sigma_{1,1}$:
+    can be capped off at the boundary component $\gamma$ with a disk. The resulting map on the surface $\widehat{\Sigma}_0 \cong \Sigma_1^1$:
     \[
     \widehat{\phi}_0 \colon \widehat{\Sigma}_0 \to \widehat{\Sigma}_0
     \]
@@ -223,65 +225,64 @@ We shall need one more proposition before we are ready to prove the main result 
 
 \begin{proof}
     Let $V$ be the solid torus containing the pattern $P$, and let $T = \partial V$ be its boundary. In the satellite construction, $V$ is embedded in $S^3$ such that its core is the companion knot $C$. The boundary $T$ forms an essential JSJ torus in the knot exterior.
-    
-    Let $m$ be the wrapping number of $K$. By Schubert's geometric genus inequality (Theorem \ref{thm:schubert}), the genera must satisfy 
+
+    Let $m$ be the wrapping number of $K$. By Schubert's geometric genus inequality (Theorem \ref{thm:schubert}), the genera must satisfy
     \[
     g(K) \geq g(P(U)) + m \cdot g(C).
     \]
     Substituting our known values yields $2 \geq 1 + m \cdot 1$, which simplifies to $m \leq 1$. However, by definition, the geometric wrapping number must be at least the absolute value of the algebraic winding number, so $m \geq |w| = 1$. These two inequalities strictly force the geometric wrapping number to be $m = 1$. Consequently, the fiber surface $\Sigma$ can be isotoped to intersect the JSJ torus $T$ in exactly one simple closed curve, which is our Thurston reducing curve $\gamma$.
-    
-    This curve $\gamma$ splits $\Sigma$ into two compact subsurfaces. By our convention, the "outer" surface $\Sigma_0 = \Sigma \cap V$ resides entirely inside the solid torus. Its boundary consists of exactly two components: $\partial \Sigma_0 = K \cup \gamma$.
 
-    We construct a new surface by capping off strictly the boundary component $\gamma$. Abstractly, we attach a 2-disk $D^2$ to $\gamma$, forming the surface 
+    This curve $\gamma$ splits $\Sigma$ into two compact subsurfaces. By our convention, the ``outer'' surface $\Sigma_0 = \Sigma \cap V$ resides entirely inside the solid torus. Its boundary consists of exactly two components: $\partial \Sigma_0 = K \cup \gamma$.
+
+    We construct a new surface by capping off strictly the boundary component $\gamma$. Abstractly, we attach a 2-disk $D^2$ to $\gamma$, forming the surface
     \[
     \widehat{\Sigma}_0 = \Sigma_0 \cup_{\gamma} D^2.
     \]
     The only remaining boundary of this new surface is the knot $K$.
-    
+
     Geometrically, capping off $\gamma$ corresponds to a change in the ambient space. The curve $\gamma$ runs exactly once longitudinally along the solid torus $V$. Attaching a disk to $\gamma$ is equivalent to replacing the knotted companion exterior $S^3 \setminus \mathring{V}$ with an unknotted solid torus.
-    
+
     Under this operation, the embedding of $V$ becomes standard, and the satellite knot $K = P(C)$ is transformed into the pattern knot in the unknot, $P(U)$. Therefore, the capped-off surface $\widehat{\Sigma}_0$ is a Seifert surface for $P(U)$. Since $\gamma$ is separating, the genus is additive, so $g(\widehat{\Sigma}_0) = g(\Sigma_0) = 1$. Because $P(U)$ is a trefoil, this means $\widehat{\Sigma}_0$ is exactly its minimal-genus fiber.
 
-    The global monodromy $h$ preserves the JSJ torus $T$ and thus restricts to an automorphism 
+    The global monodromy $h$ preserves the JSJ torus $T$ and thus restricts to an automorphism
     \[
     \phi_0 \colon \Sigma_0 \to \Sigma_0
     \]
     that fixes both boundary components $K$ and $\gamma$ pointwise.
-    
+
     When we cap off $\gamma$ with the disk $D^2$, the homeomorphism $\phi_0$ extends naturally to the disk by the identity, yielding a well-defined homeomorphism $\widehat{\phi}_0 \colon \widehat{\Sigma}_0 \to \widehat{\Sigma}_0$ that fixes the boundary $K$.
-    
+
     Because capping off $\gamma$ unties the companion and transforms the ambient fibration into the standard fibration of the unknotted solid torus, this extended map $\widehat{\phi}_0$ is precisely the geometric monodromy of the resulting knot. Since $P(U)$ is a trefoil, $\widehat{\phi}_0$ is the geometric monodromy of the trefoil.
 \end{proof}
 
 We are now ready to prove the main result of this chapter, Theorem \ref{theorem:satellite}.
 
-\begin{myproof}[proof of Theorem \ref{theorem:satellite}]
-    By Theorem \ref{theorem:ni-fibered}, $K$ is fibered; and by Equation \ref{eq:ozvath-szabo genus top grading}, of genus two. Let 
+\begin{myproof}[Proof of Theorem \ref{theorem:satellite}]
+    By Theorem \ref{theorem:ni-fibered}, $K$ is fibered; and by Equation \ref{eq:ozvath-szabo genus top grading}, of genus two. Let
     \[
-    h \colon \Sigma_{2,1} \to \Sigma_{2,1}
+    h \colon \Sigma_2^1 \to \Sigma_2^1
     \]
     be the monodromy of $K$. Let $(\phi_h,\Gamma)$ be the Nielsen-Thurston form of the monodromy.
 
-    If $\Gamma = \emptyset$, then $\Sigma_0 = \Sigma_{2,1}$, and 
+    If $\Gamma = \emptyset$, then $\Sigma_0 = \Sigma_2^1$, and
     \[
     \phi_0 \colon \Sigma_0 \to \Sigma_0.
     \]
-    is periodic. Otherwise, $K$ would be a hyperbolic knot, and not a satellite knot by Theorem \ref{theorem:thurston classification of knots}. Hence Proposition \ref{prop:knottracesprop} applies, in particular $K$ is a $(p,q)$-torus knot. However, the knot Floer homology of torus knots are well-known, and 
-    none coincide with that of $T(2,3) \# T(2,3)$. Specifically, all torus knots are L-space knots (or mirrors of L-space knots). A defining property of L-space knots is that the rank of their knot Floer homology in any fixed Alexander grading $a$ is at most $1$. Thus, if $K = T_{p,q}$, then
+    is periodic. Otherwise, $K$ would be a hyperbolic knot, and not a satellite knot by Theorem \ref{theorem:thurston classification of knots}. Hence Proposition \ref{prop:knottracesprop} applies, in particular $K$ is a $(p,q)$-torus knot. However, the knot Floer homology of torus knots is well-known, and none coincides with that of $T(2,3) \# T(2,3)$. Specifically, all torus knots are L-space knots (or mirrors of L-space knots). A defining property of L-space knots is that the rank of their knot Floer homology in any fixed Alexander grading $a$ is at most $1$. Thus, if $K = T_{p,q}$, then
     \[
     \widehat{HFK}(T(2,3)\#T(2,3)) \cong \widehat{HFK}(K) \cong \widehat{HFK}(T(p,q)),
     \]
-    and we must have 
+    and we must have
     \[
     \operatorname{rank} \widehat{HFK}(K, a) \le 1
     \]
     for all $a \in \mathbb{Z}$. But this is a contradiction, as it is known that the rank of the second-to-top Alexander grading of $\widehat{HFK}(T(2,3)\#T(2,3))$ is $2$.
 
     Hence $\Gamma \neq \emptyset$, and this can be either Case A or Case B, by Lemma \ref{lem:satellite_CaseACaseB}.
-    
-    Suppose the fiber $\Sigma_{2,1}$ and its reducing system is of Type A. Then $\Sigma_0$ is homeomorphic to a pair of pants, which is known to not support pseudo-Anosov homeomorphisms (see, e.g., Farb-Margalit\sidecite{farb2012primer}). This follows from the observation that every essential simple closed curve on the pair of pants is boundary-parallel; thus, every homeomorphism preserves a multicurve (the boundary itself) and is therefore reducible. Hence in this case $\phi_0 \colon \Sigma_0 \to \Sigma_0$ must be periodic, thus Proposition \ref{prop:knottracesprop} applies, specifically the case for when $\Gamma \neq 0$. 
-    
-    Consider first the cable knot sub-case, i.e., that $K$ is a $(p,q)$-cable knot with $\Sigma_0$ of genus $g(T_{p,q})$. Since under our assumption of Case B, $\Sigma_0$ is of genus zero,
+
+    Suppose the fiber $\Sigma_2^1$ and its reducing system is of Type A. Then $\Sigma_0$ is homeomorphic to a pair of pants, which is known to not support pseudo-Anosov homeomorphisms (see, e.g., Farb-Margalit\sidecite{farb2012primer}). This follows from the observation that every essential simple closed curve on the pair of pants is boundary-parallel; thus, every homeomorphism preserves a multicurve (the boundary itself) and is therefore reducible. Hence in this case $\phi_0 \colon \Sigma_0 \to \Sigma_0$ must be periodic, thus Proposition \ref{prop:knottracesprop} applies, specifically the case for when $\Gamma \neq \emptyset$.
+
+    Consider first the cable knot sub-case, i.e., that $K$ is a $(p,q)$-cable knot with $\Sigma_0$ of genus $g(T_{p,q})$. Since under our assumption of Case A, $\Sigma_0$ is of genus zero,
     \[
     g(\Sigma_0) = g(T_{p,q}) = 0.
     \]
@@ -292,28 +293,26 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
         \Delta_{3_1 \# 4_1} (t)&= \Delta_{\bar{3}_1 \# 4_1}(t)\\
         &= \Delta_{3_1}(t) \cdot \Delta_{4_1}(t)\\
         &= (t - 1 + t^{-1})\cdot (-t +3 -t^{-1})\\
-        &= t(-t + 3 t^{-1}) - 1(-t+3-t^{-1}) + t^{-1}(-t+3-t^{-1})\\
-        &= (-t^2 +3t - 1) + (t-3+t^{-1}) + (-1+3t^{-1} - t^{-2})\\
-        &= -t^2 +4t - 5 + 4t^{-1} - t^{-2}
+        &= -t^2 + 4t - 5 + 4t^{-1} - t^{-2}.
     \end{align*}
 
-    Which differs from that of $T(2,3)\#T(2,3)$, hence that of $K$. Therefore, $K$ must be the connect-sum of trefoils, and it must be in fact the connect-sum of the right-handed trefoils since the $\widehat{HFK}$ of the square knot $\overline{T(2,3)}\# T(2,3)$ and of $\overline{T(2,3)} \# \overline{T(2,3)}$ both differ from 
+    Which differs from that of $T(2,3)\#T(2,3)$, hence that of $K$. Therefore, $K$ must be the connect-sum of trefoils, and it must be in fact the connect-sum of the right-handed trefoils since the $\widehat{HFK}$ of the square knot $\overline{T(2,3)}\# T(2,3)$ and of $\overline{T(2,3)} \# \overline{T(2,3)}$ both differ from
     \[
     \widehat{HFK}(T(2,3) \# T(2,3)) \cong \widehat{HFK}(K)
     \]
     as bigraded vector spaces.
 
-    Now suppose that the fiber $\Sigma_{2,1}$ and its reducing system is of Type B. There are two possibilities: either the outermost map $\phi_0$ is periodic, or it is pseudo-Anosov.
-    
-    Suppose $\phi_0$ is periodic. Then since $\Gamma \neq \emptyset$ and $\Sigma_0$ is not planar, Proposition \ref{prop:knottracesprop} implies that $K$ is a $(p,q)$-cable knot of a knot in $S^3$ and $\Sigma_0$ has genus $g(T_{p,q})$, where $q\geq 2$ and $gcd(p,q) = 1$. Since $\Sigma_0$ of Case B has genus one, we have
+    Now suppose that the fiber $\Sigma_2^1$ and its reducing system is of Type B. There are two possibilities: either the outermost map $\phi_0$ is periodic, or it is pseudo-Anosov.
+
+    Suppose $\phi_0$ is periodic. Then since $\Gamma \neq \emptyset$ and $\Sigma_0$ is not planar, Proposition \ref{prop:knottracesprop} implies that $K$ is a $(p,q)$-cable knot of a knot in $S^3$ and $\Sigma_0$ has genus $g(T_{p,q})$, where $q\geq 2$ and $\gcd(p,q) = 1$. Since $\Sigma_0$ of Case B has genus one, we have
     \[
     g(\Sigma_0) = g(T_{p,q}) = 1.
     \]
-    The only genus one torus knots are the trefoils, hence $K$ is a cable knot with trefoil pattern, where the trefoils are embedded in the solid torus as torus knots (as required by the definition of a cable knot). However, this is a contradiction, as the presentation of the trefoils as torus knots yield winding number 2 if presented as $T(2,3)$ on the solid torus, and winding number 3 if presented as $T(3,2)$ on the solid torus. This contradicts Lemma \ref{lem:satellite_trefoils_windingnumber_1} which states that the winding number of $K$ must be 1.   
+    The only genus one torus knots are the trefoils, hence $K$ is a cable knot with trefoil pattern, where the trefoils are embedded in the solid torus as torus knots (as required by the definition of a cable knot). However, this is a contradiction, as the presentation of the trefoils as torus knots yields winding number 2 if presented as $T(2,3)$ on the solid torus, and winding number 3 if presented as $T(3,2)$ on the solid torus. This contradicts Lemma \ref{lem:satellite_trefoils_windingnumber_1} which states that the winding number of $K$ must be 1.
 
-    So suppose $\phi_0$ is pseudo-Anosov. Then Proposition \ref{prop:knottracesprop} does not apply. However, from Lemma \ref{lem:satellite_trefoils_windingnumber_1}, it is still known that $K = P(C)$ satisfies $P(U)$ and $C$ are trefoils, and the winding number $w$ is 1. 
-    
-    Let us consider the capped-off map 
+    So suppose $\phi_0$ is pseudo-Anosov. Then Proposition \ref{prop:knottracesprop} does not apply. However, from Lemma \ref{lem:satellite_trefoils_windingnumber_1}, it is still known that $K = P(C)$ satisfies $P(U)$ and $C$ are trefoils, and the winding number $w$ is 1.
+
+    Let us consider the capped-off map
     \[
     \widehat{\phi}_0 \colon \widehat{\Sigma}_0 \to \widehat{\Sigma}_0
     \]
@@ -327,7 +326,7 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
    \[
    |c(K)| \leq 1.
    \]
-    Therefore, the only possibility is 
+    Therefore, the only possibility is
     \[
     |c(K)| = 1.
     \]
@@ -335,9 +334,9 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
     \[
     c(K) = 1.
     \]
-    Let $-Y$ denote the manifold defined by the open book decomposition $(\Sigma_{2,1}, \phi_h)$, which must be $S^3$, with reverse orientation:
+    Let $-Y$ denote the manifold defined by the open book decomposition $(\Sigma_2^1, \phi_h)$, which must be $S^3$, with reverse orientation:
     \[
-    -Y = -Y_{(\Sigma_{2,1},\phi_h)} \cong S^3.
+    -Y = -Y_{(\Sigma_2^1,\phi_h)} \cong S^3.
     \]
     Let $-Y_1(K)$ denote the result of performing $1$-surgery along the binding $K$ on $-Y$; while $-Y_0(K)$ denotes the result of performing $0$-surgery along the binding $K$.
 
@@ -350,25 +349,25 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
     \[
     c(\xi) \in HF^+(-Y_1(K))
     \]
-    to be the image of a particular class in 
+    to be the image of a particular class in
     \[
     HF^+(-Y_0(K)) \cong \mathbb{F}.
     \]
-    Since $K$ is an L-space knot, $-Y_1(K)$ is an L-space. Thus $HF^+(-Y_1(K)) \cong \mathcal{T}^+$, the tower module. The contact invariant 
+    Since $K$ is an L-space knot, $-Y_1(K)$ is an L-space. Thus $HF^+(-Y_1(K)) \cong \mathcal{T}^+$, the tower module. The contact invariant
     \[
     c(\xi_1) \in HF^+(S^3_1(K))
     \]
     associated with the canonical contact structure on the fibered surgery is non-zero (see work of Ozv\'{a}th-Szab\'{o}\sidecite{ozsvath2004holomorphic}).
-    
-    On the other hand, the 1-surgery $-Y_1(K)$ is equivalent to the open book decomposition defined by the monodromy $\phi_h$ composed with a right-handed Dehn twist along the boundary:    
+
+    On the other hand, the 1-surgery $-Y_1(K)$ is equivalent to the open book decomposition defined by the monodromy $\phi_h$ composed with a right-handed Dehn twist along the boundary:
     \[
-    -Y_1(K) \cong -Y_{(\Sigma_{2,1},\phi_h \circ \tau_\partial)}.
+    -Y_1(K) \cong -Y_{(\Sigma_2^1,\phi_h \circ T_\partial)}.
     \]
     By assumption the fractional Dehn twist coefficient of $\phi_h$ is $1$, hence its composition with a right-handed Dehn twist has fractional Dehn twist coefficient zero:
     \[
-    c(\phi_h \circ \tau_\partial) = 0.
+    c(\phi_h \circ T_\partial) = 0.
     \]
-    But this contradicts a result of Honda-Kazez-Matic\sidecite{honda2007right} that for a fibered knot in a three-manifold, the contact invariant is $0$ if and only if the open book monodromy is \emph{not} right-veering. 
+    But this contradicts a result of Honda-Kazez-Matic\sidecite{honda2007right} that for a fibered knot in a three-manifold, the contact invariant is $0$ if and only if the open book monodromy is \emph{not} right-veering.
 
     For the case of
     \[
@@ -377,31 +376,20 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
     the same argument works with $Y$ in place of $-Y$, and left-handed Dehn twist in place of the right-handed Dehn twist.
 \end{myproof}
 
-\section{Proof of Theorem \ref{thm:cable_detection}: The (2,1)-Cable}
-\label{sec:2_1_cable_proof}
+\section{Eliminating the (2,1)-Cable as a Candidate}
+\label{sec:2_1_cable_candidate}
 
-In the preceding analysis, we eliminated all non-trivial satellite configurations under the assumption that the algebraic winding number is $|w| = 1$, with both the pattern and companion acting as trefoils. However, to complete our topological classification, we must formally address the degenerate geometric case of the $(2,1)$-cable of the trefoil, which evades standard reducing system obstructions, thereby proving Theorem \ref{thm:cable_detection} as stated in the Introduction.
+Within the satellite analysis above, one degenerate geometric configuration with algebraic winding number $|w|=1$ formally evades the standard reducing-system obstruction: the $(2,1)$-cable of the right-handed trefoil, denoted $C_{2,1}(T_{2,3})$. We address this candidate via a direct Alexander polynomial calculation.
 
-Suppose $K$ is the $(2,1)$-cable of the right-handed trefoil, denoted $C_{2,1}(T_{2,3})$. The Alexander polynomial of a $(p,q)$-cable of a knot $C$ is determined by the standard satellite formula:
+The Alexander polynomial of a $(p,q)$-cable of a knot $C$ is determined by the standard satellite formula:
 \[
 \Delta_{C_{p,q}}(t) = \Delta_C(t^p) \cdot \Delta_{T_{p,q}}(t).
 \]
-For the $(2,1)$-cable, we have $p=2$ (longitudinal winding) and $q=1$ (meridional winding). Since the $(2,1)$-torus knot $T_{2,1}$ is isotopic to the unknot, its Alexander polynomial is trivial ($\Delta_{T_{2,1}}(t) = 1$). Substituting the symmetrized Alexander polynomial of the trefoil, $\Delta_C(t) = t - 1 + t^{-1}$, we obtain:
-\begin{align*}
-\Delta_{C_{2,1}}(t) &= \Delta_C(t^2) \cdot 1 \\
-&= t^2 - 1 + t^{-2}.
-\end{align*}
-
-To definitively rule out the possibility of any other knot sharing this specific homological profile, we apply an argument from Baldwin, Hu, and Sivek (specifically utilizing the framework of \cite[Lemma 3.2]{baldwin2021khovanov}). Their argument dictates that the existence of such a homological duplicate fundamentally reduces to the existence of a hypothetical hyperbolic fibered knot in $S^3$. Crucially, because of the knot Floer homology rank bounds in the next-to-top Alexander grading, the monodromy of this hypothetical hyperbolic knot must be freely isotopic to a pseudo-Anosov mapping class with absolutely no fixed points.
-
-If this hypothetical hyperbolic knot were to exist, its fixed-point-free pseudo-Anosov monodromy would have to be carried by one of the fully classified standard jointless train tracks on the 6-punctured disk. Consequently, its Alexander polynomial would necessarily match the induced characteristic polynomial of the reduced homological action matrix $A_{\text{red}}$ for at least one of our surviving candidate braid families derived in Chapters 4 and 5.
-
-We therefore cross-reference the required Alexander polynomial of the $(2,1)$-cable:
+For the $(2,1)$-cable, we have $p=2$ (longitudinal winding) and $q=1$ (meridional winding). Since the $(2,1)$-torus knot $T_{2,1}$ is isotopic to the unknot, its Alexander polynomial is trivial. Substituting the symmetrized Alexander polynomial of the trefoil, $\Delta_{T_{2,3}}(t) = t - 1 + t^{-1}$, we obtain:
 \[
-\Delta(t) = t^2 - 1 + t^{-2}
+\Delta_{C_{2,1}(T_{2,3})}(t) = \Delta_{T_{2,3}}(t^2) = t^2 - 1 + t^{-2}.
 \]
-against the exhaustive database of Alexander polynomials extracted from the homological filters of our candidate braids. Our computational verification confirms that \textbf{none} of the candidate braid families across any of the analyzed strata yield this characteristic polynomial. 
 
-Because the required homological signature is entirely absent from the geometric state space of fixed-point-free 6-braids, this hypothetical hyperbolic duplicate cannot exist. The only knot with this knot Floer homology is the $(2,1)$-cable itself, concluding the proof of Theorem \ref{thm:cable_detection}.
+This polynomial strictly contradicts the requisite homological spectral constraint of $K$, which by the assumption of Theorem \ref{thm:main_detection} must be $\Delta_K(t) = (t^2-t+1)^2 = t^2 - 2t + 3 - 2t^{-1} + t^{-2}$. Consequently, knot Floer homology trivially distinguishes $T_{2,3}\# T_{2,3}$ from the $(2,1)$-cable of the trefoil, and the latter is eliminated as a candidate for $K$.
 
-
+A separate, parallel detection theorem for $C_{2,1}(T_{2,3})$ itself---asserting that knot Floer homology detects the cable---is established in Chapter \ref{chap:cable_detection}.

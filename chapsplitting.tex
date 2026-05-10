@@ -3,7 +3,7 @@
 
 For the purpose of classifying all pseudo-Anosov braids on $D_6$ in the strata $(3;1^6;3)$ and $(2;1^6;3^2)$ which lift to fixed-point-free pseudo-Anosov maps, we utilize the \texttt{autofolder} program to output all standard train track isomorphism classes for these strata. For each of these isomorphism classes, the program provides one standard train track representative; thus, for each of the two strata, we obtain a finite list of standard train tracks (encoded as \texttt{StandardTrainTrack} objects). By Proposition \ref{prop:every_pA_carried_by_standard_track}, every pseudo-Anosov 6-braid $\beta$ in each stratum is carried by one of these standard train tracks.
 
-We can further reduce the number of standard train tracks to consider by invoking a result of Farber, Reinoso, and Wang \sidecite{farber2024fixed}, which states that in most strata, every pseudo-Anosov map is conjugate to one carried by what they term ``jointless'' train tracks. A \emph{joint} on a standard train track is a switch located at a marked monogon with more than one adjacent real edge. To demonstrate this, they developed the notion of an operation called \emph{tight splitting} on standard train tracks. As mentioned previously, there is a more general operation of splitting, due to Penner and Harer \sidecite{penner1992combinatorics}, which can be viewed as the geometric inverse of folding. The tight splitting of Farber-Reinoso-Wang is a specific instance of splitting—precisely the inverse of the elementary folding defined in Chapter \ref{chap:folding_automata}.
+We can further reduce the number of standard train tracks to consider by invoking a result of Farber, Reinoso, and Wang \sidecite{farber2024fixed}, which states that in most strata, every pseudo-Anosov map is conjugate to one carried by what they term ``jointless'' train tracks. A \emph{joint} on a standard train track is a switch located at a marked monogon with more than one adjacent real edge. To demonstrate this, they developed the notion of an operation called \emph{tight splitting} on standard train tracks. As mentioned previously, there is a more general operation of splitting, due to Penner and Harer \sidecite{penner1992combinatorics}, which can be viewed as the geometric inverse of folding. The tight splitting of Farber-Reinoso-Wang is a specific instance of splitting---precisely the inverse of the elementary folding defined in Chapter \ref{chap:folding_automata}.
 
 Crucially, a tight splitting guarantees that the resultant train track carries the same train track map as the original (up to conjugation by a braid). Using tight splittings, Farber, Reinoso, and Wang show that all joints of a standard train track $\tau$ carrying a train track map $f$ can be removed via a finite sequence of tight splittings. This process produces a jointless train track $\tau'$ that still carries $f$, up to conjugation.
 
@@ -98,7 +98,7 @@ In the language of folding automata, a tight splitting implies that traversing a
 
 \begin{prop}
 \label{prop:transition_matrix_split}
-Suppose that $\tau$ \textit{l}-splits at $v$. Let $M$ and $M_{v}$ be the transition matrices of $f \colon \tau \to \tau$ and $f_{v}^{l} \colon \tau_{v}^{l} \to \tau_{v}^{l}$ respectively. Then the transition matrices satisfy the relation 
+Suppose that $\tau$ \textit{l}-splits at $v$. Let $M$ and $M_{v}$ be the transition matrices of $f \colon \tau \to \tau$ and $f_{v}^{l} \colon \tau_{v}^{l} \to \tau_{v}^{l}$ respectively. Then the transition matrices satisfy the relation
 \[
 MP = PM_v
 \]
@@ -120,11 +120,11 @@ Let $(\tau, \psi, f)$ be the data of a pseudo-Anosov map carried by a standardly
 Similarly, if $v$ \textit{r}-splits, then $\mu(r(v)) < \mu(l(v_r))$.
 \end{prop}
 
-The utility of Proposition \ref{prop:weight_inequality} becomes apparent when analyzing a tight splitting at a \emph{loop switch}—a switch situated at a marked monogon—where the operation yields a train track in the same isomorphism class.
+The utility of Proposition \ref{prop:weight_inequality} becomes apparent when analyzing a tight splitting at a \emph{loop switch}---a switch situated at a marked monogon---where the operation yields a train track in the same isomorphism class.
 
 \begin{corollary}
 \label{cor:weight_reduction}
-    Suppose a loop switch $v$ of a train track $\tau$ \textit{l}-splits, such that the resulting train track $\tau_v^l$ is isomorphic to $\tau$. Let $\iota \colon \tau_v^l \to \tau$ be the isomorphism (given by a braid). Then the weight of the branch corresponding to $r(v_l)$ strictly decreases. That is, if $\mu$ is the invariant measure on $\tau$ and $\mu_v$ is the measure on $\tau_v^l$, then:
+    Suppose a loop switch $v$ of a train track $\tau$ \textit{l}-splits, such that the resulting train track $\tau_v^l$ is isomorphic to $\tau$. Let $\varphi \colon \tau_v^l \to \tau$ be the isomorphism (given by a braid). Then the weight of the branch corresponding to $r(v_l)$ strictly decreases. That is, if $\mu$ is the invariant measure on $\tau$ and $\mu_v$ is the measure on $\tau_v^l$, then:
     \[
     \mu_v(r(v_l)_{new}) < \mu(r(v_l)_{old}).
     \]
@@ -136,9 +136,9 @@ The utility of Proposition \ref{prop:weight_inequality} becomes apparent when an
     \mu(r(v_l)_{old}) = \mu_v(r(v_l)_{new}) + \mu_v(\alpha).
     \]
     By Proposition \ref{prop:weight_inequality}, the eigenvector $\mu_v$ is well-defined and positive. Furthermore, the proposition establishes that for the splitting to be valid (tight), the weights must satisfy the strict inequality $\mu(l(v)) < \mu(r(v_l)_{old})$.
-    
+
     Since the splitting operation assigns the weight of the removed edge $l(v)$ to the new edge $\alpha$ (i.e., $\mu_v(\alpha) = \mu(l(v))$), and since $\mu$ is a positive eigenvector for a pseudo-Anosov map, we have $\mu_v(\alpha) > 0$.
-    
+
     Substituting this back into the additivity equation yields:
     \[
     \mu_v(r(v_l)_{new}) = \mu(r(v_l)_{old}) - \mu(l(v)).
@@ -147,7 +147,7 @@ The utility of Proposition \ref{prop:weight_inequality} becomes apparent when an
     \[
     \mu_v(r(v_l)_{new}) < \mu(r(v_l)_{old}).
     \]
-    Thus, under the isomorphism $\iota$ which maps the edge $r(v_l)_{new}$ back to $r(v_l)_{old}$, the weight associated with this edge orbit strictly decreases.
+    Thus, under the isomorphism $\varphi$ which maps the edge $r(v_l)_{new}$ back to $r(v_l)_{old}$, the weight associated with this edge orbit strictly decreases.
 \end{proof}
 
 \begin{corollary}
@@ -166,20 +166,20 @@ The utility of Proposition \ref{prop:weight_inequality} becomes apparent when an
     \tau = \tau_0 \to \tau_1 \to \tau_2 \to \dots
     \]
     where each transition is a tight split at a loop switch. Since tight splitting preserves the conjugacy class of the pseudo-Anosov map, the dilatation $\lambda$ remains constant throughout the sequence. Furthermore, the number of edges in a standard train track on $D_n$ is bounded (depending only on $n$).
-    
+
     By a result of Reinoso \cite[Lemma~6.3.3]{reinoso2024pseudo}, for a fixed size $N$ and spectral radius $\lambda$, there are only finitely many Perron-Frobenius matrices. Since the transition matrix $M_k$ of each track $\tau_k$ belongs to this finite set (up to permutation), the sequence of matrices must eventually cycle.
-    
-    Therefore, there exist indices $k < m$ such that $\tau_k \cong \tau_m$. This implies that the sequence enters a cycle of train track isomorphism classes. By identifying $\tau_m$ with $\tau_k$, we can view the subsequence $\tau_k \to \dots \to \tau_m$ as a sequence of splittings that returns to an isomorphic track. 
-    
-    However, by Corollary \ref{cor:weight_reduction}, each tight split at a loop switch strictly reduces the weight of the associated branch orbit. Over the course of the cycle from $\tau_k$ to $\tau_m$, the composition of these reductions implies that the weight vector $\mu_m$ is a strictly scaled-down version of $\mu_k$ (i.e., $\mu_m = \rho \mu_k$ with $\rho < 1$).
-    
-    Iterating this cycle infinitely would drive the invariant weights to zero, contradicting the existence of the unstable foliation. Thus, the sequence of tight splittings must terminate.
+
+    Therefore, there exist indices $k < m$ such that $\tau_k \cong \tau_m$. This implies that the sequence enters a cycle of train track isomorphism classes. By identifying $\tau_m$ with $\tau_k$, we can view the subsequence $\tau_k \to \dots \to \tau_m$ as a sequence of splittings that returns to an isomorphic track.
+
+    However, by Corollary \ref{cor:weight_reduction}, each tight split at a loop switch strictly reduces the weight of at least one branch orbit. Composing these reductions over the cycle from $\tau_k$ to $\tau_m$ yields an isomorphism $\tau_m \cong \tau_k$ under which the weight vector $\mu_m$ has at least one entry strictly smaller than the corresponding entry of $\mu_k$. Iterating this cycle, the affected weights would form a strictly decreasing sequence bounded below by zero, hence converging to zero. But the invariant measure of a pseudo-Anosov map is everywhere positive, contradicting the existence of the unstable foliation.
+
+    Thus, the sequence of tight splittings must terminate.
 \end{proof}
 
 \section{Switch Rigidity and Existence of Splits}
 \label{sec:switch-rigidity}
 
-The following proposition of Farber-Reinoso-Wang is instrumental in their proof that every train track map is carried by a jointless train track, essentially showing that any joint at a loop switch can be split. 
+The following proposition of Reinoso \cite[Corollary~6.2.9]{reinoso2024pseudo}, building on the broader work of Farber-Reinoso-Wang \sidecite{farber2024fixed}, is instrumental in their proof that every train track map is carried by a jointless train track, essentially showing that any joint at a loop switch can be split.
 
 \begin{prop}[Existence of Splittable Switches, {\cite[Corollary~6.2.9]{reinoso2024pseudo}}]
 \label{prop:reinoso_6.2.9_splittable}
@@ -197,11 +197,11 @@ For our purposes, the result provides a sufficient condition to guarantee a swit
     \label{fig:split_diagram_example}
 \end{figure}
 
-Figure \ref{fig:split_diagram_example} shows a sequence of splittings starting from the standard jointless train track labeled (1.). We implicitly assume that there is a train track map carried by this train track (1.). Consider the triangle, i.e., the $3$-gon, on the left of this train track. The maximal real valence of a switch at this infinitesimal $3$-gon is 2. Specifically, the switch $v$ is the unique switch of maximal real valence. 
+Figure \ref{fig:split_diagram_example} shows a sequence of splittings starting from the standard jointless train track labeled (1.). We implicitly assume that there is a train track map carried by this train track (1.). Consider the triangle, i.e., the $3$-gon, on the left of this train track. The maximal real valence of a switch at this infinitesimal $3$-gon is 2. Specifically, the switch $v$ is the unique switch of maximal real valence.
 
-By Proposition \ref{prop:reinoso_6.2.9_splittable}, $v$ must either $l$-split or $r$-split. If it $l$-splits, we traverse to the left-hand side of the diagram to a standard train track with a joint labeled $v$ again. Invoking Proposition \ref{prop:reinoso_6.2.9_splittable} once more, this train track either $l$-splits or $r$-splits. For the $r$-split case, we arrive at a train track labeled (12.). For the $l$-split case, we arrive at a train track at the bottom left of the diagram, which is isomorphic to the original train track (1.). 
+By Proposition \ref{prop:reinoso_6.2.9_splittable}, $v$ must either $l$-split or $r$-split. If it $l$-splits, we traverse to the left-hand side of the diagram to a standard train track with a joint labeled $v$ again. Invoking Proposition \ref{prop:reinoso_6.2.9_splittable} once more, this train track either $l$-splits or $r$-splits. For the $r$-split case, we arrive at a train track labeled (12.). For the $l$-split case, we arrive at a train track at the bottom left of the diagram, which is isomorphic to the original train track (1.).
 
-Going back to the initial splitting of (1.), the $r$-split scenario yields a train track which $l$-splits to itself, and $r$-splits to the train track (0.). 
+Going back to the initial splitting of (1.), the $r$-split scenario yields a train track which $l$-splits to itself, and $r$-splits to the train track (0.).
 
 In this diagram, at each bifurcation, Proposition \ref{prop:reinoso_6.2.9_splittable} guarantees that at least one of an $l$-split or an $r$-split occurs, but not necessarily both. On the other hand, Corollary \ref{cor:termination} disallows infinite repeating sequences of splittings of a train track back to itself (or a train track isomorphic to itself); in other words, any sequence of tight splittings on the diagram must eventually result in train track (12.) or train track (0.). Otherwise, such a sequence would include infinite revisits of the same train track. Therefore, Figure \ref{fig:split_diagram_example} demonstrates that given any train track map $f$ carried by train track (1.), $f$ is also carried by train track (12.) or (0.), up to an action by a braid.
 
@@ -209,8 +209,8 @@ We call a diagram such as Figure \ref{fig:split_diagram_example} a \textbf{split
 
 \section{Conclusion}
 
-In this chapter, we addressed the massive proliferation of redundant states inherent in the unrestricted folding automaton. Because the \texttt{autofolder} algorithm exhaustively executes every valid elementary fold at every available cusp, it generates a state space that grows exponentially, populated by valid but topologically redundant standard train tracks—specifically those burdened by joints. By deploying the tight splitting operation to systematically identify and split loop switches of maximal real valence, we established a rigorous reduction procedure to mathematically prune this overgrown state space for our non-orientable strata.
+In this chapter, we addressed the massive proliferation of redundant states inherent in the unrestricted folding automaton. Because the \texttt{autofolder} algorithm exhaustively executes every valid elementary fold at every available cusp, it generates a state space that grows exponentially, populated by valid but topologically redundant standard train tracks---specifically those burdened by joints. By deploying the tight splitting operation to systematically identify and split loop switches of maximal real valence, we established a rigorous reduction procedure to mathematically prune this overgrown state space for our non-orientable strata.
 
-As guaranteed by the termination of tight splitting (Theorem \ref{thm:splitting_termination}), this reduction process is both finite and exhaustive. In the following chapter, we will execute this procedure, utilizing comprehensive splitting diagrams to systematically collapse the raw output of our \texttt{autofolder} algorithm. 
+As guaranteed by the termination of tight splitting (Theorem \ref{thm:splitting_termination}), this reduction process is both finite and exhaustive. In Chapter \ref{chap:stratatraintrackanalysis}, we will execute this procedure, utilizing comprehensive splitting diagrams to systematically collapse the raw output of our \texttt{autofolder} algorithm.
 
 Through this exhaustive reduction, we will demonstrate that any pseudo-Anosov mapping class belonging to the strata $(3;1^6;3)$ or $(2;1^6;3^2)$ on $D_6$ must, up to braid conjugation and mirroring, be carried by a small, manageable number of jointless standard train tracks. Once this finite collection is established, we will apply the Trace Lemma. By explicitly computing their transition matrices, we will algebraically restrict their possible dilatations, thereby eliminating the final candidates and completing the proof of our main detection theorem.

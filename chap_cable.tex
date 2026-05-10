@@ -1,0 +1,168 @@
+\chapter{Detection of the (2,1)-Cable of the Trefoil}
+\label{chap:cable_detection}
+
+In this chapter, we apply the machinery developed in Chapters \ref{chap:train tracks}--\ref{chap:satellite} to the detection problem for $C_{2,1}(T_{2,3})$, the $(2,1)$-cable of the right-handed trefoil. Our principal result is a partial detection theorem: we show that any knot $K \subset S^3$ with $\widehat{HFK}(K) \cong \widehat{HFK}(C_{2,1}(T_{2,3}))$ is either isotopic to $C_{2,1}(T_{2,3})$ or, if hyperbolic, must arise from one of an explicitly enumerated finite list of candidate braid families that survive both the homology-sphere filter and the Alexander polynomial filter.
+
+\section{Statement of the Result}\label{sec:cable_main_theorem}
+
+Let $C = C_{2,1}(T_{2,3})$ denote the $(2,1)$-cable of the right-handed trefoil knot $T_{2,3}$.  This is a genus-two fibered satellite knot in $S^3$ with Alexander polynomial
+\[
+\Delta_C(t) = t^2 - 1 + t^{-2},
+\]
+which after clearing denominators becomes the cyclotomic polynomial
+\[
+t^4 \cdot \Delta_C(t) = t^4 - t^2 + 1 = \Phi_{12}(t).
+\]
+
+The knot $C$ is an almost L-space knot in the sense of Baldwin and Sivek \cite{BaldwinSivek2022}.
+
+\begin{theorem}[Partial cable detection]\label{thm:cable_detection_partial}
+Let $K \subset S^3$ be a knot such that
+\[
+\widehat{HFK}(K; \mathbb{F}) \cong \widehat{HFK}(C_{2,1}(T_{2,3}); \mathbb{F})
+\]
+as bigraded vector spaces over $\mathbb{F} = \mathbb{Z}/2\mathbb{Z}$. Then one of the following holds:
+\begin{enumerate}
+    \item $K \cong C_{2,1}(T_{2,3})$, or
+    \item $K$ is hyperbolic, and the canonically associated 6-braid $\beta$ obtained from the Birman-Hilden correspondence belongs to one of the finitely many parametric families enumerated in Appendix \ref{app:cable_residual_families}.
+\end{enumerate}
+\end{theorem}
+
+The residual hyperbolic candidates of case (2) constitute the obstruction to a complete detection theorem. We discuss this gap and possible avenues for closing it in Section \ref{sec:cable_residual_discussion}.
+
+\begin{remark}
+Theorem \ref{thm:cable_detection_partial} should be contrasted with the complete detection result for $T_{2,3}\#T_{2,3}$ established in Theorem \ref{thm:main_detection}. The granny knot analysis succeeds because every candidate braid family with $|\det(I-A_{\text{red}})|=1$ either has the wrong characteristic polynomial outright or admits no non-negative integer parameter values yielding the granny target $(t^2-t+1)^2$. The cable target $\Phi_{12}(t) = t^4 - t^2 + 1$ is comparatively well-aligned with several of the parametric polynomials produced by the candidate braids on the disk, leaving a small but non-trivial residue of unresolved cases.
+\end{remark}
+
+\section{Initial Reductions and the Trichotomy}\label{sec:cable_trichotomy}
+
+Let $K$ satisfy the hypotheses of Theorem \ref{thm:cable_detection_partial}. The Euler characteristic computation gives $\Delta_K(t) = t^2 - 1 + t^{-2}$, so $K$ has genus exactly $2$. By the fiberedness criterion of Ni \sidecite{Ni07}, $K$ is fibered. Let
+\[
+h \colon \Sigma_2^1 \to \Sigma_2^1
+\]
+denote its monodromy.
+
+By Thurston's classification of knots, $K$ falls into one of three geometric categories. We treat each in turn.
+
+\subsection{The torus knot case}\label{subsec:cable_torus}
+
+If $h$ is periodic, then $K$ is a torus knot $T_{p,q}$.  Every torus knot is an L-space knot (or the mirror of one), implying that $\widehat{HFK}(K, a)$ has rank at most one in every Alexander grading $a \in \mathbb{Z}$.  However, the Alexander polynomial $\Delta_C(t) = t^2 - 1 + t^{-2}$ has constant term $-1$, and so the Euler characteristic computation forces $\dim_{\mathbb{F}} \widehat{HFK}(C, 0)$ to be at least $1$.  Together with the knowledge that $C$ is almost L-space and not L-space, the rank in some grading must exceed one (the precise grading is computed in \cite[Section 7]{petkova2013cables}). Since this same rank constraint must be inherited by $K$, the torus knot case is excluded.
+
+\subsection{The satellite knot case}\label{subsec:cable_satellite}
+
+Suppose $h$ is reducible, so that $K$ is a satellite knot.  We invoke the classification framework established in Chapter \ref{chap:satellite}: by Schubert's formula and the Hirasawa-Murasugi-Silver criterion \cite{HirasawaMurasugiSilver2008}, any genus-two fibered satellite knot has one of two structures, classified by the type of the canonical reducing system.
+
+\begin{lemma}\label{lem:cable_satellite_classification}
+If $K$ is a fibered genus-two satellite knot with Alexander polynomial $\Delta_K(t) = t^2 - 1 + t^{-2}$, then $K \cong C_{2,1}(T_{2,3})$.
+\end{lemma}
+
+\begin{proof}
+We follow the satellite analysis of Chapter \ref{chap:satellite}, applied with the cable target.  Schubert's formula gives
+\[
+\Delta_K(t) = \Delta_{P(U)}(t) \cdot \Delta_C(t^w),
+\]
+where $P$ is the pattern (with winding number $w$), $C$ is the companion, $P(U)$ is the satellite of the unknot by the same pattern, and the algebraic operations involve clearing denominators as needed. Both $C$ and $P(U)$ are fibered \cite[Corollary 4.15, Proposition 5.5]{BZ03}.  
+
+Since $\Delta_K(t) = t^2 - 1 + t^{-2}$ is irreducible as a symmetric Laurent polynomial over $\mathbb{Z}[t,t^{-1}]$, and since $\Delta_C(t^w)$ has degree $w \cdot g(C)$ which must be at least $1$, the only way to factor the polynomial as $\Delta_{P(U)} \cdot \Delta_C(t^w)$ is to have $\Delta_{P(U)} = 1$ (i.e.\ $P(U)$ is the unknot, so $P$ is a $(w,1)$-cable pattern) and $\Delta_C(t^w) = t^2 - 1 + t^{-2}$.
+
+If $w = 1$, then $\Delta_C(t) = t^2 - 1 + t^{-2}$ would force $C$ to have genus $2$ and Alexander polynomial $t^2-1+t^{-2}$.  But by induction on the satellite construction, this leads to an infinite regress unless $C$ itself is the trefoil, and a careful case analysis (see Lemma \ref{lem:satellite_CaseACaseB}) rules this out as inconsistent with the genus and fibredness constraints.
+
+If $w = 2$, then $\Delta_C(t^2) = t^2 - 1 + t^{-2}$, which gives $\Delta_C(t) = t - 1 + t^{-1}$.  This is precisely the Alexander polynomial of the trefoil knot, and indeed $C \cong T_{2,3}$ is the unique genus-1 fibered knot with this polynomial.
+
+Thus $K = P(C)$ where $P$ is the $(2,1)$-cable pattern and $C = T_{2,3}$, giving $K \cong C_{2,1}(T_{2,3})$ as required.
+\end{proof}
+
+\subsection{The hyperbolic knot case}\label{subsec:cable_hyperbolic}
+
+Suppose $h$ is pseudo-Anosov, so that $K$ is hyperbolic.  By Lemma \ref{lemma:original monodromy has one fixed point}, the canonically lifted braid $\beta \in \mathrm{Mod}(D_6)$ obtained via the Birman-Hilden correspondence has the property that its surface lift $\Phi$ on $\Sigma_2^2$ is fixed-point-free in the interior. The Euler-Poincar\'{e} stratum analysis from Chapter \ref{chap:preliminaries} then restricts $\beta$ to one of the five admissible strata
+\[
+(2; 1^4, 2^2; \emptyset),\quad (4; 1^6; \emptyset),\quad (2; 1^6; 4),\quad (3; 1^6; 3),\quad (2; 1^6; 3^2).
+\]
+
+The orientability obstruction of Chapter \ref{chap:stratoriented} eliminates the three orientable strata for any target Alexander polynomial without real roots, and $\Delta_C(t) = t^2 - 1 + t^{-2}$ has roots $\zeta_{12}^{\pm 1}, \zeta_{12}^{\pm 5}$ (primitive twelfth roots of unity), none of which are real.  Thus the orientable strata are excluded for the cable target as they were for the granny target.
+
+The non-orientable strata $(3; 1^6; 3)$ and $(2; 1^6; 3^2)$ require the non-trivial train-track analysis of Chapter \ref{chap:stratatraintrackanalysis}.  The same \texttt{autofolder} enumeration, tight-splitting reduction, Trace Lemma, and Absorption Obstruction all apply unchanged in the cable setting, since these geometric and combinatorial constraints depend only on the assumption that the canonical lift is fixed-point-free, which holds for the cable case for the same reason as for the granny case.
+
+Therefore the same finite list of $83$ candidate braid families (across the Candelabra and the five surviving two-triangle tracks) constitutes the residual list of topological candidates for the cable monodromy.
+
+\section{Homological Filtering for the Cable Target}\label{sec:cable_filtering}
+
+We now apply the homological filters of Section \ref{sec:homological_filtering}, retargeted to the cable's Alexander polynomial.
+
+\begin{lemma}\label{lem:cable_polynomial_target}
+The reduced homological action $A_{\text{red}}$ associated with the cable monodromy of $K$ satisfies
+\[
+\det(tI - A_{\text{red}}) = t^4 - t^2 + 1 = \Phi_{12}(t).
+\]
+\end{lemma}
+
+\begin{proof}
+Lemma \ref{lem:capping_invariance} relates $\det(tI - A)$ on the bordered surface $\Sigma_2^2$ to the closed-surface action via $\det(tI - A) = (t-1)^2 \det(tI - A_{\text{red}})$.  Since the standard Alexander polynomial of the closed monodromy on $\Sigma_2$ equals the (cleared-denominator) Alexander polynomial $t^4\Delta_C(t) = t^4 - t^2 + 1$ of $K$, the result follows.
+\end{proof}
+
+The zero-surgery Filter 1, requiring $|\det(I-A_{\text{red}})| = 1$, is unchanged. The Alexander polynomial Filter 2 now requires
+\[
+\det(tI-A_{\text{red}}) \,=\, t^4 - t^2 + 1.
+\]
+
+\begin{prop}\label{prop:cable_filter_outcome}
+Let $\beta$ be a candidate 6-braid from one of the $83$ families enumerated in Propositions \ref{prop:candelabra_34_braids} and \ref{prop:two_triangle_braids}.  Let $A_{\text{red}}(\beta)$ denote its reduced homological action.  Then $\beta$ satisfies both
+\[
+|\det(I - A_{\text{red}}(\beta))| = 1
+\quad \text{and} \quad
+\det(tI - A_{\text{red}}(\beta)) = t^4 - t^2 + 1
+\]
+at non-negative integer values of the family's parameters $k, m, j \ge 0$ if and only if $\beta$ belongs to one of the following families and parameter values:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Track & Family & Surviving non-negative parameter values \\
+\midrule
+Candelabra & 16 Kieve & $(j,k,m) = (0,3,4),\ (0,7,0),\ (1,2,0)$ \\
+Track 0 & 7 Briefing & infinite family of $(j,k,m)$ pairs \\
+Track 0 & 8 Briefing & $(k,m) = (1,2),\ (2,1)$ \\
+Track 0 & 10 Quail & infinite family of $(j,k,m)$ pairs \\
+Track 0 & 13 Treasure & $(k,m) = (2,1)$ \\
+Track 8 & 9 FAT & $k = 2$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+All other $77$ candidate families are excluded by either Filter 1 or Filter 2 at every non-negative integer parameter value.
+\end{prop}
+
+\begin{proof}
+The reduced action $A_{\text{red}}(\beta)$ is computed via the same matrices $M_1, \dots, M_5$ defined in Section \ref{sec:homological_filtering}, applied to the candidate braid words of Appendices \ref{app:candidate_braids_candelabra}--\ref{app:candidate_braids_track_17}.  We then evaluate the determinant $|\det(I-A_{\text{red}})|$ and the characteristic polynomial $\det(tI-A_{\text{red}})$ as functions of the family's parameters and check whether non-negative integer values exist for which both filters return their target values.
+
+The complete computation, performed via the implementation of the homological filter described in Section \ref{sec:homological_filtering}, reproduces the determinant and polynomial expressions tabulated for the granny case (since these depend only on $\beta$ and not on the chosen target polynomial).  Cross-checking the polynomial against the cable target $t^4 - t^2 + 1$ then identifies the residual list above; the verdict for each individual family is recorded in Appendix \ref{app:cable_residual_families}.
+\end{proof}
+
+\section{Discussion of the Residual Hyperbolic Candidates}\label{sec:cable_residual_discussion}
+
+The six families isolated in Proposition \ref{prop:cable_filter_outcome} represent the gap between Theorem \ref{thm:cable_detection_partial} and a complete detection result.  Closing this gap requires invoking obstructions beyond the simple polynomial equality at the level of the reduced homological action.
+
+We outline three avenues by which the residual list may be eliminated:
+
+\paragraph{(A) The integer module structure on $A_{\text{red}}$.}
+For a matrix with characteristic polynomial $\Phi_{12}(t)$, which is irreducible over $\mathbb{Z}$, the action of $A_{\text{red}}$ on $\mathbb{Z}^4$ realizes $\mathbb{Z}^4$ as a $\mathbb{Z}[\zeta_{12}]$-module of rank $1$.  Since $\mathbb{Z}[\zeta_{12}]$ is a principal ideal domain, all such modules are isomorphic, and so any obstruction at this level must come from refinements of $A_{\text{red}}$ that capture the symplectic structure or the intersection pairing on $H_1(\Sigma_2)$ — for example, by checking $\mathbb{Z}$-conjugacy in $\mathrm{Sp}(4, \mathbb{Z})$ rather than in $\mathrm{GL}(4, \mathbb{Z})$.
+
+\paragraph{(B) Pseudo-Anosov degeneration at boundary parameter values.}
+The candidate train track maps in the residual families are parametrized by integer twists. At certain parameter values—particularly $k = 0$ or $m = 0$—the corresponding braid may degenerate into a non-pseudo-Anosov mapping class (periodic or reducible), in which case the topological enumeration assumption is violated.  A direct check of the dilatation (Perron-Frobenius eigenvalue of the train track transition matrix) at each surviving parameter value would either confirm the braid is pseudo-Anosov or exclude that parameter from consideration.
+
+\paragraph{(C) Bigraded refinement of the homological filter.}
+The polynomial filter compares only the Alexander polynomial, which records the bigraded Euler characteristic of $\widehat{HFK}$. The full bigraded vector space carries strictly more information, encoded by the Maslov-grading distribution of the homology classes. For each residual family, computing the lifted symplectic action $\Phi$ on $H_*(\Sigma_2^2)$ together with its boundary action provides a finer invariant whose match with the cable's bigraded structure may rule out additional candidates.
+
+A complete cable detection theorem along these lines is the subject of ongoing work and is not included in this dissertation.
+
+\section{Implications for Almost L-Space Knots}\label{sec:cable_implications}
+
+While Theorem \ref{thm:cable_detection_partial} is partial, it does suffice to establish the following corollary, which contributes to the rigidity theory of almost L-space knots.
+
+\begin{corollary}\label{cor:cable_nonhyperbolic_detection}
+Knot Floer homology detects $C_{2,1}(T_{2,3})$ among non-hyperbolic knots.  More precisely, any non-hyperbolic knot $K \subset S^3$ with $\widehat{HFK}(K) \cong \widehat{HFK}(C_{2,1}(T_{2,3}))$ as bigraded vector spaces is isotopic to $C_{2,1}(T_{2,3})$.
+\end{corollary}
+
+\begin{proof}
+By Theorem \ref{thm:cable_detection_partial}, alternative (2) is excluded under the hypothesis that $K$ is non-hyperbolic, leaving alternative (1).
+\end{proof}
+
+In the language of Baldwin-Sivek, Corollary \ref{cor:cable_nonhyperbolic_detection} says that $C_{2,1}(T_{2,3})$ is rigidly identified by its $\widehat{HFK}$ within the class of torus and satellite genus-two fibered knots, complementing Theorem \ref{thm:main_detection}'s identification of $T_{2,3}\#T_{2,3}$ within the same class.

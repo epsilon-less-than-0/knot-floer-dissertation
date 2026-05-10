@@ -1,17 +1,104 @@
-\chapter*{Conclusion}
-\label{ch:conclusion}
-\addcontentsline{toc}{chapter}{\nameref{ch:conclusion}}
+\chapter{Conclusion and Future Directions}\label{chap:conclusion}
 
-We have started this thesis with an introduction to Morse functions.
-While simple, they provide great insight in the structure of differential manifolds, as we have seen.
-Morse functions give rise to handlebody decompositions, the Morse complex and eventually Morse homology.
-We have shown that Morse homology does not depend on the Morse function nor on the pseudo-gradient vector field and that it is in fact isomorphic to singular homology.
-Morse homology gives rise to the Morse inequalities, providing a lower bound for the number of critical points of a Morse function.
+We have established that knot Floer homology detects the granny knot $T_{2,3}\# T_{2,3}$ as a bigraded vector space over $\mathbb{F} = \mathbb{Z}/2\mathbb{Z}$, providing the first detection result for a composite knot. Along the way, we developed the \texttt{autofolder} algorithm — a complete, algorithmic realization of the folding-automaton framework theorized by Ko, Los, and Song — and a partial detection result for the $(2,1)$-cable of the trefoil. In this concluding chapter, we summarize the principal results, discuss their broader implications, and identify directions for future research.
 
-In the last part of the thesis, we have witnessed the power of ideas of Morse.
-We have proven multiple cancellation theorems eventually leading to the proof of the minimality of the Morse inequalities, which was originally due to Smale.
-This in turn has the $h$-cobordism and the generalized higher dimensional Poincaré conjecture as an immediate corollary, forming the pinnacle of this~thesis.
+\section{Summary of Results}
 
-As of today, Morse theory remains an important subject in differential geometry.
-For example, handlebody decompositions and Heegaard splittings are used extensively for studying $3$- and $4$-manifolds.
-Moreover, the ideas of Morse homology have been extended to infinite dimensions by Andreas Floer, resulting in proofs of various versions of the Arnold conjecture.
+The principal results of this dissertation are the following.
+
+\begin{theorem}[Theorem \ref{thm:main_detection}]
+Let $K \subset S^3$ be a knot. If $\widehat{HFK}(K; \mathbb{F}) \cong \widehat{HFK}(T_{2,3}\#T_{2,3}; \mathbb{F})$ as bigraded vector spaces, then $K$ is isotopic to $T_{2,3}\# T_{2,3}$.
+\end{theorem}
+
+\begin{theorem}[Theorem \ref{thm:autofolder_main}]
+The \texttt{autofolder} algorithm provides a complete, finite classification of all standard train tracks and their valid elementary folds for any specified stratum of pseudo-Anosov braids on the $n$-punctured disk.
+\end{theorem}
+
+\begin{theorem}[Theorem \ref{thm:cable_detection_partial}]
+Knot Floer homology detects $C_{2,1}(T_{2,3})$ among non-hyperbolic knots: any non-hyperbolic knot $K \subset S^3$ with $\widehat{HFK}(K) \cong \widehat{HFK}(C_{2,1}(T_{2,3}))$ as bigraded vector spaces is isotopic to $C_{2,1}(T_{2,3})$.  In the hyperbolic case, $K$ corresponds to one of finitely many parametric families of candidate 6-braids enumerated in Appendix \ref{app:cable_residual_families}.
+\end{theorem}
+
+\begin{corollary}[Corollary \ref{cor:chirality}]
+Knot Floer homology distinguishes the homochiral connect-sum of trefoils ($T_{2,3}\#T_{2,3}$) from the heterochiral connect-sum ($T_{2,3}\#\overline{T}_{2,3}$) and from the mirror granny knot ($\overline{T}_{2,3}\#\overline{T}_{2,3}$).
+\end{corollary}
+
+The proof strategy throughout combines three threads. First, the genus and fiberedness detection results of Ozsv\'{a}th-Szab\'{o}, Ni, and Juh\'{a}sz translate the topological classification problem into a problem about surface monodromies. Second, the Birman-Hilden correspondence descends the genus-two monodromy to a 6-braid on the disk, where train track methods become applicable. Third, the explicit machinery developed in this dissertation — the \texttt{autofolder}, tight splitting, the Trace Lemma, the Absorption Obstruction, and the homological filtering pipeline — exhaustively eliminates candidate mapping classes within each topological stratum.
+
+The verification of the chirality corollary (Section \ref{sec:chirality}) shows that the detection result is sharp: it is the bigraded structure of $\widehat{HFK}$, and not merely the total rank or the Alexander polynomial, that distinguishes the granny knot from its mirror and from the square knot.
+
+\section{Direct Consequences}
+
+\subsection{Almost L-space rigidity}
+
+The granny knot is the unique composite almost L-space knot, by a theorem of Baldwin and Sivek \cite{BaldwinSivek2022}. Combined with our Theorem \ref{thm:main_detection}, this establishes:
+
+\begin{corollary}
+Knot Floer homology detects the unique composite almost L-space knot.
+\end{corollary}
+
+For the cable, our partial result already establishes detection within the non-hyperbolic class of almost L-space knots:
+
+\begin{corollary}
+Among non-hyperbolic genus-two fibered knots, the cable $C_{2,1}(T_{2,3})$ is uniquely identified by its bigraded knot Floer homology.
+\end{corollary}
+
+These results contribute to the program of using $\widehat{HFK}$ as a fingerprint for distinguished knot classes, complementing the L-space knot detection results of Baldwin-Hu-Sivek for $T(2,5)$ \sidecite{baldwin2025khovanov} and Reinoso \sidecite{Reinoso2023} for the broader family of L-space knots of genus two.
+
+\subsection{Cosmetic surgery conjecture}
+
+By a theorem of Hanselman \cite{Hanselman2023}, knot Floer homology detection of a knot $K$ implies that $K$ satisfies the cosmetic surgery conjecture: distinct Dehn surgeries on $K$ never produce orientation-preservingly homeomorphic 3-manifolds. From Theorem \ref{thm:main_detection} we obtain:
+
+\begin{corollary}
+The granny knot $T_{2,3} \# T_{2,3}$ satisfies the cosmetic surgery conjecture.
+\end{corollary}
+
+This verification is non-trivial. Standard hyperbolic obstructions to cosmetic surgery (most notably hyperbolic volume) do not apply to composite knots, whose complements contain essential tori. Theorem \ref{thm:main_detection} establishes that the filtered chain homotopy type of $\widehat{HFK}$ is sufficient to rule out such surgeries, in a setting where geometric methods are unavailable.
+
+\subsection{The autofolder as a stand-alone contribution}
+
+The \texttt{autofolder} algorithm, while developed here in service of Theorem \ref{thm:main_detection}, is independently useful. Los \sidecite{LosInfiniteSequence} explicitly called for an algorithmic realization of the folding-automaton machinery to make the state space of pseudo-Anosov mapping classes tractable; the \texttt{autofolder} provides this. Beyond the specific strata analyzed in Chapters \ref{chap:stratoriented} and \ref{chap:stratatraintrackanalysis}, the algorithm operates on arbitrary strata of the marked disk and outputs the complete folding automaton.
+
+We anticipate that the algorithm will be a useful tool for future detection problems on genus-two and higher fibered knots, for the explicit construction of pseudo-Anosov braids of small dilatation, and for the experimental investigation of singularity strata that have not yet been analyzed by hand.
+
+\section{Future Directions}
+
+\subsection{Closing the cable detection gap}
+
+The most immediate open problem left by this dissertation is closing the gap in Theorem \ref{thm:cable_detection_partial}: eliminating the residual finite list of candidate braid families that pass both the homology-sphere filter and the Alexander polynomial filter at non-negative integer parameter values. Three avenues are discussed in Section \ref{sec:cable_residual_discussion}:
+
+\begin{itemize}
+    \item Refining the homological filter from the characteristic polynomial of $A_{\text{red}}$ to the full $\mathbb{Z}$-conjugacy class within $\mathrm{Sp}(4, \mathbb{Z})$, capturing the symplectic structure;
+    \item Verifying pseudo-Anosov-ness of each candidate braid at the surviving parameter values, since some parameter values may correspond to reducible or periodic mapping classes outside the scope of the topological enumeration;
+    \item Comparing the bigraded structure of $\widehat{HFK}$ rather than just the Alexander polynomial, which captures Maslov-grading information beyond what the Euler characteristic detects.
+\end{itemize}
+
+A definitive resolution of any of these would yield a complete cable detection theorem.
+
+\subsection{Detection beyond genus two}
+
+The strategy of this dissertation — Ni-Juh\'{a}sz reduction to surface monodromy, Birman-Hilden descent to a braid on the disk, and exhaustive train-track elimination of candidate mapping classes — extends in principle to higher-genus fibered knots. The principal obstruction is the rapid growth in complexity of the train track state space: even for genus three, the Euler-Poincar\'{e} stratum analysis admits substantially more strata, and the autofolder's output graphs grow correspondingly.
+
+A natural target for genus-three detection is $T_{2,7}$ — the genus-three torus knot — or $T_{2,3}\#T_{2,5}$, the unique composite genus-three fibered knot of the form $T_{2,p} \# T_{2,q}$. Both are almost L-space knots (or in the case of $T_{2,7}$, an L-space knot), and both should be amenable to the framework developed here, modulo computational scaling.
+
+\subsection{Prime detection for satellite operators}
+
+A natural generalization of the cable detection result is the question: for which satellite patterns $P$ is $P(T_{2,3})$ detected by $\widehat{HFK}$? The framework of Schubert's formula combined with the \texttt{autofolder} should apply to a wide range of cabling, doubling, and Mazur-type patterns. We expect that the same machinery, with the homological filter retargeted appropriately, will yield detection results (or partial-detection results in the spirit of Theorem \ref{thm:cable_detection_partial}) for many of the standard pattern families.
+
+\subsection{Khovanov-homology analogues}
+
+The detection of the granny knot by knot Floer homology raises the natural question of whether Khovanov homology — which is known to detect the unknot, the trefoils, the cinquefoil, and the figure-eight — also detects $T_{2,3}\#T_{2,3}$. The proof strategy used here is specific to Heegaard Floer techniques (in particular, the Ghiggini-Ni-Juh\'{a}sz fixed-point dictionary), but parallel detection results in the Khovanov setting have been established for $T(2,5)$ \sidecite{baldwin2025khovanov}, suggesting that a Khovanov-side analog of Theorem \ref{thm:main_detection} may be accessible by combining the topological reductions of this dissertation with the instanton-Floer techniques of Baldwin-Hu-Sivek.
+
+\subsection{Generalizing the autofolder}
+
+The \texttt{autofolder} as currently implemented enumerates standard train tracks on the marked disk. Two natural extensions are:
+
+\begin{itemize}
+    \item \textbf{Closed surfaces of higher genus.}  Train track theory on closed surfaces (rather than on the disk) is well-developed, but the algorithmic enumeration is more delicate due to the absence of a canonical embedding.  An autofolder operating directly on $\Sigma_g$ would bypass the Birman-Hilden descent step and could enable detection results for fibered knots in 3-manifolds other than $S^3$.
+    \item \textbf{Joint enumeration with monodromy data.} The current \texttt{autofolder} outputs the vertex set of the folding automaton; the edge set, encoding standardizing braids and transition matrices, is computed by the package but not utilized in our obstruction. Future work may exploit this edge data to compute the dilatations, finer invariants, and even spectral statistics of the candidate pseudo-Anosov mapping classes within each stratum.
+\end{itemize}
+
+\section{Closing Remarks}
+
+The detection of the granny knot by knot Floer homology demonstrates that the bigraded structure of $\widehat{HFK}$ is sufficiently rich to identify a knot uniquely even in the presence of essential tori in its complement, where geometric obstructions of the hyperbolic kind are unavailable. The combination of monodromy descent via Birman-Hilden, train-track classification via the \texttt{autofolder}, and homological filtering via the characteristic polynomial of the lifted action provides a template for future detection results in low-dimensional topology.
+
+We hope that the methods developed in this dissertation — particularly the algorithmic infrastructure for navigating the geometry of mapping class groups — will serve as a springboard for further work on the rigidity of knot invariants and the classification of pseudo-Anosov mapping classes.

@@ -1,31 +1,49 @@
-\chapter{Preliminaries}\label{Preliminaries}
+\chapter{Preliminaries}\label{chap:preliminaries} 
 
-In this chapter, we establish the foundational topological and geometric machinery required to prove our main detection result, Theorem \ref{thm:main_detection}. 
+In this chapter, we establish the foundational topological and geometric machinery required to prove our main detection result, Theorem \ref{thm:main_detection}.
 
 To achieve this, we must translate a problem in three-dimensional topology into one of surface dynamics. Because the knot $T_{2,3} \# T_{2,3}$ is fibered, any knot sharing its knot Floer homological profile must also be fibered. This shifts the focus of our proof from the geometry of the knot to the mapping class group of its fiber surface. Consequently, our argument relies on weaving together the algebraic constraints of Heegaard Floer homology with the dynamical rigidity of surface homeomorphisms.
 
-We structure this background material as follows. In Section \ref{sec:fibered-hfk}, we review the basics of fibered knots and knot Floer homology, highlighting the pivotal theorems of Ozsv\'{a}th--Szab\'{o} and Ni which demonstrate that $\widehat{HFK}$ detects the Seifert genus and fiberedness of a knot. We then introduce the Nielsen-Thurston classification of surface mapping classes and its three-dimensional analogue, Thurston's geometric classification of knots. 
+We structure this background material as follows. In Section \ref{sec:notation}, we fix the notational conventions used throughout the dissertation. In Section \ref{sec:fibered-hfk}, we review the basics of fibered knots and knot Floer homology, highlighting the pivotal theorems of Ozsv\'{a}th--Szab\'{o} and Ni which demonstrate that $\widehat{HFK}$ detects the Seifert genus and fiberedness of a knot. We then introduce the Nielsen-Thurston classification of surface mapping classes and its three-dimensional analogue, Thurston's geometric classification of knots.
 
 In Section \ref{sec:pA}, we delve into the geometry of pseudo-Anosov mapping classes, which correspond precisely to hyperbolic knots. We detail their invariant singular foliations and characterize their twisting behavior near the boundary via the fractional Dehn twist coefficient. In Section \ref{section:fibered hyperblic}, we restrict our focus to hyperbolic fibered knots sharing the knot Floer homological profile of $T_{2,3} \# T_{2,3}$, utilizing recent work in Heegaard Floer homology and contact geometry to severely bound the fixed points and boundary prongs of their monodromies.
 
 Finally, in Section \ref{section:Birman-Hilden}, we invoke the Birman-Hilden correspondence. This machinery allows us to project highly constrained, symmetric monodromies on the genus-two surface down to the punctured sphere and disk. This descent directly sets the stage for the combinatorial enumeration of pseudo-Anosov strata, which we carry out at the conclusion of the chapter.
 
+\section{Notation and Conventions}\label{sec:notation}
+
+Throughout this dissertation we adopt the following conventions; later chapters refer back to this section.
+
+\paragraph{Surfaces.} We denote by $\Sigma_g^b$ the compact, oriented surface of genus $g$ with $b \ge 0$ boundary components and no marked points. When marked points are present, we write $\Sigma_{g,n}^b$ for the surface of genus $g$ with $b$ boundary components and $n$ marked points in its interior. When $b=0$, the marked-point notation reduces to $\Sigma_{g,n}$. The $n$-marked closed disk is denoted $D_n$, and we identify $D_n$ throughout with the closed unit disk in $\mathbb{C}$ together with $n$ designated marked points. The $n$-marked sphere is denoted $S^2_{0,n}$, or simply $S^2_n$ when no confusion arises.
+
+\paragraph{Mapping classes.} The mapping class group of a surface $\Sigma$ is denoted $\mathrm{Mod}(\Sigma)$, and consists of isotopy classes of orientation-preserving homeomorphisms fixing $\partial \Sigma$ pointwise and preserving the set of marked points. The mapping class of a homeomorphism $f$ is denoted $[f]$. We use letters such as $h$, $\hat h$, $b$, $\beta$, $\Phi$ for mapping classes, and the corresponding $\phi$-decorated symbols ($\phi_h$, $\hat{\phi}_h$, $\phi_b$, $\phi_\beta$, $\phi_\Phi$) for chosen geometric (typically pseudo-Anosov) representatives.
+
+\paragraph{The hyperelliptic involution.} The hyperelliptic involution of $\Sigma_2^0$ is denoted $\iota$ throughout this dissertation. We reserve the symbol $\tau$ for train tracks (Chapters \ref{chap:folding_automata}--\ref{chap:stratatraintrackanalysis}); these two notational roles are kept strictly disjoint.
+
+\paragraph{Field of coefficients.} Unless explicitly stated otherwise, all knot Floer homology groups in this dissertation are taken with coefficients in the field $\mathbb{F} := \mathbb{Z}/2\mathbb{Z}$. The detection results of Ghiggini \sidecite{Ghi08}, Ni \sidecite{Ni07}, and Juh\'{a}sz \sidecite{Juh08} were originally established over $\mathbb{Q}$ but extend to $\mathbb{F}$; see the discussion in \cite[\S 2]{baldwin2025khovanov} for the relevant coefficient-ring considerations.
+
+\paragraph{The Birman-Hilden correspondence data.} A central object in this dissertation is the ordered tuple
+\[
+(h, \phi_h, \hat{h}, \hat{\phi}_h, b, \phi_b, \beta, \phi_\beta, \Phi, \phi_\Phi),
+\]
+which we shall refer to as the \emph{Birman-Hilden correspondence data} associated to a hyperbolic fibered knot $K$ satisfying $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3}\# T_{2,3})$. The construction and properties of this tuple are developed in detail in Section \ref{section:Birman-Hilden}.
+
 \section{Fibered Knots and Knot Floer Homology}
 \label{sec:fibered-hfk}
 
-Let $K \subset S^3$ be a knot and let $N(K)$ denote its open tubular neighborhood. We say that $K$ is \textbf{fibered} if the knot exterior $E(K) = S^3 \setminus N(K)$ admits the structure of a fiber bundle over the circle $S^1$. More precisely, there exists a smooth submersion 
+Let $K \subset S^3$ be a knot and let $N(K)$ denote its open tubular neighborhood. We say that $K$ is \textbf{fibered} if the knot exterior $E(K) = S^3 \setminus N(K)$ admits the structure of a fiber bundle over the circle $S^1$. More precisely, there exists a smooth submersion
 \[
 \pi: E(K) \to S^1
 \]
-such that for every $\theta \in S^1$, the preimage 
+such that for every $\theta \in S^1$, the preimage
 \[
 \Sigma_\theta = \pi^{-1}(\theta)
 \]
-is a compact, orientable surface with boundary $\partial \Sigma_\theta = K$. The fiber $\Sigma_\theta \cong \Sigma_g^1$ (where $g$ is the Seifert genus of $K$) is a minimal genus Seifert surface for $K$, and the fibration is entirely determined by the monodromy diffeomorphism 
+is a compact, orientable surface with boundary $\partial \Sigma_\theta = K$. The fiber $\Sigma_\theta \cong \Sigma_g^1$ (where $g$ is the Seifert genus of $K$) is a minimal genus Seifert surface for $K$, and the fibration is entirely determined by the monodromy diffeomorphism
 \[
 h: \Sigma_g^1 \to \Sigma_g^1,
 \]
-which is defined up to isotopy fixing the boundary pointwise. 
+which is defined up to isotopy fixing the boundary pointwise.
 
 The knot exterior is thus homeomorphic to the mapping torus
 \[
@@ -65,9 +83,7 @@ As a consequence of Theorem \ref{theorem:ni-fibered}, if a hypothetical knot $K$
 \[
 \widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})
 \]
-as bigraded vector spaces, then it is immediate that $K$ is a fibered knot of genus two. The bulk of the work required to prove Theorem \ref{thm:main_detection} involves the rigorous study of the monodromy $h \colon \Sigma_2^1 \to \Sigma_2^1$ of such a fibered knot. 
-
-Let $\Sigma_{g,n}^b$ denote a compact, oriented surface of genus $g$, with $b\geq 0$ boundary components, and a set $\mathcal{P}$ of $n\geq 0$ marked points in its interior. When the specific topological data of the surface is either arbitrary or clear from context, we will suppress the sub- and superscripts and simply write $\Sigma$. The \textbf{mapping class group}, denoted $\mathrm{Mod}(\Sigma)$, is defined as the group of isotopy classes of orientation-preserving homeomorphisms of $\Sigma$ that restrict to the identity on $\partial \Sigma$ and preserve the set $\mathcal{P}$. We denote the mapping class of a homeomorphism $f$ by $[f]$.
+as bigraded vector spaces, then it is immediate that $K$ is a fibered knot of genus two. The bulk of the work required to prove Theorem \ref{thm:main_detection} involves the rigorous study of the monodromy $h \colon \Sigma_2^1 \to \Sigma_2^1$ of such a fibered knot.
 
 A simple closed curve on $\Sigma_{g,n}^b$ is \textbf{essential} if it does not bound a disk, a once-punctured disk, or an annulus cobounding a boundary component of $\Sigma_{g,n}^b$. A \textbf{multicurve} is a finite collection of disjoint, pairwise non-isotopic, essential simple closed curves.
 
@@ -92,7 +108,7 @@ Let $\Sigma$ be a compact, orientable surface with negative Euler characteristic
 \end{itemize}
 \end{theorem}
 
-We will refer to the mapping class $[h]$ as periodic, reducible, or pseudo-Anosov according to the geometric type of its representative. More details on pseudo-Anosov maps will be provided in Section \ref{sec:pA}. 
+We will refer to the mapping class $[h]$ as periodic, reducible, or pseudo-Anosov according to the geometric type of its representative. More details on pseudo-Anosov maps will be provided in Section \ref{sec:pA}.
 
 \subsection*{Thurston's Trichotomy for Knots}
 The \emph{Thurston classification of knots} is the three-dimensional geometric realization of the Nielsen-Thurston classification of surface mapping classes. For a fibered knot $K \subset S^3$ with fiber $\Sigma_g^1$ and monodromy $h$, the knot exterior $E(K)$ is homeomorphic to the mapping torus $M_h$.
@@ -103,11 +119,11 @@ The dynamical properties of the mapping class $[h]$ directly dictate the three-d
     Every knot $K \subset S^3$ is exactly one of the following: a torus knot, a satellite knot, or a hyperbolic knot.
 \end{theorem}
 
-For fibered knots, this three-dimensinoal geometric trichotomy is in bijective correspondence with the two-dimensional dynamical trichotomy of the monodromy:
+For fibered knots, this three-dimensional geometric trichotomy is in bijective correspondence with the two-dimensional dynamical trichotomy of the monodromy:
 \begin{itemize}
     \item \textbf{Torus Knots (Periodic):} If $[h]$ is periodic, the mapping torus $M_h$ admits a Seifert fibered structure. In $S^3$, the only fibered knots with Seifert fibered complements are the torus knots $T_{p,q}$, which can be embedded on the surface of an unknotted torus.
     \item \textbf{Satellite Knots (Reducible):} If $[h]$ is reducible, the invariant multicurve $\Gamma \subset \Sigma_g^1$ sweeps out a finite union of incompressible, non-boundary-parallel tori $\Gamma \times S^1$ in the mapping torus $M_h$. The existence of such an essential torus in $E(K)$ is the exact definition of a satellite knot. We provide more details in Chapter \ref{chap:satellite}.
-    \item \textbf{Hyperbolic Knots (Pseudo-Anosov):} If $[h]$ is pseudo-Anosov, the invariant measured foliations on $\Sigma_g^1$ can be suspended to construct a complete Riemannian metric of constant negative curvature on the interior of $M_h$. Thus, $S^3 \setminus K$ is a hyperbolic 3-manifold of finite volume. 
+    \item \textbf{Hyperbolic Knots (Pseudo-Anosov):} If $[h]$ is pseudo-Anosov, the invariant measured foliations on $\Sigma_g^1$ can be suspended to construct a complete Riemannian metric of constant negative curvature on the interior of $M_h$. Thus, $S^3 \setminus K$ is a hyperbolic 3-manifold of finite volume.
 \end{itemize}
 
 The proof strategy for Theorem \ref{thm:main_detection} relies entirely on this geometric bridge. We will systematically assume the hypothetical knot $K$ belongs to each of Thurston's three geometric categories: torus, satellite, and hyperbolic. We will then eliminate all distinct knot candidates in each category. We note immediately that the torus knot case is entirely trivial; the Alexander polynomials of torus knots are completely classified, and none can possibly coincide with the observed polynomial $\Delta_K(t) = (t - 1 + t^{-1})^2$. Thus, the topological obstruction rests entirely on eliminating the satellite and hyperbolic cases.
@@ -137,12 +153,12 @@ Following the convention of Farber, Reinoso, and Wang \sidecite{farber2024fixed}
 \[
 (b_1, \dots, b_r; \, m_1, \dots, m_n; \, k_1, \dots, k_s)
 \]
-where the $i$th boundary component of $\phi$ has $b_i$ prongs; the $i$th marked point has $m_i$ prongs; and the $i$th non-marked interior singularity has $k_i$ prongs. We use $\emptyset$ if there are no singularities of a certain type, and exponents to denote multiple singularities possessing the same number of prongs. 
+where the $i$th boundary component of $\phi$ has $b_i$ prongs; the $i$th marked point has $m_i$ prongs; and the $i$th non-marked interior singularity has $k_i$ prongs. We use $\emptyset$ if there are no singularities of a certain type, and exponents to denote multiple singularities possessing the same number of prongs.
 
 For example, the tuple $(2; 1^6; 3^2)$ indicates that the foliations have a 2-pronged singularity at the unique boundary component; six 1-pronged singularities at marked points; and two 3-pronged non-marked interior singularities. If the surface has an empty boundary, we suppress the $b_i$ entries entirely. For instance, the stratum $(1^6; 3^2)$ on the sphere $S^2$ indicates six 1-pronged singularities at marked points and two 3-pronged interior singularities.
 
 \subsection{Fractional Dehn Twist Coefficient}\label{subsection:FDTC}
-The \textbf{fractional Dehn twist coefficient}, denoted $c(h)$, is a rational number that quantifies the amount of twisting of the monodromy near the boundary $\partial \Sigma_g^1$. 
+The \textbf{fractional Dehn twist coefficient}, denoted $c(h)$, is a rational number that quantifies the amount of twisting of the monodromy near the boundary $\partial \Sigma_g^1$.
 
 \begin{definition}
 \label{def:fdtc}
@@ -168,15 +184,15 @@ where:
 Given a fibered knot $K$, we define $c(K) \coloneqq c(h)$ where $(\Sigma_g^1, h)$ is the open book associated to $K$. The conjugation invariance ensures this is a well-defined knot invariant.
 
 \section{Fibered Hyperbolic Knots}\label{section:fibered hyperblic}
-To prove our main result, we must rule out the existence of a distinct hyperbolic knot $K$ whose knot Floer homology coincides with $T_{2,3} \# T_{2,3}$. Let $K$ be a hyperbolic knot such that 
+To prove our main result, we must rule out the existence of a distinct hyperbolic knot $K$ whose knot Floer homology coincides with $T_{2,3} \# T_{2,3}$. Let $K$ be a hyperbolic knot such that
 \[
 \widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})
 \]
-as bi-graded vector spaces. By the discussion in Section \ref{sec:fibered-hfk}, $K$ is immediately known to be fibered and of genus two. Let 
+as bigraded vector spaces. By the discussion in Section \ref{sec:fibered-hfk}, $K$ is immediately known to be fibered and of genus two. Let
 \[
 h \colon \Sigma_2^1 \to \Sigma_2^1
 \]
-denote the monodromy of $K$. By Theorem \ref{theorem:Thurston hyperbolic iff pA}, $[h]$ is pseudo-Anosov. Let $\phi_h$ be its geometric representative. 
+denote the monodromy of $K$. By Theorem \ref{theorem:Thurston hyperbolic iff pA}, $[h]$ is pseudo-Anosov. Let $\phi_h$ be its geometric representative.
 
 \subsection*{Fixed Points}
 The work of Ghiggini-Spano, and independently of Ni, establishes that the next-to-top Alexander grading of $K$ severely bounds the number of fixed points of $\phi_h$:
@@ -184,14 +200,14 @@ The work of Ghiggini-Spano, and independently of Ni, establishes that the next-t
 \begin{theorem}[{\cite[Theorem 1.2]{ghiggini2022heegaard}}, \cite{Ni2022}]
     Let $Y$ be a closed, oriented 3-manifold, and $K \subset Y$ be a hyperbolic fibered knot with fiber $\Sigma$ and monodromy $h$. If
     \[
-    \dim_{\mathbb{F}} \widehat{HFK}(Y, K, [\Sigma], g(\Sigma) - 1)= r,
+    \dim_{\mathbb{F}} \widehat{HFK}(Y, K, [\Sigma], g(\Sigma) - 1) = r,
     \]
     then $h$ is freely isotopic to a pseudo-Anosov map $\phi_h$ with at most $r - 1$ fixed points.
 \end{theorem}
 
 In our case, the next-to-top Alexander grading is of rank two:
 \[
-    \dim_{\mathbb{F}} \widehat{HFK}(S^3, K, [\Sigma_2^1], 1)= \dim_{\mathbb{F}} \widehat{HFK}(S^3, T_{2,3} \# T_{2,3}, [\Sigma_2^1], 1) = 2. 
+    \dim_{\mathbb{F}} \widehat{HFK}(S^3, K, [\Sigma_2^1], 1)= \dim_{\mathbb{F}} \widehat{HFK}(S^3, T_{2,3} \# T_{2,3}, [\Sigma_2^1], 1) = 2.
 \]
 Hence $\phi_h$ has at most one fixed point. The work of Farber, Reinoso, and Wang \sidecite{farber2024fixed} eliminates the possibility that there are no fixed points:
 
@@ -209,14 +225,14 @@ The work of Baldwin-Hu-Sivek \sidecite{baldwin2025khovanov} demonstrates that wh
 \]
 on the closed genus-two surface $\Sigma_2^0$, obtained by capping $\partial \Sigma_2^1$ with a disk. The invariant foliations extend to stable and unstable foliations $\hat{\mathcal{F}}^s$ and $\hat{\mathcal{F}}^u$, where the $n$-prongs on $\partial \Sigma_2^1$ meet at a newly formed singularity $p$ in the capping disk. Note that $p$ is inherently a fixed point of $\hat{\phi}_h$.
 
-We now show that $\phi_h$ must have more than one prong on the boundary $\partial \Sigma_2^1$, allowing for such a capping off and extension of the folations. The following argument follows Baldwin-Hu-Sivek closely, but with more details:
+We now show that $\phi_h$ must have more than one prong on the boundary $\partial \Sigma_2^1$, allowing for such a capping off and extension of the foliations. The following argument follows Baldwin-Hu-Sivek closely, but with more details:
 
-\paragraph{Thinness and the $\tau$ invariant} The composite knot $T_{2,3} \# T_{2,3}$ is an alternating knot and is therefore \textbf{knot Floer thin}, as established by Ozsv\'{a}th and Szab\'{o} \sidecite{ozsvath2003heegaard}. Its homology is supported entirely on the diagonal $\delta = A - M = \sigma/2$. Since $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$, $K$ is also thin. For thin knots, the spectral sequence from $\widehat{HFK}$ to $\widehat{HF}(S^3)$ collapses immediately, meaning the $\tau$ invariant is determined entirely by the grading support. Since $\tau(T_{2,3} \# T_{2,3}) = 2$, we deduce that 
+\paragraph{Thinness and the $\tau$ invariant} The composite knot $T_{2,3} \# T_{2,3}$ is an alternating knot and is therefore \textbf{knot Floer thin}, as established by Ozsv\'{a}th and Szab\'{o} \sidecite{ozsvath2003heegaard}. Its homology is supported entirely on the diagonal $\delta = A - M = \sigma/2$. Since $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$, $K$ is also thin. For thin knots, the spectral sequence from $\widehat{HFK}$ to $\widehat{HF}(S^3)$ collapses immediately, meaning the $\tau$ invariant is determined entirely by the grading support. Since $\tau(T_{2,3} \# T_{2,3}) = 2$, we deduce that
 \[
 \tau(K) = g(K) = 2.
 \]
 
-\paragraph{Strong quasipositivity} By the work of Hedden \sidecite{Hedden2010}, a fibered knot $K$ satisfies $\tau(K) = g(K)$ if and only if $K$ is strongly quasipositive. In terms of contact topology, this implies the open book decomposition of $S^3$ with binding $K$ supports the standard tight contact structure $\xi_{std}$. 
+\paragraph{Strong quasipositivity} By the work of Hedden \sidecite{Hedden2010}, a fibered knot $K$ satisfies $\tau(K) = g(K)$ if and only if $K$ is strongly quasipositive. In terms of contact topology, this implies the open book decomposition of $S^3$ with binding $K$ supports the standard tight contact structure $\xi_{std}$.
 
 \paragraph{Right-veering monodromy} Let $(\Sigma_2^1, h)$ be the abstract open book associated to $K$. By Honda, Kazez, and Matić \sidecite{honda2007right}, the contact structure supported by $(\Sigma_2^1, h)$ is tight if and only if the monodromy $h$ is right-veering. This implies the fractional Dehn twist coefficient satisfies $c(h) \ge 0$. Since $K$ is hyperbolic, $h$ is pseudo-Anosov and thus irreducible. Honda, Kazez, and Matić establish that a right-veering diffeomorphism with $c(h)=0$ must be reducible. We therefore conclude $c(h) > 0$.
 
@@ -236,17 +252,17 @@ Since $0 < c(h) < 1$, the coefficient is strictly non-integer, meaning the singu
 
 \section{The Birman-Hilden Correspondence and Monodromy Descent} \label{section:Birman-Hilden}
 
-In this section, we establish the geometric machinery required to relate the monodromy of the knot $K$ to a braid on the sphere, and subsequently to a braid on the disk. This relationship relies on the geometric symmetries of the closed genus-two surface, which in accordance with the discussion in Section \ref{prop:capping off}, should be thought of as arising from capping-off the monodromy of the hyperbolic knot $K$.
+In this section, we establish the geometric machinery required to relate the monodromy of the knot $K$ to a braid on the sphere, and subsequently to a braid on the disk. This relationship relies on the geometric symmetries of the closed genus-two surface, which in accordance with the discussion in Section \ref{subsec:capping_off}, should be thought of as arising from capping-off the monodromy of the hyperbolic knot $K$.
 
-Recall that for the closed genus-two surface $\Sigma_2^0$, the mapping class group $\mathrm{Mod}(\Sigma_2^0)$ contains a distinguished element $[\tau]$, known as the \textbf{hyperelliptic involution}. Algebraically, $[\tau]$ is the unique non-trivial element in the center of $\mathrm{Mod}(\Sigma_2^0)$. Consequently, for any mapping class $[\hat{\phi}_h] \in \mathrm{Mod}(\Sigma_2^0)$, we have the commutation relation:
+Recall that for the closed genus-two surface $\Sigma_2^0$, the mapping class group $\mathrm{Mod}(\Sigma_2^0)$ contains a distinguished element $[\iota]$, known as the \textbf{hyperelliptic involution}. Algebraically, $[\iota]$ is the unique non-trivial element in the center of $\mathrm{Mod}(\Sigma_2^0)$. Consequently, for any mapping class $[\hat{\phi}_h] \in \mathrm{Mod}(\Sigma_2^0)$, we have the commutation relation:
 \begin{equation}\label{equation:symmetric hyperelliptic involution}
-    [\hat{\phi}_h][\tau] = [\tau][\hat{\phi}_h].
+    [\hat{\phi}_h][\iota] = [\iota][\hat{\phi}_h].
 \end{equation}
-We call a geometric representative $\tau \colon \Sigma_2^0 \to \Sigma_2^0$ a hyperelliptic involution if it belongs to the class $[\tau]$. 
+We call a geometric representative $\iota \colon \Sigma_2^0 \to \Sigma_2^0$ a hyperelliptic involution if it belongs to the class $[\iota]$.
 
-The geometric utility of this involution is captured by the Birman-Hilden correspondence. Broadly speaking, this classical correspondence establishes an algebraic relationship between the subgroup of mapping classes that commute with a branched covering involution (the \textit{symmetric} mapping class group) and the mapping class group of the quotient surface marked by the branch data. 
+The geometric utility of this involution is captured by the Birman-Hilden correspondence. Broadly speaking, this classical correspondence establishes an algebraic relationship between the subgroup of mapping classes that commute with a branched covering involution (the \textit{symmetric} mapping class group) and the mapping class group of the quotient surface marked by the branch data.
 
-For the closed genus-two surface $\Sigma_2^0$, the hyperelliptic involution $[\tau]$ generates the center of $\mathrm{Mod}(\Sigma_2^0)$. Because every mapping class commutes with the center, \textit{every} mapping class on $\Sigma_2^0$ is symmetric. Consequently, the Birman-Hilden correspondence implies that $\mathrm{Mod}(\Sigma_2^0) / \langle [\tau] \rangle$ is isomorphic to $\mathrm{Mod}(S^2_{0,6})$, the mapping class group of the sphere with six marked points.
+For the closed genus-two surface $\Sigma_2^0$, the hyperelliptic involution $[\iota]$ generates the center of $\mathrm{Mod}(\Sigma_2^0)$. Because every mapping class commutes with the center, \textit{every} mapping class on $\Sigma_2^0$ is symmetric. Consequently, the Birman-Hilden correspondence implies that $\mathrm{Mod}(\Sigma_2^0) / \langle [\iota] \rangle$ is isomorphic to $\mathrm{Mod}(S^2_{0,6})$, the mapping class group of the sphere with six marked points.
 
 This algebraic isomorphism has profound geometric implications for surface dynamics. It guarantees that any pseudo-Anosov mapping class on $\Sigma_2^0$ can be projected down to a well-defined pseudo-Anosov map on the marked sphere. For our purposes, this descent is made precise by the following lemma of Baldwin, Hu, and Sivek:
 
@@ -262,38 +278,40 @@ This algebraic isomorphism has profound geometric implications for surface dynam
     representing a class $b \in \mathrm{Mod}(S^2_{0,6})$. Furthermore, the invariant foliations of $\hat{\phi}_h$ are lifts of those of $\phi_b$.
 \end{lemma}
 
-In the proof of Lemma \ref{lemma:Baldwinliftpseudoanosov}, it is shown that the double covering $\pi$ is the quotient map under the action of a hyperelliptic involution $\tau$ that commutes strictly (``on the nose'') with $\hat{\phi}_h$:
+In the proof of Lemma \ref{lemma:Baldwinliftpseudoanosov}, it is shown that the double covering $\pi$ is the quotient map under the action of a hyperelliptic involution $\iota$ that commutes strictly (``on the nose'') with $\hat{\phi}_h$:
 \[
-\hat{\phi}_h \circ \tau = \tau \circ \hat{\phi}_h.
+\hat{\phi}_h \circ \iota = \iota \circ \hat{\phi}_h.
 \]
-The fixed points of the involution $\tau$ are exactly the pre-images of the branch points. Denoting these pre-images by $p_i = \pi^{-1}(q_i)$, we have $\mathrm{Fix}(\tau) = \{p_1, \dots , p_6\}$. These are called the \textbf{Weierstrass points} of $\Sigma_2^0$.
+The fixed points of the involution $\iota$ are exactly the pre-images of the branch points. Denoting these pre-images by $p_i = \pi^{-1}(q_i)$, we have $\mathrm{Fix}(\iota) = \{p_1, \dots , p_6\}$. These are called the \textbf{Weierstrass points} of $\Sigma_2^0$.
 
 \subsection{Fixed Point Dynamics of the Capped Monodromy}
 
-Recall that our hypothetical knot $K$ is fibered of genus two. Let $h \in \mathrm{Mod}(\Sigma_2^1)$ denote its monodromy class on the surface with one boundary component, and let $\phi_h \colon \Sigma_2^1 \to \Sigma_2^1$ be its unique pseudo-Anosov geometric representative. 
+Recall that our hypothetical knot $K$ is fibered of genus two. Let $h \in \mathrm{Mod}(\Sigma_2^1)$ denote its monodromy class on the surface with one boundary component, and let $\phi_h \colon \Sigma_2^1 \to \Sigma_2^1$ be its unique pseudo-Anosov geometric representative.
 
-By Lemma \ref{lemma:original monodromy has one fixed point}, we know that the original monodromy $\phi_h$ possesses exactly one fixed point in the interior of the surface, which we shall denote by $z$. 
+By Lemma \ref{lemma:original monodromy has one fixed point}, we know that the original monodromy $\phi_h$ possesses exactly one fixed point in the interior of the surface, which we shall denote by $z$.
 
 When extending $\phi_h$ to the closed surface $\Sigma_2^0$ by capping the boundary with a disk, we introduce exactly one new fixed point, $p$ (the center of the capping disk). Thus, the capped-off pseudo-Anosov map $\hat{\phi}_h$ has exactly two fixed points, $\{z, p\}$. The geometric fate of these two points under the branched covering is entirely dictated by the hyperelliptic involution, as established in the following proposition.
 
 \begin{prop}[Capping Off, \cite{baldwin2025khovanov}]\label{prop:capping off}
-Let $K$ be a hyperbolic, genus-two knot with monodromy class $h$ and pseudo-Anosov representative $\phi_h$. Suppose $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$. The capped off monodromy $\hat{\phi}_h \colon \Sigma_2^0 \to \Sigma_2^0$ is a pseudo-Anosov homeomorphism with exactly two fixed points, and the hyperelliptic involution $\tau$ swaps these two fixed points.
+Let $K$ be a hyperbolic, genus-two knot with monodromy class $h$ and pseudo-Anosov representative $\phi_h$. Suppose $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$. The capped off monodromy $\hat{\phi}_h \colon \Sigma_2^0 \to \Sigma_2^0$ is a pseudo-Anosov homeomorphism with exactly two fixed points, and the hyperelliptic involution $\iota$ swaps these two fixed points.
 \end{prop}
 
 \begin{proof}
-We know $\mathrm{Fix}(\hat{\phi}_h) = \{z, p\}$. Since $\tau$ and $\hat{\phi}_h$ commute, $\tau$ preserves the fixed point set of $\hat{\phi}_h$. Thus, $\tau$ must either fix both $z$ and $p$ pointwise, or swap them.
+By Lemma \ref{lemma:original monodromy has one fixed point}, $\phi_h$ has exactly one interior fixed point on $\Sigma_2^1$, which we denote $z$. Capping the boundary introduces one further fixed point $p$ at the center of the capping disk, so $\mathrm{Fix}(\hat{\phi}_h) = \{z, p\}$.
 
-Suppose, for the sake of contradiction, that $\tau(z) = z$ and $\tau(p) = p$. Then $z$ and $p$ are Weierstrass points and descend to branch points on $S^2$, say $\pi(z) = q_5$ and $\pi(p) = q_6$.
+Since $\iota$ and $\hat{\phi}_h$ commute, $\iota$ preserves the fixed point set of $\hat{\phi}_h$. Thus, $\iota$ must either fix both $z$ and $p$ pointwise, or swap them.
+
+Suppose, for the sake of contradiction, that $\iota(z) = z$ and $\iota(p) = p$. Then $z$ and $p$ are Weierstrass points and descend to branch points on $S^2$, say $\pi(z) = q_5$ and $\pi(p) = q_6$.
 
 Consider $\Sigma_2^0$ punctured at $p$. The restriction of $\pi$ gives a double branched cover $\pi' \colon \Sigma_2^0 \setminus \{p\} \to S^2\setminus \{q_6\}$. Viewing these as the interiors of $\Sigma_2^1$ and $D^2$, the map $\hat{\phi}_h$ restricts to the original monodromy $h$ on $\Sigma_2^1$. It follows that $h$ is isotopic to the lift of a 5-braid mapping class
 \[
 \beta \colon (D_5, q_1,\dots,q_5) \to (D_5, q_1,\dots,q_5).
 \]
-Under our assumption, $z$ descends to the branch point $q_5$, forcing $q_5$ to be a fixed point of $\beta$. The associated permutation $\sigma_{\beta} \in S_5$ must fix the index 5. Consequently, the fifth strand of the braid forms a distinct link component $L_1$ of the closure $\hat{\beta}$, while the remaining strands form at least one other component. Thus, the closure $B = \hat{\beta}$ is a link with $\mu(B) \ge 2$ components. 
+Under our assumption, $z$ descends to the branch point $q_5$, forcing $q_5$ to be a fixed point of $\beta$. The associated permutation $\sigma_{\beta} \in S_5$ must fix the index 5. Consequently, the fifth strand of the braid forms a distinct link component $L_1$ of the closure $\hat{\beta}$, while the remaining strands form at least one other component. Thus, the closure $B = \hat{\beta}$ is a link with $\mu(B) \ge 2$ components.
 
 The braid $\beta$ specifies an open book decomposition of $S^3$ whose branch set is $B$. The covering map $\pi'$ extends to a branched double covering between the manifolds $M_h \to M_\beta$. Since $K$ is a knot in $S^3$, we have $M_h \cong \Sigma(S^3,B) \cong S^3$. However, $b_1(\Sigma(S^3, B)) \ge \mu(B) - 1 \ge 1$, which implies $M_h$ cannot be $S^3$. This is a contradiction.
 
-Therefore, the involution $\tau$ cannot fix $z$ and $p$. It must swap them: $\tau(z) = p$ and $\tau(p) = z$.
+Therefore, the involution $\iota$ cannot fix $z$ and $p$. It must swap them: $\iota(z) = p$ and $\iota(p) = z$.
 \end{proof}
 
 \subsection{The Induced Map on the Disk}
@@ -322,9 +340,9 @@ The constructions above yield what we shall term the \emph{Birman-Hilden corresp
 \begin{enumerate}
     \item $h \in \mathrm{Mod}(\Sigma_2^1)$ is the original monodromy class of the hyperbolic knot $K$.
     \item $\phi_h \colon \Sigma_2^1 \to \Sigma_2^1$ is the unique pseudo-Anosov representative of $h$. It has exactly one interior fixed point, $z$.
-    \item $\hat{h} \in \mathrm{Mod}(\Sigma_2^0)$ is the capped-off mapping class on the closed surface. 
+    \item $\hat{h} \in \mathrm{Mod}(\Sigma_2^0)$ is the capped-off mapping class on the closed surface.
     \item $\hat{\phi}_h \colon \Sigma_2^0 \to \Sigma_2^0$ is the pseudo-Anosov representative of $\hat{h}$. It possesses exactly two fixed points: the inherited point $z$, and the new capping center $p$.
-    \item $b \in \mathrm{Mod}(S^2_6)$ is the spherical mapping class obtained by descending $\hat{h}$ via the hyperelliptic involution.
+    \item $b \in \mathrm{Mod}(S^2_{0,6})$ is the spherical mapping class obtained by descending $\hat{h}$ via the hyperelliptic involution.
     \item $\phi_b \colon S^2 \to S^2$ is the pseudo-Anosov representative of $b$. It permutes the six branch points and has exactly one non-marked fixed point $r$, which is the geometric descent of $z$ and $p$.
     \item $\beta \in \mathrm{Mod}(D_6)$ is the 6-braid mapping class on the disk, obtained by performing a real blow-up of $S^2$ at the fixed point $r$.
     \item $\phi_\beta \colon D^2 \to D^2$ is the pseudo-Anosov representative of $\beta$, fixing the boundary $\partial D^2$ set-wise and permuting the six marked points.
@@ -338,11 +356,10 @@ Consequently, the geometric singularities relate via the following rigid diction
 \begin{itemize}
     \item A $k$-pronged singularity of $\phi_\beta$ at a marked point (the branch locus) lifts to a single $2k$-pronged singularity of $\hat{\phi}_h$ because the covering map branches over these points, doubling the cone angle.
     \item A $k$-pronged singularity of $\phi_\beta$ on the boundary $\partial D^2$ (the blown-up unbranched point $r$) lifts to two distinct $k$-pronged boundaries $\partial_z$ and $\partial_p$ on $\Sigma_2^2$, which correspond to $k$-pronged singularities at $z$ and $p$ on $\Sigma_2^0$.
-    \item A $k$-pronged singularity of $\phi_\beta$ in the interior of the disk (away from branch points) lifts to two distinct $k$-pronged singularities of $\hat{\phi}_h$, which are necessarily permuted by the hyperelliptic involution $\tau$.
+    \item A $k$-pronged singularity of $\phi_\beta$ in the interior of the disk (away from branch points) lifts to two distinct $k$-pronged singularities of $\hat{\phi}_h$, which are necessarily permuted by the hyperelliptic involution $\iota$.
 \end{itemize}
 
-\section{Strata}
-
+\section{Strata}\label{sec:euler_poincare}
 With this geometric dictionary established, we are now equipped to classify all possible Birman-Hilden correspondence data where $h$ is the monodromy of a hyperbolic knot $K$ satisfying $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$. We first enumerate all possible singularity structures (strata) that $\hat{\phi}_h$ can exhibit on $\Sigma_2^0$.
 
 \begin{prop}[Euler-Poincar\'{e} Formula, {\cite[Proposition 11.4]{FarbMargalit2012}}]\label{prop:EulerPoincare}
@@ -366,7 +383,7 @@ The possible sets of prongs $(P_s > 2)$ that satisfy this sum are:
     \item \{6\}
 \end{itemize}
 
-We can immediately eliminate the $\{5,3\}$ case. The map $\hat{\phi}_h$ must permute singularities with identical prong counts. Thus, it would fix the 5-pronged and 3-pronged singularities, forcing them to be exactly $z$ and $p$. However, by Proposition \ref{prop:capping off}, $\tau$ swaps $z$ and $p$, which implies they must have identical local geometry (the same number of prongs). 
+We can immediately eliminate the $\{5,3\}$ case. The map $\hat{\phi}_h$ must permute singularities with identical prong counts. Thus, it would fix the 5-pronged and 3-pronged singularities, forcing them to be exactly $z$ and $p$. However, by Proposition \ref{prop:capping off}, $\iota$ swaps $z$ and $p$, which implies they must have identical local geometry (the same number of prongs).
 
 We can also eliminate $\{3,3,4\}$ and $\{6\}$. Since a pseudo-Anosov map must preserve singularity types, the unique 4-pronged or 6-pronged singularity in these sets would be forced to map to itself, constituting a third interior fixed point. This contradicts our established fact that $\mathrm{Fix}(\hat{\phi}_h)$ contains exactly two points.
 
@@ -374,13 +391,13 @@ Thus, the only valid sets of singularities are $\{3,3,3,3\}$ and $\{4,4\}$. Bear
 
 \begin{table}[ht]
     \centering
-    \begin{tabular}{c c l} 
+    \begin{tabular}{c c l}
         \toprule
         Prongs on $p$ & Prongs on $z$ & Prongs on other Singularities \\
         \midrule
         2 & 2 & \{4,4\} or \{3,3,3,3\}\\
         3 & 3 & \{3,3\} \\
-        4 & 4 & $\emptyset$ \\ 
+        4 & 4 & $\emptyset$ \\
         \bottomrule
     \end{tabular}
     \caption{Possible singularity configurations satisfying the Euler-Poincar\'{e} formula.}
@@ -390,23 +407,23 @@ Thus, the only valid sets of singularities are $\{3,3,3,3\}$ and $\{4,4\}$. Bear
 We analyze each case to determine the precise strata on $\Sigma_2^0$, $S^2$, and $D^2$.
 
 \subsection{Two prongs on $z$ and $p$}
-If $z$ and $p$ are 2-pronged (smooth) points, the stratum $(4;4)$ is immediately eliminated since the remaining single 4-pronged singularity would be a fixed point. 
+If $z$ and $p$ are 2-pronged (smooth) points, the stratum $(4;4)$ is immediately eliminated since the remaining single 4-pronged singularity would be a fixed point.
 
-For the stratum $(4,4;\emptyset)$, two marked points are 4-pronged singularities. $\tau$ fixes them, and $\hat{\phi}_h$ swaps them. This descends to $(2^2,1^4;2)$ on $S^2$, which corresponds to $(2;1^4,2^2; \emptyset)$ on $D^2$.
+For the stratum $(4,4;\emptyset)$, two marked points are 4-pronged singularities. $\iota$ fixes them, and $\hat{\phi}_h$ swaps them. This descends to $(2^2,1^4;2)$ on $S^2$, which corresponds to $(2;1^4,2^2; \emptyset)$ on $D^2$.
 
-For $(\emptyset; 4,4)$, two unmarked points are 4-pronged. $\tau$ swaps them, and $\hat{\phi}_h$ swaps them. This descends to $(1^6;4)$ on $S^2$, corresponding to $(2;1^6;4)$ on $D^2$.
+For $(\emptyset; 4,4)$, two unmarked points are 4-pronged. $\iota$ swaps them, and $\hat{\phi}_h$ swaps them. This descends to $(1^6;4)$ on $S^2$, corresponding to $(2;1^6;4)$ on $D^2$.
 
 For the $\{3,3,3,3\}$ case, marked points cannot be odd-pronged, leaving only $(\emptyset; 3,3,3,3)$. The four 3-pronged unmarked points are permuted without fixed points. This descends to $(1^6;3^2)$ on $S^2$, corresponding to $(2;1^6;3^2)$ on $D^2$.
 
 \begin{table}[ht]
     \centering
-    \begin{tabular}{c c l} 
+    \begin{tabular}{c c l}
         \toprule
         Stratum on $\Sigma_2^0$ & Stratum on $S^2$ & Stratum on $D^2$ \\
         \midrule
         $(4,4;\emptyset)$ & $(2^2,1^4;2)$ & $(2;1^4,2^2;\emptyset)$ \\
         $(\emptyset;4,4)$ & $(1^6;4)$ & $(2;1^6;4)$ \\
-        $(\emptyset; 3,3,3,3)$ & $(1^6;3^2)$ & $(2;1^6;3^2)$\\ 
+        $(\emptyset; 3,3,3,3)$ & $(1^6;3^2)$ & $(2;1^6;3^2)$\\
         \bottomrule
     \end{tabular}
     \caption{The strata with two prongs on $z$ and $p$.}
@@ -414,11 +431,11 @@ For the $\{3,3,3,3\}$ case, marked points cannot be odd-pronged, leaving only $(
 \end{table}
 
 \subsection{Three prongs on $z$ and $p$}
-Here, $z$ and $p$ are 3-pronged, leaving two additional unmarked 3-pronged singularities. This is stratum $(\emptyset;3,3,3,3)$, where $z$ and $p$ are among the set. $\tau$ and $\hat{\phi}_h$ both swap the extra two singularities. This descends to $(1^6; 3,3)$ on $S^2$, corresponding to $(3;1^6;3)$ on $D^2$.
+Here, $z$ and $p$ are 3-pronged, leaving two additional unmarked 3-pronged singularities. This is stratum $(\emptyset;3,3,3,3)$, where $z$ and $p$ are among the set. $\iota$ and $\hat{\phi}_h$ both swap the extra two singularities. This descends to $(1^6; 3,3)$ on $S^2$, corresponding to $(3;1^6;3)$ on $D^2$.
 
 \begin{table}[ht]
     \centering
-    \begin{tabular}{c c l} 
+    \begin{tabular}{c c l}
         \toprule
         Stratum on $\Sigma_2^0$ & Stratum on $S^2$ & Stratum on $D^2$ \\
         \midrule
@@ -434,7 +451,7 @@ If $z$ and $p$ are 4-pronged, there are no additional singularities. This is str
 
 \begin{table}[ht]
     \centering
-    \begin{tabular}{c c l} 
+    \begin{tabular}{c c l}
         \toprule
         Stratum on $\Sigma_2^0$ & Stratum on $S^2$ & Stratum on $D^2$ \\
         \midrule

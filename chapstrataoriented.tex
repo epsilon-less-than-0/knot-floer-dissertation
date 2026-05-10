@@ -6,18 +6,18 @@ In this chapter, we analyze the specific strata of pseudo-Anosov homeomorphisms 
 
 \begin{theorem}
     \label{thm:orientable_strata_elimination}
-    Let $K \subset S^3$ be a hyperbolic knot satisfying $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$, and let 
+    Let $K \subset S^3$ be a hyperbolic knot satisfying $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$, and let
     \[
     (h, \phi_h, \hat{h}, \hat{\phi}_h, b, \phi_b, \beta, \phi_\beta, \Phi, \phi_\Phi)
     \]
-    be the associated Birman-Hilden correspondence data induced by the monodromy of $K$. Furthermore, let 
+    be the associated Birman-Hilden correspondence data induced by the monodromy of $K$. Furthermore, let
     \[
     (\beta, \phi_\beta, \tau, f_\beta)
     \]
     be the geometric data associated with the disk braid, where $\tau$ is a standard train track. Then the pseudo-Anosov representative $\phi_\beta \colon D^2 \to D^2$ (and consequently the invariant train track $\tau$) cannot belong to the strata $(2; 1^4, 2^2; \emptyset)$, $(4; 1^6; \emptyset)$, or $(2; 1^6; 4)$.
 \end{theorem}
 
-To achieve this, our primary objective is to establish that the invariant foliations associated with the lifted pseudo-Anosov map on the genus-two surface with two boundary components ($\Sigma_2^2$) in these strata are orientable. This immediately implies that the original monodromy of $K$ also possesses orientable invariant foliations.
+To achieve this, our primary objective is to establish that the invariant foliations associated with the lifted pseudo-Anosov map on the genus-two surface with two boundary components $\Sigma_2^2$ in these strata are orientable. This immediately implies that the original monodromy of $K$ also possesses orientable invariant foliations.
 
 Establishing orientability allows us to invoke the homological arguments utilized by Baldwin, Hu, and Sivek \sidecite{baldwin2025khovanov} for their detection result on the cinquefoil. Specifically, once orientability is shown, we apply a theorem of Thurston \sidecite{Thurston1988}, as reformulated by Baldwin-Hu-Sivek, to identify the dilatation $\lambda$ of the pseudo-Anosov map with the spectral radius of its action on the first homology of the branched cover. This action is completely determined by the Alexander polynomial of the knot $K$. We will demonstrate that for $T_{2,3} \# T_{2,3}$, the Alexander polynomial possesses no real roots $\lambda > 1$. This leads to a strict algebraic contradiction, thereby proving that the knot cannot support a pseudo-Anosov monodromy associated with these specific strata.
 
@@ -25,11 +25,11 @@ Establishing orientability allows us to invoke the homological arguments utilize
 
 We begin by examining the combinatorial structure of the train tracks carrying the pseudo-Anosov maps in the specified strata. Let $\phi_\beta: D^2 \to D^2$ be a pseudo-Anosov homeomorphism of the 6-marked disk, and let $\tau$ be a train track carrying $\phi_\beta$. Note that by Theorem \ref{theorem:theorem C jointless}, we may assume $\tau$ is a jointless standard train track.
 
-Let $\tilde{\tau}$ denote the lift of $\tau$ to the double branched cover $\Sigma_2^2$. As described in Section \ref{sec:lifting train tracks}, $\tilde{\tau}$ carries the lifted mapping class $\Phi$ with pseudo-Anosov representative $\phi_\Phi$. The lifted train track $\tilde{\tau}$ can be viewed geometrically as two copies of the planar train track $\tau$, connected via the lifts of the marked points. 
+Let $\tilde{\tau}$ denote the lift of $\tau$ to the double branched cover $\Sigma_2^2$. As described in Section \ref{sec:lifting train tracks}, $\tilde{\tau}$ carries the lifted mapping class $\Phi$ with pseudo-Anosov representative $\phi_\Phi$. The lifted train track $\tilde{\tau}$ can be viewed geometrically as two copies of the planar train track $\tau$, connected via the lifts of the marked points.
 
-In the planar track $\tau$, the marked points reside in the interior of infinitesimal polygons. Upon lifting to the double cover, these marked points lift to the Weierstrass points of the hyperelliptic surface. Each of these Weierstrass points is enclosed by infinitesimal polygons obtained by the smoothing procedure described in Section \ref{sec:lifting train tracks}. In the specific strata under consideration, the marked points on the disk are enclosed by either monogons (1-pronged) or bigons (2-pronged). 
+In the planar track $\tau$, the marked points reside in the interior of infinitesimal polygons. Upon lifting to the double cover, these marked points lift to the Weierstrass points of the hyperelliptic surface. Each of these Weierstrass points is enclosed by infinitesimal polygons obtained by the smoothing procedure described in Section \ref{sec:lifting train tracks}. In the specific strata under consideration, the marked points on the disk are enclosed by either monogons (1-pronged) or bigons (2-pronged).
 
-Because the covering map acts locally as $w = z^2$, these infinitesimal polygons at the branch locus lift to regions with exactly double the number of sides. The bigons lift to 4-gons. The monogons lift to bigons, which are subsequently smoothed into regular points on the track (eliminating the cusps entirely). Similarly, on the boundary of the lift, the peripheral regions—which are 2-gons and 4-gons on the disk—lift to 4-gons and 8-gons, respectively. Finally, for the stratum $(2; 1^6; 4)$, the un-marked 4-pronged singularity (4-gon) lies in the unbranched interior of the disk; thus, it lifts cleanly to two distinct 4-gons on $\Sigma_2^2$ which are swapped by the hyperelliptic involution.
+Because the covering map acts locally as $w = z^2$, these infinitesimal polygons at the branch locus lift to regions with exactly double the number of sides. The bigons lift to 4-gons. The monogons lift to bigons, which are subsequently smoothed into regular points on the track (eliminating the cusps entirely). Similarly, on the boundary of the lift, the peripheral regions---which are 2-gons and 4-gons on the disk---lift to 4-gons and 8-gons, respectively. Finally, for the stratum $(2; 1^6; 4)$, the un-marked 4-pronged singularity (4-gon) lies in the unbranched interior of the disk; thus, it lifts cleanly to two distinct 4-gons on $\Sigma_2^2$ which are swapped by the hyperelliptic involution.
 
 An equivalent description of the correspondence between $\tau$ and $\tilde{\tau}$ is as follows. Consider the disk $D^2$ embedded in $\mathbb{C}$, with the marked points positioned on the real line. By assumption, $\tau$ is standard, hence only a single side-swapping edge passes vertically above each marked point. We may isotope $\tau$ so that every edge except for the side-swapping edges lies in the upper half-plane; hence the intersection of the underlying graph of $\tau$ with the lower half-plane is a union of disjoint arcs. We can then construct $\tilde{\tau}$ by taking the mirror image of this upper-half-plane graph across the real line and applying the required smoothing procedure at the marked points. This symmetric union is exactly the underlying graph of $\tilde{\tau}$.
 
@@ -37,11 +37,12 @@ An equivalent description of the correspondence between $\tau$ and $\tilde{\tau}
 \label{lem:even_sided_polygons}
 In the strata $(2; 1^4, 2^2; \emptyset)$, $(4; 1^6; \emptyset)$, and $(2; 1^6; 4)$ on $D^2$, every complementary region of the lifted invariant train track $\tilde{\tau}$ on $\Sigma_2^2$ is an even-sided polygon.
 \end{lemma}
+
 \begin{proof}
-By Proposition \ref{prop:B-H train track polygon enclosure}, the complementary regions of $\tau$ on the disk correspond to the singularities of the foliation. 
+By Proposition \ref{prop:B-H train track polygon enclosure}, the complementary regions of $\tau$ on the disk correspond to the singularities of the foliation.
 \begin{itemize}
-    \item In the stratum $(2; 1^4, 2^2; \emptyset)$, the complementary regions are 1-gons, 2-gons, and a peripheral 2-gon. 
-    \item In $(4; 1^6; \emptyset)$, they are 1-gons and a peripheral 4-gon. 
+    \item In the stratum $(2; 1^4, 2^2; \emptyset)$, the complementary regions are 1-gons, 2-gons, and a peripheral 2-gon.
+    \item In $(4; 1^6; \emptyset)$, they are 1-gons and a peripheral 4-gon.
     \item In $(2; 1^6; 4)$, they are 1-gons, an interior 4-gon, and a peripheral 2-gon.
 \end{itemize}
 Since the double branched covering doubles the cone angle at the branch points and the boundary, the 1-gons smooth into 0-gons (regular lines), while the peripheral 2-gons and 4-gons lift strictly to 4-gons and 8-gons on $\Sigma_2^2$. The interior 4-gon in the unbranched region simply lifts to two distinct 4-gons. Therefore, all surviving complementary regions in $\tilde{\tau}$ have an even number of sides.
@@ -57,7 +58,7 @@ We now establish a procedure to specify an orientation for the invariant foliati
     \end{itemize}
 \end{definition}
 
-It is immediately clear from this definition that any train track possessing odd-sided polygons (such as monogons or triangles) cannot be consistently oriented. Every polygon has cusps as its corners. Choosing an orientation for an edge incident to a polygon forces orientations on all adjacent edges along the boundary of that region. Since the orientation must flow either strictly into or strictly out of a cusp, it forces an alternating sequence of orientations at each subsequent cusp along the polygon. A cusp whose edges point inward must be adjacent to a cusp whose edges point outward. Consequently, a polygon with an odd number of corners yields an alternating parity contradiction and cannot admit a consistent orientation. 
+It is immediately clear from this definition that any train track possessing odd-sided polygons (such as monogons or triangles) cannot be consistently oriented. Every polygon has cusps as its corners. Choosing an orientation for an edge incident to a polygon forces orientations on all adjacent edges along the boundary of that region. Since the orientation must flow either strictly into or strictly out of a cusp, it forces an alternating sequence of orientations at each subsequent cusp along the polygon. A cusp whose edges point inward must be adjacent to a cusp whose edges point outward. Consequently, a polygon with an odd number of corners yields an alternating parity contradiction and cannot admit a consistent orientation.
 
 Conversely, this alternating property ensures that a train track whose complementary regions are strictly even-sided can always be consistently oriented. Topologically, because all regions are even-sided, the complementary regions can be properly 2-colored (analogous to a checkerboard), allowing a globally consistent flow to be assigned to the edges separating them.
 
@@ -65,7 +66,7 @@ Conversely, this alternating property ensures that a train track whose complemen
     \centering
     \includegraphics[width=\linewidth]{figures/orienting_traintrack.png}
     \caption[Consistent orientation of a lifted track]{Top: A train track $\tau$ in the stratum $(2;1^4,2^2;\emptyset)$. Middle: Reflecting $\tau$ across the dotted real line and resolving the polygons to produce the lift $\tilde{\tau}$. Bottom: A consistent orientation on $\tilde{\tau}$, possible only because all regions are even-sided.}
-    \label{fig:placeholder}
+    \label{fig:consistent_orientation}
 \end{figure}
 
 \begin{prop}
@@ -79,7 +80,7 @@ Orientability of the foliation on $\Sigma_2^2$ corresponds directly to the exist
 Considering $\tilde{\tau}$ as embedded in $\Sigma_2^2$, the interior of every $2k$-sided infinitesimal polygon is foliated by the unstable foliation $\mathcal{F}^u$ as described in Section \ref{sec:train track and foliations}. Specifically, the well-defined tangent line at each cusp is parallel to a leaf extending to the interior singularity, forming the $2k$ prongs at the singularity. These separatrices can be oriented in direct accordance with the consistent orientation of the bounding track edges. This partitions the region into $2k$ sectors, each foliated by leaves parallel to the corresponding side. We orient these subregions smoothly in accordance with the consistent orientation of the polygon. This procedure extends the orientation across every interior region of each infinitesimal polygon without contradiction. See Figure \ref{fig:orient_foliation}.
 
 It remains to show that the peripheral regions can be oriented in a compatible way. This is an identical procedure, except that the edges forming the periphery consist of both real edges and portions of the boundary components $\partial_z, \partial_p$. There are $2r$ cusps forming the corners of the peripheral region. The tangent line at each cusp is parallel to a leaf extending to the boundary components, forming the $r$ prongs at each of the two boundary components. These leaves can be oriented in accordance with the locally consistent orientation of the cusps. Because $\tilde{\tau}$ is globally consistently oriented, these paths connect without orientation clashes. We orient the foliations on the surrounding disk by extending the orientation of these paths smoothly towards the boundary. Thus, $\mathcal{F}^u$ is globally orientable.
-\end{proof} 
+\end{proof}
 
 \begin{figure}[h]
     \centering
@@ -90,14 +91,21 @@ It remains to show that the peripheral regions can be oriented in a compatible w
 
 \begin{corollary}
 \label{cor:orientable_knot_monodromy}
-    Let $K$ be a hyperbolic knot such that $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$, and suppose 
+    Let $K$ be a hyperbolic knot such that $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$, and suppose
     \[
     (h, \phi_h, \hat{h}, \hat{\phi}_h, b, \phi_b, \beta, \phi_\beta, \Phi, \phi_\Phi)
     \]
     is the corresponding Birman-Hilden correspondence data. If the disk map $\phi_\beta \colon D^2 \to D^2$ belongs to the strata $(2; 1^4, 2^2; \emptyset)$, $(4; 1^6; \emptyset)$, or $(2; 1^6; 4)$, then the invariant foliations of the original monodromy $\phi_h$ are orientable.
 \end{corollary}
+
 \begin{proof}
-    By Proposition \ref{prop:orientable_foliations}, the invariant foliations of the fixed-point-free lift $\phi_\Phi$ on $\Sigma_2^2$ are orientable. To recover the invariant foliations of the original knot monodromy $\phi_h$ on $\Sigma_2^1$, we collapse the blown-up boundary component $\partial_z$ back into the interior fixed point $z$, and identify the remaining boundary component $\partial_p$ with the boundary of the knot exterior. Since this local collapse of a boundary curve to a point does not affect the global transverse orientation of the regular leaves, the orientability of the foliation is preserved.
+    By Proposition \ref{prop:orientable_foliations}, the invariant foliations of the fixed-point-free lift $\phi_\Phi$ on $\Sigma_2^2$ are orientable; that is, the unstable foliation $\widetilde{\mathcal{F}}^u$ admits a global transverse orientation on $\Sigma_2^2$.
+
+    To recover the invariant foliations of the original knot monodromy $\phi_h$ on $\Sigma_2^1$, we proceed in two steps. First, we collapse the blown-up boundary component $\partial_z$ back into the interior fixed point $z$, recovering the closed-surface map $\hat{\phi}_h$ on $\Sigma_2^0 \setminus \{p\}$. Since $\partial_z$ is a single boundary circle and its image $z$ is a single point, this is a continuous quotient that sends the regular leaves of $\widetilde{\mathcal{F}}^u$ in a neighborhood of $\partial_z$ to the regular leaves of $\hat{\mathcal{F}}^u$ in a punctured neighborhood of $z$. The collapse does not introduce any leaf-crossings or sign-flips; the global transverse orientation is preserved.
+
+    Second, we identify the remaining boundary component $\partial_p$ with the boundary of the knot exterior, restricting $\hat{\phi}_h$ from $\Sigma_2^0 \setminus \{p\}$ to $\Sigma_2^1$ by deleting a small disk around $p$. This restriction is the identity on a punctured neighborhood of $p$, so the transverse orientation of $\hat{\mathcal{F}}^u$ restricts to a transverse orientation of $\mathcal{F}^u$ on $\Sigma_2^1$.
+
+    Both operations preserve the global transverse orientation of the regular leaves, so the invariant foliation of $\phi_h$ on $\Sigma_2^1$ is orientable.
 \end{proof}
 
 Having established that the pseudo-Anosov representative $\phi_h$ in these strata must have orientable invariant foliations, we can now strictly relate its dilatation to the homological invariants of the knot. We employ the argument formalized by Baldwin, Hu, and Sivek \cite{baldwin2025khovanov}, in which the dilatation $\lambda(\phi_h)$ manifests as an eigenvalue of the action of the map on the first homology.
@@ -115,43 +123,31 @@ In the context of the monodromy of a knot, the map $\phi = \phi_h$ is the geomet
 
 \begin{corollary}
 \label{cor:alexander_root}
-For a fibered knot $K$, if the monodromy $\phi_h$ lies in a stratum with orientable invariant foliations, then the dilatation $\lambda(\phi_h)$ must be the largest absolute value of a real root of the Alexander polynomial $\Delta_K(t)$. 
+For a fibered knot $K$, if the monodromy $\phi_h$ lies in a stratum with orientable invariant foliations, then the dilatation $\lambda(\phi_h)$ must be the largest absolute value of a real root of the Alexander polynomial $\Delta_K(t)$.
 \end{corollary}
 
 \section{Application to \texorpdfstring{$T_{2,3} \# T_{2,3}$}{T(2,3) \# T(2,3)}}
 
-We now apply this algebraic restriction to our specific case: the candidate knot $K = T_{2,3} \# T_{2,3}$. We investigate whether a pseudo-Anosov map in the strata $(2; 1^4, 2^2; \emptyset)$, $(4; 1^6; \emptyset)$, or $(2; 1^6; 4)$ can represent the monodromy of $K$.
-
-The Alexander polynomial for the right-handed trefoil $T_{2,3}$ is given by $\Delta_{T_{2,3}}(t) = t^2 - t + 1$. The Alexander polynomial of the connect-sum is the product of the individual polynomials:
+We now apply this algebraic restriction to our specific case: the candidate knot $K = T_{2,3} \# T_{2,3}$. The Alexander polynomial for the right-handed trefoil $T_{2,3}$ is given by $\Delta_{T_{2,3}}(t) = t^2 - t + 1$, and the Alexander polynomial of the connect-sum is the product of the individual polynomials:
 \begin{equation}
 \Delta_{K}(t) = \Delta_{T_{2,3}}(t) \cdot \Delta_{T_{2,3}}(t) = (t^2 - t + 1)^2.
 \end{equation}
-
-We examine the roots of this polynomial. The roots of $t^2 - t + 1 = 0$ are the primitive sixth roots of unity:
-\begin{equation}
-t = \frac{1 \pm i\sqrt{3}}{2} = e^{\pm i\pi/3}.
-\end{equation}
-These roots are strictly complex; they have non-zero imaginary components.
-
-\begin{prop}
-\label{prop:no_real_roots}
-The polynomial $\Delta_K(t) = (t^2 - t + 1)^2$ has no real roots.
-\end{prop}
-
-\begin{proof}
-The discriminant of the quadratic factor $t^2 - t + 1$ is $\Delta = (-1)^2 - 4(1)(1) = -3 < 0$. Thus, all roots come in complex conjugate pairs, and none are real.
-\end{proof}
+The discriminant of the quadratic factor $t^2 - t + 1$ is $\Delta = (-1)^2 - 4(1)(1) = -3 < 0$. Hence the roots of $t^2 - t + 1$ are the primitive sixth roots of unity,
+\[
+t = \frac{1 \pm i\sqrt{3}}{2} = e^{\pm i\pi/3},
+\]
+which are strictly complex. Consequently, $\Delta_K(t) = (t^2-t+1)^2$ has no real roots.
 
 \section{Conclusion}
 
 We now assemble the preceding results to formally prove our main theorem.
 
 \begin{proof}[Proof of Theorem \ref{thm:orientable_strata_elimination}]
-Assume, for the sake of contradiction, that the knot $K$ admits a monodromy $\phi_h$ corresponding to a disk map $\phi_\beta$ belonging to the strata $(2; 1^4, 2^2; \emptyset)$, $(4; 1^6; \emptyset)$, or $(2; 1^6; 4)$. By Proposition \ref{prop:orientable_foliations}, the invariant foliations of the lifted map $\phi_\Phi$ on $\Sigma_2^2$ are orientable. Because collapsing the blown-up boundary component $\partial_z$ back into the original fixed point $z$ preserves the global transverse orientation of the leaves, the invariant foliations of the original knot monodromy $\phi_h$ on $\Sigma_2^1$ must also be orientable, as established in Corollary \ref{cor:orientable_knot_monodromy}. 
+Assume, for the sake of contradiction, that the knot $K$ admits a monodromy $\phi_h$ corresponding to a disk map $\phi_\beta$ belonging to the strata $(2; 1^4, 2^2; \emptyset)$, $(4; 1^6; \emptyset)$, or $(2; 1^6; 4)$. By Proposition \ref{prop:orientable_foliations}, the invariant foliations of the lifted map $\phi_\Phi$ on $\Sigma_2^2$ are orientable. By Corollary \ref{cor:orientable_knot_monodromy}, the invariant foliations of the original knot monodromy $\phi_h$ on $\Sigma_2^1$ are likewise orientable.
 
-Therefore, by Corollary \ref{cor:alexander_root}, the dilatation $\lambda(\phi_h)$ must be a real root of the Alexander polynomial $\Delta_K(t)$. However, as established in Proposition \ref{prop:no_real_roots}, $\Delta_K(t)$ possesses strictly complex roots and no real roots. Since, by geometric definition, the dilatation of a pseudo-Anosov map must satisfy $\lambda > 1$ (and thus be strictly real), we arrive at a contradiction.
+Therefore, by Corollary \ref{cor:alexander_root}, the dilatation $\lambda(\phi_h)$ must be the largest absolute value of a real root of the Alexander polynomial $\Delta_K(t) = (t^2-t+1)^2$. However, as established in the preceding section, $\Delta_K(t)$ has strictly complex roots and no real roots. Since, by geometric definition, the dilatation of a pseudo-Anosov map must satisfy $\lambda > 1$ (and thus be strictly real), we arrive at a contradiction.
 
 Thus, no pseudo-Anosov representative for the knot $K$ exists within these orientable strata.
 \end{proof}
 
-% This elimination constitutes a critical step in the classification of the fiber surface monodromy, demonstrating that Heegaard Floer homology severely restricts the topological dynamics of the knot, systematically reducing the possible pseudo-Anosov strata we must consider.
+This elimination constitutes a critical step in the classification of the fiber surface monodromy, demonstrating that knot Floer homology severely restricts the topological dynamics of $K$. By eliminating these three strata using only the orientability obstruction, we reduce our remaining task to the analysis of the non-orientable strata $(3;1^6;3)$ and $(2;1^6;3^2)$, which we treat in Chapter \ref{chap:stratatraintrackanalysis} via the more delicate Trace Lemma and Absorption Obstruction machinery.
