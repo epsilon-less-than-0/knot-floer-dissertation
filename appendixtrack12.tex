@@ -1,7 +1,14 @@
 \chapter[Train Track Case Analysis: Track 12]{Train Track Case Analysis: Track 12}
 \label{app:case_analysis_track12}
 
-This is Track 17:
+This is Track 12:
+\bigskip
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures_case_analysis/track12_case_analysis/Track 12.jpg}
+    \caption{Track 12
+    \label{fig:track12}}
+\end{figure}
 
 \section{Case A: Triangles Fixed}\label{CaseA Track 12}
 Let us assume the triangles are fixed. Hence, both $\fbd$ and $\fbdb$ both pass over $d$/$\dbar$ after an even number of letters. We shall call this \textit{Assumption A}. Then $\fbd$ can begin with $b$ or $r$, while $\fbdb$ can begin with $s$, $i$, $p$, or $o$.
@@ -9,19 +16,19 @@ Let us assume the triangles are fixed. Hence, both $\fbd$ and $\fbdb$ both pass 
 \subsection{BKG}\label{BKG}
 Suppose $\fbd$ began with $b$, and $\fbdb$ began with $s$.
 
-This is BKG1.
+This is Figure \ref{fig:BKG1}.
 
 Here in order to meet Assumption A, $\fbdb$ must eventually traverse $p^+$ before crossing $\dbar$. Before that it would possibly have twisting with $o$ or $i$.
 
-Here we claim that the dotted lines must join in the middle. Indeed, if they did not, then in order to not put either $\fbd$ or $\fbdb$ in Situation $\beta$, this can only occur with $\fbdb$ going below $\fbr$, or $\fbp$ going above $\fbd$. In the former case, this causes $\fbp$ to trace, as shown in BKG2. In the latter case, the dotted lines will be in Situation $\alpha$, as shown in BKG3.
+Here we claim that the dotted lines must join in the middle. Indeed, if they did not, then in order to not put either $\fbd$ or $\fbdb$ in Situation $\beta$, this can only occur with $\fbdb$ going below $\fbr$, or $\fbp$ going above $\fbd$. In the former case, this causes $\fbp$ to trace, as shown in Figure \ref{fig:BKG2}. In the latter case, the dotted lines will be in Situation $\alpha$, as shown in Figure \ref{fig:BKG3}.
 
-Thus the dotted lines must join, so we have BKG4.
+Thus the dotted lines must join, so we have Figure \ref{fig:BKG4}.
 
-Now let us assume that there were no initial twists by $\fbdb$. Then $\fbr$ will trace, as shown in BKG5.
+Now let us assume that there were no initial twists by $\fbdb$. Then $\fbr$ will trace, as shown in Figure \ref{fig:BKG5}.
 
 So let us assume instead that $\fbdb$ has initial twists with $o$. 
 
-But this means $\fbo$ will trace, as shown in BKG6.
+But this means $\fbo$ will trace, as shown in Figure \ref{fig:BKG6}.
 
 % Then it must be
 % \[
@@ -37,7 +44,7 @@ But this means $\fbo$ will trace, as shown in BKG6.
 % \fbo = s^- \dbar b^- r^- d p^- s^*...
 % \]
 
-% The latter case is shown in BKG7. Here the dotted lines are forced to join, otherwise $\fbd$ will violate Rule F1.
+% The latter case is shown in BKG7. Here the dotted lines are forced to join, otherwise $\fbd$ will violate the Trace Lemma.
 
 % Now consider $\fbb$ and $\fbp$. $\fbb$ can only begin with $r^\circ$ or $r^-$. Suppose it were the former case. Then we must have
 % \[
@@ -118,14 +125,14 @@ But this means $\fbo$ will trace, as shown in BKG6.
 
 This is a contradiction.
 
-\subsection{CNM}
+\subsection{CNM}\label{CNM}
 Suppose $\fbd$ began with $b$, and $\fbdb$ began with $i$.
 
 The same argument used in BKG \ref{BKG} to show that the dotted lines in the middle must join applies here.
 
-This is CNM1.
+This is Figure \ref{fig:CNM1}.
 
-Here if $\fbdb$ were to begin with $i^+$ then it must continue with $p^+$ otherwise $\fbi$ would immediately trace. Moreover, $\fbdb$ must join with $\fbd$ here or $\fbd$ would be in Situation $\beta$. So in this scenario we have CNM2.
+Here if $\fbdb$ were to begin with $i^+$ then it must continue with $p^+$ otherwise $\fbi$ would immediately trace. Moreover, $\fbdb$ must join with $\fbd$ here or $\fbd$ would be in Situation $\beta$. So in this scenario we have Figure \ref{fig:CNM2}.
 
 Here $\fbs$ must begin with $p^+$ otherwise $\fbi$ will immediately trace. So it continues:
 \[
@@ -133,7 +140,7 @@ Here $\fbs$ must begin with $p^+$ otherwise $\fbi$ will immediately trace. So it
 \]
 where it must be $r^+$ otherwise it would cause $\fbp$ to trace after crossing.
 
-Here $\fbs$ cannot go into 2, otherwise it will escape to the outer perimeter and eventually trace due to the position of $\fbr$. So it goes into 1, which is CNM3.
+Here $\fbs$ cannot go into 2, otherwise it will escape to the outer perimeter and eventually trace due to the position of $\fbr$. So it goes into 1, which is Figure \ref{fig:CNM3}.
 
 Here $\fbb$ can either begin with $r^\circ$ or $r^-$. Suppose it were the former. Then we have $\fbp$ and $\fbs$ both continuing with $r^+$, and $\fbs$ must then continue with $b^-$. Otherwise, $\fbp$ would continue with $b^+$ and then trace:
 \[
@@ -144,9 +151,9 @@ So we have
 \[
 \fbs = ...b^- r^- d...
 \]
-This is CNM4. But here $\fbs$ escapes to the outer perimeter again and will eventually trace.
+This is Figure \ref{fig:CNM4}. But here $\fbs$ escapes to the outer perimeter again and will eventually trace.
 
-So suppose instead that $\fbb$ began with $r^-$, as in CNM5.
+So suppose instead that $\fbb$ began with $r^-$, as in Figure \ref{fig:CNM5}.
 
 Here it can go into 1 or 2. Suppose it went into 1. Then
 \[
@@ -154,17 +161,17 @@ Here it can go into 1 or 2. Suppose it went into 1. Then
 \]
 where it must traverse $s^-$ as to not cause $\fbr$ to traverse $s^+$ and thereby trace.
 
-This is CNM6.
+This is Figure \ref{fig:CNM6}.
 
 Here again we must have
 \[
 \fbs = ...b^- r^- d...
 \]
-and $\fbs$ will escape to the outer perimeter and trace, as shown in CNM7.
+and $\fbs$ will escape to the outer perimeter and trace, as shown in Figure \ref{fig:CNM7}.
 
-So suppose $\fbb$ went into 2. Then we have the situation depicted in CNM8. Here $\fbi$, $\fbs$, and $\fbb$ are stuck in a three-way counterclockwise path mill between $\fbb$, and $\fbp$. This is a contradiction.
+So suppose $\fbb$ went into 2. Then we have the situation depicted in Figure \ref{fig:CNM8}. Here $\fbi$, $\fbs$, and $\fbb$ are stuck in a three-way counterclockwise path mill between $\fbb$, and $\fbp$. This is a contradiction.
 
-So going back to the situation depicted in CNM1, suppose $\fbdb$ began with $i^-$, then
+So going back to the situation depicted in Figure \ref{fig:CNM1}, suppose $\fbdb$ began with $i^-$, then
 \[
 \fbdb = i^- o^*...
 \]
@@ -172,8 +179,8 @@ as it cannot cross or it would violate Assumption A. But now $\fbo$ will follow 
 
 This is a contradiction.
 
-\subsection{LGU}
-Suppose $\fbd$ began with $b$, and $\fbdb$ began with $p$. Then $\fbdb$ must begin with $p^-$, as shown in LGU1; and then it must traverse either $i^- \dbar$, or $s^- \dbar$. In either case, this would cause the dotted lines to be in Situation $\alpha$, as shown in LGU2, and LGU3.
+\subsection{LGU}\label{LGU}
+Suppose $\fbd$ began with $b$, and $\fbdb$ began with $p$. Then $\fbdb$ must begin with $p^-$, as shown in Figure \ref{fig:LGU1}; and then it must traverse either $i^- \dbar$, or $s^- \dbar$. In either case, this would cause the dotted lines to be in Situation $\alpha$, as shown in Figure \ref{fig:LGU2}, and Figure \ref{fig:LGU3}.
 
 This is a contradiction.
 
@@ -182,8 +189,8 @@ Suppose $\fbd$ began with $b$, and $\fbdb$ began with $o$. But this forces $\fbo
 
 This concludes the case when we assume $\fbd$ begins with $b$. Now we assume $\fbd$ begins with $r$, and $\fbdb$ can begin with $p$, $i$, $s$, or $o$, as before. Again Assumption A must be upheld.
 
-\subsection{SXM}
-Suppose $\fbd$ began with $r$, and $\fbdb$ began with $p$. Then we have the situation depicted in SXM1.
+\subsection{SXM}\label{SXM}
+Suppose $\fbd$ began with $r$, and $\fbdb$ began with $p$. Then we have the situation depicted in Figure \ref{fig:SXM1}.
 
 Here there are four possibilities for $\fbdb$ to traverse before crossing without violating Assumption A. We have
 \[
@@ -204,7 +211,7 @@ Let us first assume the first case. Notice that in the middle, $\fbb$ must go ab
 \[
 \fbb = d p^- i^- o^*...
 \]
-as shown in SXM2.
+as shown in Figure \ref{fig:SXM2}.
 
 Here if $\fbo$ were to go above $\fbd$, then it would force $\fbdb$ into Situation $\beta$, But if it went below $\fbd$, then it would eventually trace.
 
@@ -213,7 +220,7 @@ So let us assume the second case, that
 \fbdb = p^- s^- \dbar...
 \]
 
-This is SXM3, where again $\fbb$ must go above $\fbdb$ for the same reason as before, and the dotted lines must join in the middle otherwise one of them will immediately enter Situation $\beta$.
+This is Figure \ref{fig:SXM3}, where again $\fbb$ must go above $\fbdb$ for the same reason as before, and the dotted lines must join in the middle otherwise one of them will immediately enter Situation $\beta$.
 
 Here $\fbo$ must continue with $i^+$ and to the left of $\fbb$ otherwise $\fbb$ would trace after crossing $\dbar$. But now $\fbo$ will be absorbed:
 \[
@@ -247,7 +254,7 @@ And again $\fbo$ must continue with $i^+$:
 \fbo = p^- i^+ p^+ \dbar r^+ b^+ d s^*...
 \]
 
-This is SXM5.
+This is Figure \ref{fig:SXM5}.
 
 Here $\fbb$ must end to give
 \[
@@ -255,9 +262,9 @@ Here $\fbb$ must end to give
 \]
 as either continuing with $i^+$ or $i^-$ would cause it to immediately trace after crossing $\dbar$.
 
-This is SXM6.
+This is Figure \ref{fig:SXM6}.
 
-Here consider $\fbr$. It can either begin with $b^\circ$ or $b^+$. Suppose it were the former. This is SXM7. 
+Here consider $\fbr$. It can either begin with $b^\circ$ or $b^+$. Suppose it were the former. This is Figure \ref{fig:SXM7}. 
 
 Here if $\fbi$ continued with $r^\circ$ or $r^+$, forcing $\fbs$ to continue with $r^+$, then $\fbs$ would trace immediately after crossing $d$. On the other hand, if $\fbi$ continued with $r^-$, then it would trace:
 \[
@@ -271,7 +278,7 @@ So suppose $\fbr$ began with $b^+$. Then it must do so going to the left of $\fb
 \fbr = b^+ d s^- o^*...
 \]
 
-This is SXM8.
+This is Figure \ref{fig:SXM8}.
 
 Here if $\fbi$ continued with $b^\circ$ or $b^+$, forcing $\fbs$ to continue with $b^+$, then $\fbs$ is immediately absorbed. But if $\fbi$ continued with $b^-$ then it will trace:
 \[
@@ -286,23 +293,23 @@ So now suppose it were the fourth case:
 \]
 
 
-But now $\fbo$ will trace as shown in SXM9.
+But now $\fbo$ will trace as shown in Figure \ref{fig:SXM9}.
 
 \subsection{GIB}\label{GIB}
-Suppose $\fbd$ began with $r$, and $\fbdb$ began with $i$. Then we have the situation depicted in GIB1.
+Suppose $\fbd$ began with $r$, and $\fbdb$ began with $i$. Then we have the situation depicted in Figure \ref{fig:GIB1}.
 
 Here, as show, in order to meet Assumption A, $\fbdb$ must eventually traverse $p^+$ right before crossing, possibly first with some twisting.
 
 Here if the dotted lines do not join, then in order to not put either $\fbd$ or $\fbdb$ in Situation $\beta$, the only way this could be done is if $\fbp$ went above $\fbd$; or $\fbdb$ went below $\fbd$.
 
-In the former case, this causes $\fbp$ to trace, as shown in GIB2. In the latter case, the dotted lines will enter Situation $\alpha$, as shown in GIB3.
+In the former case, this causes $\fbp$ to trace, as shown in Figure \ref{fig:GIB2}. In the latter case, the dotted lines will enter Situation $\alpha$, as shown in Figure \ref{fig:GIB3}.
 
-So the dotted lines must join. But in this case $\fbp$ still trace, as shown in GIB4.
+So the dotted lines must join. But in this case $\fbp$ still trace, as shown in Figure \ref{fig:GIB4}.
 
 This is a contradiction.
 
 \subsection{TEX}
-Suppose $\fbd$ began with $r$, and $\fbdb$ began with $s$. Then we have the situation depicted in GIB1. As in the situation in GIB \ref{GIB}, $\fbdb$ must eventually traverse $p^+$ right before crossing.
+Suppose $\fbd$ began with $r$, and $\fbdb$ began with $s$. Then we have the situation depicted in Figure \ref{fig:GIB1}. As in the situation in GIB \ref{GIB}, $\fbdb$ must eventually traverse $p^+$ right before crossing.
 
 Here we can repeat the entire argument in GIB \ref{GIB} to reach a contradiction.
 
@@ -320,7 +327,7 @@ Then $\fbdb$ can begin with $r$, $b$; and $\fbd$ can begin with $p$, $i$, $i$, $
 \subsection{TGU}\label{TGU}
 Suppose $\fbdb$ began with $r$, and $\fbdb$ began with $p$. We remind the reader that we are assuming $\fbdb$ must go over an odd number of letters before crossing. This assumption necessitates that eventually $\fbdb$ must traverse $o^-$ right before crossing $d$.
 
-This is TGU1.
+This is Figure \ref{fig:TGU1}.
 
 Here if $\fbr$ went above $\fbp$ then $\fbr$ will immediately trace; if instead $\fbr$ went below $\fbp$ then $\fbp$ will immediately trace.
 
@@ -329,13 +336,13 @@ This is a contradiction.
 \subsection{XNA}\label{XNA}
 Suppose $\fbdb$ began with $r$, and $\fbdb$ began with $i$. We remind the reader that we are assuming $\fbdb$ must go over an odd number of letters before crossing. This assumption necessitates that eventually $\fbdb$ must traverse $o^-$ right before crossing $d$.
 
-This is XNA1.
+This is Figure \ref{fig:XNA1}.
 
 Here $\fbb$ must go above $\fbp$ to not immediately trace; and in between $\fbp$ and $\fbdb$ in order to not trace as well. This forces $\fbdb$ to not have any initial twists or $\fbb$ would be brought along and trace. 
 
-This is XNA2.
+This is Figure \ref{fig:XNA2}.
 
-Here $\fbdb$ must continue with $p^-$ after crossing to not violate Rule F1.
+Here $\fbdb$ must continue with $p^-$ after crossing to not violate the Trace Lemma.
 
 Here if $\fbs$ began with $b^\circ$ or $b^-$, forcing $\fbi$ to begin with $b^-$ then $\fbi$ will trace:
 \[
@@ -352,7 +359,7 @@ forcing
 \fbp = d i^*...
 \]
 
-This is XNA3.
+This is Figure \ref{fig:XNA3}.
 
 Here $\fbd$ must begin with $i^-$ otherwise $\fbp$ would trace. Then if $\fbd$ immediately crosses, it would traverse
 \[
@@ -364,23 +371,23 @@ and then the dotted lines will be in Situation $\alpha$. So we must have
 \]
 instead.
 
-But now as XNA4 shows, $\fbo$ will trace.
+But now as Figure \ref{fig:XNA4} shows, $\fbo$ will trace.
 
 This is a contradiction.
 
 \subsection{WYS}\label{WYS}
 Suppose $\fbdb$ began with $r$, and $\fbdb$ began with $s$. We remind the reader that we are assuming $\fbdb$ must go over an odd number of letters before crossing. 
 
-This is WYS1.
+This is Figure \ref{fig:WYS1}.
 
-The same arguments used in XNA \ref{XNA} lead to the conclusion that $\fbs$ must begin with $b^+$, but in this instance this means it will immediately trace after crossing, as shown in WYS2.
+The same arguments used in XNA \ref{XNA} lead to the conclusion that $\fbs$ must begin with $b^+$, but in this instance this means it will immediately trace after crossing, as shown in Figure \ref{fig:WYS2}.
 
 This is a contradiction.
 
 \subsection{HTI}\label{HTI}
 Suppose $\fbdb$ began with $r$, and $\fbdb$ began with $o$. We remind the reader that we are assuming $\fbdb$ must go over an odd number of letters before crossing. This assumption necessitates that eventually $\fbdb$ must traverse $o^-$ right before crossing $d$.
 
-In this case, $\fbp$ is forced to immediately trace after crossing, as shown in HTI1.
+In this case, $\fbp$ is forced to immediately trace after crossing, as shown in Figure \ref{fig:HTI1}.
 
 This is a contradiction.
 
@@ -389,7 +396,7 @@ Suppose $\fbdb$ began with $r$, and $\fbdb$ began with $\dbar$. We remind the re
 
 Here $\fbp$ must go under $\fbd$ or it would immediately trace.
 
-We have SEZ1.
+We have Figure \ref{fig:SEZ1}.
 
 Here $\fbp$ can continue with $i$ or $o$. Suppose it were the former. Then this forces 
 \[
@@ -402,7 +409,7 @@ to prvent $\fbp$ from tracing. Also, we must have
 \]
 to prevent $\fbs$ from tracing after crossing $d$.
 
-We have the situation depicted in SEZ2.
+We have the situation depicted in Figure \ref{fig:SEZ2}.
 
 The position of $\fbi$ here forces $\fbdb$ to not have any initial twists, so we have
 \[
@@ -418,15 +425,15 @@ and here $\fbo$ must go above $\fbd$, otherwise if $\fbd$ went in between $\fbo$
 \]
 and here it must continue with $p^-$ or else $\fbb$ would trace.
 
-But now we have the situation depicted in SEZ3, where it is clear that $\fbo$ will trace.
+But now we have the situation depicted in Figure \ref{fig:SEZ3}, where it is clear that $\fbo$ will trace.
 
 So suppose instead $\fbp$ continued with $s$:
 \[
 \fbp = d s^*...
 \]
-and if $\fbr$ also began with $s$ here we would have SEZ4. Here the same argument as before shows the dotted liens must join. Here $\fbi$ and $\fbo$ must continue with $p^-$ otherwise $\fbb$ would trace after crossing; but then one of $\fbo$ or $\fbi$ will trace.
+and if $\fbr$ also began with $s$ here we would have Figure \ref{fig:SEZ4}. Here the same argument as before shows the dotted liens must join. Here $\fbi$ and $\fbo$ must continue with $p^-$ otherwise $\fbb$ would trace after crossing; but then one of $\fbo$ or $\fbi$ will trace.
 
-If $\fbr$ instead began with $i$, then this is the situation depicted in SEZ5. Here again $\fbi$ and $\fbo$ must continue with $p^-$ otherwise $\fbb$ would trace after crossing; but then one of $\fbo$ or $\fbi$ will trace.
+If $\fbr$ instead began with $i$, then this is the situation depicted in Figure \ref{fig:SEZ5}. Here again $\fbi$ and $\fbo$ must continue with $p^-$ otherwise $\fbb$ would trace after crossing; but then one of $\fbo$ or $\fbi$ will trace.
 
 This is contradiction.
 
@@ -434,7 +441,7 @@ This concludes the situation where we assume $\fbdb$ goes over an odd number of 
 
 Hence, $\fbdb$ can begin with $b$ or $r$, whicle $\fbd$ can begin with $p$, $i$, $s$, $o$.
 
-\subsection{PBH}
+\subsection{PBH}\label{PBH}
 Back to the end of Case B,C,D \ref{CaseBCD Track 12}.
 Suppose $\fbdb$ began with $b$, and $\fbdb$ began with $p$. We assume $\fbd$ must go over an even number of letters before crossing, which necessitates that $\fbdb$ must go over an odd number of letters before crossing.
 
@@ -446,7 +453,7 @@ and thus
 \[
 \fbo = b^- r^- d...
 \]
-as shown in PBH1.
+as shown in Figure \ref{fig:PBH1}.
 
 Here no matter where $\fbr$ continues it will trace.
 
@@ -468,20 +475,360 @@ Suppose $\fbdb$ began with $b$, and $\fbdb$ began with $s$. We assume $\fbd$ mus
 
 The same argument of CVF \ref{CVF} applies to give a contradiction.
 
-\subsection{TRK}
+\subsection{TRK}\label{TRK}
 Back to the end of Case B,C,D \ref{CaseBCD Track 12}.
 Suppose $\fbdb$ began with $b$, and $\fbdb$ began with $o$. We assume $\fbd$ must go over an even number of letters before crossing, which necessitates that $\fbdb$ must go over an odd number of letters before crossing.
 
-This is TRK1.
+This is Figure \ref{fig:TRK1}.
 
-Then TRK2 is immediate.
+Then Figure \ref{fig:TRK2} is immediate.
 
 Here if $\fbb$ were to begin with $p^\circ$ or $p^-$, then $\fbi$ and $\fbs$ will follow with $p^-$, but then one of them will immediately trace. 
 
-On the other hand, if $\fbb$ were to begin with $p^+$, then in order to not trace, it can only do so by going in between $\fbdb$ and $\fbi$, as shown in TRK3.
+On the other hand, if $\fbb$ were to begin with $p^+$, then in order to not trace, it can only do so by going in between $\fbdb$ and $\fbi$, as shown in Figure \ref{fig:TRK3}.
 
 Now if it continues with $r^\circ$ or $r^-$, forcing $\fbp$ to begin with $r^-$, then $\fbp$ will immediately trace after crossing. But then this means $\fbb$ has to continue with $r^+$, immediately tracing.
 
 This is a contradiction.
 
 This concludes the cases analysis for Track 12.
+
+
+\clearpage
+\section{Figures}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/BKG-1.jpg}
+    \caption{BKG1}
+    \label{fig:BKG1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/BKG-2.jpg}
+    \caption{BKG2}
+    \label{fig:BKG2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/BKG-3.jpg}
+    \caption{BKG3}
+    \label{fig:BKG3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/BKG-4.jpg}
+    \caption{BKG4}
+    \label{fig:BKG4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/BKG-5.jpg}
+    \caption{BKG5}
+    \label{fig:BKG5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/BKG-6.jpg}
+    \caption{BKG6}
+    \label{fig:BKG6}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/CNM-1.jpg}
+    \caption{CNM1}
+    \label{fig:CNM1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/CNM-2.jpg}
+    \caption{CNM2}
+    \label{fig:CNM2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/CNM-3.jpg}
+    \caption{CNM3}
+    \label{fig:CNM3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/CNM-4.jpg}
+    \caption{CNM4}
+    \label{fig:CNM4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/CNM-5.jpg}
+    \caption{CNM5}
+    \label{fig:CNM5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/CNM-6.jpg}
+    \caption{CNM6}
+    \label{fig:CNM6}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/CNM-7.jpg}
+    \caption{CNM7}
+    \label{fig:CNM7}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/CNM-8.jpg}
+    \caption{CNM8}
+    \label{fig:CNM8}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/LGU-1.jpg}
+    \caption{LGU1}
+    \label{fig:LGU1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/LGU-2.jpg}
+    \caption{LGU2}
+    \label{fig:LGU2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/LGU-3.jpg}
+    \caption{LGU3}
+    \label{fig:LGU3}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SXM-1.jpg}
+    \caption{SXM1}
+    \label{fig:SXM1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SXM-2.jpg}
+    \caption{SXM2}
+    \label{fig:SXM2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SXM-3.jpg}
+    \caption{SXM3}
+    \label{fig:SXM3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SXM-4.jpg}
+    \caption{SXM4}
+    \label{fig:SXM4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SXM-5.jpg}
+    \caption{SXM5}
+    \label{fig:SXM5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SXM-6.jpg}
+    \caption{SXM6}
+    \label{fig:SXM6}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SXM-7.jpg}
+    \caption{SXM7}
+    \label{fig:SXM7}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SXM-8.jpg}
+    \caption{SXM8}
+    \label{fig:SXM8}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SXM-9.jpg}
+    \caption{SXM9}
+    \label{fig:SXM9}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/GIB-1.jpg}
+    \caption{GIB1}
+    \label{fig:GIB1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/GIB-2.jpg}
+    \caption{GIB2}
+    \label{fig:GIB2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/GIB-3.jpg}
+    \caption{GIB3}
+    \label{fig:GIB3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/GIB-4.jpg}
+    \caption{GIB4}
+    \label{fig:GIB4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/TGU.jpg}
+    \caption{TGU1}
+    \label{fig:TGU1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/XNA-1.jpg}
+    \caption{XNA1}
+    \label{fig:XNA1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/XNA-2.jpg}
+    \caption{XNA2}
+    \label{fig:XNA2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/XNA-3.jpg}
+    \caption{XNA3}
+    \label{fig:XNA3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/XNA-4.jpg}
+    \caption{XNA4}
+    \label{fig:XNA4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/WYS-1.jpg}
+    \caption{WYS1}
+    \label{fig:WYS1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/WYS-2.jpg}
+    \caption{WYS2}
+    \label{fig:WYS2}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/HTI.jpg}
+    \caption{HTI1}
+    \label{fig:HTI1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SEZ-1.jpg}
+    \caption{SEZ1}
+    \label{fig:SEZ1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SEZ-2.jpg}
+    \caption{SEZ2}
+    \label{fig:SEZ2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SEZ-3.jpg}
+    \caption{SEZ3}
+    \label{fig:SEZ3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SEZ-4.jpg}
+    \caption{SEZ4}
+    \label{fig:SEZ4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/SEZ-5.jpg}
+    \caption{SEZ5}
+    \label{fig:SEZ5}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/PBH.jpg}
+    \caption{PBH1}
+    \label{fig:PBH1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/TRK-1.jpg}
+    \caption{TRK1}
+    \label{fig:TRK1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/TRK-2.jpg}
+    \caption{TRK2}
+    \label{fig:TRK2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track12_case_analysis/TRK-3.jpg}
+    \caption{TRK3}
+    \label{fig:TRK3}
+\end{figure}

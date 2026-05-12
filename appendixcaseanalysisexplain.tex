@@ -1,12 +1,134 @@
-\chapter[Appendix: Case Analysis Preliminaries]{Appendix: Case Analysis Preliminaries}
-\label{app:case analysis Preliminaries}
+\chapter{Appendix: Case Analysis Preliminaries}
+\label{app:case_analysis_preliminaries}
 
-In the following seven appendices, we will lay out the complete cases analyses on the candelabra train track and train tracks 0,1,8,12,13,17 to completely list the possible train track maps carried by these train tracks which can possibly lift to fixed-point free train track maps. To that end, we consider all possible images of the real edges of these train tracks. 
+The case analyses presented in Appendices \ref{app:case_analysis_candelabra}, \ref{app:case_analysis_track0}, \ref{app:case_analysis_track1}, \ref{app:case_analysis_track8}, \ref{app:case_analysis_track12}, \ref{app:case_analysis_track13}, and \ref{app:case_analysis_track17} all turn on a small number of recurring obstructions and named configurations established in Chapter \ref{chap:stratatraintrackanalysis}. This appendix collects these into a single reference and explains the language and patterns of argument that appear repeatedly across the per-track case analyses.
 
-The primary obstruction utilized in these case analyses is the trace lemma, which states that the image of any real edge adjacent to a monogon cannot run over itself. For the Candelabra, this applies to all six real edges. For Tracks 0,1,8,12,13,17 of the stratum ???, this applies to all but the read edge $d$ which connects the two triangles. For this edge, the trace lemma applies in the following sense: there must be an even number of letters between any two occurrence of $d$ in $\fbd$. Similarly, 
+\section{Primary Obstructions}
 
+\subsection{The Trace Lemma}
+\label{sec:case_analysis_trace_lemma}
 
-\section{Rule F1}
-\begin{rulee}
-    frfrfrf
-\end{rulee}
+The fundamental algebraic constraint on the image words $f_\beta(e)$ is the Trace Lemma, established as Lemma \ref{lem:trace_lemma_downstairs} and its strong consequence Corollary \ref{cor:trace_jointless}, which we restate here for reference.
+
+\begin{lemma}[Trace Lemma, restated from Lemma \ref{lem:trace_lemma_downstairs}]
+\label{lem:trace_lemma_appendix}
+Suppose the canonical lift $\phi_h$ has no interior fixed points on $\Sigma_2^2$. Then, for any real edge $e$ of the standard train track $\tau$, any sub-word of the image path $f_\beta(e)$ bounded by two occurrences of $e$ must contain an even number of side-swapping edges.
+\end{lemma}
+
+\begin{corollary}[Trace Lemma for Jointless Monogons, restated from Corollary \ref{cor:trace_jointless}]
+\label{cor:trace_jointless_appendix}
+If $e$ is a real edge of $\tau$ which is directly incident to a jointless monogon, then $e$ cannot appear anywhere in its own image path $f_\beta(e)$.
+\end{corollary}
+
+In the Candelabra (stratum $(3;1^6;3)$), every real edge $b, o, s, i, p, r$ is incident to a jointless monogon, so Corollary \ref{cor:trace_jointless_appendix} applies to all six real edges. In the two-triangle strata (stratum $(2;1^6;3^2)$, Tracks 0, 1, 8, 12, 13, 17), Corollary \ref{cor:trace_jointless_appendix} applies to all five monogon-incident edges $b, i, o, p, r$, but it does \emph{not} apply to the central edge $d$ (and its symmetric companion $\bar{d}$), which is incident to two infinitesimal triangles rather than a monogon. For $d$ and $\bar{d}$, only the more general Lemma \ref{lem:trace_lemma_appendix} applies, in the form of the parity constraints recalled below.
+
+We refer to a violation of Corollary \ref{cor:trace_jointless_appendix} as \textbf{tracing}: an image path $f_\beta(e)$ traces if it contains the letter $e$. The phrase ``$f_\beta(e)$ will trace immediately'' indicates that the next forced letter in the image word would produce a self-occurrence of $e$.
+
+\subsection{The Absorption Obstruction}
+\label{sec:case_analysis_absorption}
+
+The Trace Lemma supplies the algebraic restriction; the geometric restriction is the Absorption Obstruction (Lemma \ref{lem:cone_condition}). Recall: at any vertex $v$ where two real edges $a$ and $b$ are adjacent, the initial segments of $\phi_\beta(a)$ and $\phi_\beta(b)$ bound a convex cone $X_v(a, b)$ in the disk; for any real edge $c$, the image path $\phi_\beta(c)$ cannot enter the interior of this cone.
+
+When the case analysis arrives at a hypothetical image word for $f_\beta(c)$ whose induced path enters $X_v(a, b)$, we say $f_\beta(c)$ is \textbf{absorbed} between $f_\beta(a)$ and $f_\beta(b)$, and we record this in image words with the notation
+\[
+f_\beta(c) = \dots \Abso{f_\beta(a)}{f_\beta(b)} \dots
+\]
+following the convention introduced in Section \ref{subsec:absorption_obstruction}. Such an absorption immediately invalidates the candidate word.
+
+\section{Trace Constraints for the Central Edge $d$}
+\label{sec:case_analysis_trace_constraints}
+
+For Tracks 0, 1, 8, 12, 13, and 17, the analysis subdivides into Cases A, B, C, and D based on how $f_\beta$ permutes the two infinitesimal triangles (see the discussion of Cases A, B, C, D in Section ``Path Notation and the Two Triangles of Chapter 
+ef{chap:stratatraintrackanalysis}). The Trace Lemma yields the following parity constraints, which we use throughout the per-track case analyses.
+
+\begin{itemize}
+    \item \textbf{Case A (Triangles Fixed).} Every occurrence of $d$ in $f_\beta(d)$, and every occurrence of $\bar{d}$ in $f_\beta(\bar{d})$, must follow an \emph{even} number of preceding letters. In particular, the \emph{first} occurrence of $d$ in $f_\beta(d)$ is preceded by an even number of letters.
+    \item \textbf{Cases B, C, D (Triangles Swapped).} At least one of $f_\beta(d)$ or $f_\beta(\bar{d})$ must pass over $d$ or $\bar{d}$ after an \emph{odd} number of letters.
+\end{itemize}
+
+In what follows, we refer to the parity constraint in Case A as \textbf{Assumption A}.
+
+\begin{assumption}[Assumption A]
+\label{assumption_A_appendix}
+In Case A, the first occurrence of $d$ in $f_\beta(d)$ is preceded by an even number of letters, and likewise for the first occurrence of $\bar{d}$ in $f_\beta(\bar{d})$.
+\end{assumption}
+
+\section{Named Configurations and Their Contradictions}
+\label{sec:case_analysis_named_configurations}
+
+The per-track case analyses repeatedly arrive at one of three named configurations, each of which produces a contradiction with the obstructions above. We distinguish two flavors of contradiction:
+
+\begin{itemize}
+    \item \textbf{Non-termination contradictions.} The image word would need to continue indefinitely to satisfy all rules. Since each $f_\beta(e)$ is a finite word, this is impossible.
+    \item \textbf{Direct violation contradictions.} The image word cannot continue at all without immediately violating the Trace Lemma or being absorbed.
+\end{itemize}
+
+\subsection{Situation $\alpha$}
+\label{ssec:situation_alpha_appendix}
+
+\begin{definition}[Situation $\alpha$]
+\label{def:situation_alpha}
+A pair of image paths $f_\beta(d)$ and $f_\beta(\bar{d})$ are in \emph{Situation $\alpha$} if they fail to join in the interior of the configuration and are instead forced to traverse the outer perimeter of the train track indefinitely, with each successive crossing of $d$ in either word at the parity required by the Trace Lemma (Case A) or its odd-parity analog (Cases B, C, D).
+\end{definition}
+
+The contradiction produced by Situation $\alpha$ is of the \emph{non-termination} type: each individual perimeter crossing is consistent with the Trace Lemma, but the resulting image word $f_\beta(d)$ has no finite length, contradicting the requirement that $f_\beta(d)$ be a finite word in the letters of the train track.
+
+A clean instance of Situation $\alpha$ appears in subsection Yaffle of Appendix \ref{app:case_analysis_track0}, depicted in Figure \ref{fig:Yaffle1}: the dotted lines have no interior route by which to join, and so continue clockwise around the outer perimeter of the train track without termination.
+
+\subsection{Situation $\beta$}
+\label{ssec:situation_beta_appendix}
+
+\begin{definition}[Situation $\beta$]
+\label{def:situation_beta}
+A dotted line $f_\beta(d)$ (or $f_\beta(\bar{d})$) is in \emph{Situation $\beta$} if, after a crossing of $d$ (or $\bar{d}$), it is trapped inside a region of the configuration enclosed by another edge-path---typically $f_\beta(b)$, $f_\beta(i)$, $f_\beta(o)$, $f_\beta(p)$, or $f_\beta(r)$---such that every escape route from this region forces the next return to $d$ (or $\bar{d}$) after an odd number of letters.
+\end{definition}
+
+The contradiction produced by Situation $\beta$ is of the \emph{direct violation} type: every geometrically available continuation produces an odd-parity return to $d$, violating Lemma \ref{lem:trace_lemma_appendix} for the central edge.
+
+The colloquial name for Situation $\beta$ that appears in some passages of the case analyses is the ``bagged serpent,'' reflecting the geometric picture of a dotted line coiled inside an enclosing pocket without a parity-respecting exit. A clean instance of Situation $\beta$ appears in subsection Fangle of Appendix \ref{app:case_analysis_track0}, depicted in Figure \ref{fig:Fangle1}: the dotted lines cannot traverse above $f_\beta(p)$ without subsequently violating the Trace Lemma on their return to $d$.
+
+\subsection{Path Mills}
+\label{ssec:path_mills_appendix}
+
+\begin{definition}[Path Mill]
+\label{def:path_mill}
+A \emph{$k$-way path mill} is a configuration in which $k$ image paths $f_\beta(e_1), \dots, f_\beta(e_k)$, with the $e_i$ among $\{b, i, o, p, r, s\}$, become stuck in a rotational pattern between two fixed vertices of the train track. At each step, $k-1$ of the $f_\beta(e_i)$ are positioned at one vertex while the remaining one is at the other; the edge image that just arrived is then forced by Corollary \ref{cor:trace_jointless_appendix} and the Absorption Obstruction (Lemma \ref{lem:cone_condition}) to traverse to the opposite vertex, joining the others there, after which the pattern repeats. The cycle never terminates.
+\end{definition}
+
+The contradiction produced by a path mill is of the \emph{non-termination} type: the image words of the involved edges would need to continue indefinitely, which is impossible.
+
+At each step in the cycle, an edge image that fails to continue along the prescribed route is forced either to trace (violating Corollary \ref{cor:trace_jointless_appendix}) or to be absorbed by one of the other edges (violating Lemma \ref{lem:cone_condition}), both of which are forbidden. Hence the cycle has no escape.
+
+The cleanest illustration is the three-way path mill between vertices $b$ and $o$ appearing in subsection SYD of Appendix \ref{app:case_analysis_track0}, depicted in Figures \ref{fig:SYD1}--\ref{fig:SYD5}. We reproduce the key passage here:
+
+\begin{quote}
+The edges $f_\beta(s)$, $f_\beta(i)$, and $f_\beta(r)$ are in a three-way counterclockwise path mill between $b$ and $o$. At each step there is always a pair from the three positioned at $b$ or $o$, while the third edge is at the other. Looking at the pair at each step, the edge on the right is always forced to continue counterclockwise and to traverse to the left of the edge on the left---otherwise the left edge would be forced either to trace, or to be absorbed in some way. Thus the right edge traverses to the other vertex ($b$ or $o$) to join the third edge, forming the new pair, and the pattern repeats indefinitely.
+\end{quote}
+
+Four-way path mills arise occasionally; see for example subsection LKE of Appendix \ref{app:case_analysis_track13} (Figure \ref{fig:LKE13}) and subsection MMU of Appendix \ref{app:case_analysis_track17} (Figure \ref{fig:MMU13}). The forcing mechanism generalizes from the three-way case in the obvious manner.
+
+\section{Notation and Common Phrases}
+\label{sec:case_analysis_notation}
+
+We collect here the meanings of recurring shorthand used throughout the per-track case analyses.
+
+\paragraph{Dotted lines.}
+Refers to the two image paths $f_\beta(d)$ and $f_\beta(\bar{d})$, which together depict the image of the central edge between the two infinitesimal triangles in Tracks 0, 1, 8, 12, 13, 17. These are drawn as dashed or dotted curves in the figures of the per-track appendices, to distinguish them from the five monogon-incident edges.
+
+\paragraph{Joining in the middle.}
+Two image paths $f_\beta(d)$ and $f_\beta(\bar{d})$ are said to \emph{join in the middle} if they meet at a common interior point of the train track configuration. Joining in the middle is the desired outcome at each branching choice in the case analysis: the alternative---failing to join---is what produces Situation $\alpha$ or Situation $\beta$.
+
+\paragraph{Tracing.}
+An image path $f_\beta(e)$ \emph{traces} (or \emph{traces itself}) when its image word contains the letter $e$. By Corollary \ref{cor:trace_jointless_appendix}, this is a contradiction whenever $e$ is incident to a jointless monogon. The phrase ``$f_\beta(e)$ will trace immediately'' indicates that the next forced letter in the candidate word would produce a self-occurrence of $e$.
+
+\paragraph{Absorbed.}
+An image path $f_\beta(c)$ is \emph{absorbed} between $f_\beta(a)$ and $f_\beta(b)$ when it is forced to enter the convex cone $X_v(a, b)$ near a vertex $v$, in violation of Lemma \ref{lem:cone_condition}. Absorption is distinct from tracing but is similarly fatal to the case at hand. In displayed image words, absorption is recorded with the notation $\Abso{f_\beta(a)}{f_\beta(b)}$.
+
+\paragraph{Initial twists.}
+An image path $f_\beta(d)$ has \emph{initial twists} if it begins with one or more letters before the first crossing of $d$. By Assumption \ref{assumption_A_appendix}, in Case A the number of initial twists must be even.
+
+\paragraph{Exit routes 1, 2, 3.}
+The figures in the case analyses label the possible local continuations of an image path at a branching point with small numbers (e.g.\ ``goes into 1, 2, or 3''). These numbers correspond to the local choice of direction at the vertex shown in the figure; the case analysis then enumerates which of these routes survives the constraints imposed by the Trace Lemma, the Absorption Obstruction, and the trace constraints of Section \ref{sec:case_analysis_trace_constraints}.
+
+\paragraph{Outer perimeter.}
+The boundary loop of the train track polygon, traversed in either the clockwise or counterclockwise direction. An image path circling the outer perimeter without termination is the geometric signature of Situation $\alpha$.

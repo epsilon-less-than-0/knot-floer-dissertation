@@ -9,7 +9,7 @@ Our analysis proceeds in several steps. First, the finite list of candidate stan
 
 For the stratum $(3;1^6;3)$, this reduction process isolates a single standard jointless train track, which we refer to as \textit{The Candelabra} (see Figure \ref{fig:candelabra}). For the stratum $(2;1^6;3^2)$, the tight splitting sequences reduce the candidate list to exactly six tracks. Therefore, up to conjugation, mirroring, and the addition of full twists, every fixed-point-free pseudo-Anosov 6-braid in these two strata must be carried by one of these specific train tracks.
 
-We then exhaustively analyze all possible train track maps that can be carried by each of these refined tracks. To determine which maps are theoretically admissible, we subject them to rigorous combinatorial constraints---the Trace Lemma and the Absorption Obstruction---which algebraically and geometrically detect the presence of fixed points. This procedure successfully prunes the infinite space of maps down to a finite list of eligible train track map \textit{families} for each track. For each surviving family, we produce explicit braid words $\beta$ that induce those maps.
+We then exhaustively analyze all possible train track maps that can be carried by each of these refined tracks. The analysis proceeds edge by edge, enumerating the admissible image paths $f_\beta(e)$ subject to two combinatorial obstructions: the Trace Lemma (which forbids self-occurrence at jointless monogon edges and imposes parity constraints at the central edge $d$ of two-triangle tracks) and the Absorption Obstruction (which forbids image paths from entering geometrically inaccessible regions near vertices). When neither obstruction can be satisfied, the configuration falls into one of three named patterns---Situation $\alpha$, Situation $\beta$, or a path mill---each of which produces a contradiction; we collect these in Appendix \ref{app:case_analysis_preliminaries}. This procedure successfully prunes the infinite space of maps down to a finite list of eligible train track map \textit{families} for each track. For each surviving family, we produce explicit braid words $\beta$ that induce those maps.
 
 Finally, to verify if such a braid $\beta$ can properly fit into the Birman-Hilden correspondence data
 \[
@@ -79,7 +79,7 @@ Since $\phi_\beta(c)$ cannot cross the boundary to exit, it must either terminat
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\linewidth]{figures/absorbed.png}
+    \includegraphics[width=0.8\linewidth]{figures/Absorption-1.jpg}
     \caption[The Absorption Obstruction]{An invalid geometric configuration where $\phi_\beta(c)$ is absorbed between $\phi_\beta(a)$ and $\phi_\beta(b)$, violating injectivity.}
     \label{fig:absorbed_cone}
 \end{figure}
@@ -90,12 +90,38 @@ f_\beta(c) = \dots \Abso{f_\beta(a)}{f_\beta(b)} \dots
 \]
 The existence of such an absorption immediately invalidates the transition word. By systematically applying the Absorption Obstruction alongside the algebraic parity constraints of the Trace Lemma, we can definitively prune the space of possible transition matrices.
 
+
+
+\subsection{The Case Analysis Procedure}
+\label{subsec:case_analysis_procedure}
+
+Given a jointless standard train track $\tau$, we enumerate the families of train track maps $f_\beta$ carried by $\tau$ via the following procedure. Steps 1--6 below constitute the content of the per-track case analyses in Appendices \ref{app:case_analysis_candelabra}, \ref{app:case_analysis_track0}, \ref{app:case_analysis_track1}, \ref{app:case_analysis_track8}, \ref{app:case_analysis_track12}, \ref{app:case_analysis_track13}, and \ref{app:case_analysis_track17}; Step 7 is the content of the corresponding braid-extraction appendices.
+
+\begin{enumerate}
+    \item \textbf{Initial labeling.} Label and orient the real edges of $\tau$ toward their adjacent monogons. For two-triangle tracks, identify the central edge $d$ connecting the two infinitesimal triangles and its symmetric companion $\bar{d}$.
+    
+    \item \textbf{Triangle permutation case split.} For two-triangle tracks, branch the analysis into Cases A, B, C, D according to how $f_\beta$ permutes the two infinitesimal triangles, as described in Section \ref{subsec:path_notation_two_triangles}.
+    
+    \item \textbf{Initial-letter enumeration.} For each real edge $e$ of $\tau$, enumerate the possible first letters of $f_\beta(e)$, subject to Corollary \ref{cor:trace_jointless} (the letter $e$ does not appear in $f_\beta(e)$) and, in Case A, the parity constraint of Assumption A applied to $f_\beta(d)$ and $f_\beta(\bar{d})$.
+    
+    \item \textbf{Forced continuations.} For each partial image path, determine the next admissible letters by checking the Trace Lemma (for paths at the central edge $d$, the parity of the number of letters between consecutive $d$-crossings) and the Absorption Obstruction (at each vertex traversed, the image path must not enter a cone formed by adjacent edge images, as in Lemma \ref{lem:cone_condition}).
+    
+    \item \textbf{Termination or contradiction.} Continue Step 4 until either (i) the path terminates with a $\circ$-decoration at a marked point, yielding a candidate, or (ii) the path is forced into Situation $\alpha$, Situation $\beta$, a path mill, or a direct tracing or absorption violation, eliminating the case. See Appendix \ref{app:case_analysis_preliminaries} for the precise definitions of Situations $\alpha$, $\beta$, and path mills, together with worked examples of each contradiction pattern.
+    
+    \item \textbf{Parameterization.} Group surviving paths into families parameterized by the number of internal twists $k$ between adjacent edges, accommodating the fact that an edge image may twist between two adjacent edges an arbitrary number of times before terminating.
+    
+    \item \textbf{Braid extraction.} For each surviving family, reverse-engineer a braid word $\beta$ inducing the family by isotoping the image train track back to $\tau$. This is illustrated explicitly for the candelabra example below and for the Jehu family in Appendix \ref{app:candidate_braids_candelabra}.
+\end{enumerate}
+
+We now demonstrate this procedure with two worked examples: first on the candelabra (one infinitesimal triangle, no central edge $d$), then on Track 0 (two infinitesimal triangles, with the central edge analysis in full).
+
 \subsection{Path Notation and The Two Triangles}
+\label{subsec:path_notation_two_triangles}
 
 Following the conventions established by Reinoso \cite{reinoso2024pseudo}, we describe the image of a real edge under the train track map $f_\beta$ as a sequence of real edges decorated with turn information. Let $\tau$ be a standard train track. The image path $f_\beta(e)$ is represented as a word in the real edges $\{x_1, \dots, x_k\}$ of $\tau$.
 
 
-Each letter is equipped with a decoration $\sigma \in \{+, -, \circ\}$ indicating the behavior of the path at the vertex reached after traversing that edge:
+Each letter is equipped with a decoration from $\{+, -, \circ\}$ indicating the behavior of the path at the vertex reached after traversing that edge:
 \begin{itemize}
     \item $x^+$ indicates the path traverses edge $x$ and turns in the \textbf{positive} direction (typically left relative to the orientation) at the vertex to enter the next edge.
     \item $x^-$ indicates the path traverses edge $x$ and turns in the \textbf{clockwise} direction to enter the next edge.
@@ -120,60 +146,270 @@ For the two-triangle tracks, the constraints on the image $f_\beta(d)$ are gover
 By systematically checking every theoretical transition word against these parity constraints and the Absorption Obstruction, we can computationally exhaust the finite set of valid train track maps for both strata.
 
 
-\subsubsection*{An Example}
-Let us consider the standard jointless train track which we call the Candelabra (see Figure \ref{fig:candelabra}). This train track belongs to the stratum $(3;1^6;3)$. As will be established in Section \ref{sec:analysis_3_16_3}, on this stratum, the Candelabra is the only train track that needs to be considered.
+\subsubsection*{Example 1: The Candelabra}
+\label{subsec:example_candelabra}
 
-To begin the case analysis, we label and orient the real edges toward the monogons, as shown in Figure \ref{fig:candelabra}. We then consider the possible image paths of each oriented edge while ensuring the Trace Lemma is not violated, no edge path is absorbed, and that the edge paths together can be isotoped to be transverse to the fibered foliation of the Candelabra.
+We illustrate the procedure on the candelabra (Figure \ref{fig:candelabra}), the unique jointless standard train track in the stratum $(3;1^6;3)$ (as will be established in Section \ref{sec:analysis_3_16_3}). The candelabra has six real edges $b, o, s, i, p, r$, each incident to a jointless monogon, and a single central infinitesimal triangle. Because there is no central edge $d$, Step 2 of the procedure (the triangle permutation case split) does not arise here.
 
-Since every real edge of this train track is incident to a jointless monogon, the image path of each and every one of the edges $b$, $o$, $s$, $i$, $p$, $r$ must not contain itself. This immediately implies that the triangle must be rotated, otherwise at least the image of the edges $b$ and $r$ would begin by running along itself. We call such a violation of Corollary \ref{cor:trace_jointless} \textbf{tracing}.
+\paragraph{Step 1 (Initial labeling).} We label and orient the six real edges toward their respective monogons, as shown in Figure \ref{fig:candelabra}.
 
-\begin{figure}[h]
+\paragraph{Step 3 (Initial letters).} By Corollary \ref{cor:trace_jointless}, the letter $e$ cannot appear in $f_\beta(e)$ for any of the six edges. This already constrains the first letter of each image path: for instance, $\fbb$ cannot begin with $b$, so it must begin with one of $o, s, i, p, r$ (with an appropriate decoration). Combined with the local cyclic order at each vertex, this immediately implies that the triangle must be rotated by $f_\beta$; otherwise at least one of $\fbb$ or $\fbr$ would immediately trace. Thus the complete case analysis must consider separately the case in which $\fbr$ and $\fbb$ begin with the pair $\{o^{*}, s^{*}\}$ in some order, and the case in which they begin with $\{i^{*}, p^{*}\}$ in some order. For the purpose of this example, we treat the former case. In this situation, $\fbo$ and $\fbs$ begin with the pair $\{i^{*}, p^{*}\}$ in some order, while $\fbi$ and $\fbp$ begin with the pair $\{b^{*}, r^{*}\}$ in some order. The complete case analysis enumerates all such possibilities; here we restrict to the following subcase:
+\[
+\fbp = b^\circ, \qquad \fbi = r^\circ,
+\]
+\[
+\fbr = o^*\ldots, \qquad \fbb = o^*\ldots,
+\]
+\[
+\fbo = p^*\ldots, \qquad \fbs = p^*\ldots.
+\]
+This initial state is shown in Figure \ref{fig:Jehu_example_1}.
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{figures_braid/figures_candelabra/Candelabra Braid 2 Jehu-2.jpg}
-    \caption{An example family of candidate train track maps on the Candelabra.}
-    \label{fig:candelabra_example_family}
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-01.jpg}
+    \caption{Initial subcase under consideration: $\fbp = b^\circ$, $\fbi = r^\circ$, with $\fbr$ and $\fbb$ both beginning at $o$, and $\fbo$ and $\fbs$ both beginning at $p$.}
+    \label{fig:Jehu_example_1}
 \end{figure}
 
-Let us consider Figure \ref{fig:candelabra_example_family} for an example of a family of candidate train track maps on the Candelabra. The image paths of each real edge are fully drawn in the figure, except for the image paths of $r$ and $b$, which are not drawn to have ended.
+\paragraph{Step 4 (Forced continuations and absorption).} Within this subcase, the case analysis further branches on the decoration of each first letter. Let us first consider $\fbr$. If it were to begin with $o^\circ$ (meaning it terminates immediately) or $o^+$ (a counterclockwise turn), then because $\fbb$ lies to the right of $\fbr$, $\fbb$ would in both cases be forced to begin with $o^+$, and would then immediately trace:
+\[
+\fbb = o^+ b^\times,
+\]
+as shown in Figures \ref{fig:Jehu_example_2} and \ref{fig:Jehu_example_3}.
 
-For all the edges except $r$ and $b$, the image paths of the edges as shown in the figure correspond to the following:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-02.jpg}
+    \caption{Failure of the $\fbr = o^\circ$ branch: $\fbb$ is forced to begin with $o^+$ and traces immediately at $b^\times$.}
+    \label{fig:Jehu_example_2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-03.jpg}
+    \caption{Failure of the $\fbr = o^+$ branch: $\fbb$ is again forced into $o^+ b^\times$, tracing immediately.}
+    \label{fig:Jehu_example_3}
+\end{figure}
+
+The only remaining possibility is for $\fbr$ to begin with $o^-$, entering to the right of $\fbb$ after the clockwise turn:
+\[
+\fbr = o^-\ldots,
+\]
+as shown in Figure \ref{fig:Jehu_example_4}. The next letter can then be either $i^{*}$ or $p^{*}$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-04.jpg}
+    \caption{The only admissible decoration: $\fbr = o^-\ldots$, with $\fbr$ entering to the right of $\fbb$ after the clockwise turn.}
+    \label{fig:Jehu_example_4}
+\end{figure}
+
+Let us now turn to $\fbs$. If it were to begin with $p^\circ$ or $p^-$, then because $\fbo$ lies to the left of $\fbs$, $\fbo$ would be forced to begin with $p^-$ and would be absorbed:
+\[
+\fbo = p^- r^- \Abso{\fbp}{\fbi},
+\]
+as shown in Figure \ref{fig:Jehu_example_5}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-05.jpg}
+    \caption{Failure of the $\fbs = p^\circ$ and $\fbs = p^-$ branches: $\fbo$ is forced to begin with $p^-$ and is absorbed between $\fbp$ and $\fbi$.}
+    \label{fig:Jehu_example_5}
+\end{figure}
+
+We must therefore have instead $\fbs = p^+\ldots$, and the next letter can be either $o^{*}$ or $s^{*}$. To avoid tracing, it must be the former:
+\[
+\fbs = p^+ o^*\ldots.
+\]
+This is Figure \ref{fig:Jehu_example_6}. Note that $\fbs$ must go to the left of $\fbr$; otherwise $\fbs$ would continue traversing the outer perimeter and be absorbed between $\fbp$ and $\fbi$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-06.jpg}
+    \caption{Forced continuation: $\fbs = p^+ o^*\ldots$, with $\fbs$ passing to the left of $\fbr$ to avoid the outer-perimeter absorption.}
+    \label{fig:Jehu_example_6}
+\end{figure}
+
+We can now return to $\fbr$. In this situation, if $\fbr$ continued with $p^*$, then it would traverse above $\fbs$ and wrap around to be absorbed:
+\[
+\fbr = o^- p^- r^- \Abso{\fbp}{\fbi},
+\]
+as shown in Figure \ref{fig:Jehu_example_7}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-07.jpg}
+    \caption{Failure of the $\fbr = o^- p^*\ldots$ branch: $\fbr$ traverses above $\fbs$, wraps around $r^-$, and is absorbed between $\fbp$ and $\fbi$.}
+    \label{fig:Jehu_example_7}
+\end{figure}
+
+We must therefore have
+\[
+\fbr = o^- i^*\ldots,
+\]
+as shown in Figure \ref{fig:Jehu_example_8}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-08.jpg}
+    \caption{Forced continuation: $\fbr = o^- i^*\ldots$, the only remaining admissible route.}
+    \label{fig:Jehu_example_8}
+\end{figure}
+
+Now consider $\fbb$. Beginning with $o^+$ is ruled out by immediate absorption. On the other hand, if $\fbb$ began with $o^\circ$, the incoming $\fbs$ would then traverse $o^+$ and be absorbed. We must therefore have
+\[
+\fbb = o^- i^*\ldots,
+\]
+as shown in Figure \ref{fig:Jehu_example_9}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-09.jpg}
+    \caption{Forced continuation: $\fbb = o^- i^*\ldots$, after ruling out $\fbb = o^+\ldots$ (immediate absorption) and $\fbb = o^\circ$ (which would absorb the incoming $\fbs$).}
+    \label{fig:Jehu_example_9}
+\end{figure}
+
+Consider next the sub-branch in which $\fbs$ terminates at $o^\circ$:
+\[
+\fbs = p^+ o^\circ.
+\]
+(The complete case analysis verifies that if $\fbs$ did not terminate here, the resulting configuration would eventually produce a contradiction, but the argument requires extensive further branching that we omit.) The situation is shown in Figure \ref{fig:Jehu_example_10}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-10.jpg}
+    \caption{The subcase $\fbs = p^+ o^\circ$ (terminating at $o$), together with the forced $\fbo = p^\circ$ in this configuration.}
+    \label{fig:Jehu_example_10}
+\end{figure}
+
+In this situation, $\fbo$ must terminate immediately: if it did not, the next letter could only be $o^*$, which would trace. Thus
+\[
+\fbo = p^\circ.
+\]
+It remains to determine the continuations of $\fbb$ and $\fbr$. Here $\fbb$ cannot continue with $i^\circ$ or $i^-$: either choice would force $\fbr$ to continue with $i^-$, which would then be absorbed:
+\[
+\fbr = o^- i^- o^+ p^- \Abso{\fbo}{\fbs},
+\]
+as shown in Figure \ref{fig:Jehu_example_11}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-11.jpg}
+    \caption{Failure of the $\fbb = o^- i^\circ$ and $\fbb = o^- i^-$ branches: $\fbr$ is forced into $o^- i^- o^+ p^-$ and absorbed between $\fbo$ and $\fbs$.}
+    \label{fig:Jehu_example_11}
+\end{figure}
+
+We must therefore have
+\[
+\fbb = o^- i^+ s^*\ldots,
+\]
+as shown in Figure \ref{fig:Jehu_example_12}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-12.jpg}
+    \caption{Forced continuation: $\fbb = o^- i^+ s^*\ldots$, the only remaining admissible route.}
+    \label{fig:Jehu_example_12}
+\end{figure}
+
+At this point, $\fbb$ and $\fbr$ may both terminate, or they may twist between $s^*$ and $i^*$ some number of times before terminating. Figures \ref{fig:Jehu_example_13} and \ref{fig:Jehu_example_14} show two examples of such twisting. Neither $\fbb$ nor $\fbr$ can escape this region between $s$ and $i$ without eventually being absorbed or tracing; both must terminate at one of the two letters after finitely many twists.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-13.jpg}
+    \caption{The surviving family with one twist ($k = 1$) of $\fbb$ and $\fbr$ between $s$ and $i$ before termination.}
+    \label{fig:Jehu_example_13}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Case Analysis Example Candelabra-14.jpg}
+    \caption{The surviving family with two twists ($k = 2$). The general case admits an arbitrary $k \geq 0$ number of twists, with one of $\fbb, \fbr$ ending at $s^\circ$ and the other at $i^\circ$.}
+    \label{fig:Jehu_example_14}
+\end{figure}
+
+\paragraph{Step 5--6 (Image paths and parameterization).} In conclusion, the resulting image paths are:
 \begin{align*}
-    f_\beta(p) &= b^\circ \\
-    f_\beta(o) &= p^\circ \\
-    f_\beta(i) &= r^\circ \\
-    f_\beta(s) &= p^+ o^\circ
+    f_\beta(p) &= b^\circ, \\
+    f_\beta(o) &= p^\circ, \\
+    f_\beta(i) &= r^\circ, \\
+    f_\beta(s) &= p^+ o^\circ,
 \end{align*}
-
-For $f_\beta(r)$ and $f_\beta(b)$, they ``twist'' between $s$ and $i$ for an arbitrary number of times, represented by a parameter $k$; but eventually, one has to end at $s$, while the other ends at $i$.
-
-More precisely, we have either:
+together with the twisting pair $f_\beta(r)$ and $f_\beta(b)$, which twist between $s$ and $i$ an arbitrary $k \geq 0$ number of times, with one terminating at $s$ and the other at $i$. Precisely, we have either
 \[
-f_\beta(r) = o^- (i^+s^+)^k i^\circ \quad \text{and} \quad f_\beta(b) = o^- i^+ (s^+ i^+)^k s^\circ
+f_\beta(r) = o^- (i^+s^+)^k i^\circ \quad \text{and} \quad f_\beta(b) = o^- i^+ (s^+ i^+)^k s^\circ,
 \]
-or:
+or
 \[
-f_\beta(r) = o^- i^+ (s^+i^+)^k s^\circ \quad \text{and} \quad f_\beta(b) = o^- (i^+s^+)^k i^\circ
+f_\beta(r) = o^- i^+ (s^+i^+)^k s^\circ \quad \text{and} \quad f_\beta(b) = o^- (i^+s^+)^k i^\circ.
 \]
-where $k \geq 0$ is a non-negative integer representing the number of twists.
+This family appears as Candidate Family 2 of the Candelabra train track in our full case analysis (Appendix \ref{app:case_analysis_candelabra}).
 
-For such a family of candidate train track maps, we can obtain a corresponding family of candidate braids which induce them. In this example, the braid
+\paragraph{Step 7 (Braid extraction).} For each $k \geq 0$, this family is induced by a 6-braid of the form
 \[
-\beta = \Delta^{2i} (\sigma_3^k\sigma_2^{-1}\sigma_3^{-1}\sigma_4 \cdot G)^{-1}
+\beta = \Delta^{2i} (\sigma_3^k \cdot G_1 \cdot G_2)^{-1},
 \]
-carries this family of train track maps, where $G$ is the following braid:
-\begin{flushleft}
-$\displaystyle G = \allowbreak\sigma_{3}^{-1}\allowbreak\sigma_{4}^{-1}\allowbreak\sigma_{2}^{-1}\allowbreak\sigma_{3}^{-1}\allowbreak\sigma_{1}^{-1}\allowbreak\sigma_{2}^{-1}\allowbreak\sigma_{3}^{-1}\allowbreak\sigma_{4}^{-1}\allowbreak\sigma_{3}\allowbreak\sigma_{4}^{-1}\allowbreak\sigma_{5}^{-1}\allowbreak\sigma_{4}^{-1}\allowbreak\sigma_{3}^{-1}\allowbreak\sigma_{4}\allowbreak\sigma_{5}\allowbreak\sigma_{2}^{-1}\allowbreak\sigma_{1}^{-1}\allowbreak\sigma_{1}^{-1}\allowbreak\sigma_{2}^{-1}\allowbreak\sigma_{1}^{-1}\allowbreak\sigma_{1}^{-1} \cdot \allowbreak\sigma_{5}\allowbreak\sigma_{4}\allowbreak\sigma_{3}\allowbreak\sigma_{2}\allowbreak\sigma_{1}\allowbreak\sigma_{2}\allowbreak\sigma_{3}\allowbreak\sigma_{4}\allowbreak\sigma_{5}\allowbreak\sigma_{5}\allowbreak\sigma_{4}\allowbreak\sigma_{3}\allowbreak\sigma_{2}\allowbreak\sigma_{3}\allowbreak\sigma_{4}\allowbreak\sigma_{5}\allowbreak\sigma_{5}\allowbreak\sigma_{4}\allowbreak\sigma_{3}\allowbreak\sigma_{4}\allowbreak\sigma_{5}\allowbreak\sigma_{5}\allowbreak\sigma_{4}\allowbreak\sigma_{5}\allowbreak\sigma_{5}$
-\end{flushleft}
-(We remind the reader that in our convention, a braid word is read from left to right).
+where $i \in \mathbb{Z}$ is an arbitrary number of full twists (see Corollary \ref{cor:induce_by_braid_fulltwist}) and the two intermediate braid factors are
+\begin{align*}
+G_1 &= \sigma_2^{-1}\sigma_3^{-1}\sigma_4, \\
+G_2 &= \sigma_{3}^{-1}\sigma_{4}^{-1}\sigma_{2}^{-1}\sigma_{3}^{-1}\sigma_{1}^{-1}\sigma_{2}^{-1}\sigma_{3}^{-1}\sigma_{4}^{-1}\sigma_{3}\sigma_{4}^{-1}\sigma_{5}^{-1}\sigma_{4}^{-1}\sigma_{3}^{-1}\sigma_{4}\sigma_{5}\sigma_{2}^{-1}\sigma_{1}^{-1}\sigma_{1}^{-1}\sigma_{2}^{-1}\sigma_{1}^{-1}\sigma_{1}^{-1} \\
+&\quad \cdot \sigma_{5}\sigma_{4}\sigma_{3}\sigma_{2}\sigma_{1}\sigma_{2}\sigma_{3}\sigma_{4}\sigma_{5}\sigma_{5}\sigma_{4}\sigma_{3}\sigma_{2}\sigma_{3}\sigma_{4}\sigma_{5}\sigma_{5}\sigma_{4}\sigma_{3}\sigma_{4}\sigma_{5}\sigma_{5}\sigma_{4}\sigma_{5}\sigma_{5}.
+\end{align*}
+The derivation matches the stages described visually in Figure \ref{fig:candelabra_braid_b2} of Appendix \ref{app:candidate_braids_candelabra}: the factor $\sigma_3^k$ unwinds the $k$ twists between $\fbr$ and $\fbb$; the factor $G_1 = \sigma_2^{-1}\sigma_3^{-1}\sigma_4$ then transforms the unwound image to a standardized intermediate configuration; finally, $G_2$ transforms this intermediate back to the candelabra, as illustrated step by step in Figure \ref{fig:candelabra_braid_G}. The inverse of the product gives the candidate braid. We remind the reader that throughout this thesis, braid words are read from left to right.
 
-This can be seen from Figure \ref{fig:candelabra_braid_b2} of Appendix \ref{app:candidate_braids_candelabra}. We begin with the image of the train track map, and observe the sequence of action of the braid $\sigma_3^k\sigma_2^{-1}\sigma_3^{-1}\sigma_4 \cdot G$ transforming it back to the Candelabra. Firstly, the action of $\sigma_3^k$ unwinds the twisting between $\fbr$ and $\fbb$. Then $\sigma_2^{-1}\sigma_3^{-1}\sigma_4$ transforms it into the image on the bottom right of the Figure. The braid $G$ then transforms this into the Candelabra, which can be seen in Figure \ref{fig:candelabra_braid_G}. Consequently, the inverse of the total braid induces this train track map.
+By Corollary \ref{cor:induce_by_braid_fulltwist}, every 6-braid that induces this same family of train track maps differs from $\beta$ by a number of full twists. Up to conjugation, these braids represent candidates $\beta$ which can fit into the Birman-Hilden correspondence data.
 
-By Corollary \ref{cor:induce_by_braid_fulltwist}, up to conjugation, any 6-braid inducing this same family of train track maps differs from $\beta$ by a number of full twists. Hence, this analysis yields the braid candidates:
+\subsubsection*{Example 2: A Two-Triangle Track}
+\label{subsec:example_two_triangles}
+
+We now illustrate the procedure on a two-triangle track to demonstrate the additional features of Step 2 (the Cases A, B, C, D split) and Assumption A. We work on Track 0 (Figure \ref{fig:final_six_tracks}), one of the six irreducible jointless tracks in the stratum $(2;1^6;3^2)$. Track 0 has five real edges $b, i, o, p, r$ each incident to a jointless monogon, plus the central edge $d$ (and its symmetric companion $\bar{d}$) connecting the two infinitesimal triangles.
+
+We focus on \emph{Case A} (triangles fixed). The analysis for Cases B, C, D proceeds analogously with odd parity replacing even at $d$-crossings.
+
+\paragraph{Step 1 (Initial labeling).} The real edges $b, i, o, p, r$ are oriented toward their monogons; $d$ runs between the two triangles, with $\bar{d}$ its symmetric companion.
+
+\paragraph{Step 2 (Triangle permutation).} We work in Case A: $f_\beta$ fixes the two infinitesimal triangles.
+
+\paragraph{Step 3 (Initial letters under Assumption A).} The Trace Lemma applied to $b$, $i$, $o$, $p$, $r$ (each jointless-monogon-incident) forbids any of these edges from appearing in its own image path. For the central edge $d$, Assumption A requires that the first occurrence of $d$ in $f_\beta(d)$ be preceded by an even number of letters. Consider, for instance, an attempted start
 \[
-\beta = \Delta^{2i} (\sigma_3^k\sigma_2^{-1}\sigma_3^{-1}\sigma_4 \cdot G)^{-1}.
+f_\beta(d) = r^+ d \ldots
 \]
+This places the first crossing of $d$ after a single letter ($r^+$), violating Assumption A. The same applies to any attempt to put $d$ in the second position of $f_\beta(d)$. The first $d$-crossing must therefore occur in an even position, so the start of $f_\beta(d)$ has the form
+\[
+f_\beta(d) = x^{\pm}\, y^{\pm}\, d \ldots
+\]
+or with more preceding letters (still in even count). The same parity constraint applies to $f_\beta(\bar{d})$.
 
-Up to conjugation, these braids represent candidates $\beta$ which can fit into the Birman-Hilden correspondence data.
+\paragraph{Step 4 (Forced continuations).} Suppose we are exploring a branch in which
+\[
+f_\beta(d) = b^- p^- d \ldots, \qquad f_\beta(\bar{d}) = i^+ s^+ \bar{d} \ldots
+\]
+(Each begins with two letters preceding the central edge crossing, in agreement with Assumption A.) After the $d$-crossing in $f_\beta(d)$, the next letter is constrained by both the Trace Lemma and the Absorption Obstruction. The Trace Lemma requires that the next occurrence of $d$ in $f_\beta(d)$ be again preceded by an even number of letters since the previous $d$; equivalently, $d$ cannot reappear after a single letter. So a continuation of the form
+\[
+f_\beta(d) = b^- p^- d \cdot z^{\pm}\, d \ldots
+\]
+is forbidden, where $z^{\pm}$ is any single letter.
+
+Independently, the Absorption Obstruction may forbid certain geometric routings of the continuation. Suppose the next letter is being chosen at a vertex where $f_\beta(i)$ and $f_\beta(o)$ have already established initial segments forming the cone $X_v(\fbi, \fbo)$. Then Lemma \ref{lem:cone_condition} forbids $f_\beta(d)$ from continuing into the interior of this cone:
+\[
+f_\beta(d) = b^- p^- d\, \Abso{\fbi}{\fbo} \ldots
+\]
+is invalid, and we record this with the absorption symbol $\times$.
+
+\paragraph{Step 5 (Termination, contradictions, or survival).} Continuing the case analysis at each branching point eventually either:
+\begin{enumerate}
+    \item produces a complete candidate image word terminating with a $\circ$-decoration, or
+    \item forces the dotted lines $f_\beta(d)$ and $f_\beta(\bar{d})$ to fail to join in the interior of the configuration. In the latter case, the dotted lines must continue around the outer perimeter of the train track, each successive $d$-crossing necessarily at an even position---but they continue indefinitely, never terminating. This is \emph{Situation $\alpha$}, and it produces a non-termination contradiction (Appendix \ref{app:case_analysis_preliminaries}).
+\end{enumerate}
+A third possibility is that the dotted lines do join in the interior but are forced into a region of the configuration from which they cannot escape without an odd-parity return to $d$. This is \emph{Situation $\beta$}, also called the bagged serpent.
+
+\paragraph{Step 6 (Parameterization) and Step 7 (Braid extraction).} The surviving image paths organize into families parameterized by twist counts $k, m, j, \ldots$ between adjacent edges, exactly as in the candelabra example. For Track 0, the full case analysis (Appendix \ref{app:case_analysis_track0}) produces 13 such families, of which the family labeled \emph{Jubilant} provides one of the two F1-passing candidates in the homological filtering of Section \ref{sec:homological_filtering}. Each surviving family is then turned into an explicit candidate braid word by the same reverse-isotopy procedure used in Example 1.
+
+\medskip
+
+We do not attempt to walk through Track 0's complete case analysis here; the per-track appendix (Appendix \ref{app:case_analysis_track0}) is approximately 100 pages of step-by-step forced-letter reasoning across all four cases. The miniature derivation above shows the typical local move---enumerate next letters at each vertex, eliminate by the Trace Lemma or Absorption Obstruction, classify any failures as Situation $\alpha$, $\beta$, or path mill, and continue. For a worked instance of the resulting Jubilant family with concrete parameter values, see Figure \ref{fig:Jubilant3} of Appendix \ref{app:case_analysis_track0}.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -379,7 +615,7 @@ We begin by demonstrating that any pseudo-Anosov map in this stratum must be car
 
 \subsection{Enumeration of Train Track Maps and Braids}
 
-Having reduced our geometric search space to the Candelabra, we execute the train track case analysis detailed in Section \ref{sec:traintrack_analysis}. By enforcing the Trace Lemma and the Absorption Obstruction on every potential transition word, we successfully isolate the surviving maps. The complete derivation of these maps and their corresponding braid words is presented in Appendix \ref{app:candidate_braids_candelabra}, yielding the following proposition:
+Having reduced our geometric search space to the Candelabra, we execute the case analysis procedure of Section \ref{subsec:case_analysis_procedure}. With no central edge $d$ in this stratum, Cases B, C, D and Assumption A do not arise; the dominant obstruction is Corollary \ref{cor:trace_jointless} (the no-self-occurrence rule for jointless-monogon edges), with the Absorption Obstruction handling most remaining geometric routing decisions. The complete derivation of the surviving maps and their corresponding braid words is presented in Appendix \ref{app:candidate_braids_candelabra}, yielding the following proposition:
 
 \begin{prop}\label{prop:candelabra_34_braids}
     Let $\Phi \colon \Sigma_2^2 \to \Sigma_2^2$ be a pseudo-Anosov mapping class corresponding to the stratum $(3;1^6;3)$ on the disk. If the pseudo-Anosov representative $\phi_\Phi$ has no interior fixed points, then $\Phi$ is conjugate to the lift of one of the 34 braid families explicitly enumerated in Appendix \ref{app:candidate_braids_candelabra}.
@@ -471,7 +707,7 @@ Because the geometric complexity of this stratum involves two interior 3-pronged
 \end{figure}
 
 \subsection{Enumeration of Train Track Maps and Braids}
-With the geometric state space reduced to six invariant tracks, we execute the rigorous case analysis formalized in Section \ref{sec:traintrack_analysis}. For each of the six tracks, we test every possible permutation of the two triangles against the parity constraints of the Trace Lemma and the geometric bounds of the Absorption Obstruction.
+With the geometric state space reduced to six invariant tracks, we execute the case analysis procedure of Section \ref{subsec:case_analysis_procedure} on each. The parity constraints on $f_\beta(d)$ and $f_\beta(\bar{d})$ (the Trace Lemma applied to the central edge in its four-case form) become the decisive obstruction in this stratum: Situation $\alpha$ produces the bulk of non-termination eliminations (the dotted lines circle the outer perimeter without joining), and Situation $\beta$ produces the bulk of direct-violation eliminations (the dotted lines are trapped in a pocket forcing an odd-parity return). Path mills arise as a secondary non-termination obstruction for the non-dotted edges.
 
 For Track 12, this analysis yields no surviving train track maps: every candidate transition word is excluded either by a tracing violation of Corollary \ref{cor:trace_jointless} or by absorption between adjacent edge images. The full case analysis for Track 12 is included in Appendix \ref{app:case_analysis_track12} for completeness. Consequently, no fixed-point-free pseudo-Anosov braid in the stratum $(2;1^6;3^2)$ is carried by Track 12, and the analysis below treats only the remaining five tracks where surviving candidates exist.
 

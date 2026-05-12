@@ -10,7 +10,7 @@ number of letters. We will call this \emph{Assumption A}. We know $\fbd$ does no
 \subsection{VIE} \label{VIE}
 Suppose $\fbd$ starts at $b$, and $\fbdb$ starts at $i$. Then $\fbd$ must start with $b^-$, as starting with $b^+$ would force the next letter to be $d$, thereby violating Assumption A. In addition, Assumption A necessitates that $\fbd$ eventually crossing $d$ right after $r^-$, possibly after some twisting between $b$, $o$, and $r$. This is because it is impossible to cross over $d$ right after $b$ after an even number of letters, assuming that $\fbd$ starts at $b$. 
 
-This is VIE1.
+This is Figure \ref{fig:VIE1}.
 
 But here notice that if there were in fact initial twists by $\fbdb$, it must be of the form $\fbd = b^- r^+ b^*...$, which would mean that it takes $\fbb$ with it and therefore cause it to trace. Thus $\fbd$ cannot have initial twists.
 
@@ -20,7 +20,7 @@ Consider $\fbdb$. It must start with $i^+$ to not violate Assumption A. The next
 \]
 It must also cross $\dbar$ right after $p^+$ to not violate Assumption A as well. Similar to the situation for $\fbd$ above, suppose that $\fbdb$ were to have initial twists before $...p^+\dbar...$, in this case they would be twists between $p$, $s$, or $i$. Then it must be of the form $\fbdb = i^+ p^-...$, and the next letter is $s^*$ or $i^*$. However, this forces $\fbs$ and $\fbi$ to start with $p^-$ and then to $s^*$ or $i^*$ together, thereby tracing. This is a contradiction. Thus $\fbdb$ cannot have initial twists. 
 
-This is VIE2.
+This is Figure \ref{fig:VIE2}.
 
 Consider $\fbr$. It can start with $d$ or $o$. If it were to start with $d$, then it can either do so while going above $\fbp$ or below $\fbp$. If it went above $\fbp$, then $\fbp$ will trace:
 \[
@@ -43,14 +43,14 @@ Similarly if it started with $o^-$:
 \fbr = o^- b^- r^\times
 \]
 
-This is VIE3.
+This is Figure \ref{fig:VIE3}.
 
 Here if the dotted lines can join, or if they do not, $\fbd$ on the left can go either below or above $\fbdb$ on the right.
 
 \subsubsection{Iris} \label{Iris}
 Suppose the dotted lines join in the middle. 
 
-This is Iris1.
+This is Figure \ref{fig:Iris1}.
 
 Consider $\fbb$. We can either have
 \[
@@ -77,7 +77,7 @@ This forces $\fbo$ to start with $b^-$ and to the right of $\fbp$. Otherwise, $\
 \fbo = b^- r^- d p^*...
 \]
 
-This is Flute1.
+This is Figure \ref{fig:Flute1}.
 
 Here $\fbo$ must continue with $p^-$ and to the right of $\fbs$ and $\fbi$. Otherwise, $\fbs$ and $\fbi$ will be forced to start with $p^+$ and to the left of $\fbo$, in which case they will be absorbed between $\fbd$ and $\fbo$:
 \[
@@ -89,7 +89,7 @@ Thus we must have:
 \fbo = b^- r^- d \hat{p}^- i^*...
 \]
 
-This is Flute2.
+This is Figure \ref{fig:Flute2}.
 
 Here $\fbi$ can start and end at $p^\circ$, or it can start with $p^+$. It cannot start with $p^-$ as that would cause it to trace immediately.
 
@@ -103,7 +103,7 @@ Then this forces
 \fbs = p^- i^*...
 \]
 
-This is Flute3.
+This is Figure \ref{fig:Flute3}.
 
 Consider $\fbo$. If it continued with $i^\circ$ or $i^+$, then $\fbs$ is forced to continue with $i^+$ and to the left of $\fbo$. But then $\fbs$ will be absorbed:
 \[
@@ -115,12 +115,12 @@ On the other hand, if $\fbo$ were to continue with $i^-$, then if it did so to t
 \fbo = b^- r^- d p^- \hat{i}^- p^+ \Abso{\fbs}{\fbi}
 \]
 
-This is a contradiction. Thus in the situation depicted in Flute2, $\fbi$ cannot start and end at $p^\circ$. So suppose instead it starts with $p^+$. Then we have
+This is a contradiction. Thus in the situation depicted in Figure \ref{fig:Flute2}, $\fbi$ cannot start and end at $p^\circ$. So suppose instead it starts with $p^+$. Then we have
 \[
 \fbi = p^+ \dbar r^+ b^*...
 \]
 
-This is Flute4.
+This is Figure \ref{fig:Flute4}.
 
 Here $\fbi$ must continue with $b^+$ and to the right of $\fbp$. Otherwise, $\fbp$ will be forced to continue with $b^-$ and to the right of $\fbi$, in which case it will trace:
 \[
@@ -132,7 +132,7 @@ Thus we must have:
 \fbi = p^+ \dbar r^+ \hat{b}^+ r^-...
 \]
 
-This is Flute5.
+This is Figure \ref{fig:Flute5}.
 
 Here $\fbi$ can continue with $d$ or $o^-$. If it were to continue with $d$, it will trace:
 \[
@@ -144,7 +144,7 @@ Thus it must continue with $o^-$:
 \fbi = p^+ \dbar r^+ b^+ r^- \hat{o}^- b^- r^- d p^- s^*...
 \]
 
-This is Flute6.
+This is Figure \ref{fig:Flute6}.
 
 Here consider $\fbp$. It must end here at $b^\circ$. Indeed, if it were to continue with $b^+$, it will trace:
 \[
@@ -181,7 +181,7 @@ Thus we must have
 \fbo = b^- r^- d p^- \hat{i}^\circ
 \]
 
-This is Flute7.
+This is Figure \ref{fig:Flute7}.
 
 Here let us consider $\fbs$. It must start and end at $p^\circ$. Indeed, if it were to start with $p^+$, then it continues, either
 \[
@@ -197,7 +197,7 @@ Hence we must have
 \fbs = p^\circ
 \]
 
-This is Flute8.
+This is Figure \ref{fig:Flute8}.
 
 Here we claim that $\fbi$ must end at $s^\circ$. Indeed, suppose it were to continue with $s^+$, then
 \[
@@ -214,7 +214,7 @@ Thus we must have
 \fbi = p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- \hat{s}^\circ
 \]
 
-This is Flute9, and this is our Candidate 1.
+This is Figure \ref{fig:Flute9}, and this is our Candidate 1.
 
 
 \subsubsubsection{Plump} \label{Plump}
@@ -252,7 +252,7 @@ Thus we must have
 \fbp = \dbar r^\circ
 \]
 
-This is Plump1.
+This is Figure \ref{fig:Plump1}.
 
 Here $\fbb$ must either end at $p^\circ$, or continue with $p^-$ and into 1., or 2. Note that $p^+$ is not possible as it would eventually trace.
 
@@ -271,11 +271,11 @@ and
 \fbi = p^+ \dbar r^+ b^*...
 \]
 
-This is Muscle1.
+This is Figure \ref{fig:Muscle1}.
 
 Here $\fbo$ is forced to start with $b^-$ and to the right of $\fbs$ and $\fbi$. Otherwise $\fbs$ and $\fbi$ will be immediately absorbed between $\fbd$ and $\fbo$.
 
-This is Muscle2.
+This is Figure \ref{fig:Muscle2}.
 
 Here $\fbi$ can continue with $b^\circ$ or $b^+$. Note that $b^-$ is not possible as that would cause it to trace:
 \[
@@ -304,11 +304,11 @@ Thus $\fbo$ must continue with $i^-$. But now it will be absorbed:
 \fbo = b^- r^- d p^- \hat{i}^- p^+ \dbar r^+ b^+ r^- d p^- \Abso{\fbs}{\fbi}
 \]
 
-This is depicted in Muscle4.
+This is depicted in Figure \ref{fig:Muscle4}.
 
-This is a contradiction. Thus in the situation depicted in Muscle2, $\fbi$ cannot end at $b^\circ$. So $\fbi$ must continue with $b^+$ there.
+This is a contradiction. Thus in the situation depicted in Figure \ref{fig:Muscle2}, $\fbi$ cannot end at $b^\circ$. So $\fbi$ must continue with $b^+$ there.
 
-This is Muscle5.
+This is Figure \ref{fig:Muscle5}.
 
 Here $\fbi$ can go into 1, or 2. 
 
@@ -317,7 +317,7 @@ Suppose it goes into 1. Then it continues:
 \[
 \fbi = p^+ \dbar r^+ \hat{b}^+ r^- d p^- \dbar r^+... 
 \]
-This is Dolphin1.
+This is Figure \ref{fig:Dolphin1}.
 
 Here it cannot continue with $d$, or it will trace:
 \[
@@ -329,7 +329,7 @@ Thus it must continue with $o^-$:
 \fbi = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ \hat{o}^- b^- r^- d p^- s^*...
 \]
 
-This is Dolphin2.
+This is Figure \ref{fig:Dolphin2}.
 
 Here $\fbo$ must end here at $i^\circ$. Indeed, if it were to continue with $i^+$, then we will have:
 \[
@@ -342,7 +342,7 @@ While if it were to continue with $i^-$, we will have:
 
 Thus we must have $\fbo$ ending at $i^\circ$.
 
-This is Dolphin3.
+This is Figure \ref{fig:Dolphin3}.
 
 Similarly, $\fbs$ must end here at $b^\circ$. Indeed, if it were to continue with $b^+$, then we will have:
 \[
@@ -360,7 +360,7 @@ While if $\fbs$ were to continue with $b^-$, we will have:
 
 Thus we must have $\fbs$ ending at $b^\circ$.
 
-This is Dolphin4.
+This is Figure \ref{fig:Dolphin4}.
 
 Here $\fbi$ is forced to end at $s^\circ$. Indeed, if instead it were to continue with $s^+$, then we will have:
 \[
@@ -377,7 +377,7 @@ Thus we must have
 \fbi = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ o^- b^- r^- d p^- \hat{s}^\circ
 \]
 
-This is Candidate Train Track map 2, depicted in Dolphin5.
+This is Candidate Train Track map 2, depicted in Figure \ref{fig:Dolphin5}.
 
 \subsubsubsubsubsection{Cottage} \label{Cottage}
 Back to the end of Muscle \ref{Muscle}. Suppose $\fbi$ goes into 2. Then it will trace:
@@ -385,14 +385,14 @@ Back to the end of Muscle \ref{Muscle}. Suppose $\fbi$ goes into 2. Then it will
 \fbi = p^+ \dbar r^+ \hat{b}^+ r^- d p^- \Abso{\fbs}{\fbi}
 \]
 
-This is depicted in Cottage1.
+This is depicted in Figure \ref{fig:Cottage1}.
 
 This is a contradiction.
 
 \subsubsubsubsection{Magpie} \label{Magpie}
 Back to the end of Plump \ref{Plump}. Suppose $\fbb$ continues with $p^-$.
 
-This is Magpie1.
+This is Figure \ref{fig:Magpie1}.
 
 Here it can continue into 1, or 2. Suppose it continues into 1, then it will trace:
 \[
@@ -404,14 +404,14 @@ Here the next letter cannot be $o^-$, since the letter following that would be $
 \fbb = r^- d p^- \dbar r^+ \hat{d} i^+ p^+ \dbar r^+ b^\times
 \]
 
-This is Magpie2.
+This is Figure \ref{fig:Magpie2}.
 
 
-So it must continue into 2. This is Magpie3.
+So it must continue into 2. This is Figure \ref{fig:Magpie3}.
 
 Here $\fbb$ must end at $i$ or $p$, possibly after some number of twisting between the two. It can never escape this region since any such behavior would cause it to trace, even if it escaped to the outer perimeter. For the following argument that leads to the Candidate Train Track family 2a, we will assume $\fbb$ ends at $i$, with the understanding that the general family can have more twists, and and other edge path that goes through this region will have the appropriate amount of twisted added.
 
-This is Magpie4.
+This is Figure \ref{fig:Magpie4}.
 
 Here suppose $\fbs$ were to begin with $p^-$ and to the right of $\fbi$. Then it continues:
 \[
@@ -423,14 +423,14 @@ This forces $\fbo$ to begin with $b^-$ and to the right of $\fbs$:
 \fbo = b^- r^- d p^- i^- p^*...
 \]
 
-This is Magpie5.
+This is Figure \ref{fig:Magpie5}.
 
-This forces $\fbi$ to begin with $p^-$ and to the right of $\fbo$, which will cause it to immediately trace. This is a contradiction. Thus in the situation depicted in Magpie4, $\fbs$ cannot begin with $p^-$ and to the right of $\fbi$. This means that $\fbi$ must begin with $p^+$ and to the left of $\fbs$. It then continues:
+This forces $\fbi$ to begin with $p^-$ and to the right of $\fbo$, which will cause it to immediately trace. This is a contradiction. Thus in the situation depicted in Figure \ref{fig:Magpie4}, $\fbs$ cannot begin with $p^-$ and to the right of $\fbi$. This means that $\fbi$ must begin with $p^+$ and to the left of $\fbs$. It then continues:
 \[
 \fbi = p^+ \dbar r^+ o^- b^- r^- d p^- s^*...
 \]
 
-This is Magpie6.
+This is Figure \ref{fig:Magpie6}.
 
 Here $\fbo$ os forced to begin and end with $b^\circ$. Otherwise, it will trace:
 \[
@@ -462,7 +462,7 @@ Thus we must have
 \fbi = p^+ \dbar r^+ o^- b^- r^- d p^- \hat{s}^\circ
 \]
 
-This gives us the Train Track Map Candidate depicted in Magpie7, which is part of the Train Track Map Candidates 3, with no twists from $\fbb$. In general, this Candidate Family includes $k$ twists from $\fbb$. In Magpie8, we have illustrated a train track map from this candidate with one twist from $\fbb$.
+This gives us the Train Track Map Candidate depicted in Figure \ref{fig:Magpie7}, which is part of the Train Track Map Candidates 3, with no twists from $\fbb$. In general, this Candidate Family includes $k$ twists from $\fbb$. In Figure \ref{fig:Magpie8}, we have illustrated a train track map from this candidate with one twist from $\fbb$.
 
 
 \subsubsection{Ruby}\label{Ruby} 
@@ -471,20 +471,20 @@ Back to the end of VIE \ref{VIE}. Suppose dotted lines do not join, so $\fbd$ on
 \fbd = b^- r^- \hat{d} i^+ p^+ \dbar r^+ b^+ o^+ r^*...
 \]
 
-This is Ruby2.
+This is Figure \ref{fig:Ruby2}.
 
 Now it enters Situation $\beta$. This is a contradiction.
 
 \subsection{GRR} \label{GRR}
 Back to the end of Case A \ref{CaseATrack1}, triangles fixed. Suppose $\fbd$ starts at $b$, and $\fbdb$ starts at $s$. Using the same argument used in VIE \ref{VIE}, we can conclude that neither $\fbd$, nor $\fbdb$ can have initial twists.
 
-This is GRR1.
+This is Figure \ref{fig:GRR1}.
 
 Here $\fbr$ can start with $d$ or start with $o^*$. 
 
 \subsubsection{Bree} \label{Bree}
 
-Suppose $\fbr$ starts with $d$. This is shown in Bree1.
+Suppose $\fbr$ starts with $d$. This is shown in Figure \ref{fig:Bree1}.
 
 Here $\fbr$ must go below $\fbp$. Otherwise, $\fbp$ will trace:
 \[
@@ -514,22 +514,22 @@ Thus we must have
 \fbr = d i^\circ
 \]
 
-This is Bree2.
+This is Figure \ref{fig:Bree2}.
 
 Here consider $\fbi$. It must begin with $p^+$ and to the left of $\fbs$. Otherwise, $\fbs$ will be forced to begin with $p^-$ and to the right of $\fbi$, in which case it will immediately trace.
 
-This is Bree3.
+This is Figure \ref{fig:Bree3}.
 
 Here $\fbi$ must go below $\fbd$ since if it were to go above, then it will trace:
 \[
 \fbi = p^+ \hat{\dbar} r^+ b^+ d  i^\times
 \]
 
-So now we have the situation depicted in Bree4.
+So now we have the situation depicted in Figure \ref{fig:Bree4}.
 
 Now here $\fbi$ must continue with $r^+$ and to the left of $\fbp$. Otherwise $\fbp$ will be forced to continue with $r^-$, in which case it will immediately trace after crossing $d$. 
 
-This is Bree5.
+This is Figure \ref{fig:Bree5}.
 
 Here $\fbi$ can go into 1, or 2. But if it were to go into 2, it will eventually trace:
 \[
@@ -550,7 +550,7 @@ This forces $\fbo$ to begin with $b^-$, and continue:
 \fbo = b^- r^- d p^- s^*...
 \]
 
-This is Bree6.
+This is Figure \ref{fig:Bree6}.
 
 Note that here $\fbo$ cannot go above $\fbdb$ as it crosses $d$, as that would immediately put $\fbdb$ in Situation $\beta$.
 
@@ -569,18 +569,18 @@ This then forces $\fbs$ to begin with $p^+$ and to the left of $\fbb$:
 \fbs = p^+ \dbar r^+ o^*...
 \]
 
-This is Bree7.
+This is Figure \ref{fig:Bree7}.
 
 Here notice that the dotted lines have to join. Otherwise, either going below or above the other would place at least one of $\fbd$ or $\fbdb$ in Situation $\beta$.
 
 But now we have a counterclockwise path mill, with edge paths $\fbs$, $\fbi$, and $\fbb$; situated at edges $b$ and $p$.  
 
-Spo going back to the situation depicted in Bree6, suppose $\fbp$ does not end there and continues with $r^+$. Then we have
+Spo going back to the situation depicted in Figure \ref{fig:Bree6}, suppose $\fbp$ does not end there and continues with $r^+$. Then we have
 \[
 \fbp = \dbar r^+ b^*...
 \]
 
-This is Bree8.
+This is Figure \ref{fig:Bree8}.
 
 Here $\fbi$ must continue with $b^+$ and to the left of $\fbp$. Otherwise, $\fbp$ will be forced to continue with $b^-$ and to the right of $\fbi$, in which case it will trace:
 \[
@@ -592,7 +592,7 @@ So we must have
 \fbi = p^+ \dbar r^+ b^+ r^*...
 \]
 
-This is Bree9. Here $\fbi$ must continue with $r^-$ and to the right of $\fbb$. Otherwise, $\fbb$ will be forced to begin with $r^+$, and it will immediately trace. But now $\fbi$ will eventually trace:
+This is Figure \ref{fig:Bree9}. Here $\fbi$ must continue with $r^-$ and to the right of $\fbb$. Otherwise, $\fbb$ will be forced to begin with $r^+$, and it will immediately trace. But now $\fbi$ will eventually trace:
 \[
 \fbi = p^+ \dbar r^+ b^+ \hat{r}^- d i^\times
 \]
@@ -617,7 +617,7 @@ Thus we must have
 \fbr = o^\circ
 \]
 
-This is Scud1.
+This is Figure \ref{fig:Scud1}.
 
 Here the dotted lines can either join, or if not, the only possibility would be if $\fbd$ went below $\fbp$. If instead $\fbd$ went above $\fbp$ but below $\fbdb$, then it will be in Situation $\beta$; if it went above $\fbdb$, then $\fbdb$ will be in Situation $\beta$.
 
@@ -626,7 +626,7 @@ So suppose the dotted lines join. Consider $\fbi$. It must begin with $p^+$, and
 \fbi = p^+ \dbar r^*...
 \]
 
-This is Scud2.
+This is Figure \ref{fig:Scud2}.
 
 Here $\fbi$ must continue with $r^+$ and into 1, or 2. If it did not, $\fbp$ will be forced to continue with $r^-$ and to the right of $\fbi$, in which case it will trace immediately after crossing $d$.
 
@@ -636,7 +636,7 @@ Suppose $\fbi$ goes into 1. Then $\fbb$ is forced to begin with $r^-$, and it co
 \fbb = r^- d p^- s^*...
 \]
 
-This is Swale1.
+This is Figure \ref{fig:Swale1}.
 
 Here $\fbb$ can continue with $s^-$ or $s^\circ$. It cannot continue with $s^+$ as that would cause it to trace:
 \[
@@ -650,14 +650,14 @@ Suppose $\fbb$ continues with $s^-$. Then it continues:
 \fbb = r^- d p^- \hat{s}^- p^+ \dbar r^+...
 \]
 
-This is Bezoar1.
+This is Figure \ref{fig:Bezoar1}.
 
 Here $\fbb$ cannot continue with $o^-$, or it will trace immediately. Thus it must continue with $d$. The next letter after $d$ must be $i^*$, and not $s^+$, as that would make it traverse counterclockwise at the outer perimeter, thereby tracing. Thus we have:
 \[
 \fbb = r^- d p^- s^- p^+ \dbar r^+ \hat{d} i^*...
 \]
 
-This is Bezoar2.
+This is Figure \ref{fig:Bezoar2}.
 
 Here $\fbi$ is forced to continue with $d$, and continues:
 \[
@@ -678,7 +678,7 @@ So we must have
 \fbp = \dbar r^\circ
 \]
 
-This is Bezoar3.
+This is Figure \ref{fig:Bezoar3}.
 
 Consider $\fbs$. It must end her eat $p^\circ$. Indeed, if not, then it must begin with $p^+$, in which case it will trace:
 \[
@@ -690,7 +690,7 @@ So we must have
 \fbs = p^\circ
 \]
 
-This is Bezoar4.
+This is Figure \ref{fig:Bezoar4}.
 
 Consider $\fbi$. It cannot continue with $s^+$, as that would cause it to be absorbed:
 \[
@@ -712,7 +712,7 @@ Thus $\fbi$ must end at $s^\circ$:
 \fbi = p^+ \dbar r^+ d s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- \hat{s}^\circ
 \]
 
-This is Bezoar5.
+This is Figure \ref{fig:Bezoar5}.
 
 Here consider $\fbb$. If it did not end here at $i^\circ$, it will trace:
 \[
@@ -742,7 +742,7 @@ So we must have
 \fbo = b^\circ
 \]
 
-This establishes candidate train track map 4. Shown in Bezoar6.
+This establishes candidate train track map 4. Shown in Figure \ref{fig:Bezoar6}.
 
 
 \subsubsubsubsection{Efface}\label{Efface}
@@ -751,7 +751,7 @@ Back to the end of Swale \ref{Swale}, suppose $\fbb$ continues with $s^\circ$:
 \fbb = r^- d p^- \hat{s}^\circ
 \]
 
-This is Efface1.
+This is Figure \ref{fig:Efface1}.
 
 Here $\fbi$ can continue with $o^-$ or $d$.
 
@@ -766,7 +766,7 @@ Then this forces $\fbo$ to begin and end immediately at $b^\circ$. If it did not
 \fbo = b^- r^- d p^- s^- p^+ \dbar r^+ o^\times
 \]
 
-This is Abscond1.
+This is Figure \ref{fig:Abscond1}.
 
 Here $\fbs$ can either begin (and end with) $p^\circ$, or $p^+$. Suppose it were the former:
 \[
@@ -778,7 +778,7 @@ Then $\fbp$ must continue with $r^+$ and to the left of $\fbi$, otherwise $\fbi$
 \fbp = \dbar r^+ d i^*...
 \]
 
-This is Abscond2.
+This is Figure \ref{fig:Abscond2}.
 
 Now $\fbi$ must end at $r^\circ$. Indeed, if it were to continue with $r^+$, we would have:
 \[
@@ -809,14 +809,14 @@ So we must have
 \fbp = \dbar r^+ d \hat{i}^\circ
 \]
 
-This establishes a Train Track Map Candidate, depicted in Abscond3. We will call this Candidate 5.
+This establishes a Train Track Map Candidate, depicted in Figure \ref{fig:Abscond3}. We will call this Candidate 5.
 
-Going back to the situation depicted in Abscond1, suppose $\fbs$ were to begin instead with $p^+$.
+Going back to the situation depicted in Figure \ref{fig:Abscond1}, suppose $\fbs$ were to begin instead with $p^+$.
 
 Here $\fbp$ either ends at $r^\circ$, or continue with $r^+d i^*...$. It must end at either $i$ or $r$ at some point, possibly after twisting $k$ times between the two. Here, as soon as $\fbp$ ends, $\fbi$ must also end, as otherwise it would escape to the outer perimeter and trace. Thus $\fbs$ must also end.
 
 
-This is Candidate Family 6. Abscond6 shows $\fbp$ ending immediately at $r$.
+This is Candidate Family 6. Figure \ref{fig:Abscond6} shows $\fbp$ ending immediately at $r$.
 
 
 \subsubsubsubsubsection{Fervent}\label{Fervent}
@@ -825,7 +825,7 @@ Back to the end of Efface \ref{Efface}, suppose $\fbi$ continues with $d$. Then 
 \fbi = p^+ \dbar r^+ \hat{d} s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^- s^- p^+ \dbar r^+ b^*...
 \]
 
-This is Fervent1.
+This is Figure \ref{fig:Fervent1}.
 
 This forces $\fbo$ to begin with $b^-$:
 \[
@@ -842,7 +842,7 @@ Thus we must have
 \fbs = p^\circ
 \]
 
-This is Fervent2.
+This is Figure \ref{fig:Fervent2}.
 
 Here consider $\fbi$. We claim that it must end here at $b^\circ$. Indeed, otherwise we would have
 \begin{align*}
@@ -870,7 +870,7 @@ While if it were to continue with $i^+$, it would be absorbed:
 \fbo = b^- r^- d p^- s^- p^+ \dbar r^+ d \hat{i}^+ \dbar r^- d p^- s^+ p^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
 \]
 
-This gives us Candidate 7, depicted in Fervent3.
+This gives us Candidate 7, depicted in Figure \ref{fig:Fervent3}.
 
 \subsubsubsection{Ombre} \label{Ombre}
 Back to the end of Scud \ref{Scud}. Suppose $\fbi$ goes into 2. 
@@ -880,7 +880,7 @@ This then forces $\fbo$ to begin with $b^-$:
 \fbo = b^- r^- d p^- s^*...
 \]
 
-This is Ombre1.
+This is Figure \ref{fig:Ombre1}.
 
 Here $\fbb$ can begin with $r^\circ$ or $r^-$. 
 
@@ -890,7 +890,7 @@ Suppose $\fbb$ begins with $r^\circ$. This then forces $\fbp$ to continue with $
 \fbp = \dbar r^+ b^*...
 \]
 
-This is Satire1.
+This is Figure \ref{fig:Satire1}.
 
 Here $\fbi$ must continue with $b^+$ and to the left of $\fbp$. Otherwise, $\fbp$ will be forced to continue with $b^-$ and to the right of $\fbi$, in which case it will trace after crossing $d$.
 
@@ -900,7 +900,7 @@ So we must have
 \fbi = p^+ \dbar r^+ \hat{b}^+ r^-...
 \]
 
-This is Satire2.
+This is Figure \ref{fig:Satire2}.
 
 Here $\fbi$ can continue with $o^-$ or $d$.
 
@@ -927,7 +927,7 @@ Thus we must have
 \fbo = b^- r^- d p^- \hat{s}^\circ
 \]
 
-This is Abdomen1.
+This is Figure \ref{fig:Abdomen1}.
 
 Now consider $\fbp$. It can continue with $b^\circ$ or $b^+$.
 
@@ -937,14 +937,14 @@ Suppose $\fbp$ continues with $b^\circ$. Then $\fbi$ continues with $b^-$:
 \fbi = p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- s^- \dbar r^+ \hat{b}^- r^- d p^*...
 \]
 
-This is Panorama1.
+This is Figure \ref{fig:Panorama1}.
 
 Here $\fbs$ is forced to begin with $p^+$ and to the left of the incoming $\fbi$:
 \[
 \fbs = p^+ \dbar r^+ b^+ r^- d i^*...
 \]
 
-This is Panorama2.
+This is Figure \ref{fig:Panorama2}.
 
 Here we claim that $\fbi$ must end at $p^\circ$. Indeed, if instead it were to continue with $p^+$, then we have:
 \begin{align*}
@@ -978,7 +978,7 @@ Thus we must have
 \fbs = p^+ \dbar r^+ b^+ r^- d \hat{i}^\circ
 \]
 
-This gives us Candidate 8, shown in Panorama5.
+This gives us Candidate 8, shown in Figure \ref{fig:Panorama3}.
 
 \subsubsubsubsubsubsection{Pristine}\label{Pristine}
 Back to the end of Abdomen \ref{Abdomen}. Suppose $\fbp$ continues with $b^+$. Then it must do so by going to the left of $\fbi$. Otherwise, it would trace. So we must have
@@ -986,7 +986,7 @@ Back to the end of Abdomen \ref{Abdomen}. Suppose $\fbp$ continues with $b^+$. T
 \fbp = \dbar r^+ \hat{b}^+ r^- d i^*...
 \]
 
-This is Pristine1.
+This is Figure \ref{fig:Pristine1}.
 
 Here we claim that $\fbi$ must end at $b^\circ$. Indeed, if instead it were to continue with $b^-$, then
 \begin{align*}
@@ -1009,7 +1009,7 @@ Thus we must have
 \fbi = p^+ \dbar r^+ b^+ r^- o^- b^- r^- d p^- s^- \dbar r^+ \hat{b}^\circ
 \]
 
-This is Pristine2.
+This is Figure \ref{fig:Pristine2}.
 
 Here consider $\fbp$. We claim it must end here at $i^\circ$. Indeed, if instead it were to continue with $i^+$, then we would have:
 \[
@@ -1044,7 +1044,7 @@ Back to the end of Satire \ref{Satire}. Suppose $\fbi$ continues with $d$. Then 
 \fbi = p^+ \dbar r^+ b^+ r^- \hat{d} s^+ p^+ \dbar r^+ b^+ o^+ r^+ b^- r^- d p^- s^*...
 \]
 
-This is Gingham1.
+This is Figure \ref{fig:Gingham1}.
 
 Here $\fbo$ must continue with $s^-$ and to the right of the incoming $\fbi$. Indeed, otherwise $\fbi$ will be forced to continue with $s^+$ and to the left of $\fbo$, in which case it will be absorbed:
 \[
@@ -1056,7 +1056,7 @@ Thus we must have
 \fbo = b^- r^- d p^- \hat{s}^- p^+ \dbar r^+ b^+ r^- d i^*...
 \]
 
-This is Gingham2.
+This is Figure \ref{fig:Gingham2}.
 
 Here $\fbp$ has to end here at $b^\circ$, as both continuing with $b^+$ or $b^-$ causes it to trace.
 
@@ -1070,7 +1070,7 @@ Thus we must have
 \fbs = p^\circ
 \]
 
-This is Gingham3.
+This is Figure \ref{fig:Gingham3}.
 
 Here $\fbi$ must end at $s^\circ$. Indeed, if it did not, then we would have
 \[
@@ -1086,7 +1086,7 @@ Thus we must have
 \fbi = p^+ \dbar r^+ b^+ r^- d s^+ p^+ \dbar r^+ b^+ o^+ r^+ b^- r^- d p^- \hat{s}^\circ
 \]
 
-This is Gingham4. 
+This is Figure \ref{fig:Gingham4}. 
 
 Here $\fbo$ must end at $i^\circ$. Indeed, if it did not, then we would have
 \[
@@ -1102,12 +1102,12 @@ Thus we must have
 \fbo = b^- r^- d p^- s^- p^+ \dbar r^+ b^+ r^- d \hat{i}^\circ
 \]
 
-This is Gingham5. This is Candidate 10.
+This is Figure \ref{fig:Gingham5}. This is Candidate 10.
 
 \subsubsubsubsection{Kismet}\label{Kismet}
 Back to the end of Ombre \ref{Ombre}. Suppose $\fbb$ begins with $r^-$. 
 
-This is Kismet1.
+This is Figure \ref{fig:Kismet1}.
 
 Here $\fbb$ can go into 1 or 2.
 
@@ -1122,7 +1122,7 @@ Now $\fbp$ is forced to continue with $r^+$ so we have
 \fbp = \dbar r^+ b^*...
 \]
 
-This is Dossier1.
+This is Figure \ref{fig:Dossier1}.
 
 Here $\fbi$ must continue with $b^+$ and to the left of $\fbp$, otherwise $\fbp$ will be forced to continue with $b^-$ and to the right of $\fbi$, in which case it will trace:
 \[
@@ -1134,7 +1134,7 @@ Thus we must have
 \fbi = p^+ \dbar r^+ b^+ r^- d s^+ p^+ \dbar r^+ b^+ o^+ r^*...
 \]
 
-This is Dossier2.
+This is Figure \ref{fig:Dossier2}.
 
 Here $\fbp$ must end at $b^\circ$. Indeed, otherwise we would have either
 \[
@@ -1169,7 +1169,7 @@ If instead it were to continue with $r^-$, then we would have:
 \fbi = p^+ \dbar r^+ b^+ r^- d s^+ p^+ \dbar r^+ b^+ o^+ \hat{r}^- o^- b^- r^- d p^- s^- \dbar r^+ b^- r^- d r^+ b^- r^- d p^- s^*...
 \]
 
-This is Dossier3.
+This is Figure \ref{fig:Dossier3}.
  
 Now here $\fbi$ cannot continue with $s^+$, or it will eventually be absorbed between $\fbd$ and $\fbo$. This means it must either end there at $s^\circ$ or $s^-$, in either case this forces $\fbo$ to continue with $s^-$, but this will lead to it tracing:
 \[
@@ -1182,7 +1182,7 @@ Thus, we must have
 \]
 after all.
 
-This is Dossier4.
+This is Figure \ref{fig:Dossier4}.
 
 Now here $\fbb$ must end at $i^\circ$ or it will trace:
 \[
@@ -1227,7 +1227,7 @@ This forces $\fbs$ to begin with $p^+$ and to the left of the incoming $\fbb$, o
 \fbs = p^+ \dbar r^+ b^*...
 \]
 
-This is Perplex2.
+This is Figure \ref{fig:Perplex2}.
 
 Here $\fbi$ must continue with $b^+$ and to the left of the incoming $\fbs$, otherwise $\fbs$ will be forced to continue with $b^-$ and to the right of $\fbi$, in which case it will trace:
 \[
@@ -1239,7 +1239,7 @@ Thus we must have
 \fbi = p^+ \dbar r^+ \hat{b}^+ r^- d p^*... 
 \]
 
-This is Perplex3.
+This is Figure \ref{fig:Perplex3}.
 
 Here $\fbi$ must continue with $p^-$ and to the right of $\fbb$, otherwise, $\fbb$ will be forced to continue with $p^+$ and to the left of the incoming $\fbi$, in which case it will trace:
 \[
@@ -1251,7 +1251,7 @@ Thus we must have
 \fbi = p^+ \dbar r^+ b^+ r^- d \hat{p}^- \dbar r^*...
 \]
 
-This is Perplex4.
+This is Figure \ref{fig:Perplex4}.
 
 Here $\fbp$ can either end at $p^\circ$, or continue with $r^+$. It is not possible for it to continue with $r^-$, as then it would trace immediately after crossing $d$.
 
@@ -1276,7 +1276,7 @@ So suppose it continues with $b^+$:
 \fbs = p^+ \dbar r^+ \hat{b}^+ r^- d p^- \dbar r^+...
 \]
 
-This is Querulous2.
+This is Figure \ref{fig:Querulous2}.
 
 Consider $\fbb$. It must end here at $p^\circ$. Indeed, if it were to continue with $p^+$, it would trace:
 \[
@@ -1293,7 +1293,7 @@ Thus we must have
 \fbb = r^- d \hat{p}^\circ
 \]
 
-This is Querulous3.
+This is Figure \ref{fig:Querulous3}.
 
 Now consider $\fbi$. If it continued with $d$, then it will force $s$ to trace, as before. So it must continue with $o^-$, and $\fbs$ must continue with $di...$, to not trace. So we must have
 \[
@@ -1304,7 +1304,7 @@ and
 \fbi = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ \hat{o}^- b^- r^- d p^- s^- \dbar r^- d p^+ \dbar r^+ b^*...
 \]
 
-This is Querulous4.
+This is Figure \ref{fig:Querulous4}.
 
 Here $\fbi$ must end at $b^\circ$. Indeed, if not then we either have
 \[
@@ -1334,11 +1334,11 @@ Thus we must have
 \fbs = p^+ \dbar r^+ b^+ r^- d p^- \dbar r^+ d \hat{i}^\circ
 \]
 
-This gives us Candidate 12, shown in Querulous5.
+This gives us Candidate 12, shown in Figure \ref{fig:Querulous5}.
 
-Back to the situation depicted in Querulous1. Suppose $\fbs$ ends at $b^\circ$.
+Back to the situation depicted in Figure \ref{fig:Querulous1}. Suppose $\fbs$ ends at $b^\circ$.
 
-This is Querulous6.
+This is Figure \ref{fig:Querulous6}.
 
 Then $\fbi$ cannot continue with $o^-$, or it will be absorbed:
 \[
@@ -1350,7 +1350,7 @@ Thus $\fbi$ must continue with $d$:
 \fbi = ...\hat{d} s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^*...
 \]
 
-This is Querulous7.
+This is Figure \ref{fig:Querulous7}.
 
 Consider $\fbb$ here. We claim it must continue with $p^-$. Indeed, if it conitnued with $p^+$ then it will trace:
 \[
@@ -1372,7 +1372,7 @@ This is a contradiction. Thus $\fbb$ must continue with $p^-$, and to the right 
 \fbb = r^- d \hat{p}^- \dbar r^+ d i^*...
 \]
 
-This is Querulous8.
+This is Figure \ref{fig:Querulous8}.
 
 
 Now consider $\fbi$. We claim it must end here at $p^\circ$. Indeed, if not we would either have
@@ -1402,7 +1402,7 @@ Thus we must have
 \fbb =...\hat{i}^\circ
 \]
 
-This gives Candidate 13, shown in Querulous9.
+This gives Candidate 13, shown in Figure \ref{fig:Querulous9}.
 
 \subsubsubsubsubsubsubsection{Sybaritic}\label{Sybaritic}
 Back to the end of Zugzwang \ref{Zugzwang}. Suppose $\fbo$ continues with $s^-$. Then it continues:
@@ -1410,7 +1410,7 @@ Back to the end of Zugzwang \ref{Zugzwang}. Suppose $\fbo$ continues with $s^-$.
 \fbo = ...\hat{s}^- p^+ \dbar r^+ b^+ r^- d p^*...
 \]
 
-This is Sybaritic1.
+This is Figure \ref{fig:Sybaritic1}.
 
 Here $\fbo$ must continue with $p^-$ and to the right of the incoming $\fbb$. Indeed, otherwise $\fbb$ will be forced to continue with $p^+$ and to the left of the incoming $\fbo$, in which case $\fbb$ will trace:
 \[
@@ -1427,7 +1427,7 @@ This forces $\fbi$ to continue with $d$:
 \fbi =...\hat{d} s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^*... 
 \]
 
-This is Sybaritic2.
+This is Figure \ref{fig:Sybaritic2}.
 
 Consider $\fbs$. It must end here at $b^\circ$. Indeed, otherwise we would have either
 \[
@@ -1443,7 +1443,7 @@ Thus we must have
 \fbs = p^+ \dbar r^+ \hat{b}^\circ
 \]
 
-This is Sybaritic3.
+This is Figure \ref{fig:Sybaritic3}.
 
 Here $\fbb$ can either end at $p^\circ$ or continue with $p^-$. Suppose it ends here at $p^\circ$.
 
@@ -1452,7 +1452,7 @@ Then $\fbi$ is forced to continue with $p^+$:
 \fbi = ...\hat{p}^+ \dbar r^+ b^- r^- d p^- s^*...
 \]
 
-This is Sybaritic4. 
+This is Figure \ref{fig:Sybaritic4}. 
 
 Here $\fbi$ is forced to end at $s^\circ$. Indeed, otherwise we either have
 \begin{align*}
@@ -1484,11 +1484,11 @@ Thus we must have
 \fbo = ...\hat{i}^\circ
 \]
 
-This is Sybaritic5.
+This is Figure \ref{fig:Sybaritic5}.
 
 This is Candidate 14.
 
-Back to the situation depicted in Sybaritic3. Suppose $\fbb$ continues with $p^-$. Then it must do so to the right of $\fbi$, otherwise it will trace:
+Back to the situation depicted in Figure \ref{fig:Sybaritic3}. Suppose $\fbb$ continues with $p^-$. Then it must do so to the right of $\fbi$, otherwise it will trace:
 \[
 \fbb = ... \hat{p}^- \dbar r^+ o^- b^\times
 \]
@@ -1498,7 +1498,7 @@ Thus it continues to the right of $\fbi$:
 \fbb = ...\hat{p}^- \dbar r^+ d i^*...
 \]
 
-This is Sybaritic6.
+This is Figure \ref{fig:Sybaritic6}.
 
 Consider $\fbi$. If it were to continue with $p^+$ here, then it will be absorbed:
 \[
@@ -1515,7 +1515,7 @@ Thus we must have
 \fbi = ... \hat{p}^\circ
 \]
 
-This is Sybaritic7.
+This is Figure \ref{fig:Sybaritic7}.
 
 Consider $\fbo$. It must continue with $i^-$ and to the right of $\fbb$. Otherwise, $\fbb$ will be forced to continue with $i^+$ and to the left of $\fbo$, in which case it will trace:
 \[
@@ -1535,14 +1535,14 @@ Back to the end of Perplex \ref{Perplex}. Suppose $\fbp$ continues with $r^+$. T
 \fbp = \dbar \hat{r}^+ d i^*...
 \]
 
-This is Leverage1.
+This is Figure \ref{fig:Leverage1}.
 
 This forces $\fbi$ to continue with $r^+$:
 \[
 \fbi =...\hat{r}^+ o^- b^- r^- d p^- s^- \dbar r^*...
 \]
 
-This is Leverage2.
+This is Figure \ref{fig:Leverage2}.
 
 Consider $\fbp$. It can either continue with $i^+$, or $i^\circ$; while $i^-$ will cause it to trace:
 \[
@@ -1564,7 +1564,7 @@ Thus it must be the case that $\fbp$ ends at $i^\circ$:
 \fbp = \dbar r^+ d \hat{i}^\circ
 \]
 
-This is Leverage3.
+This is Figure \ref{fig:Leverage3}.
 
 Here consider $\fbb$. It must end here at $p^\circ$. Indeed, otherwise it will trace:
 \[
@@ -1580,7 +1580,7 @@ Thus we must have
 \fbb = r^- d \hat{p}^\circ
 \]
 
-This is Leverage4.
+This is Figure \ref{fig:Leverage4}.
 
 Here consider $\fbo$. It must end here at $s^\circ$. Indeed, otherwise we would either have
 \[
@@ -1596,13 +1596,13 @@ Thus we must have
 \fbo = b^- r^- d p^- \hat{s}^\circ
 \]
 
-This is Leverage5.
+This is Figure \ref{fig:Leverage5}.
 
 Here consider $\fbi$. It can only continue with $r^+$ or $r^\circ$, otherwise it will trace immediately after crossing $d$. So suppose it continues with $r^+$. Then we have
 \[
 \fbi = ...r^+ d s^+ p^+ \dbar r^+ b^+ o^+ r^- d p^+ \dbar r^+ b^*...
 \]
-This is Leverage6.
+This is Figure \ref{fig:Leverage6}.
 
 Here $\fbi$ must continue with $b^-$ and to the right of $\fbs$. Otherwise, $\fbs$ will be forced to continue with $b^+$ and to the left of $\fbi$, which would force it to eventually trace:
 \[
@@ -1612,7 +1612,7 @@ But then we must have
 \[
 \fbi = ...b^- r^- d p^- \Abso{\fbs}{\fbi}
 \]
-Hence in the situated depicted in Leverage5, $\fbi$ must end at $b^\circ$.
+Hence in the situated depicted in Figure \ref{fig:Leverage5}, $\fbi$ must end at $b^\circ$.
 
 Here $\fbs$ is forced to end at $b^\circ$. Indeed, otherwise it will be absorbed:
 \[
@@ -1626,11 +1626,11 @@ or trace:
 \fbs = ...b^+ r^- d p^- \dbar r^+ d i^+ \dbar r^- d s^\times
 \]
 
-This gives Candidate Train Track Map 15, shown in Leverage7.
+This gives Candidate Train Track Map 15, shown in Figure \ref{fig:Leverage7}.
 
 
 \subsubsubsection{Jumar}
-Back to the situation depicted in Scud1, and suppose the dotted lines do not join. Then $\fbd$ on the left hand side must go under $\fbp$ on the right hand side. Then we have
+Back to the situation depicted in Figure \ref{fig:Scud1}, and suppose the dotted lines do not join. Then $\fbd$ on the left hand side must go under $\fbp$ on the right hand side. Then we have
 \[
 \fbp = \dbar r^+ b^+ o^+ r^*...
 \]
@@ -1649,7 +1649,7 @@ and
 
 This is Jamar3.
 
-Here both $\fbd$ and $\fbdb$ must continue with $r^-$. Otherwise, continuing with $r^+$ will force either of them to violate Rule F1. But then they either circle the perimeter counterclockwise and back at $r^*$ again, and repeat, or they both go up to $i^*$. But in that case, they both violate Rule F! since after $i$ they must cross $\dbar$. This is a contradiction.
+Here both $\fbd$ and $\fbdb$ must continue with $r^-$. Otherwise, continuing with $r^+$ will force either of them to violate the Trace Lemma. But then they either circle the perimeter counterclockwise and back at $r^*$ again, and repeat, or they both go up to $i^*$. But in that case, they both violate Rule F! since after $i$ they must cross $\dbar$. This is a contradiction.
 
 \subsection{IPC}\label{IPC}
 Back to the end of Case A \ref{CaseATrack1}, triangles fixed. Suppose $\fbd$ starts at $b$, and $\fbdb$ starts at $p$.
@@ -1663,7 +1663,7 @@ But in this case, $\fbb$ is forced to follow $\fbd$, which will force it to trac
 \fbd = b^- r^- d...
 \]
 
-This is IPC1.
+This is Figure \ref{fig:IPC1}.
 
 Here $\fbdb$ can begin with no initial twists, which has two possibilities:
 \[
@@ -1678,14 +1678,14 @@ It can also begin with initial twists, in which case it must be
 \fbdb = p^- s^- (p^-s^+)^n p^+ i^- \dbar...
 \]
 f
-On the other hand, $\fbdb$ in the middle can go under $\fbr$, above $\fbd$, or join with $\fbd$. It cannot go in between $\fbd$ and $\fbr$ or it will violate Rule F1.
+On the other hand, $\fbdb$ in the middle can go under $\fbr$, above $\fbd$, or join with $\fbd$. It cannot go in between $\fbd$ and $\fbr$ or it will violate the Trace Lemma.
 
-\subsubsection{Etui}
+\subsubsection{Etui}\label{Etui}
 Suppose $\fbdb$ goes under $\fbr$. 
 
-This is Etui1. Here regardless of whether $\fbdb$ has any initial twists, the pair $\fbd$ and $\fbdb$ on the left must go above the pair $\fbi$ and $\fbs$. Indeed, otherwise both $\fbd$ and $\fbdb$ will violate Rule F1. But now we are in situation $\alpha$. This is a contradiction.
+This is Figure \ref{fig:Etui1}. Here regardless of whether $\fbdb$ has any initial twists, the pair $\fbd$ and $\fbdb$ on the left must go above the pair $\fbi$ and $\fbs$. Indeed, otherwise both $\fbd$ and $\fbdb$ will violate the Trace Lemma. But now we are in Situation $\alpha$. This is a contradiction.
 
-\subsubsection{Snee}
+\subsubsection{Snee}\label{Snee}
 Back to the end of IPC. Suppose $\fbdb$ on the right goes above $\fbd$. Then we have
 \[
 \fbdb = ...\dbar r^+ b^+ d...
@@ -1699,7 +1699,7 @@ and
 \fbi = \dbar r^+ b^+ d...
 \]
 
-This is Snee1.
+This is Figure \ref{fig:Snee1}.
 
 Here at least one of $\fbs$ and $\fbi$ will trace immediately after crossing $d$, regardless of whether $\fbdb$ has any initial twists or not. This is a contradiction.
 
@@ -1722,7 +1722,7 @@ Here $\fbr$ must go up $i$ and not $s$ since in that case, regardless whether $\
 \]
 Hence it must go up to $i^*...$. 
 
-This is Zarf1.
+This is Figure \ref{fig:Zarf1}.
 
 Here we claim that $\fbdb$ cannot have any initial twists. Indeed, if it did, then $\fbs$ cannot cross $d$ to the right hand side, otherwise it will trace due to the twisting. So $\fbs$ must continue with $o^*...$. But now $\fbi$ cannot end at $o^\circ$ or continue with $o^-$ because that would then force $\fbs$ to continue with $o^-$, and it will trace:
 \[
@@ -1746,9 +1746,9 @@ and not
 \[
 \fbdb = p^- i^-...
 \]
-because in this case $\fbd$ will be forced to go up $i$ and violate Rule F1.
+because in this case $\fbd$ will be forced to go up $i$ and violate the Trace Lemma.
 
-This means we are in the situation depicted in Zarf2.
+This means we are in the situation depicted in Figure \ref{fig:Zarf2}.
 
 Here $\fbr$ must end at $i^\circ$ or it will trace:
 \[
@@ -1765,13 +1765,13 @@ Thus we must have
 
 Now $\fbs$ can either continue with $d$ or $o^*$.
 
-\subsubsubsection{Xebec}
+\subsubsubsection{Xebec}\label{Xebec}
 Suppose $\fbs$ continues with $d$. Then we have
 \[
 \fbs = \dbar r^+ b^+ \hat{d} i^+ \dbar r^*...
 \]
 
-This is Xebec1.
+This is Figure \ref{fig:Xebec1}.
 
 Here $\fbs$ must continue with $r^+$ and to the left of $\fbb$. Otherwise, $\fbb$ must begin with $r^-$ and to the right of $\fbs$, in which case it will trace:
 \[
@@ -1799,7 +1799,7 @@ This is a contradiction.
 \subsubsubsection{Vuggy}\label{Vuggy}
 Back to the end of Zarf \ref{Zarf}. We must have $\fbs$ continues with $o^*...$. 
 
-This is Vuggy1.
+This is Figure \ref{fig:Vuggy1}.
 
 In fact, it must end here at $o^\circ$. Indeed, otherwise it traces:
 \[
@@ -1823,7 +1823,7 @@ Which forces:
 \fbi = \dbar r^+ b^+ \hat{o}^+ b^- r^- d s^*...
 \]
 
-This is Vuggy2.
+This is Figure \ref{fig:Vuggy2}.
 
 Here $\fbb$ must end immediately at $r^\circ$. Indeed, otherwise it traces:
 \[
@@ -1866,7 +1866,7 @@ Thus we must have
 \fbp = s^\circ
 \]
 
-This is Guddle1.
+This is Figure \ref{fig:Guddle1}.
 
 Here $\fbi$ must end at $p^\circ$. Otherwise, it will be absorbed:
 \[
@@ -1877,7 +1877,7 @@ or
 \fbi = ...p^+ s^- \dbar r^+ b^+ o^+ b^- r^- d \Abso{\fbi}{\fbs}
 \]
 
-This gives us Candidate Train Track map 16, shown in Guddle2. 
+This gives us Candidate Train Track map 16, shown in Figure \ref{fig:Guddle2}. 
 
 \subsubsubsubsection{Fipple}\label{Fipple}
 Back to the end of Vuggy \ref{Vuggy}. Suppose $\fbi$ begins with $b^-$. Thus we have
@@ -1885,12 +1885,12 @@ Back to the end of Vuggy \ref{Vuggy}. Suppose $\fbi$ begins with $b^-$. Thus we 
 \fbo = b^- r^- d i^- \dbar b^- r^- d s^*...
 \]
 
-This is Fipple1.
+This is Figure \ref{fig:Fipple1}.
 
 Here $\fbp$ can either end at $s^\circ$, or begin with $s^-$ and into 1., 2., or 3.
 
 \subsubsubsubsubsection{Macumba}\label{Macumba}
-Suppose $\fbp$ ends at $s^\circ$. Then we have the situation depicted in Macumba1.
+Suppose $\fbp$ ends at $s^\circ$. Then we have the situation depicted in Figure \ref{fig:Macumba1}.
 
 Here $\fbi$ must continue with $p^-$ and to the right of $\fbo$. Otherwise, $\fbo$ will be forced to continue with $p^+$ and to the left of $\fbi$, in which case it will trace:
 \[
@@ -1902,7 +1902,7 @@ Thus $\fbi$ must continue with $p^-$ and to the right of $\fbo$. But then it wil
 \fbi = ... p^- s^- \dbar r^+ b^+ d i^\times
 \]
 
-\subsubsubsubsubsection{Fopdoodle}
+\subsubsubsubsubsection{Fopdoodle}\label{Fopdoodle}
 Back to the end of Fipple \ref{Fipple}. Suppose $\fbp$ beings with $s^-$, and suppose it enters into 1. Then it reduces to the same argument concerning $\fbi$ and $\fbo$ in Macumba \ref{Macumba}, which leads to a contradiction. So suppose it goes into 2. Then it will be absorbed:
 \[
 \fbp = s^- \dbar r^+ b^+ d i^+ \dbar r^+ b^+ \Abso{\fbd}{\fbo}
@@ -1913,7 +1913,7 @@ So suppose it goes into 3, then we have
 \fbp = s^- \dbar r^+ b^+ d i^+ \dbar r^+ b^*...
 \]
 
-This is Fopdoodle1.
+This is Figure \ref{fig:Fopdoodle1}.
 
 Here $\fbi$ must continue with $s^-$ and to the right of $\fbo$. Otherwise, $\fbo$ will be forced to continue with $s^+$ and the left of $\fbi$, in which case it will trace:
 \[
@@ -1924,40 +1924,40 @@ But then we have
 \fbi = ...d^- \dbar r^+ b^+ d i^\times 
 \]
 
-\subsection{LYR}\label{LYR}
+\subsection{HND}\label{HND}
 Back to the end of Case A \ref{CaseATrack1}, triangles fixed. Suppose $\fbd$ starts at $r$, and $\fbdb$ starts at $i$.
 
-The situation is depicted in LYR1.
+The situation is depicted in Figure \ref{fig:HND1}.
 
-Here $\fbdb$ cannot go in between $\fbd$ and $\fbb$ or it will violate Rule F1; nor can it go in between $\fbd$ and $\fbo$ or it will be absorbed between $\fbd$ and $\fbo$. So it must go into 1., 2., or join with $\fbd$ in the middle.
+Here $\fbdb$ cannot go in between $\fbd$ and $\fbb$ or it will violate the Trace Lemma; nor can it go in between $\fbd$ and $\fbo$ or it will be absorbed between $\fbd$ and $\fbo$. So it must go into 1., 2., or join with $\fbd$ in the middle.
 
-\subsubsection{Froe}
+\subsubsection{Froe}\label{Froe}
 Suppose $\fbdb$ goes into 1. Then we haave
 \[
 \fbdb = i^+ p^+ \dbar r^+ b^+ d...
 \]
 
-This is Froe1.
+This is Figure \ref{fig:Froe1}.
 
 Here the pair $\fbd$ and $\fbdb$, and $\fbo$ in between them on the left hand side are in Situation $\alpha$. This is a contradiction.
 
-\subsubsection{Moxa}
-Back to the end of \label{LYR}. Suppose $\fbdb$ goes into 2. Then we have
+\subsubsection{Moxa}\label{Moxa}
+Back to the end of \ref{HND}. Suppose $\fbdb$ goes into 2. Then we have
 \[
 \fbdb = i^+ p^+ \dbar b^- r^- d...
 \]
 
-This is Moxa1.
+This is Figure \ref{fig:Moxa1}.
 
 Here $\fbp$ will trace:
 \[
 \fbp = \dbar b^- r^- d p^\times
 \]
 
-\subsubsection{Erne}
-Back to the end of \label{LYR}. Suppose the dotted lines join in the middle.
+\subsubsection{Erne}\label{Erne}
+Back to the end of \ref{HND}. Suppose the dotted lines join in the middle.
 
-This is Erne1. 
+This is Figure \ref{fig:Erne1}. 
 
 But now $\fbp$ must continue nuder $\fbo$ or be absorbed between $\fbd$ and $\fbo$; but then it traces:
 \[
@@ -1967,35 +1967,35 @@ But now $\fbp$ must continue nuder $\fbo$ or be absorbed between $\fbd$ and $\fb
 \subsection{USH}\label{USH}
 Back to the end of Case A \ref{CaseATrack1}, triangles fixed. Suppose $\fbd$ starts at $r$, and $\fbdb$ starts at $s$.
 
-The situation is depicted in USH1.
+The situation is depicted in Figure \ref{fig:USH1}.
 
-Here $\fbdb$ cannot go into 2., or it will be in situation $\beta$. It cannot go into 3., or it will be absorbed between $\fbd$ and $\fbo$. So $\fbdb$ can only go into 1., 4., or join with $\fbd$ in the middle.
+Here $\fbdb$ cannot go into 2., or it will be in Situation $\beta$. It cannot go into 3., or it will be absorbed between $\fbd$ and $\fbo$. So $\fbdb$ can only go into 1., 4., or join with $\fbd$ in the middle.
 
-\subsubsection{Torc}
+\subsubsection{Torc}\label{Torc}
 Suppose $\fbdb$ goes into 1. 
 
-This is Torc1.
+This is Figure \ref{fig:Torc1}.
 
 Here the pair $\fbd$ and $\fbdb$, together with $\fbo$ in between them, are in Situation $\alpha$.
 
 \subsubsection{Yegg}
 Back to the end of USH \ref{USH}. Suppose $\fbdb$ goes into 4. But now $\fbp$ traces, as depicted in Vegg1.
 
-\subsubsection{Kief}
+\subsubsection{Kief}\label{Kief}
 Back to the end of USH \ref{USH}. Suppose $\fbdb$ and $\fbd$ join in the middle. But now $\fbb$ will trace:
 \[
 \fbb = d p^- s^- \dbar b^\times
 \]
-as shown in Kief1.
+as shown in Figure \ref{fig:Kief1}.
 
 \subsection{LXA}\label{LXA}
 Back to the end of Case A \ref{CaseATrack1}, triangles fixed. Suppose $\fbd$ starts at $r$, and $\fbdb$ starts at $p$.
 
-This is LXA1.
+This is Figure \ref{fig:LXA1}.
 
 Here $\fbdb$ will cross $\dbar$ right after it comes down via $s^-$, or $i^-$, possibly with initial twists. 
 
-Suppose it comes down on $s^-$ before crossing. Then it cannot have any initial twisting. This is shown in LXA2.
+Suppose it comes down on $s^-$ before crossing. Then it cannot have any initial twisting. This is shown in Figure \ref{fig:LXA2}.
 
 Here if $\fbb$ were to go above the pair $\fbi$ and $\fbs$ on the right, then it will trace:
 \[
@@ -2014,21 +2014,21 @@ at least one of them will trace. This is a contradiction.
 Thus, $\fbdb$ must go down via $i$ before crossing. Then $\fbdb$ can either have no initial twists or have initial twists.
 
 \subsubsection{Xama}\label{Xama}
-Suppose $\fbdb$ has no initial twists. The situation is depicted in Xama1.
+Suppose $\fbdb$ has no initial twists. The situation is depicted in Figure \ref{fig:Xama1}.
 
 Here $\fbdb$ can go into 1, 2., or join with $\fbd$. It cannot go in between $\fbb$ and $\fbd$ as that would be Situation $\beta$; and it cannot go in between $\fbd$ and $\fbo$ or it will be absorbed between the two.
 
-Suppose it goes into 1. This is Xama2. Here $\fbd$ and $\fbdb$, together with $\fbo$ in between them, are in situation $\alpha$.
+Suppose it goes into 1. This is Figure \ref{fig:Xama2}. Here $\fbd$ and $\fbdb$, together with $\fbo$ in between them, are in Situation $\alpha$.
 
-So suppose $\fbdb$ goes into 2. This is Xama2. Here $\fbdb$ has to go above the pair $\fbi$ and $\fbs$, or it will go into Situation $\beta$. Similarly, $\fbd$ has to go above the pair, and therefore $\fbb$ as well. 
+So suppose $\fbdb$ goes into 2. This is Figure \ref{fig:Xama2}. Here $\fbdb$ has to go above the pair $\fbi$ and $\fbs$, or it will go into Situation $\beta$. Similarly, $\fbd$ has to go above the pair, and therefore $\fbb$ as well. 
 
-This is Xama3.
+This is Figure \ref{fig:Xama3}.
 
-Here the pair $\fbd$ and $\fbdb$, together with $\fbb$ in between them, are in situation $\alpha$. This is a contradiction.
+Here the pair $\fbd$ and $\fbdb$, together with $\fbb$ in between them, are in Situation $\alpha$. This is a contradiction.
 
-So suppose in the situation depicted in Xama1, the dotted lines joint in the middle.
+So suppose in the situation depicted in Figure \ref{fig:Xama1}, the dotted lines joint in the middle.
 
-This is Xama4.
+This is Figure \ref{fig:Xama4}.
 
 Here $\fbb$ can only go into 1., or 2. If it were to go in between $\fbo$ and $\fbi$ then it will eventually trace after crossing $\dbar$.
 
@@ -2041,19 +2041,19 @@ Here it cannot go $\fbi = \fbar r^+ b^+ d...$ a the next letter would trace. But
 \fbo = r^+ b^+ d i^+ p^+ \dbar r^+ b^+ o^\times
 \]
 
-THis is Xama5.
+THis is Figure \ref{fig:Xama5}.
 
-Thus going back to the situation depicted in Xama4, $\fbb$ must go into 1. Then we must have
+Thus going back to the situation depicted in Figure \ref{fig:Xama4}, $\fbb$ must go into 1. Then we must have
 \[
 \fbb = d p^- s^\circ
 \]
 It must end here at $s^\circ$ since either $s^+$ and $s^-$ would lead it to eventually trace.
 
-This is Xama6.
+This is Figure \ref{fig:Xama6}.
 
 Here $\fbr$ can either end at $b^\circ$, or begin with $b^+$.
 
-\subsubsubsection{Zaxes}
+\subsubsubsection{Zaxes}\label{Zaxes}
 Suppose $\fbr$ ends at $b^\circ$:
 \[
 \fbr = b^\cric
@@ -2077,15 +2077,15 @@ But now we have
 \fbi = \dbar b^- \hat{r}^+ d i^\times
 \]
 
-This is Zaxes1.
+This is Figure \ref{fig:Zaxes1}.
 
-\subsubsubsection{Qophs}
+\subsubsubsection{Qophs}\label{Qophs}
 Back to the end of Xama \ref{Xama}. Suppose 
 \[
 \fbr = b^+ d i^*...
 \]
 
-This is Qophs1.
+This is Figure \ref{fig:Qophs1}.
 
 Here $\fbs$ must continue with $b^-$ and to the right of $\fbi$ and $\fbo$. Otherwise, $\fbi$ will be forced to continue iwth $b^+$ and trace immediately after scrossing $d$. It must go to the right of $\fbo$ as well since if it were t ogo in between $\fbi$ and $\fbo$ (i.e. to the left of $\fbo$), then it will be absorbed:
 \[
@@ -2097,21 +2097,21 @@ But no it is still forced to trace:
 \fbs = \dbar b^- d p^- i^- \dbar b^- r^- d p^- s^\times
 \]
 
-\subsubsection{Zoea}
+\subsubsection{Zoea}\label{Zoea}
 Back to the end of LXA\ref{LXA}. Suppose $\fbdb$ has initial twisting, and comes down on $i$ right before crossing $\dbar$.
 
-This is Zoea1, where we've depicted one twisting between $s$ and $p$ before going to $i^-$ and crossing $\dbar$.
+This is Figure \ref{fig:Zoea1}, where we've depicted one twisting between $s$ and $p$ before going to $i^-$ and crossing $\dbar$.
 
 Here $\fbs$ must continue with $b^-$ and to the right of $\fbr$. Otherwise $\fbi$ will be forced to continue with $b^+$ and to the left of $\fbs$, in which case it will immediately trace after crossing $d$. Further, $\fbs$ must go to the right of $\fbr$ or it will trace:
 \[
 \fbs = \dbar b^- d p^-s^\times
 \]
 
-Thus we must continue with the situation depicted in Zoea2.
+Thus we must continue with the situation depicted in Figure \ref{fig:Zoea2}.
 
 Here $\fbs$ must continue with $r^-$ and to the right of $\fbi$. Otherwise, $\fbi$ will be forced to continue with $r^+$ and immediately trace right after crossing $d$. 
 
-Thus we have the situation depicted in Zoea3. Here again $\fbs$ is forced to continue with $b^+$ and to the left of $\fbr$. Otherwise, $\fbr$ will immediately trace.
+Thus we have the situation depicted in Figure \ref{fig:Zoea3}. Here again $\fbs$ is forced to continue with $b^+$ and to the left of $\fbr$. Otherwise, $\fbr$ will immediately trace.
 
 But now $\fbs$ will trace:
 \[
@@ -2128,16 +2128,16 @@ We first assume $\fbdb$ passes over $d$ after an odd number of letters.
 \subsection{OMG}\label{OMG}
 Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $o$, and $\fbd$ starts at $p$.
 
-But in this situation $\fbr$ traces, as shown in OMG1.
+But in this situation $\fbr$ traces, as shown in Figure \ref{fig:OMG1}.
 
 \subsection{SUX}\label{SUX}
 Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $o$, and $\fbd$ starts at $s$.
 
-This is SUX1.
+This is Figure \ref{fig:SUX1}.
 
 Here both $\fbs$ and $\fbi$ must continue with $r^-$ and to the right of $\fbb$. Otherwise, $\fbb$ will trace.
 
-This is SUX2.
+This is Figure \ref{fig:SUX2}.
 
 Here again both $\fbs$ and $\fbi$ must continue with $p^-$ and to the right of $\fbr$. Otherwise $\fbr$ will trace immediately after crossing $\dbar$. But now $\fbs$ traces.
 
@@ -2149,22 +2149,22 @@ The same argument in SUX \ref{SUX} shows this cannot happen. Except at the very 
 \subsection{ULN}\label{ULN}
 Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $o$, and $\fbd$ starts at $\dbar$.
 
-This is ULN1.
+This is Figure \ref{fig:ULN1}.
 
 Here $\fbd$ must continue with $r^+$ and to the left of $\fbs$ and $\fbi$. Otherwise, both $\fbi$ and $\fbb$ cross $d$, and then continue with $p^-$ (or $\fbb$ will trace after crossing $\dbar$). But then at least one of $\fbs$ or $\fbi$ will trace. So we must have
 \[
 \fbs = \dbar r^+ b^+ o^*...
 \]
 
-This is ULN2.
+This is Figure \ref{fig:ULN2}.
 
-Now consider $\fbo$. It must continue with $r^+$ and to the left of $\fbs$ and $\fbi$. Otherwise the two will be abssorbed between $\fbi$ and $\fbo$. Now we have the situation depicted in ULN3.
+Now consider $\fbo$. It must continue with $r^+$ and to the left of $\fbs$ and $\fbi$. Otherwise the two will be abssorbed between $\fbi$ and $\fbo$. Now we have the situation depicted in Figure \ref{fig:ULN3}.
 
 Here $\fbo$ must continue with $b^+$ and to the left of $\fbp$. Otherwise $\fbp$ also woud be absorbed. But now $\fbo$ traces. 
 
 This is a contradiction.
 
-\subsection{ULN}\label{ULN}
+\subsection{NAN}\label{NAN}
 Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $b$, and $\fbd$ starts at $p$.
 
 Consider $\fbr = \dbar...$. The next letter must be $b$ or else it will trace:
@@ -2180,13 +2180,13 @@ This forces both $\fbi$ and $\fbs$ to begin with $d$:
 \fbi = d p^*...
 \]\
 
-This is NAN1.
+This is Figure \ref{fig:NAN1}.
 
-Here $\fbd$ must begin with $p^+$ otherwise either $\fbs$ or $\fbi$ will trace. This gives NAN2.
+Here $\fbd$ must begin with $p^+$ otherwise either $\fbs$ or $\fbi$ will trace. This gives Figure \ref{fig:NAN2}.
 
-Both $\fbd$ and $\fbo$ must continue with $r^+$ otherwise $\fbp$ will trace immediately after crossing $d$. This gives NAN3.
+Both $\fbd$ and $\fbo$ must continue with $r^+$ otherwise $\fbp$ will trace immediately after crossing $d$. This gives Figure \ref{fig:NAN3}.
 
-Here $\fbo$ must continue with $b^+$ and to the left of $\fbr$. Otherwise, $\fbr$ will trace. This gives NAN4.
+Here $\fbo$ must continue with $b^+$ and to the left of $\fbr$. Otherwise, $\fbr$ will trace. This gives Figure \ref{fig:NAN4}.
 
 Here $\fbd$ and $\fbdb$ cannot join or $\fbr$ will trace. Thus they both must continue with $b^+$ and to the left of $\fbr$. But now $\fbd$ and $\fbdb$ are in Situation $\alpha$. 
 
@@ -2195,7 +2195,7 @@ This is a contradiction.
 \subsection{GOH}\label{GOH}
 Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $b$, and $\fbd$ starts at $s$.
 
-his is GOH1.
+his is Figure \ref{fig:GOH1}.
 
 Here $\fbb$ must go above $\fbs$ and $\fbi$. Otherwise it will tace immediately after crossing $\dbar$. but now either $\fbs$ or $\fbi$ will trace immediately after crossing $d$.
 
@@ -2210,12 +2210,12 @@ The same argument as that of GOH \ref{GOH} gives a contradiction.
 \subsection{BOD}\label{BOD}
 Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $b$, and $\fbd$ starts at $\dbar$.
 
-This is BOD1.
+This is Figure \ref{fig:BOD1}.
 
 Here $\fbs$ and $\fbi$ must go above $\fbo$. Otherwise, either $\fbs$ or $\fbi$ will trace immediately after crossing $d$. 
 
 
-This is BOD2.
+This is Figure \ref{fig:BOD2}.
 
 Here $\fbb$ must being with $p^+$ and to the left of $\fbs$ and $\fbi$. Otherwise, again either of those would trace. Then after crossing $\fbdb$, $\fbb$ must continue with $r^+$ and to the left of $\fbp$ otherwise $\fbp$ will trace right after crossing $d$. But now $\fbb$ traces;
 \[
@@ -2225,7 +2225,7 @@ Here $\fbb$ must being with $p^+$ and to the left of $\fbs$ and $\fbi$. Otherwis
 \subsection{MAA}\label{MAA}
 Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $r$, and $\fbd$ starts at $p$.
 
-This is MAA1.
+This is Figure \ref{fig:MAA1}.
 
 Here $\fbr$ must go below $\fbp$ otherwise $\fbr$ will trace immediately after crossing $\dbar$. But now $\fbp$ will trace immediately right after crossing $d$.
 
@@ -2234,7 +2234,7 @@ This is a contradiction.
 \subsection{XNB}\label{XNB}
 Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $r$, and $\fbd$ starts at $s$.
 
-This is XNB1.
+This is Figure \ref{fig:XNB1}.
 
 Here $\fbdb$ must come down on $r$ before crossing $d$, and it cannot have any initial twists otherwise $\fbd$ will be forced to cross $d$ with it, and thereby trace. So we must have
 \[
@@ -2243,7 +2243,7 @@ Here $\fbdb$ must come down on $r$ before crossing $d$, and it cannot have any i
 
 Here it must go above $\fbb$. Otherwise $\fbb$ will trace. On the other hand $\fbb$ must go above $\fbp$ otherwise $\fbp$ will trace. 
 
-This is XNB2.
+This is Figure \ref{fig:XNB2}.
 
 Here $\fbi$ must begin with $b^+$ and to the left of $\fbs$. Otherwise $\fbs$ is forced to begin with $b^-$, and thereby trace:
 \[
@@ -2252,7 +2252,7 @@ Here $\fbi$ must begin with $b^+$ and to the left of $\fbs$. Otherwise $\fbs$ is
 
 In fact $\fbi$ must then continue with $o^*$ otherwise it would force $\fbp$ to cross with it and then go up $s$, which would force $\fbp$ to trace.
 
-This is XNB3.
+This is Figure \ref{fig:XNB3}.
 
 Here $\fbdb$ either join with $\fbd$, or $\fbdb$ must continue with $s^-$ and to the right of $\fbp$.
 
@@ -2260,7 +2260,7 @@ Here $\fbdb$ either join with $\fbd$, or $\fbdb$ must continue with $s^-$ and to
 \subsubsection{Qadi}\label{Qadi}
 Suppose the dotted lines join. 
 
-This is Qadi1.
+This is Figure \ref{fig:Qadi1}.
 
 Here $\fbp$ can continue with $d$ or $o^*$. Suppose it were to continue with $d$. Then
 \[
@@ -2272,7 +2272,7 @@ This forces $\fbo$ to begin with $i^-$ and to the right of $\fbp$. So we have
 \fbo = i^- \dbar b^*...
 \]
 
-This is Qadi2.
+This is Figure \ref{fig:Qadi2}.
 
 This forces $s\fbs$ to go $b^+$ and to the left of the incoming $\fbp$:
 \[ 
@@ -2288,7 +2288,7 @@ Thus we must have
 \fbi = b^+ \hat{o}^+ b^*...
 \]
 
-This is Qadi3.
+This is Figure \ref{fig:Qadi3}.
 
 Here $\fbi$ must continue with $b^-$ and to the right of $\fbo$. Otherwise, $\fbo$ would immediately trace. But now $\fbi$ will trace:
 \[
@@ -2296,9 +2296,9 @@ Here $\fbi$ must continue with $b^-$ and to the right of $\fbo$. Otherwise, $\fb
 \]
 
 
-Back to the situation depicted in Qadi1. SUppose $\fbp$ continues with $o^*$.
+Back to the situation depicted in Figure \ref{fig:Qadi1}. SUppose $\fbp$ continues with $o^*$.
 
-This is Qadi4.
+This is Figure \ref{fig:Qadi4}.
 
 Here $\fbo$ can continue with $i^-$ or $i^\circ$.
 
@@ -2308,7 +2308,7 @@ Suppose $\fbo$ continues with $i^-$. So we have
 \fbo = o^- \dbar r^*...
 \]
 
-This is Agora1.
+This is Figure \ref{fig:Agora1}.
 
 Here $\fbi$ must continue with $r^-$ and to the right of the incoming $\fbo$. Otherwise $\fbo$ would be forced to continue with $r^+$ and to the left of $\fbi$, and would immediately trace.
 
@@ -2318,7 +2318,7 @@ So we have
 \]
 and it must continue with $p^-$ and to the right of $\fbr$. Otherwise, $\fbr$ would trace immediately after crossing $\dbar$. 
 
-This is Agora2.
+This is Figure \ref{fig:Agora2}.
 
 Here $\fbo$ is forced to continue with $r^-$ and to the right of $\fbb$. Otherwise $\fbb$ is forced to continue with $r^+$ and either gets absorbed:
 \[
@@ -2334,11 +2334,11 @@ Thus we must have
 \fbo = ...r^- d p^- s^*...
 \]
 
-This is Agora3.
+This is Figure \ref{fig:Agora3}.
 
 Here $\fbi$ must continue with $s^-$ and to the right of $\fbo$. 
 
-This is Agora4.
+This is Figure \ref{fig:Agora4}.
 
 Here both $\fbp$ and $\fbs$ must end immediately or they would both eventually trace. So we have
 \[
@@ -2349,16 +2349,16 @@ and
 \fbs = b^\circ
 \]
 
-This is Agora5.
+This is Figure \ref{fig:Agora5}.
 
 Here $\fbr$ and either continue with $p^\circ$ or $p^-$.
 
-\subsubsubsubsection{Byssus}
+\subsubsubsubsection{Byssus}\label{Byssus}
 Suppose
 \[
 \fbr = p^\circ
 \]
-This is Byssus1.
+This is Figure \ref{fig:Byssus1}.
 
 This forces $\fbi$ to continue
 \[
@@ -2367,10 +2367,10 @@ This forces $\fbi$ to continue
 
 But now $\fbi$, $\fbb$, and $\fbo$ are in a clockwise path mill. this is a contradiction.
 
-\subsubsubsubsection{Zareba}
+\subsubsubsubsection{Zareba}\label{Zareba}
 Back to the end of Agora \ref{Agora}. Suppose $\fbr$ continue with $p^-$. 
 
-This is Zareba1.
+This is Figure \ref{fig:Zareba1}.
 
 Here $\fbr$, $\fbo$, and $\fbi$ are in a clockwise path mill between $s$ and $p$.
 
@@ -2383,7 +2383,7 @@ Back to the end of Qadi \ref{Qadi}. Suppose
 \fbo = i^\circ
 \]
 
-This is Bokeh1.
+This is Figure \ref{fig:Bokeh1}.
 
 Here $\fbs$ can begin with $b^\circ$ or $b^+$.
 
@@ -2393,7 +2393,7 @@ Suppose
 \fbs = b^\circ
 \]
 
-This is Popjoy1.
+This is Figure \ref{fig:Popjoy1}.
 
 Here $\fbp$ can either begin with $o^\circ$ or $o^+$. Suppose
 \[
@@ -2406,14 +2406,14 @@ Then $\fbi$ is forced to continue with $r^-$ and to the right of $\fbb$. Otherwi
 \fbi = r^+ o^+ \hat{r}^- p^- s^*...
 \]
 
-This is Popjoy2.
+This is Figure \ref{fig:Popjoy2}.
 
 Here $\fbr$ must end at $p$ or $s$ after possibly twisting $k$ times between the two. Then $\fbi$ and $\fbb$ twist $m$  times between $s$ and $r$, and end there.
 
 
 This is Candidate Train Track Map Family 17.
 
-\subsubsubsubsection{Archon}
+\subsubsubsubsection{Archon}\label{Archon}
 Back to the end of Bokeh \ref{Bokeh}. suppose
 \[
 \fbs = b^+ o^*...
@@ -2423,26 +2423,26 @@ This is Arhcon1.
 
 Here $\fbs$ is forced to continue with $o^+$ and to the left of $\fbp$. Otherwise $\fbp$ will be absorbed.
 
-This is Archon2.
+This is Figure \ref{fig:Archon2}.
 
 Here $\fbb$ is forced to continue with $r^+$ and to the left of $\fbs$. Otherwise, $\fbs$ is forced to continue with $r^-$ and after crossing $d$, $p^-$ and to the right of $\fbr$ (otherwise $\fbr$ will trace), but then $\fbs$ itself traces.
 
-This is Archon3.
+This is Figure \ref{fig:Archon3}.
 
 Here $\fbi$, $\fbb$, $\fbp$, and $\fbs$ are in a four-strand counterclockwise path mill between $o$ and $r$.
 
 This is a contradiction.
 
-\subsubsection{Iwis}
-Back to the end of XNB \ref{XNB}. Suppose $\fbdb$ does not join with $\fbd$ in the situation depicted in XNB3, but instead continue with $s^-$ and to the right of $\fbp$. Then it continues as shown in Iwis1.
+\subsubsection{Iwis}\label{Iwis}
+Back to the end of XNB \ref{XNB}. Suppose $\fbdb$ does not join with $\fbd$ in the situation depicted in Figure \ref{fig:XNB3}, but instead continue with $s^-$ and to the right of $\fbp$. Then it continues as shown in Figure \ref{fig:Iwis1}.
 
 here $\fbs$ must begin with $b^+$ and to the left of the incoming $\fbdb$.
 
-This is Iwis2.
+This is Figure \ref{fig:Iwis2}.
 
 Here $\fbi$ must continue with $o^+$ and to the left of $\fbdb$. Otherwise, $\fbs$ will be forced to continue with $o^-$ and eventually trace.
 
-This is Iwis3.
+This is Figure \ref{fig:Iwis3}.
 
 Here $\fbdb$, $\fbs$, and $\fbi$ are in a counter clockwise path mill between $o$ and $b$.
 
@@ -2452,11 +2452,11 @@ This is a contradiction.
 \subsection{QRO}\label{QRO}
 Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $r$, and $\fbd$ starts at $i$.
 
-This is QRO1.
+This is Figure \ref{fig:QRO1}.
 
 Here $\fbd$ can either begin with $p^+$ or $p^-$.
 
-\subsubsection{Birl}
+\subsubsection{Burl}\label{Burl}
 Suppose 
 \[
 \fbd = p^+...
@@ -2475,33 +2475,33 @@ Now consider $\fbi$. It must continue with $o^+$ and to the left of the incoming
 \fbi = ... o^+ r^*...
 \]
 
-Here $\fbi$ must continue with $r^-$ and to the right of $\fbb$. If not, then $\fbb$ will be forced to continue with $r^+$, which would put $\fbb$, $\fbp$, $\fbi$ in a conuter clockwise path mill between $o$ and $r$, as depicted in Birl1.
+Here $\fbi$ must continue with $r^-$ and to the right of $\fbb$. If not, then $\fbb$ will be forced to continue with $r^+$, which would put $\fbb$, $\fbp$, $\fbi$ in a conuter clockwise path mill between $o$ and $r$, as depicted in Figure \ref{fig:Burl1}.
 
-Thus we must have the situation depicted in Birl2.
+Thus we must have the situation depicted in Figure \ref{fig:Burl2}.
 
-Here we claim that $\fbi$ must continue with $p^-$ and then $s^*$, as depicted in Birl3. Indeed, if it continues instead with $p^\circ$ or $p^+$, then $\fbr$ is forced to begin with $p^+$ and to the left of $\fbi$, in which case it will trace immediately after crossing $\dbar$.
+Here we claim that $\fbi$ must continue with $p^-$ and then $s^*$, as depicted in Figure \ref{fig:Burl3}. Indeed, if it continues instead with $p^\circ$ or $p^+$, then $\fbr$ is forced to begin with $p^+$ and to the left of $\fbi$, in which case it will trace immediately after crossing $\dbar$.
 
-Thus we are in the situation depicted in Birl2. But now $\fbdb$ must continue with $s^-$ and to the right of $\fbi$, and not $s^+$; otherwise, it would violate Rule F1. But then we have the situation depicted in Birl4.
+Thus we are in the situation depicted in Figure \ref{fig:Burl2}. But now $\fbdb$ must continue with $s^-$ and to the right of $\fbi$, and not $s^+$; otherwise, it would violate the Trace Lemma. But then we have the situation depicted in Figure \ref{fig:Burl4}.
 
-Here $\fbr$ must begin with $p^-$ and continue in between $\fbi$ and $\fbdb$, as depicted in Birl5.
+Here $\fbr$ must begin with $p^-$ and continue in between $\fbi$ and $\fbdb$, as depicted in Figure \ref{fig:Burl5}.
 
 Here $\fbi$ must continue with $s^-$ and to the right of $\fbr$. Otherwise, $\fbr$ will be forcde to continue with $s^+$ and to the left of $\fbi$, in which case it will trace after crossing $\dbar$. 
 
-This is Birl6.
+This is Figure \ref{fig:Burl6}.
 
 Now $\fbr$, $\fbi$, and the triplet $\fbd$/$\fbo$/$\fbdb$ are in a clockwise path mill between $p$ and $s$.
 
 This is a contradiction.
 
-\subsubsection{Kyat}
+\subsubsection{Kyat}\label{Kyat}
 Back to the end of QRO \ref{QRO}. Suppose
 \[
 \fbd = p^-...
 \]
 
-This is Kyat1.
+This is Figure \ref{fig:Kyat1}.
 
-Here $\fbd$ must continue with $b^+$. Otherwise, if it went to $r^*$, or $b^-$, it would violate Rule F1. Thus we must have
+Here $\fbd$ must continue with $b^+$. Otherwise, if it went to $r^*$, or $b^-$, it would violate the Trace Lemma. Thus we must have
 \[
 \fbd = i^- \dbar \hat{b}^+ o^*...
 \]
@@ -2515,14 +2515,14 @@ and
 \fbp = d i^*...
 \]
 
-This is Kyat2.
+This is Figure \ref{fig:Kyat2}.
 
 Here $\fbo$ is forced to begin with $i^-$ and to the right of $\fbp$. But now it will trace:
 \[
 \fbo = i^- \dbar b^+ o^\times 
 \]
 
-As depicted in Kyat3.
+As depicted in Figure \ref{fig:Kyat3}.
 
 This is a contradiction.
 
@@ -2530,41 +2530,41 @@ This is a contradiction.
 \subsection{WVB}\label{WVB}
 Assuming $\fbdb$ passes over $d$ after an odd number of letters, and let us assume $\fbdb$ starts at $r$, and $\fbd$ starts at $\dbar$.
 
-This is WVB1.
+This is Figure \ref{fig:WVB1}.
 
 Here $\fbdb$ can have no initial twists, or have initial twists with $b$.
 
-\subsubsection{Nard}
+\subsubsection{Nard}\label{Nard}
 Suppose $\fbdb$ has no initial twists. Then we have
 \[
 \fbdb = r^- d...
 \]
 
-This is Nard1.
+This is Figure \ref{fig:Nard1}.
 
 Here $\fbd$ on the right hand side can either go above $\fbd$ on the left hand side, or go below, or the two can join in the middle.
 
-Suppose $\fbd$ goes above $\fbdb$. Then this forces the situation depicted in Nard2.
+Suppose $\fbd$ goes above $\fbdb$. Then this forces the situation depicted in Figure \ref{fig:Nard2}.
 
-Here $\fbd$ must continue with $b^+$ and to the left of $\fbs$ and $\fbi$. Otherwise $b^-$ would cause $\fbd$ to violate Rule F1. Then $\fbd$ must then cross $d$, again to not violate Rule F1. At the same time $\fbo$ follows $\fbdb$ to not trace.
+Here $\fbd$ must continue with $b^+$ and to the left of $\fbs$ and $\fbi$. Otherwise $b^-$ would cause $\fbd$ to violate the Trace Lemma. Then $\fbd$ must then cross $d$, again to not violate the Trace Lemma. At the same time $\fbo$ follows $\fbdb$ to not trace.
 
-This is Nard3.
+This is Figure \ref{fig:Nard3}.
 
-Here the pair $\fbd$ and $\fbdb$ sandwich $\fbp$ in between them. Now the pair cannot continue with $s^+$ or $i^+$, as that would either bring $p$ to trace, or vilate Rule F1. However, neither can the pair continue with $s^-$ or $i^-$ as those choices immediately violate Rule F1. 
+Here the pair $\fbd$ and $\fbdb$ sandwich $\fbp$ in between them. Now the pair cannot continue with $s^+$ or $i^+$, as that would either bring $p$ to trace, or violate the Trace Lemma. However, neither can the pair continue with $s^-$ or $i^-$ as those choices immediately violate the Trace Lemma. 
 
 This is a contradiction.
 
 
-\subsubsection{Drek}
+\subsubsection{Drek}\label{Drek}
 back to the end of WVB \ref{WVB}. Suppose $\fbdb$ has initial twists. 
 
-This is Drek1
+This is Figure \ref{fig:Drek1}
 
-Then the initial twists cannot include $o$, such as depicted in Drek2. Here either $\fbo$ will be forced to trace, or $\fbp$ will be forced to trace.
+Then the initial twists cannot include $o$, such as depicted in Figure \ref{fig:Drek2}. Here either $\fbo$ will be forced to trace, or $\fbp$ will be forced to trace.
 
-Thus the initial twists can only occur between $r$ and $b$, such as the one depicted in Drek3, which depicts one twist.
+Thus the initial twists can only occur between $r$ and $b$, such as the one depicted in Figure \ref{fig:Drek3}, which depicts one twist.
 
-Here the pair $\fbs$ and $\fbi$ either continue below the pair $\fbo$ and $\fbd$, in which case at least one of $\fbs$ or $\fbi$ will immediately trace; or the pair $\fbs$ and $\fbi$ go above the pair $\fbo$ and $\fbd$, in which case they must continue with $p^-$ and to the right of $\fbb$, otherwise $\fbb$ will trace. But now $\fbi$ or $\fbs$ will trace. This is depicted in Drek4.
+Here the pair $\fbs$ and $\fbi$ either continue below the pair $\fbo$ and $\fbd$, in which case at least one of $\fbs$ or $\fbi$ will immediately trace; or the pair $\fbs$ and $\fbi$ go above the pair $\fbo$ and $\fbd$, in which case they must continue with $p^-$ and to the right of $\fbb$, otherwise $\fbb$ will trace. But now $\fbi$ or $\fbs$ will trace. This is depicted in Figure \ref{fig:Drek4}.
 
 This is a contradiction.
 
@@ -2578,27 +2578,27 @@ Let us assume $\fbdb$ starts at $o$. Then the only possibility for $\fbdb$ to go
 \[
 \fbdb = o^+ (r^+ b^-)^k r^- d...
 \]
-where $k$ is some number of twisting, Figure ZFB1 shows $k=1$.
+where $k$ is some number of twisting, Figure Figure \ref{fig:ZFB1} shows $k=1$.
 
 Indeed, if $\fbdb$ were to begin with $o^-$ instead, then the following is forced:
 \[
 \fbdb = o^- b^- r^-...
 \]
-as shown in ZFB2. 
+as shown in Figure \ref{fig:ZFB2}. 
 
-But it cannot cross $d$ here, so it must continue with $b^*...$ But now it is in situation ???? (bagged serpent)
+But it cannot cross $d$ here, so it must continue with $b^*...$ But now it is in Situation $\beta$ (the bagged serpent)
 
 
 Regardless of the number of twisting, neither $b$ nor $r$ can start at $\dbar$, or they will trace after crossing. Hence $\fbd$ can only start at $\dbar$.
 
-This is ZFB3.
+This is Figure \ref{fig:ZFB3}.
 
 Here the dotted lines can either join or $\fbd$ on the right must go above $\fbdb$ on the left.
 
-\subsubsection{Aery}
+\subsubsection{Aery}\label{Aery}
 Suppose the dotted lines join. 
 
-This is Aery1.
+This is Figure \ref{fig:Aery1}.
 
 Here if $\fbdb$ had no twists, i.e.
 \[
@@ -2631,3 +2631,1460 @@ and
 \]
 
 This is a contradiction.
+
+
+\clearpage
+\section{Figures}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/VIE-1.jpg}
+    \caption{VIE1}
+    \label{fig:VIE1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/VIE-2.jpg}
+    \caption{VIE2}
+    \label{fig:VIE2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/VIE-3.jpg}
+    \caption{VIE3}
+    \label{fig:VIE3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Iris.jpg}
+    \caption{Iris1}
+    \label{fig:Iris1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Flute-1.jpg}
+    \caption{Flute1}
+    \label{fig:Flute1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Flute-2.jpg}
+    \caption{Flute2}
+    \label{fig:Flute2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Flute-3.jpg}
+    \caption{Flute3}
+    \label{fig:Flute3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Flute-4.jpg}
+    \caption{Flute4}
+    \label{fig:Flute4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Flute-5.jpg}
+    \caption{Flute5}
+    \label{fig:Flute5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Flute-6.jpg}
+    \caption{Flute6}
+    \label{fig:Flute6}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Flute-7.jpg}
+    \caption{Flute7}
+    \label{fig:Flute7}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Flute-8.jpg}
+    \caption{Flute8}
+    \label{fig:Flute8}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Flute-9.jpg}
+    \caption{Flute9}
+    \label{fig:Flute9}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Plump.jpg}
+    \caption{Plump1}
+    \label{fig:Plump1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Muscle-1.jpg}
+    \caption{Muscle1}
+    \label{fig:Muscle1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Muscle-2.jpg}
+    \caption{Muscle2}
+    \label{fig:Muscle2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Muscle-3.jpg}
+    \caption{Muscle3}
+    \label{fig:Muscle3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Muscle-4.jpg}
+    \caption{Muscle4}
+    \label{fig:Muscle4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Muscle-5.jpg}
+    \caption{Muscle5}
+    \label{fig:Muscle5}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Dolphin-1.jpg}
+    \caption{Dolphin1}
+    \label{fig:Dolphin1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Dolphin-2.jpg}
+    \caption{Dolphin2}
+    \label{fig:Dolphin2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Dolphin-3.jpg}
+    \caption{Dolphin3}
+    \label{fig:Dolphin3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Dolphin-4.jpg}
+    \caption{Dolphin4}
+    \label{fig:Dolphin4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Dolphin-5.jpg}
+    \caption{Dolphin5}
+    \label{fig:Dolphin5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Cottage.jpg}
+    \caption{Cottage1}
+    \label{fig:Cottage1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Magpie-1.jpg}
+    \caption{Magpie1}
+    \label{fig:Magpie1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Magpie-2.jpg}
+    \caption{Magpie2}
+    \label{fig:Magpie2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Magpie-3.jpg}
+    \caption{Magpie3}
+    \label{fig:Magpie3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Magpie-4.jpg}
+    \caption{Magpie4}
+    \label{fig:Magpie4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Magpie-5.jpg}
+    \caption{Magpie5}
+    \label{fig:Magpie5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Magpie-6.jpg}
+    \caption{Magpie6}
+    \label{fig:Magpie6}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Magpie-7.jpg}
+    \caption{Magpie7}
+    \label{fig:Magpie7}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Magpie-8.jpg}
+    \caption{Magpie8}
+    \label{fig:Magpie8}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Ruby-1.jpg}
+    \caption{Ruby1}
+    \label{fig:Ruby1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Ruby-2.jpg}
+    \caption{Ruby2}
+    \label{fig:Ruby2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/GRR.jpg}
+    \caption{GRR1}
+    \label{fig:GRR1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bree-1.jpg}
+    \caption{Bree1}
+    \label{fig:Bree1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bree-2.jpg}
+    \caption{Bree2}
+    \label{fig:Bree2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bree-3.jpg}
+    \caption{Bree3}
+    \label{fig:Bree3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bree-4.jpg}
+    \caption{Bree4}
+    \label{fig:Bree4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bree-5.jpg}
+    \caption{Bree5}
+    \label{fig:Bree5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bree-6.jpg}
+    \caption{Bree6}
+    \label{fig:Bree6}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bree-7.jpg}
+    \caption{Bree7}
+    \label{fig:Bree7}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bree-8.jpg}
+    \caption{Bree8}
+    \label{fig:Bree8}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bree-9.jpg}
+    \caption{Bree9}
+    \label{fig:Bree9}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Scud-1.jpg}
+    \caption{Scud1}
+    \label{fig:Scud1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Scud-2.jpg}
+    \caption{Scud2}
+    \label{fig:Scud2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Swale.jpg}
+    \caption{Swale1}
+    \label{fig:Swale1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bezoar-1.jpg}
+    \caption{Bezoar1}
+    \label{fig:Bezoar1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bezoar-2.jpg}
+    \caption{Bezoar2}
+    \label{fig:Bezoar2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bezoar-3.jpg}
+    \caption{Bezoar3}
+    \label{fig:Bezoar3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bezoar-4.jpg}
+    \caption{Bezoar4}
+    \label{fig:Bezoar4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bezoar-5.jpg}
+    \caption{Bezoar5}
+    \label{fig:Bezoar5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bezoar-6.jpg}
+    \caption{Bezoar6}
+    \label{fig:Bezoar6}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Efface.jpg}
+    \caption{Efface1}
+    \label{fig:Efface1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Abscond-1.jpg}
+    \caption{Abscond1}
+    \label{fig:Abscond1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Abscond-2.jpg}
+    \caption{Abscond2}
+    \label{fig:Abscond2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Abscond-3.jpg}
+    \caption{Abscond3}
+    \label{fig:Abscond3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Abscond-4.jpg}
+    \caption{Abscond4}
+    \label{fig:Abscond4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Abscond-5.jpg}
+    \caption{Abscond5}
+    \label{fig:Abscond5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Abscond-6.jpg}
+    \caption{Abscond6}
+    \label{fig:Abscond6}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Fervent-1.jpg}
+    \caption{Fervent1}
+    \label{fig:Fervent1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Fervent-2.jpg}
+    \caption{Fervent2}
+    \label{fig:Fervent2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Fervent-3.jpg}
+    \caption{Fervent3}
+    \label{fig:Fervent3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Ombre-1.jpg}
+    \caption{Ombre1}
+    \label{fig:Ombre1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Satire-1.jpg}
+    \caption{Satire1}
+    \label{fig:Satire1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Satire-2.jpg}
+    \caption{Satire2}
+    \label{fig:Satire2}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Abdomen.jpg}
+    \caption{Abdomen1}
+    \label{fig:Abdomen1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Panorama-1.jpg}
+    \caption{Panorama1}
+    \label{fig:Panorama1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Panorama-2.jpg}
+    \caption{Panorama2}
+    \label{fig:Panorama2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Panorama-3.jpg}
+    \caption{Panorama3}
+    \label{fig:Panorama3}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Pristine-1.jpg}
+    \caption{Pristine1}
+    \label{fig:Pristine1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Pristine-2.jpg}
+    \caption{Pristine2}
+    \label{fig:Pristine2}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Gingham-1.jpg}
+    \caption{Gingham1}
+    \label{fig:Gingham1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Gingham-2.jpg}
+    \caption{Gingham2}
+    \label{fig:Gingham2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Gingham-3.jpg}
+    \caption{Gingham3}
+    \label{fig:Gingham3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Gingham-4.jpg}
+    \caption{Gingham4}
+    \label{fig:Gingham4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Gingham-5.jpg}
+    \caption{Gingham5}
+    \label{fig:Gingham5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Kismet.jpg}
+    \caption{Kismet1}
+    \label{fig:Kismet1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Dossier-1.jpg}
+    \caption{Dossier1}
+    \label{fig:Dossier1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Dossier-2.jpg}
+    \caption{Dossier2}
+    \label{fig:Dossier2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Dossier-3.jpg}
+    \caption{Dossier3}
+    \label{fig:Dossier3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Dossier-4.jpg}
+    \caption{Dossier4}
+    \label{fig:Dossier4}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Perplex-1.jpg}
+    \caption{Perplex1}
+    \label{fig:Perplex1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Perplex-2.jpg}
+    \caption{Perplex2}
+    \label{fig:Perplex2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Perplex-3.jpg}
+    \caption{Perplex3}
+    \label{fig:Perplex3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Perplex-4.jpg}
+    \caption{Perplex4}
+    \label{fig:Perplex4}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Querulous-1.jpg}
+    \caption{Querulous1}
+    \label{fig:Querulous1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Querulous-2.jpg}
+    \caption{Querulous2}
+    \label{fig:Querulous2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Querulous-3.jpg}
+    \caption{Querulous3}
+    \label{fig:Querulous3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Querulous-4.jpg}
+    \caption{Querulous4}
+    \label{fig:Querulous4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Querulous-5.jpg}
+    \caption{Querulous5}
+    \label{fig:Querulous5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Querulous-6.jpg}
+    \caption{Querulous6}
+    \label{fig:Querulous6}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Querulous-7.jpg}
+    \caption{Querulous7}
+    \label{fig:Querulous7}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Querulous-8.jpg}
+    \caption{Querulous8}
+    \label{fig:Querulous8}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Querulous-9.jpg}
+    \caption{Querulous9}
+    \label{fig:Querulous9}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Sybaritic-1.jpg}
+    \caption{Sybaritic1}
+    \label{fig:Sybaritic1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Sybaritic-2.jpg}
+    \caption{Sybaritic2}
+    \label{fig:Sybaritic2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Sybaritic-3.jpg}
+    \caption{Sybaritic3}
+    \label{fig:Sybaritic3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Sybaritic-4.jpg}
+    \caption{Sybaritic4}
+    \label{fig:Sybaritic4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Sybaritic-5.jpg}
+    \caption{Sybaritic5}
+    \label{fig:Sybaritic5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Sybaritic-6.jpg}
+    \caption{Sybaritic6}
+    \label{fig:Sybaritic6}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Sybaritic-7.jpg}
+    \caption{Sybaritic7}
+    \label{fig:Sybaritic7}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Leverage-1.jpg}
+    \caption{Leverage1}
+    \label{fig:Leverage1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Leverage-2.jpg}
+    \caption{Leverage2}
+    \label{fig:Leverage2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Leverage-3.jpg}
+    \caption{Leverage3}
+    \label{fig:Leverage3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Leverage-4.jpg}
+    \caption{Leverage4}
+    \label{fig:Leverage4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Leverage-5.jpg}
+    \caption{Leverage5}
+    \label{fig:Leverage5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Leverage-6.jpg}
+    \caption{Leverage6}
+    \label{fig:Leverage6}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Leverage-7.jpg}
+    \caption{Leverage7}
+    \label{fig:Leverage7}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/IPC.jpg}
+    \caption{IPC1}
+    \label{fig:IPC1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Etui.jpg}
+    \caption{Etui1}
+    \label{fig:Etui1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Snee.jpg}
+    \caption{Snee1}
+    \label{fig:Snee1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Zarf-1.jpg}
+    \caption{Zarf1}
+    \label{fig:Zarf1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Zarf-2.jpg}
+    \caption{Zarf2}
+    \label{fig:Zarf2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Xebec-1.jpg}
+    \caption{Xebec1}
+    \label{fig:Xebec1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Vuggy-1.jpg}
+    \caption{Vuggy1}
+    \label{fig:Vuggy1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Vuggy-2.jpg}
+    \caption{Vuggy2}
+    \label{fig:Vuggy2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Guddle-1.jpg}
+    \caption{Guddle1}
+    \label{fig:Guddle1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Guddle-2.jpg}
+    \caption{Guddle2}
+    \label{fig:Guddle2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Fipple-1.jpg}
+    \caption{Fipple1}
+    \label{fig:Fipple1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Macumba-1.jpg}
+    \caption{Macumba1}
+    \label{fig:Macumba1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Fopdoodle.jpg}
+    \caption{Fopdoodle1}
+    \label{fig:Fopdoodle1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/HND.jpg}
+    \caption{HND1}
+    \label{fig:HND1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Froe.jpg}
+    \caption{Froe1}
+    \label{fig:Froe1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Moxa.jpg}
+    \caption{Moxa1}
+    \label{fig:Moxa1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Erne.jpg}
+    \caption{Erne1}
+    \label{fig:Erne1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/USH.jpg}
+    \caption{USH1}
+    \label{fig:USH1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Torc.jpg}
+    \caption{Torc1}
+    \label{fig:Torc1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Kief.jpg}
+    \caption{Kief1}
+    \label{fig:Kief1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/LXA-1.jpg}
+    \caption{LXA1}
+    \label{fig:LXA1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/LXA-2.jpg}
+    \caption{LXA2}
+    \label{fig:LXA2}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Xama-1.jpg}
+    \caption{Xama1}
+    \label{fig:Xama1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Xama-2.jpg}
+    \caption{Xama2}
+    \label{fig:Xama2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Xama-3.jpg}
+    \caption{Xama3}
+    \label{fig:Xama3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Xama-4.jpg}
+    \caption{Xama4}
+    \label{fig:Xama4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Xama-5.jpg}
+    \caption{Xama5}
+    \label{fig:Xama5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Xama-6.jpg}
+    \caption{Xama6}
+    \label{fig:Xama6}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Zaxes.jpg}
+    \caption{Zaxes1}
+    \label{fig:Zaxes1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Qophs.jpg}
+    \caption{Qophs1}
+    \label{fig:Qophs1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Zoea-1.jpg}
+    \caption{Zoea1}
+    \label{fig:Zoea1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Zoea-2.jpg}
+    \caption{Zoea2}
+    \label{fig:Zoea2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Zoea-3.jpg}
+    \caption{Zoea3}
+    \label{fig:Zoea3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/OMG.jpg}
+    \caption{OMG1}
+    \label{fig:OMG1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/SUX-1.jpg}
+    \caption{SUX1}
+    \label{fig:SUX1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/SUX-2.jpg}
+    \caption{SUX2}
+    \label{fig:SUX2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/ULN-1.jpg}
+    \caption{ULN1}
+    \label{fig:ULN1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/ULN-2.jpg}
+    \caption{ULN2}
+    \label{fig:ULN2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/ULN-3.jpg}
+    \caption{ULN3}
+    \label{fig:ULN3}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/NAN-1.jpg}
+    \caption{NAN1}
+    \label{fig:NAN1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/NAN-2.jpg}
+    \caption{NAN2}
+    \label{fig:NAN2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/NAN-3.jpg}
+    \caption{NAN3}
+    \label{fig:NAN3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/NAN-4.jpg}
+    \caption{NAN4}
+    \label{fig:NAN4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/GOH.jpg}
+    \caption{GOH1}
+    \label{fig:GOH1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/BOD-1.jpg}
+    \caption{BOD1}
+    \label{fig:BOD1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/BOD-2.jpg}
+    \caption{BOD2}
+    \label{fig:BOD2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/MAA.jpg}
+    \caption{MAA1}
+    \label{fig:MAA1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/XNB-1.jpg}
+    \caption{XNB1}
+    \label{fig:XNB1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/XNB-2.jpg}
+    \caption{XNB2}
+    \label{fig:XNB2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/XNB-3.jpg}
+    \caption{XNB3}
+    \label{fig:XNB3}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Qadi-1.jpg}
+    \caption{Qadi1}
+    \label{fig:Qadi1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Qadi-2.jpg}
+    \caption{Qadi2}
+    \label{fig:Qadi2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Qadi-3.jpg}
+    \caption{Qadi3}
+    \label{fig:Qadi3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Qadi-4.jpg}
+    \caption{Qadi4}
+    \label{fig:Qadi4}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Agora-1.jpg}
+    \caption{Agora1}
+    \label{fig:Agora1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Agora-2.jpg}
+    \caption{Agora2}
+    \label{fig:Agora2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Agora-3.jpg}
+    \caption{Agora3}
+    \label{fig:Agora3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Agora-4.jpg}
+    \caption{Agora4}
+    \label{fig:Agora4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Agora-5.jpg}
+    \caption{Agora5}
+    \label{fig:Agora5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Byssus.jpg}
+    \caption{Byssus1}
+    \label{fig:Byssus1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Zareba.jpg}
+    \caption{Zareba1}
+    \label{fig:Zareba1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Bokeh.jpg}
+    \caption{Bokeh1}
+    \label{fig:Bokeh1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Popjoy-1.jpg}
+    \caption{Popjoy1}
+    \label{fig:Popjoy1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Popjoy-2.jpg}
+    \caption{Popjoy2}
+    \label{fig:Popjoy2}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Archon-1.jpg}
+    \caption{Archon1}
+    \label{fig:Archon1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Archon-2.jpg}
+    \caption{Archon2}
+    \label{fig:Archon2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Archon-3.jpg}
+    \caption{Archon3}
+    \label{fig:Archon3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Iwis-1.jpg}
+    \caption{Iwis1}
+    \label{fig:Iwis1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Iwis-2.jpg}
+    \caption{Iwis2}
+    \label{fig:Iwis2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Iwis-3.jpg}
+    \caption{Iwis3}
+    \label{fig:Iwis3}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/QRO.jpg}
+    \caption{QRO1}
+    \label{fig:QRO1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Burl-1.jpg}
+    \caption{Burl1}
+    \label{fig:Burl1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Burl-2.jpg}
+    \caption{Burl2}
+    \label{fig:Burl2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Burl-3.jpg}
+    \caption{Burl3}
+    \label{fig:Burl3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Burl-4.jpg}
+    \caption{Burl4}
+    \label{fig:Burl4}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Burl-5.jpg}
+    \caption{Burl5}
+    \label{fig:Burl5}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Burl-6.jpg}
+    \caption{Burl6}
+    \label{fig:Burl6}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Kyat-1.jpg}
+    \caption{Kyat1}
+    \label{fig:Kyat1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Kyat-2.jpg}
+    \caption{Kyat2}
+    \label{fig:Kyat2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Kyat-3.jpg}
+    \caption{Kyat3}
+    \label{fig:Kyat3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/WVB.jpg}
+    \caption{WVB1}
+    \label{fig:WVB1}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Nard-1.jpg}
+    \caption{Nard1}
+    \label{fig:Nard1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Nard-2.jpg}
+    \caption{Nard2}
+    \label{fig:Nard2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Nard-3.jpg}
+    \caption{Nard3}
+    \label{fig:Nard3}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Drek-1.jpg}
+    \caption{Drek1}
+    \label{fig:Drek1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Drek-2.jpg}
+    \caption{Drek2}
+    \label{fig:Drek2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Drek-3.jpg}
+    \caption{Drek3}
+    \label{fig:Drek3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Drek-4.jpg}
+    \caption{Drek4}
+    \label{fig:Drek4}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/ZFB-1.jpg}
+    \caption{ZFB1}
+    \label{fig:ZFB1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/ZFB-2.jpg}
+    \caption{ZFB2}
+    \label{fig:ZFB2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/ZFB-3.jpg}
+    \caption{ZFB3}
+    \label{fig:ZFB3}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/track1_case_analysis/Aery-1.jpg}
+    \caption{Aery1}
+    \label{fig:Aery1}
+\end{figure}
