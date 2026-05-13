@@ -120,14 +120,15 @@ Let $(\tau, \psi, f)$ be the data of a pseudo-Anosov map carried by a standardly
 Similarly, if $v$ \textit{r}-splits, then $\mu(r(v)) < \mu(l(v_r))$.
 \end{prop}
 
-The utility of Proposition \ref{prop:weight_inequality} becomes apparent when analyzing a tight splitting at a \emph{loop switch}---a switch situated at a marked monogon---where the operation yields a train track in the same isomorphism class.
+The utility of Proposition \ref{prop:weight_inequality} becomes apparent when analyzing a tight splitting at a switch where the resulting track is isomorphic to the original. This situation arises, in particular, at loop switches (switches at a marked monogon), but it also occurs at switches incident to higher-order infinitesimal polygons in the splitting diagrams of Section \ref{sec:switch-rigidity}.
 
 \begin{corollary}
 \label{cor:weight_reduction}
-    Suppose a loop switch $v$ of a train track $\tau$ \textit{l}-splits, such that the resulting train track $\tau_v^l$ is isomorphic to $\tau$. Let $\varphi \colon \tau_v^l \to \tau$ be the isomorphism (given by a braid). Then the weight of the branch corresponding to $r(v_l)$ strictly decreases. That is, if $\mu$ is the invariant measure on $\tau$ and $\mu_v$ is the measure on $\tau_v^l$, then:
+    Suppose a switch $v$ of a standard train track $\tau$ carrying a pseudo-Anosov $\psi$ \textit{l}-splits, such that the resulting train track $\tau_v^l$ is isomorphic to $\tau$. Let $\varphi \colon \tau_v^l \to \tau$ be the isomorphism (given by a braid). Then the weight of the branch corresponding to $r(v_l)$ strictly decreases. That is, if $\mu$ is the invariant measure on $\tau$ and $\mu_v$ is the measure on $\tau_v^l$, then:
     \[
     \mu_v(r(v_l)_{new}) < \mu(r(v_l)_{old}).
     \]
+    The analogous statement holds for $r$-splits, with $r(v_l)$ replaced by $l(v_r)$.
 \end{corollary}
 
 \begin{proof}
@@ -157,23 +158,23 @@ The utility of Proposition \ref{prop:weight_inequality} becomes apparent when an
 
 \begin{theorem}[Termination of Tight Splitting]
 \label{thm:splitting_termination}
-    Let $(\tau, \psi, f)$ be a pseudo-Anosov map on $D_n$ carried by a standard train track $\tau$. There exists no infinite sequence of tight splittings at loop switches starting from $\tau$.
+    Let $(\tau, \psi, f)$ be a pseudo-Anosov map on $D_n$ carried by a standard train track $\tau$. There exists no infinite sequence of tight splittings starting from $\tau$.
 \end{theorem}
 
 \begin{proof}
-    Let $\lambda$ be the dilatation of the pseudo-Anosov map $\psi$. Suppose, for the sake of contradiction, that there exists an infinite sequence of tight splittings
+    Suppose, for the sake of contradiction, that there exists an infinite sequence of tight splittings
     \[
     \tau = \tau_0 \to \tau_1 \to \tau_2 \to \dots
     \]
-    where each transition is a tight split at a loop switch. Since tight splitting preserves the conjugacy class of the pseudo-Anosov map, the dilatation $\lambda$ remains constant throughout the sequence. Furthermore, the number of edges in a standard train track on $D_n$ is bounded (depending only on $n$).
+    starting from $\tau$, and let $\mu_i$ denote the invariant transverse measure on $\tau_i$.
 
-    By a result of Reinoso \cite[Lemma~6.3.3]{reinoso2024pseudo}, for a fixed size $N$ and spectral radius $\lambda$, there are only finitely many Perron-Frobenius matrices. Since the transition matrix $M_k$ of each track $\tau_k$ belongs to this finite set (up to permutation), the sequence of matrices must eventually cycle.
+    By Theorem~\ref{thm:autofolder_main}, the set of isomorphism classes of standard train tracks in a fixed stratum on $D_n$ is finite. Since each $\tau_i$ lies in the same stratum as $\tau$ (tight splitting preserves singularity data), the pigeonhole principle yields indices $k < m$ with $\tau_k \cong \tau_m$ as standard tracks.
 
-    Therefore, there exist indices $k < m$ such that $\tau_k \cong \tau_m$. This implies that the sequence enters a cycle of train track isomorphism classes. By identifying $\tau_m$ with $\tau_k$, we can view the subsequence $\tau_k \to \dots \to \tau_m$ as a sequence of splittings that returns to an isomorphic track.
+    Fix such a pair $(k, m)$, and let $P_i$ denote the elementary folding matrix associated to each splitting $\tau_{i-1} \to \tau_i$, so that $\mu_{i-1} = P_i \mu_i$ via the pullback identification of edges. Composing along the cycle, we obtain $\mu_k = P\mu_m$, where $P = P_{k+1} \cdots P_m$ is a product of elementary folding matrices. Each $P_i$ has the form $I + E_i$, where $E_i$ is a non-negative integer matrix with a single nonzero entry (the elementary fold). Hence $P$ has all the entries of $I$ together with non-negative integer contributions; under the isomorphism $\tau_m \cong \tau_k$ identifying edges, $P$ acts on the weight vector and produces $\mu_k$ from $\mu_m$. Because the cycle has $m > k$, at least one $E_i$ contributes nontrivially, so under this isomorphism the weight vector $\mu_m$ has at least one entry strictly smaller than the corresponding entry of $\mu_k$. (This is the content of Corollary~\ref{cor:weight_reduction} applied to the composite of splittings around the cycle.)
 
-    However, by Corollary \ref{cor:weight_reduction}, each tight split at a loop switch strictly reduces the weight of at least one branch orbit. Composing these reductions over the cycle from $\tau_k$ to $\tau_m$ yields an isomorphism $\tau_m \cong \tau_k$ under which the weight vector $\mu_m$ has at least one entry strictly smaller than the corresponding entry of $\mu_k$. Iterating this cycle, the affected weights would form a strictly decreasing sequence bounded below by zero, hence converging to zero. But the invariant measure of a pseudo-Anosov map is everywhere positive, contradicting the existence of the unstable foliation.
+    Now iterate the cycle indefinitely: because $\tau_m \cong \tau_k$, the same sequence of splittings can be performed again starting from $\tau_m$, yielding tracks $\tau_{2m-k} \cong \tau_m \cong \tau_k$ with $\mu_{2m-k}$ further reduced on the same distinguished edge orbit. Tracking this orbit through successive iterations, its weight forms a strictly decreasing sequence of positive numbers bounded below by $0$, hence converging to $0$. But the invariant measure of a pseudo-Anosov map is everywhere strictly positive on the real edges of any carrying train track, contradicting this limit.
 
-    Thus, the sequence of tight splittings must terminate.
+    Thus, no infinite sequence of tight splittings starting from $\tau$ exists.
 \end{proof}
 
 \section{Switch Rigidity and Existence of Splits}

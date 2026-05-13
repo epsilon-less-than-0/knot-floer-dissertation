@@ -144,6 +144,8 @@ Applying Theorem \ref{theorem:bestvina-handel mapping class determined by train 
     for some $k \in \mathbb{Z}$, where $\Delta^2 = (\sigma_1 \dots \sigma_{n - 1})^n$ is a full twist about $\partial D_n$.
 \end{corollary}
 
+Corollary \ref{cor:induce_by_braid_fulltwist} resolves the full-twist ambiguity in the Birman-Hilden disk braid noted in Remark \ref{rem:fulltwist_ambiguity}. The disk braid $\beta \in \mathrm{Mod}(D_6)$ associated to a hyperbolic fibered knot $K$ via the Birman-Hilden correspondence is well-defined only up to powers of $\Delta_6^2$. By the corollary, two braids carried by the same train track and inducing the same train-track map differ exactly by a power of $\Delta_6^2$. The train-track framework therefore captures each disk braid at precisely the resolution at which it is canonically defined: a coset of $\langle \Delta_6^2 \rangle$ in $\mathrm{Mod}(D_6)$, represented by a unique train-track map. All downstream obstructions in this dissertation --- the orientability obstruction of Chapter \ref{chap:stratoriented}, the homological filter of Chapter \ref{chap:stratatraintrackanalysis}, and the trace and absorption obstructions of Chapter \ref{chap:stratatraintrackanalysis} --- depend on the disk braid only through its train-track signature, and therefore factor through the quotient $\mathrm{Mod}(D_6)/\langle \Delta_6^2 \rangle$ automatically.
+
 We formalize the relationship between a mapping class and its combinatorial representation through the concept of \textit{geometric data}. For a mapping class $h \in \mathrm{Mod}(S)$, the geometric data is defined as the tuple
 \[
 (h, \phi_h, \tau, f_h),
@@ -210,7 +212,7 @@ Using the terminology of real and infinitesimal edges, we can define the \emph{t
 \section{Standard Train Tracks on the Marked Disk}
 \label{sec:standard_tracks}
 
-We now restrict our attention to the unit disk $D_n$ with $n$ marked points $Q = \{q_1, \dots, q_n\}$. We utilize the subclass of \emph{standard train tracks} defined by Ko-Los-Song \sidecite{SongEntropy} and Farber-Reinoso-Wang \sidecite{farber2024fixed, reinoso2024pseudo}. A result of Ko-Los-Song ensures that every pseudo-Anosov map on $D_n$ is carried by such a track.
+We now restrict our attention to the unit disk $D_n$ with $n$ marked points $Q = \{q_1, \dots, q_n\}$. We utilize the subclass of \emph{standard train tracks} defined by Ko-Los-Song \sidecite{SongEntropy}, Farber-Reinoso-Wang \sidecite{farber2024fixed}, and Reinoso \sidecite{reinoso2024pseudo}. A result of Ko-Los-Song ensures that every pseudo-Anosov map on $D_n$ is carried by such a track.
 
 \begin{definition}[Standard Train Track]\label{def:standard_track}
     A train track $\tau \subset D_n$ is \textit{standard} if:
@@ -256,7 +258,7 @@ Let $\phi_\beta$ be a pseudo-Anosov representative of a braid $\beta$ on the mar
     Let $\phi_\beta$ be a pseudo-Anosov homeomorphism on the $n$-punctured disk $D_n$. Suppose that the invariant foliations of $\phi_\beta$ have at least one $k$-pronged singularity in the interior of $D_n$ (away from the boundary) with $k \geq 2$. Then $\phi_\beta$ is carried by a standard train track $\tau$ that has no joints.
 \end{corollary}
 
-Because the monodromy of our hypothetical genus-two knot necessarily involves $3$-pronged or $4$-pronged interior singularities (as classified in Table \ref{tab:betti_configurations}), we safely satisfy the hypothesis of Corollary \ref{cor:jointless_track}. Consequently, we may strictly restrict our attention to jointless standard train tracks moving forward. In such tracks, every marked point is enclosed by a monogon incident to exactly one real edge, or is part of a larger polygon.
+Because the monodromy of our hypothetical genus-two knot necessarily involves $3$-pronged or $4$-pronged interior singularities (as classified in Table \ref{tab:prong_configurations}), we safely satisfy the hypothesis of Corollary \ref{cor:jointless_track}. Consequently, we may strictly restrict our attention to jointless standard train tracks moving forward. In such tracks, every marked point is enclosed by a monogon incident to exactly one real edge, or is part of a larger polygon.
 
 \section{Lifting Train Track Maps}
 \label{sec:lifting train tracks}
@@ -275,8 +277,8 @@ The geometric construction of the lifted track $\tilde{\tau}$ is strictly dictat
 
 \begin{figure}[ht]
     \centering
-    % \includegraphics[width=0.8\linewidth]{figures/reinoso_fig_2_5_lifting.png}
-    \caption[Visual lift of a train track under the Birman-Hilden correspondence]{Visual representation of lifting a train track from the disk to the branched double cover. Image courtesy of Braeden Reinoso \cite{reinoso2024pseudo}.}
+    \includegraphics[width=0.8\linewidth]{figures/lifting.png}
+    \caption[Visual lift of a train track under the Birman-Hilden correspondence]{Lifting a train track and train track map from $D_6$ to $\Sigma_2^2$. Dashed edges indicate the back side of the surface.}
     \label{fig:reinoso_lift_visual}
 \end{figure}
 

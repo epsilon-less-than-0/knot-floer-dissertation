@@ -165,47 +165,34 @@ then we must choose a seed standard train track $\tau$ whose peripheral region $
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{Proof of Algorithmic Exhaustion}
+\subsection{Proof of Completeness and Termination}
 \label{sec:autofolder_proof}
 
-In the Introduction, we stated Theorem \ref{thm:autofolder_main}, asserting that the algorithmic realization of the folding automaton provides a complete and finite classification of all standard train tracks for a given stratum. We now formalize this proof.
+In the Introduction, we stated Theorem \ref{thm:autofolder_main}, asserting that the algorithmic realization of the folding automaton provides a complete and finite classification of all standard train tracks for a given stratum. The proof has two parts: \textit{exhaustiveness} (the algorithm visits every isomorphism class of standard tracks in the stratum) and \textit{finiteness} (the algorithm terminates). Exhaustiveness rests on a connectivity theorem of Penner and Harer; finiteness rests on a counting bound for standard tracks on the punctured disk.
 
-\begin{proof}[Proof of Theorem \ref{thm:autofolder_main}]
-    The proof requires establishing two properties of the directed graph generation: \textit{exhaustiveness} (it finds all relevant tracks) and \textit{finiteness} (the algorithm terminates).
-
-    \textbf{Exhaustiveness:} By the foundational work of Bestvina and Handel \sidecite{bestvina1995train}, every invariant train track carrying a pseudo-Anosov homeomorphism can be constructed via a sequence of elementary folding operations starting from a standard invariant train track. Furthermore, any pseudo-Anosov map belonging to a fixed topological stratum (dictated by its singularity data) must be carried by a standard track possessing the exact corresponding polygon structure.
-
-    The algorithm is initialized with the finite set of base standard tracks matching the stratum's singularity profile. The algorithm branches by executing every geometrically valid elementary fold (left, right, and mixed) at every eligible switch on the track. Because the algorithm systematically explores every allowable edge transition in the folding complex, no train track capable of carrying a map in the given stratum can be omitted from the generated directed graph. Thus, the output is exhaustive up to train track equivalence.
-
-    \textbf{Finiteness:} An elementary fold on a standard train track produces another train track. By collapsing degenerate edges and resolving trivial bigons, the resulting track is returned to standard form. Crucially, a standard train track on the $n$-punctured disk is a trivalent graph where the number of vertices $V$ and real edges $E$ are strictly bounded by the Euler characteristic of the punctured disk and the singularity data.
-
-    Because the number of vertices and edges is globally bounded for a fixed stratum, there are only finitely many graph isomorphism classes of standard train tracks on the surface. The algorithm checks each newly generated train track against a registry of previously visited isomorphism classes. If a fold yields an isomorphism class already in the registry, the algorithm creates a directed edge to the existing node rather than spawning a new graph.
-
-    Since the state space of isomorphism classes is finite, the branching process must eventually close on itself, forming strongly connected components. Therefore, the algorithm strictly avoids infinite generation and terminates, yielding a finite folding automaton.
-\end{proof}
-
-
-\subsection{Completeness and Connectivity}
-\label{sec:completeness}
-
-A natural question arises regarding the completeness of the \texttt{genauto} algorithm: does exploring the graph via directed folding edges guarantee that we find all (isomorphism classes of) standard train tracks of the stratum?
-
-The affirmative answer relies on the connectivity of the complex of train tracks, as established by Penner and Harer \sidecite{penner1992combinatorics}. We formalize this completeness guarantee in the following theorem.
-
-\begin{theorem}[Completeness of the \texttt{genauto} Algorithm]
-    Let $\mathcal{S}$ be a connected stratum of the space of measured foliations on $D_n$. Given a seed standard train track $\tau_{seed} \in \mathcal{S}$, the \texttt{genauto} algorithm exhaustively enumerates every isomorphism class of standard train tracks in $\mathcal{S}$.
+\begin{theorem}[Completeness of the \texttt{genauto} algorithm]
+\label{thm:genauto_completeness}
+    Let $\mathcal{S}$ be a connected stratum of the space of measured foliations on $D_n$. Given a seed standard train track $\tau_{seed} \in \mathcal{S}$, the \texttt{genauto} algorithm terminates and returns the complete, finite list of isomorphism classes of standard train tracks in $\mathcal{S}$.
 \end{theorem}
 
 \begin{myproof}
-    By the work of Penner and Harer \sidecite{penner1992combinatorics}, the space of measured laminations $\mathcal{ML}_0(D_n)$ admits a cellular decomposition where cells correspond to standard train tracks. Crucially, Penner and Harer \cite[Theorem~2.3.1]{penner1992combinatorics} prove that the set of all standard train tracks forms a connected complex. Specifically, they show that any two standard tracks in the same stratum are related by a finite sequence of \emph{splitting} moves and ambient isotopies.
+\textbf{Exhaustiveness.}
+By the work of Penner and Harer \sidecite{penner1992combinatorics}, the space of measured laminations $\mathcal{ML}_0(D_n)$ admits a cellular decomposition whose cells correspond to standard train tracks. The key connectivity result is \cite[Theorem~2.3.1]{penner1992combinatorics}: any two equivalent positively measured standard tracks $(\tau_1, \mu_1)$ and $(\tau_2, \mu_2)$ admit a common refinement $(\tau, \mu)$, in the sense that each $(\tau_i, \mu_i)$ splits (and isotopes) to $(\tau, \mu)$. Consequently, any two standard tracks in the same stratum are related by a finite sequence of splits and inverse splits (modulo isotopy).
 
-    To translate these geometric moves into the combinatorial language of folding automata:
-    \begin{itemize}
-        \item \textbf{Splitting is Inverse Folding:} The operation of \emph{splitting} a train track (as defined in Penner-Harer) is the topological inverse of the elementary folding operation. If a track $\tau$ folds to $\tau'$, then $\tau'$ splits to $\tau$. Thus, a splitting move corresponds to traversing a directed edge of the automaton backwards.
-        \item \textbf{Connectivity of the Graph:} Since any two tracks in the stratum are related by a sequence of splits and folds, the folding automaton is connected as an undirected graph.
-    \end{itemize}
+To translate this geometric statement into the combinatorial language of folding automata:
+\begin{itemize}
+    \item \textbf{Splitting is inverse folding:} The operation of \emph{splitting} a train track (as defined in Penner-Harer) is the topological inverse of the elementary folding operation. If a track $\tau$ folds to $\tau'$, then $\tau'$ splits to $\tau$. A splitting move thus corresponds to traversing a directed edge of the automaton backwards.
+    \item \textbf{Connectivity of the automaton:} Since any two tracks in the stratum are related by a sequence of splits and folds, the folding automaton is connected as an \emph{undirected} graph.
+\end{itemize}
 
-    The \texttt{genauto} algorithm implements a Breadth-First Search (BFS) on the directed graph of the automaton. Starting from $\tau_{seed}$, it computes the set of all tracks reachable by one fold (the neighborhood $N(\tau_{seed})$). Inductively, at step $k$, it finds all tracks reachable by paths of length $k$. Because the graph is finite (as proven previously) and connected, the reachable component of $\tau_{seed}$ is the entire graph $\mathcal{A}$. Thus, the algorithm necessarily terminates having enumerated every possible standard train track in the stratum.
+The \texttt{genauto} algorithm performs a breadth-first search on the directed automaton starting from $\tau_{seed}$. Because the underlying undirected graph is connected, every vertex is reachable from $\tau_{seed}$ by some directed path: any sequence of splits and folds connecting $\tau_{seed}$ to a target $\tau'$ may be rewritten as a sequence of folds (possibly through intermediate vertices not on the shortest path). Hence the BFS exhausts every isomorphism class of standard tracks in the stratum.
+
+\textbf{Finiteness.}
+A standard train track on the $n$-punctured disk is a finite trivalent graph $G$ whose vertex and edge counts are determined by the stratum's singularity data via the Euler-Poincar\'{e} formula. The total number of switches and real edges admits a uniform bound depending only on $n$ and the singularity profile, and the cyclic ordering at each switch admits only finitely many configurations. Therefore the set of isomorphism classes of standard tracks in a fixed stratum is finite.
+
+The algorithm checks each newly generated track against the registry of previously discovered isomorphism classes (Algorithm \ref{alg:autofolder_enum}). If a fold yields an isomorphism class already in the registry, it is not enqueued for further exploration. Since the state space is finite, the BFS frontier must eventually empty, and the algorithm terminates.
+
+Combining the two parts, the algorithm produces a finite, exhaustive enumeration of the standard tracks in the stratum.
 \end{myproof}
 
 \section{Computational Implementation: \texttt{autofolder}}
@@ -524,7 +511,7 @@ We now present the detailed pseudo-code for our full graph implementation. Unlik
 
 \section{Conclusion}
 
-In this chapter, we formalized the theory of folding automata and provided a complete algorithmic realization of the enumeration framework originally theorized by Ko, Los, and Song \sidecite{SongEntropy}. As noted by Los \sidecite{LosInfiniteSequence}, a systematic study of all pseudo-Anosov homeomorphisms within a given stratum requires the rigorous development of its specific train-track automata theory. Furthermore, Los anticipated that because such automata are practically immense, an explicit algorithmic description is strictly necessary to make the state space tractable.
+In this chapter, we formalized the theory of folding automata and provided a complete algorithmic realization of the enumeration framework originally theorized by Ko, Los, and Song \sidecite{SongEntropy}. As noted by Los \sidecite{Los2008}, a systematic study of all pseudo-Anosov homeomorphisms within a given stratum requires the rigorous development of its specific train-track automata theory. Furthermore, Los anticipated that because such automata are practically immense, an explicit algorithmic description is strictly necessary to make the state space tractable.
 
 For the remaining non-orientable strata on the disk---specifically $(2; 1^6; 3^2)$ and $(3; 1^6; 3)$---our \texttt{autofolder} implementation fulfills this exact requirement. It provides the exhaustive combinatorial foundation required to systematically hunt for valid train track maps, ensuring no candidate track is missed.
 

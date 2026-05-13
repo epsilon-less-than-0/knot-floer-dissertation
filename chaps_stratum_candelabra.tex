@@ -40,7 +40,7 @@ Let $(\beta, \phi_\beta, \tau, f_\beta)$ be the geometric data of a pseudo-Anoso
 \begin{proof}
 If the canonical lift $\phi_h$ has no interior fixed points, its transition matrix $M(\tilde{f}_h)$ must be strictly traceless by \cite[Proposition~2.2.4]{reinoso2024pseudo}. Consequently, for any real edge $e_i$ in the lifted track $\tilde{\tau}$, the edge $e_i$ cannot appear in its own image $\tilde{f}_h(e_i)$.
 
-Consider the image path $f_\beta(e)$ on the disk. Every traversal of a side-swapping edge causes the image $\tilde{f}_h(e_i)$ of either lift of $e$ to cross to the opposite sheet of the branched cover. If $e$ appeared in $f_\beta(e)$ separated by an odd number of side-swapping edges, then the lifted image $\tilde{f}_h(e_1)$ would necessarily map back onto $e_1$ (and similarly for $e_2$). This would force a non-zero element on the diagonal of the transition matrix, implying a non-zero trace and, by the Nielsen-Thurston classification, the existence of an interior fixed point. This contradicts the assumption that $\phi_h$ is fixed-point-free.
+Consider the image path $f_\beta(e)$ on the disk. Every traversal of a side-swapping edge causes the image $\tilde{f}_h(e_i)$ of either lift of $e$ to cross to the opposite sheet of the branched cover. If $e$ appeared in $f_\beta(e)$ separated by an odd number of side-swapping edges, then the lifted image $\tilde{f}_h(e_1)$ would necessarily map back onto $e_1$ (and similarly for $e_2$). This would force a non-zero diagonal entry of $M(\tilde{f}_h)$, contradicting the tracelessness established above.
 \end{proof}
 
 In our context, the standard train tracks generated for these strata feature jointless monogons at the marked points. This specific local geometry allows for a highly restrictive corollary.
@@ -714,7 +714,7 @@ For Track 12, this analysis yields no surviving train track maps: every candidat
 This combinatorial exhaustion yields a finite set of surviving train track map families on the five remaining tracks. The step-by-step derivation and the explicit extraction of their corresponding braid words are detailed in Appendices \ref{app:candidate_braids_track_0}, \ref{app:candidate_braids_track_1}, \ref{app:candidate_braids_track_8}, \ref{app:candidate_braids_track_13}, and \ref{app:candidate_braids_track_17}. This analysis establishes the following proposition:
 
 \begin{prop}\label{prop:two_triangle_braids}
-    Let $\Phi \colon \Sigma_2^2 \to \Sigma_2^2$ be a pseudo-Anosov mapping class corresponding to the stratum $(2;1^6;3^2)$ on the disk. If the pseudo-Anosov representative $\phi_\Phi$ has no interior fixed points, then $\Phi$is conjugate to the lift of one of the finite braid families enumerated for Tracks 0, 1, 8, 13, and 17 (Appendices \ref{app:candidate_braids_track_0}, \ref{app:candidate_braids_track_1}, \ref{app:candidate_braids_track_8}, \ref{app:candidate_braids_track_13}, \ref{app:candidate_braids_track_17}).
+    Let $\Phi \colon \Sigma_2^2 \to \Sigma_2^2$ be a pseudo-Anosov mapping class corresponding to the stratum $(2;1^6;3^2)$ on the disk. If the pseudo-Anosov representative $\phi_\Phi$ has no interior fixed points, then $\Phi$ is conjugate to the lift of one of the finite braid families enumerated for Tracks 0, 1, 8, 13, and 17 (Appendices \ref{app:candidate_braids_track_0}, \ref{app:candidate_braids_track_1}, \ref{app:candidate_braids_track_8}, \ref{app:candidate_braids_track_13}, \ref{app:candidate_braids_track_17}).
 \end{prop}
 
 \subsection{Proof of the Main Elimination Theorem}

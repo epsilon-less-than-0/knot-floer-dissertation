@@ -15,7 +15,7 @@ The \texttt{autofolder} algorithm provides a complete, finite classification of 
 \end{theorem}
 
 \begin{theorem}[Theorem \ref{thm:cable_detection_partial}]
-Knot Floer homology detects $C_{2,1}(T_{2,3})$ among non-hyperbolic knots: any non-hyperbolic knot $K \subset S^3$ with $\widehat{HFK}(K) \cong \widehat{HFK}(C_{2,1}(T_{2,3}))$ as bigraded vector spaces is isotopic to $C_{2,1}(T_{2,3})$.  In the hyperbolic case, $K$ corresponds to one of finitely many parametric families of candidate 6-braids enumerated in Appendix \ref{app:cable_residual_families}.
+Let $K \subset S^3$ be a knot with $\widehat{HFK}(K) \cong \widehat{HFK}(C_{2,1}(T_{2,3}))$ as bigraded vector spaces. Then either $K \cong C_{2,1}(T_{2,3})$, or $K$ is hyperbolic and the disk braid $\beta \in \mathrm{Mod}(D_6)$ associated to the monodromy of $K$ via the Birman-Hilden correspondence (capping off to $\Sigma_2^0$, descent to $S^2_{0,6}$, blowup at the canonical fixed point) belongs to one of finitely many parametric families enumerated in Appendix \ref{app:cable_residual_families}. In particular, $\widehat{HFK}$ detects $C_{2,1}(T_{2,3})$ among non-hyperbolic knots.
 \end{theorem}
 
 \begin{corollary}[Corollary \ref{cor:chirality}]
@@ -30,7 +30,7 @@ The verification of the chirality corollary (Section \ref{sec:chirality}) shows 
 
 \subsection{Almost L-space rigidity}
 
-The granny knot is the unique composite almost L-space knot, by a theorem of Baldwin and Sivek \cite{BaldwinSivek2022}. Combined with our Theorem \ref{thm:main_detection}, this establishes:
+The granny knot is the unique composite almost L-space knot, by a theorem of Binns \cite{Binns2023}. Combined with our Theorem \ref{thm:main_detection}, this establishes:
 
 \begin{corollary}
 Knot Floer homology detects the unique composite almost L-space knot.
@@ -44,19 +44,9 @@ Among non-hyperbolic genus-two fibered knots, the cable $C_{2,1}(T_{2,3})$ is un
 
 These results contribute to the program of using $\widehat{HFK}$ as a fingerprint for distinguished knot classes, complementing the L-space knot detection results of Baldwin-Hu-Sivek for $T(2,5)$ \sidecite{baldwin2025khovanov} and Reinoso \sidecite{Reinoso2023} for the broader family of L-space knots of genus two.
 
-\subsection{Cosmetic surgery conjecture}
-
-By a theorem of Hanselman \cite{Hanselman2023}, knot Floer homology detection of a knot $K$ implies that $K$ satisfies the cosmetic surgery conjecture: distinct Dehn surgeries on $K$ never produce orientation-preservingly homeomorphic 3-manifolds. From Theorem \ref{thm:main_detection} we obtain:
-
-\begin{corollary}
-The granny knot $T_{2,3} \# T_{2,3}$ satisfies the cosmetic surgery conjecture.
-\end{corollary}
-
-This verification is non-trivial. Standard hyperbolic obstructions to cosmetic surgery (most notably hyperbolic volume) do not apply to composite knots, whose complements contain essential tori. Theorem \ref{thm:main_detection} establishes that the filtered chain homotopy type of $\widehat{HFK}$ is sufficient to rule out such surgeries, in a setting where geometric methods are unavailable.
-
 \subsection{The autofolder as a stand-alone contribution}
 
-The \texttt{autofolder} algorithm, while developed here in service of Theorem \ref{thm:main_detection}, is independently useful. Los \sidecite{LosInfiniteSequence} explicitly called for an algorithmic realization of the folding-automaton machinery to make the state space of pseudo-Anosov mapping classes tractable; the \texttt{autofolder} provides this. Beyond the specific strata analyzed in Chapters \ref{chap:stratoriented} and \ref{chap:stratatraintrackanalysis}, the algorithm operates on arbitrary strata of the marked disk and outputs the complete folding automaton.
+The \texttt{autofolder} algorithm, while developed here in service of Theorem \ref{thm:main_detection}, is independently useful. Los \sidecite{LosAlgorithm} explicitly called for an algorithmic realization of the folding-automaton machinery to make the state space of pseudo-Anosov mapping classes tractable; the \texttt{autofolder} provides this. Beyond the specific strata analyzed in Chapters \ref{chap:stratoriented} and \ref{chap:stratatraintrackanalysis}, the algorithm operates on arbitrary strata of the marked disk and outputs the complete folding automaton.
 
 We anticipate that the algorithm will be a useful tool for future detection problems on genus-two and higher fibered knots, for the explicit construction of pseudo-Anosov braids of small dilatation, and for the experimental investigation of singularity strata that have not yet been analyzed by hand.
 
@@ -76,17 +66,60 @@ A definitive resolution of any of these would yield a complete cable detection t
 
 \subsection{Detection beyond genus two}
 
-The strategy of this dissertation — Ni-Juh\'{a}sz reduction to surface monodromy, Birman-Hilden descent to a braid on the disk, and exhaustive train-track elimination of candidate mapping classes — extends in principle to higher-genus fibered knots. The principal obstruction is the rapid growth in complexity of the train track state space: even for genus three, the Euler-Poincar\'{e} stratum analysis admits substantially more strata, and the autofolder's output graphs grow correspondingly.
+The strategy of this dissertation --- Ni-Juh\'{a}sz reduction to surface monodromy, Birman-Hilden descent to a braid on the disk, and exhaustive train-track elimination of candidate mapping classes --- extends to higher-genus fibered knots only under an important structural constraint.
 
-A natural target for genus-three detection is $T_{2,7}$ — the genus-three torus knot — or $T_{2,3}\#T_{2,5}$, the unique composite genus-three fibered knot of the form $T_{2,p} \# T_{2,q}$. Both are almost L-space knots (or in the case of $T_{2,7}$, an L-space knot), and both should be amenable to the framework developed here, modulo computational scaling.
+In genus two, the hyperelliptic involution $\iota$ is central in the mapping class group $\mathrm{Mod}(\Sigma_2)$, so \emph{every} monodromy of a genus-two fibered knot automatically commutes with $\iota$ and therefore descends to a $(2g+2) = 6$-braid on the disk via the Birman-Hilden correspondence. For genus $g \geq 3$, the picture changes: the hyperelliptic mapping class group
+\[
+\mathcal{H}_g \;=\; C_{\mathrm{Mod}(\Sigma_g)}(\iota)
+\]
+is a \emph{proper} subgroup of $\mathrm{Mod}(\Sigma_g)$, and Birman-Hilden descent applies only to monodromies in $\mathcal{H}_g$ --- the so-called \textbf{hyperelliptic} (or \textbf{symmetric}) monodromies. Consequently, the framework developed here generalizes naturally to fibered knots of genus $g \geq 3$ \emph{whose monodromy is hyperelliptic}, but not directly to general genus-$g$ fibered knots. For non-hyperelliptic monodromies, an analogous theory would need to operate on closed-surface train tracks directly (see the discussion of \emph{Generalizing the autofolder} below).
+
+Even within the hyperelliptic class, the principal computational obstruction in genus three is the rapid growth in complexity of the train-track state space: the Euler-Poincar\'{e} stratum analysis admits substantially more strata, and the \texttt{autofolder}'s output graphs grow correspondingly. Natural genus-three targets include the torus knot $T_{2,7}$ (whose torus-knot monodromy is hyperelliptic) and the composite knot $T_{2,3} \# T_{2,5}$ (the unique composite genus-three fibered knot of the form $T_{2,p} \# T_{2,q}$); both are amenable to the framework developed here, modulo computational scaling and the verification that the relevant monodromies indeed lie in $\mathcal{H}_3$.
 
 \subsection{Prime detection for satellite operators}
 
 A natural generalization of the cable detection result is the question: for which satellite patterns $P$ is $P(T_{2,3})$ detected by $\widehat{HFK}$? The framework of Schubert's formula combined with the \texttt{autofolder} should apply to a wide range of cabling, doubling, and Mazur-type patterns. We expect that the same machinery, with the homological filter retargeted appropriately, will yield detection results (or partial-detection results in the spirit of Theorem \ref{thm:cable_detection_partial}) for many of the standard pattern families.
 
-\subsection{Khovanov-homology analogues}
+\subsection{Khovanov detection of the granny knot}
 
-The detection of the granny knot by knot Floer homology raises the natural question of whether Khovanov homology — which is known to detect the unknot, the trefoils, the cinquefoil, and the figure-eight — also detects $T_{2,3}\#T_{2,3}$. The proof strategy used here is specific to Heegaard Floer techniques (in particular, the Ghiggini-Ni-Juh\'{a}sz fixed-point dictionary), but parallel detection results in the Khovanov setting have been established for $T(2,5)$ \sidecite{baldwin2025khovanov}, suggesting that a Khovanov-side analog of Theorem \ref{thm:main_detection} may be accessible by combining the topological reductions of this dissertation with the instanton-Floer techniques of Baldwin-Hu-Sivek.
+The detection of the granny knot by knot Floer homology raises the natural question of whether Khovanov homology detects $T_{2,3}\# T_{2,3}$ as well. Khovanov homology is currently known to detect the unknot, the two trefoils, the figure-eight, the cinquefoils $T(\pm 2,5)$, $5_2$, and the Whitehead doubles $\mathrm{Wh}^\pm(T_{2,3},2)$, but is not known to detect any composite knot. A Khovanov-side analog of Theorem \ref{thm:main_detection} would be the first such detection result.
+
+We outline the natural strategy here, adapted from the Khovanov detection of the figure-eight knot by Baldwin, Dowlin, Levine, Lidman, and Sazdanovic \sidecite{BaldwinDowlinLevineLidmanSazdanovic2021}. The granny knot has the following relevant invariants:
+\begin{itemize}
+    \item $\dim_{\mathbb{Q}} \widetilde{Kh}(T_{2,3}\# T_{2,3}) = 9$, since reduced Khovanov homology is multiplicative under connect sum and $\dim_{\mathbb{Q}} \widetilde{Kh}(T_{2,3}) = 3$;
+    \item $T_{2,3}\# T_{2,3}$ is thin (a connect sum of thin knots is thin);
+    \item $T_{2,3}\# T_{2,3}$ is strongly quasipositive, and $\tau(T_{2,3}\# T_{2,3}) = g(T_{2,3}\# T_{2,3}) = 2$.
+\end{itemize}
+
+Let $K \subset S^3$ be a knot whose reduced Khovanov homology over $\mathbb{Q}$ is isomorphic to $\widetilde{Kh}(T_{2,3}\# T_{2,3};\mathbb{Q})$ as a bigraded vector space. The proposed argument proceeds in three steps:
+
+\begin{enumerate}
+    \item \emph{Khovanov thinness.} The bigraded isomorphism implies $K$ is thin (Khovanov-thinness is a property of the bigraded structure).
+
+    \item \emph{Spectral sequence collapse.} Dowlin's spectral sequence \sidecite{Dowlin2024} from reduced Khovanov homology to $\widehat{HFK}$ degenerates at the $E_2$-page for thin knots, yielding
+    \[
+    \widehat{HFK}(K;\mathbb{Q}) \cong \widehat{HFK}(T_{2,3}\#T_{2,3};\mathbb{Q})
+    \]
+    as bigraded vector spaces.
+
+    \item \emph{$\widehat{HFK}$-detection.} Theorem \ref{thm:main_detection} (extended from $\mathbb{F}_2$ to $\mathbb{Q}$ coefficients) concludes $K \cong T_{2,3}\# T_{2,3}$.
+\end{enumerate}
+
+The principal subtlety in this strategy is the extension of Theorem \ref{thm:main_detection} from $\mathbb{F}_2$ to $\mathbb{Q}$ coefficients, which requires verifying that the fixed-point obstructions used in the proof remain valid in characteristic zero. We do not pursue this in the present work.
+
+\subsection{$\widehat{HFK}$ and Khovanov homology on the Wang family}
+
+The square knot $T_{2,3} \# \overline{T}_{2,3}$ is a band sum of the split link $T_{2,3} \sqcup \overline{T}_{2,3}$ along a trivial band. By a construction of Hedden-Watson \sidecite{HeddenWatson2018}, generalized by Wang \sidecite{Wang2020}, adding $n$ half-twists to such a band produces an infinite family $\{K_n\}_{n\in\mathbb{Z}}$ of distinct knots, all sharing the same Heegaard knot Floer homology (and the same instanton knot Floer homology), of which $K_0$ is the square knot. The Khovanov homology of the knots $K_n$ are mutually distinct.
+
+This picture suggests two complementary detection questions:
+
+\begin{enumerate}
+    \item \emph{Does Khovanov homology distinguish each $K_n$ from all knots outside the Wang family?} The Wang family is precisely the family of obstructions to $\widehat{HFK}$-detection of the square knot, so a positive answer for the square knot ($n=0$) would yield the first Khovanov detection result for a composite knot. The strategy outlined for the granny knot in the previous subsection does not directly apply to the square knot, since $\tau(T_{2,3} \# \overline{T}_{2,3}) = 0 \neq g(T_{2,3} \# \overline{T}_{2,3}) = 2$, and the strong-quasipositive simplifications used in the granny case fail.
+
+    \item \emph{Does Khovanov homology detect membership in the Wang family?} That is: if $\widetilde{Kh}(K) \cong \widetilde{Kh}(K_n)$ for some $n$, must $K = K_m$ for some $m$? An affirmative answer would establish a striking complementarity between $\widehat{HFK}$ and Khovanov homology: $\widehat{HFK}$ identifies the family as an isomorphism class, while Khovanov resolves membership within the family. To our knowledge, no knot invariant is currently known to detect a non-trivial infinite family of knots in this sense, so such a result would be a first.
+\end{enumerate}
+
+The first question is the natural Khovanov analog of the square knot detection problem, which lies beyond the scope of $\widehat{HFK}$. The second is a structural question about the relationship between $\widehat{HFK}$ and Khovanov homology that is naturally raised by, but does not obviously follow from, the techniques developed in this dissertation.
 
 \subsection{Generalizing the autofolder}
 
@@ -94,7 +127,7 @@ The \texttt{autofolder} as currently implemented enumerates standard train track
 
 \begin{itemize}
     \item \textbf{Closed surfaces of higher genus.}  Train track theory on closed surfaces (rather than on the disk) is well-developed, but the algorithmic enumeration is more delicate due to the absence of a canonical embedding.  An autofolder operating directly on $\Sigma_g$ would bypass the Birman-Hilden descent step and could enable detection results for fibered knots in 3-manifolds other than $S^3$.
-    \item \textbf{Joint enumeration with monodromy data.} The current \texttt{autofolder} outputs the vertex set of the folding automaton; the edge set, encoding standardizing braids and transition matrices, is computed by the package but not utilized in our obstruction. Future work may exploit this edge data to compute the dilatations, finer invariants, and even spectral statistics of the candidate pseudo-Anosov mapping classes within each stratum.
+    \item \textbf{Activating the edge data.} The current \texttt{autofolder} outputs the vertex set of the folding automaton; the edge set, encoding standardizing braids and transition matrices, is computed by the package but not utilized in our obstruction. The dilatation-enumeration applications of this edge data are discussed in the introduction (Section \ref{subsec:dilatation_enumeration_intro}); other potential uses include the study of finer dynamical invariants of pseudo-Anosov mapping classes within each stratum.
 \end{itemize}
 
 \section{Closing Remarks}

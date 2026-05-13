@@ -162,7 +162,7 @@ Case A and Case B are shown in Figure \ref{fig:two_satellite_cases}.
 \end{figure}
 
 \begin{myproof}
-    By a result of Baldwin and Sivek \sidecite{baldwin2025lspaces}, for a fibered knot in an L-space, every curve in the canonical reducing system $\Gamma$ is separating. Furthermore, by definition, $\Gamma$ is a minimal collection of disjoint, essential, and non-boundary-parallel simple closed curves.
+    By a result of Baldwin and Sivek \sidecite{BaldwinSivekInPrep}, for a fibered knot in an L-space, every curve in the canonical reducing system $\Gamma$ is separating. Furthermore, by definition, $\Gamma$ is a minimal collection of disjoint, essential, and non-boundary-parallel simple closed curves.
 
     The surface $\Sigma_2^1$ has genus $g=2$ and one boundary component $\partial \Sigma = K$. We analyze the possible components of $\Sigma_2^1 \setminus \Gamma$ based on the number of curves in $\Gamma$.
 
@@ -376,20 +376,6 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
     the same argument works with $Y$ in place of $-Y$, and left-handed Dehn twist in place of the right-handed Dehn twist.
 \end{myproof}
 
-\section{Eliminating the (2,1)-Cable as a Candidate}
-\label{sec:2_1_cable_candidate}
-
-Within the satellite analysis above, one degenerate geometric configuration with algebraic winding number $|w|=1$ formally evades the standard reducing-system obstruction: the $(2,1)$-cable of the right-handed trefoil, denoted $C_{2,1}(T_{2,3})$. We address this candidate via a direct Alexander polynomial calculation.
-
-The Alexander polynomial of a $(p,q)$-cable of a knot $C$ is determined by the standard satellite formula:
-\[
-\Delta_{C_{p,q}}(t) = \Delta_C(t^p) \cdot \Delta_{T_{p,q}}(t).
-\]
-For the $(2,1)$-cable, we have $p=2$ (longitudinal winding) and $q=1$ (meridional winding). Since the $(2,1)$-torus knot $T_{2,1}$ is isotopic to the unknot, its Alexander polynomial is trivial. Substituting the symmetrized Alexander polynomial of the trefoil, $\Delta_{T_{2,3}}(t) = t - 1 + t^{-1}$, we obtain:
-\[
-\Delta_{C_{2,1}(T_{2,3})}(t) = \Delta_{T_{2,3}}(t^2) = t^2 - 1 + t^{-2}.
-\]
-
-This polynomial strictly contradicts the requisite homological spectral constraint of $K$, which by the assumption of Theorem \ref{thm:main_detection} must be $\Delta_K(t) = (t^2-t+1)^2 = t^2 - 2t + 3 - 2t^{-1} + t^{-2}$. Consequently, knot Floer homology trivially distinguishes $T_{2,3}\# T_{2,3}$ from the $(2,1)$-cable of the trefoil, and the latter is eliminated as a candidate for $K$.
-
-A separate, parallel detection theorem for $C_{2,1}(T_{2,3})$ itself---asserting that knot Floer homology detects the cable---is established in Chapter \ref{chap:cable_detection}.
+\begin{remark}
+The satellite analysis above eliminates every candidate for $K$, and we have not had occasion to consider the $(2,1)$-cable of the right-handed trefoil, $C_{2,1}(T_{2,3})$, as a candidate: Lemma \ref{lem:satellite_trefoils_windingnumber_1} already excludes it on two counts (its winding number is $2$, not $1$, and its pattern $P(U) = T_{2,1}$ is the unknot rather than a trefoil). Nevertheless, $C_{2,1}(T_{2,3})$ is itself a fibered satellite knot of genus two, and one may ask whether its knot Floer homology is detected by $\widehat{HFK}$ in the same spirit as our main theorem. We establish a corresponding detection result for $C_{2,1}(T_{2,3})$---namely, that any knot $K' \subset S^3$ with $\widehat{HFK}(K'; \mathbb{F}) \cong \widehat{HFK}(C_{2,1}(T_{2,3}); \mathbb{F})$ and satisfying additional hyperbolic-monodromy hypotheses must in fact be $C_{2,1}(T_{2,3})$---in Chapter \ref{chap:cable_detection}.
+\end{remark}

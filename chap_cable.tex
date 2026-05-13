@@ -14,7 +14,70 @@ which after clearing denominators becomes the cyclotomic polynomial
 t^4 \cdot \Delta_C(t) = t^4 - t^2 + 1 = \Phi_{12}(t).
 \]
 
-The knot $C$ is an almost L-space knot in the sense of Baldwin and Sivek \cite{BaldwinSivek2022}.
+The complete bigraded knot Floer homology of $C_{2,1}(T_{2,3})$ over $\mathbb{F} = \mathbb{Z}/2\mathbb{Z}$, computed using the SnapPy implementation of Sz\'{a}b\'{o}'s algorithm \sidecite{szabo2017knotfloercalculator}, is shown in Figure~\ref{fig:hfk_cable}. The total rank is $7$, with two Alexander gradings ($A = \pm 1$) carrying rank $2$ and the remaining three ($A = 0, \pm 2$) carrying rank $1$.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.8]
+  % Grid
+  \draw[step=1, gray!30, very thin] (-2.5,-4.5) grid (2.5,0.5);
+
+  % Axes
+  \draw[->, thick] (-2.7,0) -- (2.9,0) node[right] {$A$};
+  \draw[->, thick] (0,-4.7) -- (0,0.9) node[above] {$M$};
+
+  % Axis labels
+  \foreach \a in {-2,-1,1,2} {
+    \node[below=2pt] at (\a,-4.5) {\small$\a$};
+  }
+  \foreach \m in {-4,-3,-2,-1} {
+    \node[left=2pt] at (-2.5,\m) {\small$\m$};
+  }
+
+  % HFK generators: (A, M) with multiplicity
+  \node[circle, fill=black, inner sep=2pt] at (2, 0)  {};
+  \node[above right] at (2, 0) {\small$1$};
+
+  \node[circle, fill=black, inner sep=2pt] at (1, 0) {};
+  \node[above right] at (1, 0) {\small$1$};
+
+  \node[circle, fill=black, inner sep=2pt] at (1,-1) {};
+  \node[above right] at (1,-1) {\small$1$};
+
+  \node[circle, fill=black, inner sep=2pt] at (0,-1) {};
+  \node[above right] at (0,-1) {\small$1$};
+
+  \node[circle, fill=black, inner sep=2pt] at (-1,-2) {};
+  \node[above right] at (-1,-2) {\small$1$};
+
+  \node[circle, fill=black, inner sep=2pt] at (-1,-3) {};
+  \node[above right] at (-1,-3) {\small$1$};
+
+  \node[circle, fill=black, inner sep=2pt] at (-2,-4) {};
+  \node[above right] at (-2,-4) {\small$1$};
+
+  % Two diagonals: delta = 1 and delta = 2
+  \draw[blue, dashed, thick] (-2.5,-3.5) -- (1.5,0.5);
+  \node[blue] at (1.7,-0.3) {\small$\delta=1$};
+  \draw[red, dashed, thick] (-2.5,-4.5) -- (2.5,0.5);
+  \node[red] at (2.7,-0.3) {\small$\delta=2$};
+\end{tikzpicture}
+\caption{The bigraded knot Floer homology
+$\widehat{HFK}(C_{2,1}(T_{2,3}); \mathbb{F}_2)$. Each dot represents a
+generator at bigrading $(A, M)$; the integer beside each dot is the rank
+$\dim_{\mathbb{F}}\widehat{HFK}_M(C_{2,1}(T_{2,3}), A)$. The top Alexander
+grading is $2$, of rank $1$, so this knot is fibered of genus $2$. Two
+generators sit at bigrading $(0, -1)$ and $(1, 0)$ on the diagonal $\delta = A - M = 1$;
+the remaining five lie on the diagonal $\delta = 2$, so the knot fails
+to be thin. In particular, the next-to-top Alexander grading $A = 1$
+has rank $2$, exceeding the L-space bound, so $C_{2,1}(T_{2,3})$ is not
+an L-space knot. The Ozsv\'{a}th-Szab\'{o} concordance invariant is
+$\tau(C_{2,1}(T_{2,3})) = 2$, the Alexander grading of the unique generator
+in Maslov grading $0$ along the $\delta = 2$ diagonal.}
+\label{fig:hfk_cable}
+\end{figure}
+
+The knot $C$ is an almost L-space knot in the sense of Baldwin and Sivek \cite{BaldwinSivek2024}.
 
 \begin{theorem}[Partial cable detection]\label{thm:cable_detection_partial}
 Let $K \subset S^3$ be a knot such that
@@ -24,7 +87,7 @@ Let $K \subset S^3$ be a knot such that
 as bigraded vector spaces over $\mathbb{F} = \mathbb{Z}/2\mathbb{Z}$. Then one of the following holds:
 \begin{enumerate}
     \item $K \cong C_{2,1}(T_{2,3})$, or
-    \item $K$ is hyperbolic, and the canonically associated 6-braid $\beta$ obtained from the Birman-Hilden correspondence belongs to one of the finitely many parametric families enumerated in Appendix \ref{app:cable_residual_families}.
+    \item $K$ is hyperbolic, and the disk braid $\beta \in \mathrm{Mod}(D_6)$ associated to the monodromy of $K$ via the Birman-Hilden correspondence --- obtained by capping off the pseudo-Anosov monodromy on $\Sigma_2^1$ to $\Sigma_2^0$, descending to the marked sphere $S^2_{0,6}$, and blowing up the canonical fixed point --- belongs to one of the finitely many parametric families enumerated in Appendix \ref{app:cable_residual_families}.
 \end{enumerate}
 \end{theorem}
 
@@ -46,7 +109,15 @@ By Thurston's classification of knots, $K$ falls into one of three geometric cat
 
 \subsection{The torus knot case}\label{subsec:cable_torus}
 
-If $h$ is periodic, then $K$ is a torus knot $T_{p,q}$.  Every torus knot is an L-space knot (or the mirror of one), implying that $\widehat{HFK}(K, a)$ has rank at most one in every Alexander grading $a \in \mathbb{Z}$.  However, the Alexander polynomial $\Delta_C(t) = t^2 - 1 + t^{-2}$ has constant term $-1$, and so the Euler characteristic computation forces $\dim_{\mathbb{F}} \widehat{HFK}(C, 0)$ to be at least $1$.  Together with the knowledge that $C$ is almost L-space and not L-space, the rank in some grading must exceed one (the precise grading is computed in \cite[Section 7]{petkova2013cables}). Since this same rank constraint must be inherited by $K$, the torus knot case is excluded.
+If $h$ is periodic, then $K$ is a torus knot $T_{p,q}$. Every torus knot is an L-space knot (or the mirror of one), and L-space knots satisfy
+\[
+\dim_{\mathbb{F}} \widehat{HFK}(K, a) \le 1 \quad \text{for all } a \in \mathbb{Z}.
+\]
+However, the rank table of Figure~\ref{fig:hfk_cable} shows that
+\[
+\dim_{\mathbb{F}} \widehat{HFK}(C, 1) = 2,
+\]
+and the hypothetical isomorphism $\widehat{HFK}(K) \cong \widehat{HFK}(C)$ would force $\dim_{\mathbb{F}} \widehat{HFK}(K, 1) = 2$ as well. Hence $K$ is not a torus knot.
 
 \subsection{The satellite knot case}\label{subsec:cable_satellite}
 
@@ -61,27 +132,33 @@ We follow the satellite analysis of Chapter \ref{chap:satellite}, applied with t
 \[
 \Delta_K(t) = \Delta_{P(U)}(t) \cdot \Delta_C(t^w),
 \]
-where $P$ is the pattern (with winding number $w$), $C$ is the companion, $P(U)$ is the satellite of the unknot by the same pattern, and the algebraic operations involve clearing denominators as needed. Both $C$ and $P(U)$ are fibered \cite[Corollary 4.15, Proposition 5.5]{BZ03}.  
+where $P$ is the pattern (with winding number $w$), $C$ is the companion, $P(U)$ is the satellite of the unknot by the same pattern. Both $C$ and $P(U)$ are fibered \cite[Corollary 4.15, Proposition 5.5]{BZ03}.
 
-Since $\Delta_K(t) = t^2 - 1 + t^{-2}$ is irreducible as a symmetric Laurent polynomial over $\mathbb{Z}[t,t^{-1}]$, and since $\Delta_C(t^w)$ has degree $w \cdot g(C)$ which must be at least $1$, the only way to factor the polynomial as $\Delta_{P(U)} \cdot \Delta_C(t^w)$ is to have $\Delta_{P(U)} = 1$ (i.e.\ $P(U)$ is the unknot, so $P$ is a $(w,1)$-cable pattern) and $\Delta_C(t^w) = t^2 - 1 + t^{-2}$.
+Since $K$ is fibered, the algebraic winding number is non-zero, so $|w| \geq 1$. Furthermore, because $C$ is a fibered knot, the maximum degree of its symmetrized Alexander polynomial strictly equals its Seifert genus $g(C)$. Consequently, $\Delta_C(t^w)$ is a nontrivial symmetric Laurent polynomial of maximum degree $|w| \cdot g(C) \geq 1$.
 
-If $w = 1$, then $\Delta_C(t) = t^2 - 1 + t^{-2}$ would force $C$ to have genus $2$ and Alexander polynomial $t^2-1+t^{-2}$.  But by induction on the satellite construction, this leads to an infinite regress unless $C$ itself is the trefoil, and a careful case analysis (see Lemma \ref{lem:satellite_CaseACaseB}) rules this out as inconsistent with the genus and fibredness constraints.
+Now $\Delta_K(t) = t^2 - 1 + t^{-2}$ has maximum degree $2$ as a symmetric Laurent polynomial. The factorization above forces $|w| \cdot g(C) + \deg \Delta_{P(U)} = 2$, where $\deg$ denotes the maximum degree of the symmetrized polynomial. Since both factors have non-negative degree, we obtain three cases.
 
-If $w = 2$, then $\Delta_C(t^2) = t^2 - 1 + t^{-2}$, which gives $\Delta_C(t) = t - 1 + t^{-1}$.  This is precisely the Alexander polynomial of the trefoil knot, and indeed $C \cong T_{2,3}$ is the unique genus-1 fibered knot with this polynomial.
+\textbf{Case $|w| = 2$, $g(C) = 1$, $\Delta_{P(U)} = 1$.} Then $\Delta_C(t^2) = t^2 - 1 + t^{-2}$ forces $\Delta_C(t) = t - 1 + t^{-1}$. This is the Alexander polynomial of the trefoil, and indeed $C \cong T_{2,3}$ is the unique genus-one fibered knot with this polynomial. Since $\Delta_{P(U)} = 1$ and $P(U)$ is fibered, $P(U)$ is the unknot; hence $P$ is a $(p, q)$-cable pattern with $|p| \cdot \gcd(1, q) = |p| = 2$ and $\gcd(p, q) = 1$, so $P$ is a $(2, q)$-cable pattern for some odd $q$. The winding number being $|w| = 2$ matches $p = 2$, and the genus constraint $g(K) = g(P(U)) + |w| \cdot g(C) = 0 + 2 \cdot 1 = 2$ is consistent. The smallest $|q|$ consistent with $K$ being non-trivially satellite is $|q| = 1$; one checks that $|q| \geq 3$ would force $K$ to be an L-space knot (since $T_{2,q}$ is L-space for $|q| \geq 3$ and cabling preserves L-spaceness over L-space companions \sidecite{HeddenCableLSpace}), contradicting Figure~\ref{fig:hfk_cable}. Thus $|q| = 1$, and $K \cong C_{2,1}(T_{2,3})$ up to chirality.
 
-Thus $K = P(C)$ where $P$ is the $(2,1)$-cable pattern and $C = T_{2,3}$, giving $K \cong C_{2,1}(T_{2,3})$ as required.
+\textbf{Case $|w| = 1$, $g(C) = 2$, $\Delta_{P(U)} = 1$.} Then $\Delta_C(t) = t^2 - 1 + t^{-2}$ and $P(U)$ is the unknot (the only fibered knot with trivial Alexander polynomial). By Hirasawa-Murasugi-Silver \sidecite{HirasawaMurasugiSilver2008}, a fibered satellite $K = P(C)$ with winding number $1$ and $P$ isotopic to the core (which is forced when $P(U)$ is the unknot and $|w| = 1$) satisfies $K \cong C$; that is, the satellite operation is trivial. This contradicts our assumption that $K$ is a non-trivial satellite.
+
+\textbf{Case $|w| = 1$, $g(C) = 1$, $\deg \Delta_{P(U)} = 1$.} Then $\Delta_C(t)$ has degree $1$ and $\Delta_{P(U)}(t)$ has degree $1$, with their product equal to $t^2 - 1 + t^{-2}$. Symmetric Laurent polynomials of degree $1$ have the form $at + b + at^{-1}$, so their product has constant coefficient sum $2a_1 a_2 + b_1 b_2$. The polynomial $t^2 - 1 + t^{-2}$ has zero $t^{\pm 1}$ coefficients, forcing $a_1 b_2 + a_2 b_1 = 0$. Combined with the coefficient of $t^2$ being $a_1 a_2 = 1$, we obtain $a_1 = a_2 = \pm 1$ and $b_1 = -b_2$. Then the constant term is $2 - b_1^2 = -1$, so $b_1^2 = 3$, which has no integer solution. Hence this case is excluded.
+
+This concludes the proof: the only allowable satellite structure is Case 1, giving $K \cong C_{2,1}(T_{2,3})$.
 \end{proof}
 
 \subsection{The hyperbolic knot case}\label{subsec:cable_hyperbolic}
 
-Suppose $h$ is pseudo-Anosov, so that $K$ is hyperbolic.  By Lemma \ref{lemma:original monodromy has one fixed point}, the canonically lifted braid $\beta \in \mathrm{Mod}(D_6)$ obtained via the Birman-Hilden correspondence has the property that its surface lift $\Phi$ on $\Sigma_2^2$ is fixed-point-free in the interior. The Euler-Poincar\'{e} stratum analysis from Chapter \ref{chap:preliminaries} then restricts $\beta$ to one of the five admissible strata
+Suppose $h$ is pseudo-Anosov, so that $K$ is hyperbolic. The rank table of Figure~\ref{fig:hfk_cable} shows $\dim_{\mathbb{F}} \widehat{HFK}(K, 1) = \dim_{\mathbb{F}} \widehat{HFK}(C, 1) = 2$, so by the theorem of Ni-Ghiggini-Spano (Theorem~\ref{theorem:ni-fibered}), the pseudo-Anosov representative $\phi_h$ has at most $1$ interior fixed point on $\Sigma_2^1$. The Farber-Reinoso-Wang classification \sidecite{farber2024fixed} then rules out the case of zero interior fixed points: the only hyperbolic fibered knot in $S^3$ whose monodromy is pseudo-Anosov with no interior fixed points is the cinquefoil $T_{2,5}$, whose Alexander polynomial $t^2 - t + 1 - t^{-1} + t^{-2}$ differs from $\Delta_C(t) = t^2 - 1 + t^{-2}$. Hence $\phi_h$ has exactly one interior fixed point.
+
+By the capping-off construction (Proposition \ref{prop:capping off}) and the Birman-Hilden correspondence (Section \ref{section:Birman-Hilden}), this monodromy descends to a 6-braid mapping class $\beta \in \mathrm{Mod}(D_6)$ on the marked disk, whose canonical lift to the genus-two surface with two boundary components $\Sigma_2^2$ is fixed-point-free in its interior. The Euler-Poincar\'{e} stratum analysis from Chapter \ref{chap:preliminaries} then restricts $\beta$ to one of the five admissible strata
 \[
 (2; 1^4, 2^2; \emptyset),\quad (4; 1^6; \emptyset),\quad (2; 1^6; 4),\quad (3; 1^6; 3),\quad (2; 1^6; 3^2).
 \]
 
-The orientability obstruction of Chapter \ref{chap:stratoriented} eliminates the three orientable strata for any target Alexander polynomial without real roots, and $\Delta_C(t) = t^2 - 1 + t^{-2}$ has roots $\zeta_{12}^{\pm 1}, \zeta_{12}^{\pm 5}$ (primitive twelfth roots of unity), none of which are real.  Thus the orientable strata are excluded for the cable target as they were for the granny target.
+The orientability obstruction of Chapter \ref{chap:stratoriented} eliminates the three orientable strata for any target Alexander polynomial without real roots. The roots of the symmetrized cable polynomial $t^4 - t^2 + 1 = \Phi_{12}(t)$ are the primitive twelfth roots of unity $\zeta_{12}^{\pm 1}, \zeta_{12}^{\pm 5}$, none of which are real. Hence the orientable strata are excluded for the cable target as they were for the granny target.
 
-The non-orientable strata $(3; 1^6; 3)$ and $(2; 1^6; 3^2)$ require the non-trivial train-track analysis of Chapter \ref{chap:stratatraintrackanalysis}.  The same \texttt{autofolder} enumeration, tight-splitting reduction, Trace Lemma, and Absorption Obstruction all apply unchanged in the cable setting, since these geometric and combinatorial constraints depend only on the assumption that the canonical lift is fixed-point-free, which holds for the cable case for the same reason as for the granny case.
+The non-orientable strata $(3; 1^6; 3)$ and $(2; 1^6; 3^2)$ require the non-trivial train-track analysis of Chapter \ref{chap:stratatraintrackanalysis}. The same \texttt{autofolder} enumeration, tight-splitting reduction, Trace Lemma, and Absorption Obstruction all apply unchanged in the cable setting, since these geometric and combinatorial constraints depend only on the assumption that the canonical lift is fixed-point-free, which we have established above.
 
 Therefore the same finite list of $83$ candidate braid families (across the Candelabra and the five surviving two-triangle tracks) constitutes the residual list of topological candidates for the cable monodromy.
 

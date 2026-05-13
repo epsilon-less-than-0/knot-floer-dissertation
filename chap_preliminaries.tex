@@ -76,7 +76,56 @@ Of central importance to this work is the ability of knot Floer homology to dete
     \end{equation}
 \end{theorem}
 
-In other words, $K$ is fibered if and only if the knot Floer homology in the top Alexander grading is one-dimensional. Consequently, for a fibered knot, the top-graded component is supported in a single Maslov grading. This theorem reduces the deeply topological question of the existence of a fibration to an algebraic computation of the rank of $\widehat{HFK}(K)$.
+In other words, $K$ is fibered if and only if the knot Floer homology in the top Alexander grading is one-dimensional. Consequently, for a fibered knot, the top-graded component is supported in a single Maslov grading. This theorem reduces the deeply topological question of the existence of a fibration to a computation in knot Floer homology.
+
+The complete bi-graded knot Floer homology of $T_{2,3}\#T_{2,3}$ is shown in Figure \ref{fig:hfk_granny}.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.8]
+  % Grid
+  \draw[step=1, gray!30, very thin] (-2.5,-4.5) grid (2.5,0.5);
+  
+  % Axes
+  \draw[->, thick] (-2.7,0) -- (2.9,0) node[right] {$A$};
+  \draw[->, thick] (0,-4.7) -- (0,0.9) node[above] {$M$};
+  
+  % Axis labels
+  \foreach \a in {-2,-1,1,2} {
+    \node[below=2pt] at (\a,-4.5) {\small$\a$};
+  }
+  \foreach \m in {-4,-3,-2,-1} {
+    \node[left=2pt] at (-2.5,\m) {\small$\m$};
+  }
+  
+  % HFK generators: (A, M) with multiplicity
+  \node[circle, fill=black, inner sep=2pt] at (2, 0)  {};
+  \node[above right] at (2, 0) {\small$1$};
+  
+  \node[circle, fill=black, inner sep=2pt] at (1,-1) {};
+  \node[above right] at (1,-1) {\small$2$};
+  
+  \node[circle, fill=black, inner sep=2pt] at (0,-2) {};
+  \node[above right] at (0,-2) {\small$3$};
+  
+  \node[circle, fill=black, inner sep=2pt] at (-1,-3) {};
+  \node[above right] at (-1,-3) {\small$2$};
+  
+  \node[circle, fill=black, inner sep=2pt] at (-2,-4) {};
+  \node[above right] at (-2,-4) {\small$1$};
+  
+  % Diagonal line delta = 2
+  \draw[red, dashed, thick] (-2.5,-4.5) -- (1,-1) -- (2.5,0.5);
+  \node[red] at (2.7,-0.3) {\small$\delta=2$};
+\end{tikzpicture}
+\caption{The bigraded knot Floer homology 
+$\widehat{HFK}(T_{2,3}\#T_{2,3};\mathbb{F}_2)$. Each dot represents a 
+generator at bigrading $(A,M)$; the integer beside each dot is the rank 
+$\dim_{\mathbb{F}}\widehat{HFK}_M(T_{2,3}\#T_{2,3},A)$. The top Alexander grading is $2$, of rank $1$, thus this knot is fibered of genus $2$. Also, all generators 
+lie on the diagonal $A - M = 2$, exhibiting the so-called \emph{thinness} of the granny 
+knot.}
+\label{fig:hfk_granny}
+\end{figure}
 
 \subsection*{The Monodromy and the Nielsen-Thurston Classification}
 As a consequence of Theorem \ref{theorem:ni-fibered}, if a hypothetical knot $K$ satisfies the hypothesis of Theorem \ref{thm:main_detection}:
@@ -126,7 +175,7 @@ For fibered knots, this three-dimensional geometric trichotomy is in bijective c
     \item \textbf{Hyperbolic Knots (Pseudo-Anosov):} If $[h]$ is pseudo-Anosov, the invariant measured foliations on $\Sigma_g^1$ can be suspended to construct a complete Riemannian metric of constant negative curvature on the interior of $M_h$. Thus, $S^3 \setminus K$ is a hyperbolic 3-manifold of finite volume.
 \end{itemize}
 
-The proof strategy for Theorem \ref{thm:main_detection} relies entirely on this geometric bridge. We will systematically assume the hypothetical knot $K$ belongs to each of Thurston's three geometric categories: torus, satellite, and hyperbolic. We will then eliminate all distinct knot candidates in each category. We note immediately that the torus knot case is entirely trivial; the Alexander polynomials of torus knots are completely classified, and none can possibly coincide with the observed polynomial $\Delta_K(t) = (t - 1 + t^{-1})^2$. Thus, the topological obstruction rests entirely on eliminating the satellite and hyperbolic cases.
+The proof strategy for Theorem \ref{thm:main_detection} relies entirely on this geometric bridge. We will systematically assume the hypothetical knot $K$ belongs to each of Thurston's three geometric categories: torus, satellite, and hyperbolic. We will then eliminate all distinct knot candidates in each category. We note immediately that the torus knot case is entirely trivial; the Alexander polynomials of torus knots are completely classified, and none can possibly coincide with the observed polynomial $\Delta_K(t) = (t^2 - t + 1)^2$. Thus, the remaining proof rests entirely on eliminating the satellite and hyperbolic cases.
 
 \section{Pseudo-Anosov Maps}\label{sec:pA}
 The case where $K$ is assumed to be a hyperbolic knot will be the most geometrically involved and will constitute the bulk of this thesis. As established by the trichotomy correspondence above:
@@ -215,7 +264,7 @@ Hence $\phi_h$ has at most one fixed point. The work of Farber, Reinoso, and Wan
     Let $K$ be a hyperbolic, fibered knot with monodromy $h$, and suppose $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$. Then $\phi_h$ has exactly one fixed point in the interior of $\Sigma_2^1$.
 \end{lemma}
 \begin{proof}
-    Farber, Reinoso, and Wang \sidecite{farber2024fixed} classified all pseudo-Anosov monodromies on the genus-two surface with one boundary component and no interior fixed points. They showed that the only such monodromy arising from a fibered knot in $S^3$ belongs to the cinquefoil $T(2,5)$. The cinquefoil has a completely different knot Floer homology from $T_{2,3} \# T_{2,3}$, which is immediately deduced from the fact that $\Delta_{T(2,5)}(t) = t^2 - t + 1 - t^{-1} + t^{-2}$.
+    Farber, Reinoso, and Wang \sidecite{farber2024fixed} classified all pseudo-Anosov monodromies on the genus-two surface with one boundary component and no interior fixed points. They showed that the only such monodromy arising from a fibered knot in $S^3$ belongs to the cinquefoil $T(2,5)$. The cinquefoil has a completely different knot Floer homology from $T_{2,3} \# T_{2,3}$, which is immediately deduced from the fact that $\Delta_{T(2,5)}(t) = t^4 - t^3 + t^2 - t + 1$.
 \end{proof}
 
 \subsection*{Capping Off}\label{subsec:capping_off}
@@ -320,6 +369,14 @@ As a consequence of Proposition \ref{prop:capping off}, $z$ and $p$ descend to a
 
 We perform a real blow-up at $r$. We identify the punctured sphere $S^2 \setminus \{r\}$ with the interior of the standard unit disk, $\mathrm{int}(D^2)$. The six branch points $Q = \{q_1, \dots, q_6\}$ correspond to marked points. The map $\phi_b|_{S^2 \setminus \{r\}}$ extends continuously to a pseudo-Anosov homeomorphism $\phi_\beta \colon D^2 \to D^2$ of the closed disk. We define $\beta$ to be the associated mapping class.
 
+\begin{remark}\label{rem:fulltwist_ambiguity}
+The mapping class $\beta \in \mathrm{Mod}(D_6)$ obtained from this blow-up is not quite canonical: it is well-defined only up to powers of the full twist $\Delta_6^2 \in \mathrm{Mod}(D_6)$. The pseudo-Anosov representative $\phi_b$ fixes the point $r$, hence determines a class $[\phi_b] \in \mathrm{Mod}(S^2_{0,6}, r)$ in the pointed mapping class group of the sphere with $r$ as a basepoint. The disk braid $\beta$ is a preimage of $[\phi_b]$ under the natural surjection $\mathrm{Mod}(D_6) \twoheadrightarrow \mathrm{Mod}(S^2_{0,6}, r)$, obtained by collapsing $\partial D^2$ to a point. The kernel of this surjection is generated by the Dehn twist about a curve parallel to $\partial D^2$, giving the short exact sequence
+\[
+1 \to \mathbb{Z}\langle \Delta_6^2 \rangle \to \mathrm{Mod}(D_6) \to \mathrm{Mod}(S^2_{0,6}, r) \to 1.
+\]
+The preimage of $[\phi_b]$ is therefore a coset of $\mathbb{Z}\langle \Delta_6^2 \rangle$, and any two choices of representative for $\beta$ differ in the local-dynamical data recorded along the boundary $\partial D^2$ at the blown-up point $r$. This ambiguity is benign for our purposes: the train-track enumeration developed in Chapter \ref{chap:train tracks} naturally operates on the quotient $\mathrm{Mod}(D_6)/\langle \Delta_6^2 \rangle$, as a consequence of Corollary \ref{cor:induce_by_braid_fulltwist}. We return to this point in Chapter \ref{chap:train tracks} after the train-track framework is in place.
+\end{remark}
+
 \subsection{The Fixed-Point-Free Lift $\phi_\Phi$}
 
 We now lift the disk homeomorphism $\phi_\beta$ back to the genus-two surface, with two boundary components. Let $\Sigma_2^2$ denote the compact surface obtained from $\Sigma_2^0$ by performing a real blow-up at the points $z$ and $p$. Topologically, $\Sigma_2^2$ is a genus-two surface with two boundary components.
@@ -352,8 +409,8 @@ The constructions above yield what we shall term the \emph{Birman-Hilden corresp
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{figures/BH.png}
-    \caption{The Birman-Hilden Correspondence data.}
+    \includegraphics[width=0.8\linewidth]{figures/BH.png}
+    \caption{The Birman-Hilden Correspondence data. Top left: original knot monodromy $h$ and its geometric representative $\phi_h$, with one interior fixed point $z$. Top middle: Capped-off monodromy $\hat{h}$ and its geometric representative $\hat{\phi}_h$, with one additional fixed point $p$. Bottom Middle: Descent of capped-off monodromy $b$ and its geometric representative $\phi_b$, with a single fixed point $r$ that is the descent of $z$ and $p$. Bottom right: Blow-up at $r$ to obtain a disk braid $\beta$ and its geometric representative $\phi_\beta$, no interior fixed points. Top right: lifting $\beta$ to obtain $\Phi$ and its geometric representative $\phi_\Phi$, no interior fixed points. Capping off one of the boundaries of the top right recovers the original monodromy.}
     \label{fig:birman_hilden_data}
 \end{figure}
 
@@ -394,7 +451,7 @@ We can immediately eliminate the $\{5,3\}$ case. The map $\hat{\phi}_h$ must per
 
 We can also eliminate $\{3,3,4\}$ and $\{6\}$. Since a pseudo-Anosov map must preserve singularity types, the unique 4-pronged or 6-pronged singularity in these sets would be forced to map to itself, constituting a third interior fixed point. This contradicts our established fact that $\mathrm{Fix}(\hat{\phi}_h)$ contains exactly two points.
 
-Thus, the only valid sets of singularities are $\{3,3,3,3\}$ and $\{4,4\}$. Bearing in mind that $p$ and $z$ must have the exact same number of prongs (which could also be 2, meaning they are smooth points), the possible configurations are summarized in Table \ref{tab:betti_configurations}.
+Thus, the only valid sets of singularities are $\{3,3,3,3\}$ and $\{4,4\}$. Bearing in mind that $p$ and $z$ must have the exact same number of prongs (which could also be 2, meaning they are smooth points), the possible configurations are summarized in Table \ref{tab:prong_configurations}.
 
 \begin{table}[ht]
     \centering
@@ -408,7 +465,7 @@ Thus, the only valid sets of singularities are $\{3,3,3,3\}$ and $\{4,4\}$. Bear
         \bottomrule
     \end{tabular}
     \caption{Possible singularity configurations satisfying the Euler-Poincar\'{e} formula.}
-    \label{tab:betti_configurations}
+    \label{tab:prong_configurations}
 \end{table}
 
 We analyze each case to determine the precise strata on $\Sigma_2^0$, $S^2$, and $D^2$.
