@@ -615,10 +615,10 @@ We begin by demonstrating that any pseudo-Anosov map in this stratum must be car
 
 \subsection{Enumeration of Train Track Maps and Braids}
 
-Having reduced our geometric search space to the Candelabra, we execute the case analysis procedure of Section \ref{subsec:case_analysis_procedure}. With no central edge $d$ in this stratum, Cases B, C, D and Assumption A do not arise; the dominant obstruction is Corollary \ref{cor:trace_jointless} (the no-self-occurrence rule for jointless-monogon edges), with the Absorption Obstruction handling most remaining geometric routing decisions. The complete derivation of the surviving maps and their corresponding braid words is presented in Appendix \ref{app:candidate_braids_candelabra}, yielding the following proposition:
+Having reduced our geometric search space to the Candelabra, we execute the case analysis procedure of Section \ref{subsec:case_analysis_procedure}. With no central edge $d$ in this stratum, Cases B, C, D and Assumption A do not arise; the dominant obstruction is Corollary \ref{cor:trace_jointless} (the no-self-occurrence rule for jointless-monogon edges), with the Absorption Obstruction handling most remaining geometric routing decisions. The complete derivation of the surviving maps, together with the rotational symmetry argument that relates the two initial rotational states of the central triangle, is presented in Appendix \ref{app:case_analysis_candelabra}. The corresponding braid words are listed in Appendix \ref{app:candidate_braids_candelabra}, yielding the following proposition:
 
 \begin{prop}\label{prop:candelabra_34_braids}
-    Let $\Phi \colon \Sigma_2^2 \to \Sigma_2^2$ be a pseudo-Anosov mapping class corresponding to the stratum $(3;1^6;3)$ on the disk. If the pseudo-Anosov representative $\phi_\Phi$ has no interior fixed points, then $\Phi$ is conjugate to the lift of one of the 34 braid families explicitly enumerated in Appendix \ref{app:candidate_braids_candelabra}.
+    Let $\Phi \colon \Sigma_2^2 \to \Sigma_2^2$ be a pseudo-Anosov mapping class corresponding to the stratum $(3;1^6;3)$ on the disk. If the pseudo-Anosov representative $\phi_\Phi$ has no interior fixed points, then $\Phi$ is conjugate to the lift of one of the $38$ braid families explicitly enumerated in Appendix \ref{app:candidate_braids_candelabra}.
 \end{prop}
 
 \subsection{Proof of the Main Elimination Theorem}
@@ -628,11 +628,11 @@ We are now equipped to definitively prove Theorem \ref{thm:candelabra_stratum_cl
 \begin{proof}[Proof of Theorem \ref{thm:candelabra_stratum_classification}]
     Suppose, for the sake of contradiction, that the geometric braid representative $\beta$ associated with the knot $K$ belongs to the stratum $(3;1^6;3)$. Since the knot complement is hyperbolic, $\beta$ lifts to a pseudo-Anosov map on $\Sigma_2^2$ that must be fixed-point-free in its interior.
 
-    By Lemma \ref{lem:candelabra_reduction}, up to conjugation and mirroring, $\beta$ must be carried by the Candelabra train track. By Proposition \ref{prop:candelabra_34_braids}, the topological restriction that its lift is fixed-point-free further forces $\beta$ to belong to one of the 34 specific braid families enumerated in Appendix \ref{app:candidate_braids_candelabra}.
+    By Lemma \ref{lem:candelabra_reduction}, up to conjugation and mirroring, $\beta$ must be carried by the Candelabra train track. By Proposition \ref{prop:candelabra_34_braids}, the topological restriction that its lift is fixed-point-free further forces $\beta$ to belong to one of the $38$ specific braid families enumerated in Appendix \ref{app:candidate_braids_candelabra}.
 
-    To determine if any of these 34 braid families can correspond to the monodromy of $K$, we apply the homological filters detailed in Section \ref{sec:homological_filtering}. For each of the 34 families, we computationally extract the reduced homological action matrix $A_{\text{red}}$. We test each matrix against the zero-surgery condition (requiring $|\det(I - A_{\text{red}})| = 1$ to ensure the ambient manifold is $S^3$) and the Alexander polynomial condition (requiring $\det(tI - A_{\text{red}}) = (t^2-t+1)^2$).
+    To determine if any of these $38$ braid families can correspond to the monodromy of $K$, we apply the homological filters detailed in Section \ref{sec:homological_filtering}. For each of the $38$ families, we computationally extract the reduced homological action matrix $A_{\text{red}}$. We test each matrix against the zero-surgery condition (requiring $|\det(I - A_{\text{red}})| = 1$ to ensure the ambient manifold is $S^3$) and the Alexander polynomial condition (requiring $\det(tI - A_{\text{red}}) = (t^2-t+1)^2$).
 
-    Our computational verification demonstrates that \textbf{none} of the 34 families simultaneously satisfy both homological requirements. Since the finite, exhaustive list of topological candidates has been entirely eliminated by algebraic obstruction, no such braid $\beta$ can exist. This concludes the proof.
+    Our computational verification demonstrates that \textbf{none} of the $38$ families simultaneously satisfy both homological requirements. Since the finite, exhaustive list of topological candidates has been entirely eliminated by algebraic obstruction, no such braid $\beta$ can exist. This concludes the proof.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

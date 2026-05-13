@@ -1,6 +1,14 @@
 \chapter[Appendix: Splitting Sequences for the Stratum]{Appendix: Splitting Sequences for the Stratum}
 \label{app:splitting_big_stratum}
 
+This appendix collects the exhaustive tight splitting sequences for the 12 base train tracks of the stratum $(2; 1^6; 3^2)$ identified in the proof of Lemma \ref{lem:two_triangle_reduction} of Chapter \ref{chap:stratatraintrackanalysis}. These splitting sequences establish the second part of the reduction of the geometric state space from the full \texttt{autofolder} output to the six irreducible standard train tracks $(0), (1), (8), (12), (13), (17)$ recorded in Figure \ref{fig:final_six_tracks}.
+
+\paragraph{What the diagrams show.} Each figure depicts a single train track $\tau$ (numbered by its label in the \texttt{autofolder} output for the stratum) together with the complete tree of tight splittings emanating from $\tau$. The root of each tree is $\tau$ itself; the leaves are the train tracks reached after a finite sequence of tight splittings. Two infinitesimal triangles ($3$-gons) are present in each base track, and an initial tight splitting can occur at either of the two corresponding loop switches; the diagrams branch accordingly. By Definition \ref{def:tight-splitting} and Proposition \ref{prop:transition_matrix_split}, a tight splitting preserves the carrying property and the dynamics of any pseudo-Anosov map carried by the original track (up to conjugation by a braid). Consequently, any pseudo-Anosov map carried by $\tau$ is also carried by every track appearing in the splitting tree of $\tau$.
+
+\paragraph{How to read the splitting termination.} Each figure terminates when every leaf of the splitting tree is one of the six irreducible tracks $(0), (1), (8), (12), (13), (17)$. The captions record the specific set of irreducible tracks at the leaves. Reading across all twelve figures, every base track $(19), (17), (15), (13), (12), (9), (8), (7), (5), (2), (1)$ splits into a subset of the irreducible six. The track $(0)$ is already irreducible (no further tight splittings are available) and does not appear in this appendix.
+
+\paragraph{Consequences for the enumeration.} Combined with the mirror-pair identification carried out in the proof of Lemma \ref{lem:two_triangle_reduction}, the splitting sequences collected here establish that, up to conjugation and mirroring, every pseudo-Anosov mapping class in the stratum $(2; 1^6; 3^2)$ is carried by one of the six irreducible tracks of Figure \ref{fig:final_six_tracks}. This is the geometric reduction underlying Proposition \ref{prop:two_triangle_braids} and the enumeration of candidate braid families that follows.
+
 
 \begin{figure*}[p] % [p] forces this to be on its own page, which is often necessary for large figures
     \centering
@@ -25,7 +33,7 @@
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/15 Splitting-1.jpg}\\[0pt]
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/15 Splitting-2.jpg}
     \caption{This splitting sequence shows train track (15.) eventually splits to the train tracks (19.) or (8.).}
-    \label{fig:c15_splitting}
+    \label{fig:15_splitting}
 \end{figure*}
 
 \begin{figure*}[p] % [p] forces this to be on its own page, which is often necessary for large figures
@@ -77,7 +85,7 @@
     % Restrict height to 45% of the text block per image, maintaining aspect ratio
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/5 Splitting.jpg}
     \caption{This splitting sequence shows train track (5.) eventually splits to the train tracks (13.) or (1.).}
-    \label{fig:7_splitting}
+    \label{fig:5_splitting}
 \end{figure*}
 
 \begin{figure*}[p] % [p] forces this to be on its own page, which is often necessary for large figures
@@ -86,7 +94,7 @@
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/2 Splitting-1.jpg}\\[0pt]
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/2 Splitting-2.jpg}
     \caption{This splitting sequence shows train track (2.) eventually splits to the train tracks (18.) or (0.).}
-    \label{fig:8_splitting}
+    \label{fig:2_splitting}
 \end{figure*}
 
 \begin{figure*}[p] % [p] forces this to be on its own page, which is often necessary for large figures
@@ -95,5 +103,5 @@
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/1 Splitting-1.jpg}\\[0pt]
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/1 Splitting-2.jpg}
     \caption{This splitting sequence shows train track (1.) eventually splits to the train tracks (11.), (8.), (12.), or (0.).}
-    \label{fig:8_splitting}
+    \label{fig:1_splitting}
 \end{figure*}

@@ -1,9 +1,49 @@
 \chapter[Train Track Case Analysis: The Candelabra]{Train Track Case Analysis: The Candelabra}
 \label{app:case_analysis_candelabra}
+This is the Candelabra:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/The Candelabra-1.jpg}
+    \caption{The Candelabra train track.}
+    \label{fig:candelabra_app}
+\end{figure}
 
 First notice that the triangle must be rotated by $f_\beta$, otherwise the image of all of the real edges will trace. There are two possible rotations of the triangle, one is the result of a single clockwise rotation, and the other is the result of two clockwise rotations. 
 
-First we assume that the triangle is rotated once clockwise. Thus, $\fbi$ begins with $r^*$, but could only be $r^\circ$ or $r^+$, and $\fbp$ begins with $b^*$. On the other hand, $\fbr$ and $\fbb$ begin with $o^*$ or $s^*$, while $\fbo$ and $\fbs$ begin with $i$ or $p$. As shown in ????
+First we assume that the triangle is rotated once clockwise. Thus, $\fbi$ begins with $r^*$, but could only be $r^\circ$ or $r^+$, and $\fbp$ begins with $b^*$. On the other hand, $\fbr$ and $\fbb$ begin with $o^*$ or $s^*$, while $\fbo$ and $\fbs$ begin with $i$ or $p$. As shown in Figure \ref{fig:candelabra_one_rotation}. 
+
+
+Figure \ref{fig:candelabra_two_rotation} shows the starting position of the situation where the triangle is rotated twice clockwise. In this situation, $\fbo$ begins with $r^*$, but could only be $r^\circ$ or $r^+$, and $\fbs$ begins with $b^*$. On the other hand, $\fbi$ and $\fbp$ begin with $o^*$ or $s^*$, while $\fbr$ and $\fbb$ begin with $i$ or $p$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Starting Position Candelabra-1.jpg}
+    \caption{Starting position when the triangle is rotated one ``click'' clockwise.}
+    \label{fig:candelabra_one_rotation}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Starting Position Candelabra-2.jpg}
+    \caption{Starting position when the triangle is rotated two ``clicks'' clockwise.}
+    \label{fig:candelabra_two_rotation}
+\end{figure}
+
+We carry out the full case analysis only under the assumption that the triangle is rotated one click clockwise. The two-click case is recovered from the one-click case by precomposition with a single braid $G$, as the following argument shows.
+
+\begin{remark}[Rotational symmetry of the two initial cases]\label{rem:candelabra_rotation}
+The two starting configurations depicted in Figures \ref{fig:candelabra_one_rotation} and \ref{fig:candelabra_two_rotation} correspond to the two possible non-trivial rotational states of the central triangle under $f_\beta$ (``one click clockwise'' versus ``two clicks clockwise''). The candelabra is rotationally symmetric with respect to the cyclic permutation of its six real edges
+\[
+b \to o, \quad o \to i, \quad i \to r, \quad r \to s, \quad s \to p, \quad p \to b,
+\]
+and this permutation interchanges the two initial configurations: applying it to the one-click starting configuration yields exactly the two-click starting configuration. Crucially, this permutation of the edges is itself realized by a specific braid $G$ in $B_6$, namely the braid extracted from Train Track Candidate 1 (the ``NHT'' family; see Section \ref{sec:braid G}).
+
+Consequently, the entire case analysis is symmetric between the two initial configurations. If the one-click case analysis yields candidate families $1, 2, \ldots, n$ with braid representatives $\beta_1, \beta_2, \ldots, \beta_n$, then the two-click case analysis mechanically yields a parallel set of candidate families $1', 2', \ldots, n'$ with braid representatives $\beta_1 \cdot G, \beta_2 \cdot G, \ldots, \beta_n \cdot G$. (Equivalently: applying the edge permutation above to a one-click candidate map produces a two-click candidate map whose representing braid differs by composition with $G$.) The primed candidate braids are recorded alongside the unprimed in Appendix \ref{app:candidate_braids_candelabra}, and the homological filter is applied to both in Appendix \ref{app:granny_verdict_tables}.
+
+It therefore suffices to present the case analysis under the one-click assumption. We proceed with this assumption for the remainder of this appendix.
+\end{remark}
+
 
 \subsection{NHT}\label{NHT}
 Suppose
@@ -57,18 +97,86 @@ $$\fbr = o^- i^*...$$
 
 This is Figure \ref{fig:Jehu1}.
 
-Here the next letter can be $i^\circ$ or $i^+$. Suppose it were the former, then $\fbo$ and $\fbs$ are forced to begin with $p^*$, in particular $\fbs$ must begin with $s^+...$
+Here the next letter can be $i^\circ$ or $i^+$. Suppose it were the former.
+
+Here both $\fbo$ and $\fbs$ cannot both begin with $i^+$, or one of them will immediately trace. So suppose
+\[
+\fbo = i^+...
+\]
+while
+\[
+\fbs = p^*...
+\]
 
 This is Figure \ref{fig:Jehu2}.
 
-But here $\fbb$ is forced to begin with $s^-$ and to the right of the incoming $\fbs$, then it continues with $i^+ s^*...$, or it will be absorbed. Then Figure \ref{fig:Jehu3} is forced.
+Here $\fbs$ must immediately end otherwise it will be absorbed. Similarly, $\fbo$ must immediately end, or it will be absorbed:
+\[
+\fbo = i^+ s^- i^- \Abso{\fbo}{\fbs}
+\]
+or trace:
+\[
+\fbo = i^+ s^+ i^- o^\times
+\]
 
-Here $\fbo$ must begin and end at $p^\circ$ otherwise it will immediately trace. Here $\fbs$ must end at $o^\circ$, or it will either trace or be absorbed. This forces $\fbb$ to also end. This gives us Figure \ref{fig:Jehu4}. This is a candidate train track map, but in fact it will be subsumed in Candidate Family 2, to follow.
+So we must have
+\[
+\fbo = i^+ s^\circ
+\]
 
-Now suppose
-$$\fbr = o^- i^+...$$
+Finally, $\fbb$ is then forced to also end, or it either traces:
+\[
+\fbb = o^- i^+ o^+ b^\times
+\]
+or is absorbed
+\[
+\fbb = o^- i^+ s^- i^- \Abso{\fbo}{\fbs}
+\]
 
-Then the situation in Figure \ref{fig:Jehu5} is forced. Here $\fbr$ and $\fbb$ twist counterclockwise between $s$ and $i$ and end there. This gives Candidate Family 2.
+Thus we have the train track Candidate 1.1, shown in Figure \ref{fig:Jehu3}. 
+
+Going back to considering the starting letter of $\fbo$ and $\fbs$, now suppose both begin with $p^*$. Then in fact $\fbs$ must begin with $p^+$ and to the left of $\fbo$. Otherwise, $\fbo$ would be forced to begin with $p^-$ and be absorbed:
+\[
+\fbo = p^- r^- \Abso{\fbp}{\fbi}
+\]
+
+Thus we have the situation depicted in Figure \ref{fig:Jehu4}.
+
+Here $\fbb$ is forced to begin with $o^-$ and to the right of the incoming $\fbs$:
+\[
+\fbb = o^- i^+ s^*...
+\]
+
+as shown in Figure \ref{fig:Jehu4}.
+
+Here $\fbs$ must end. Otherwise it either traces:
+\[
+\fbs = p^+ o^- i^+ s^\times
+\]
+or, if it continued with $o^+$ then be absorbed between itself and $\fbo$. Thus we have
+\[
+\fbs = p^+ o^\circ
+\]
+
+This then forces $\fbb$ to end, or be absorbed between $\fbo$ and $\fbs$.
+
+This is Figure \ref{fig:Jehu6}, which is a valid train track map candidate; however, it will be subsumed in Candidate Family 2, to come shortly.
+
+Now we go back to the situation depicted in Figure \ref{fig:Jehu1}, and suppose the next letter for $\fbr$ is $i^+$/ Suppose further that $\fbs$ begins with $p^*$ while $\fbo$ begins with $i^*$. Then $\fbs$ must immediately end or be absorbed.
+
+This is Figure \ref{fig:Jehu7}.
+
+Here $\fbo$ must continue with $s^+$ and to the left of $\fbr$, or $\fbr$ will be absorbed between $\fbo$ and $\fbs$. This gives Figure \ref{fig:Jehu8}. Here $\fbo$ twist between $i$ and $s$ and must end there as if it were to escape it either escapes to the outer perimeter and eventually is absorbed, or it escapes to $o$ and trace. Suppose here $\fbo$ twist for $k$ times. Then $\fbr$ and $\fbb$ twist among themselves between the two remaining edge paths $m$ times. This gives Candidate Family 1.2.
+
+Now suppose instead both $\fbs$ and $\fbo$ begin with $p^*$. Then we have Figure \ref{fig:Jehu9}. Here $\fbb$ is forced to begin with $o^-$ and to the right of the incoming $\fbs$. So we have Figure \ref{fig:Jehu10}. Here $\fbo$ immediately ends or it immediately trace; while $\fbs$ also ends or it either traces:
+\[
+\fbs = p^+ o^- i^+ s^\times
+\]
+or be absorbed between itself and  $\fbo$. 
+
+This is Figure \ref{fig:Jehu11}. 
+
+Here $\fbb$ then continue with $s^+$ and to the left of $\fbr$. Otherwise, $\fbr$ would be absorbed between $\fbo$ and $\fbs$. Then $\fbb$ and $\fbr$ twist $k$ times between $i$ and $s$, and eventually end there, giving Candidate Family 2, shown in Figure \ref{fig:Jehu12}.
 
 \subsubsection{Kexy}
 Back to the end of NHT \ref{NHT}. Suppose
@@ -1313,37 +1421,86 @@ This finishes the case analysis for the Candelabra.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-1.jpg}
+    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-01.jpg}
     \caption{Jehu1}
     \label{fig:Jehu1}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-2.jpg}
+    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-02.jpg}
     \caption{Jehu2}
     \label{fig:Jehu2}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-3.jpg}
+    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-03.jpg}
     \caption{Jehu3}
     \label{fig:Jehu3}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-4.jpg}
+    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-04.jpg}
     \caption{Jehu4}
     \label{fig:Jehu4}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-5.jpg}
+    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-05.jpg}
     \caption{Jehu5}
     \label{fig:Jehu5}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-06.jpg}
+    \caption{Jehu6}
+    \label{fig:Jehu6}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-07.jpg}
+    \caption{Jehu7}
+    \label{fig:Jehu7}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-08.jpg}
+    \caption{Jehu8}
+    \label{fig:Jehu8}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-09.jpg}
+    \caption{Jehu9}
+    \label{fig:Jehu9}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-10.jpg}
+    \caption{Jehu10}
+    \label{fig:Jehu10}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-11.jpg}
+    \caption{Jehu11}
+    \label{fig:Jehu11}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figures_case_analysis/candelabra_case_analysis/Jehu-12.jpg}
+    \caption{Jehu12}
+    \label{fig:Jehu12}
 \end{figure}
 
 

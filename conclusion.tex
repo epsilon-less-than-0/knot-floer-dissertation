@@ -24,8 +24,6 @@ Knot Floer homology distinguishes the homochiral connect-sum of trefoils ($T_{2,
 
 The proof strategy throughout combines three threads. First, the genus and fiberedness detection results of Ozsv\'{a}th-Szab\'{o}, Ni, and Juh\'{a}sz translate the topological classification problem into a problem about surface monodromies. Second, the Birman-Hilden correspondence descends the genus-two monodromy to a 6-braid on the disk, where train track methods become applicable. Third, the explicit machinery developed in this dissertation — the \texttt{autofolder}, tight splitting, the Trace Lemma, the Absorption Obstruction, and the homological filtering pipeline — exhaustively eliminates candidate mapping classes within each topological stratum.
 
-The verification of the chirality corollary (Section \ref{sec:chirality}) shows that the detection result is sharp: it is the bigraded structure of $\widehat{HFK}$, and not merely the total rank or the Alexander polynomial, that distinguishes the granny knot from its mirror and from the square knot.
-
 \section{Direct Consequences}
 
 \subsection{Almost L-space rigidity}
@@ -36,13 +34,13 @@ The granny knot is the unique composite almost L-space knot, by a theorem of Bin
 Knot Floer homology detects the unique composite almost L-space knot.
 \end{corollary}
 
-For the cable, our partial result already establishes detection within the non-hyperbolic class of almost L-space knots:
+For the cable, our partial result already establishes detection within the non-hyperbolic class:
 
 \begin{corollary}
-Among non-hyperbolic genus-two fibered knots, the cable $C_{2,1}(T_{2,3})$ is uniquely identified by its bigraded knot Floer homology.
+Among non-hyperbolic knots in $S^3$, the cable $C_{2,1}(T_{2,3})$ is uniquely identified by its bigraded knot Floer homology.
 \end{corollary}
 
-These results contribute to the program of using $\widehat{HFK}$ as a fingerprint for distinguished knot classes, complementing the L-space knot detection results of Baldwin-Hu-Sivek for $T(2,5)$ \sidecite{baldwin2025khovanov} and Reinoso \sidecite{Reinoso2023} for the broader family of L-space knots of genus two.
+These results contribute to the program of using $\widehat{HFK}$ as a fingerprint for distinguished knot classes, complementing Reinoso's classification of genus-two L-space knots \sidecite{Reinoso2023}, from which $\widehat{HFK}$-detection of $T(2,5)$ follows, and Baldwin-Hu-Sivek's Khovanov-homology detection of $T(2,5)$ \sidecite{baldwin2025khovanov}.
 
 \subsection{The autofolder as a stand-alone contribution}
 
@@ -62,7 +60,7 @@ The most immediate open problem left by this dissertation is closing the gap in 
     \item Comparing the bigraded structure of $\widehat{HFK}$ rather than just the Alexander polynomial, which captures Maslov-grading information beyond what the Euler characteristic detects.
 \end{itemize}
 
-A definitive resolution of any of these would yield a complete cable detection theorem.
+Any one of these avenues, if it successfully eliminates all residual candidates, would close the gap and yield a complete cable detection theorem.
 
 \subsection{Detection beyond genus two}
 
@@ -109,7 +107,7 @@ The principal subtlety in this strategy is the extension of Theorem \ref{thm:mai
 
 \subsection{$\widehat{HFK}$ and Khovanov homology on the Wang family}
 
-The square knot $T_{2,3} \# \overline{T}_{2,3}$ is a band sum of the split link $T_{2,3} \sqcup \overline{T}_{2,3}$ along a trivial band. By a construction of Hedden-Watson \sidecite{HeddenWatson2018}, generalized by Wang \sidecite{Wang2020}, adding $n$ half-twists to such a band produces an infinite family $\{K_n\}_{n\in\mathbb{Z}}$ of distinct knots, all sharing the same Heegaard knot Floer homology (and the same instanton knot Floer homology), of which $K_0$ is the square knot. The Khovanov homology of the knots $K_n$ are mutually distinct.
+The square knot $T_{2,3} \# \overline{T}_{2,3}$ is a band sum of the split link $T_{2,3} \sqcup \overline{T}_{2,3}$ along a trivial band. By a construction of Hedden-Watson \sidecite{HeddenWatson2018}, generalized by Wang \sidecite{Wang2020}, adding $n$ half-twists to such a band produces an infinite family $\{K_n\}_{n\in\mathbb{Z}}$ of distinct knots, all sharing the same knot Floer homology (and the same instanton knot Floer homology), of which $K_0$ is the square knot. The Khovanov homology of the knots $K_n$ are mutually distinct.
 
 This picture suggests two complementary detection questions:
 
