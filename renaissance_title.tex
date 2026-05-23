@@ -1,103 +1,113 @@
+% =====================================================================
+% Renaissance-style frontispiece (one page).
+% Applies tighter margins and singlespacing/zero parskip locally so the
+% page has room to breathe vertically without overflowing.
+% \restoregeometry returns to BC's 1.25in/1in margins after this page.
+% =====================================================================
+\newgeometry{
+    left=0.75in,
+    right=0.75in,
+    top=0.5in,
+    bottom=0.5in
+}
+
 \begin{titlepage}
     \centering
-    \thispagestyle{empty} % Removes page number
-    % \fontfamily{ebgaramond}\selectfont % <--- Switches to Garamond
-    % \vspace*{1cm}
+    \thispagestyle{empty}
 
-% Switch to Palatino (ppl) for this page only
+    % Local overrides: prevent global \parskip and \doublespacing from
+    % inflating the layout on this page.
+    \setlength{\parskip}{0pt}
+    \singlespacing
+
+    % Palatino (the closest readily-available type to a Renaissance roman;
+    % Garamond would be marginally more period-correct but is not bundled
+    % with all TeX distributions).
     \fontfamily{ppl}\selectfont
-    
+
+    \vspace*{\fill}
+
     {\Huge \scshape A}
-    
-    \vspace{0.4cm}
-    
+
+    \vspace{0.55cm}
+
     {\Huge \bfseries \scshape New and Complete Disquisition}
-    
-    \vspace{0.4cm}
-    
+
+    \vspace{0.45cm}
+
     {\Large \itshape concerning the}
-    
-    \vspace{0.4cm}
-    
-    {\Huge \scshape Knot Invariants of Ozv\'{a}th and Szab\'{o},}
-    
-    \vspace{0.4cm}
-    
+
+    \vspace{0.45cm}
+
+    {\Huge \scshape Knot Invariants\\[0.15em] of Ozsv\'{a}th and Szab\'{o},}
+
+    \vspace{0.45cm}
+
     {\Large \itshape in which the}
-    
-    \vspace{0.4cm}
-    
-    {\Huge \scshape Singular Ability}
-    
-    \vspace{0.1cm}
-    
+
+    \vspace{0.45cm}
+
+    {\LARGE \scshape Singular Ability}
+
+    \vspace{0.3cm}
+
     {\Large \itshape of said}
-    
-    \vspace{0.1cm}
-    
-    {\Huge \scshape Homology Theory}
-    
-    \vspace{0.1cm}
-    
+
+    \vspace{0.3cm}
+
+    {\LARGE \scshape Homology Theory}
+
+    \vspace{0.3cm}
+
     {\Large \itshape to Detect the}
-    
-    \vspace{0.4cm}
-    
+
+    \vspace{0.45cm}
+
     {\Huge \bfseries \scshape Connected Sum of Two Trefoils}
-    
-    \vspace{0.4cm}
-    
+
+    \vspace{0.45cm}
+
     {\Large \itshape is}
-    
-    \vspace{0.1cm}
-    
-    {\Huge \scshape Rigorously Demonstrated;}
-    
-    \vspace{0.6cm}
-    
+
+    \vspace{0.3cm}
+
+    {\LARGE \scshape Rigorously Demonstrated;}
+
+    \vspace{0.7cm}
+
     {\Large \itshape The Whole being Elucidated by means of}
-    
-    \vspace{0.2cm}
-    
+
+    \vspace{0.4cm}
+
     {\LARGE \scshape Folding Automata, Train Tracks,}
-    
-    \vspace{0.2cm}
-    
+
+    \vspace{0.4cm}
+
     {\Large \itshape and}
-    
-    \vspace{0.2cm}
-    
+
+    \vspace{0.4cm}
+
     {\LARGE \scshape Sundry Demonstrations}
-    
-    \vspace{0.1cm}
-    
+
+    \vspace{0.3cm}
+
     {\Large \itshape touching upon the}
-    
-    \vspace{0.1cm}
-    
+
+    \vspace{0.3cm}
+
     {\LARGE \scshape Fibered Nature}
-    
-    \vspace{0.1cm}
-    
+
+    \vspace{0.3cm}
+
     {\Large \itshape of the}
-    
-    \vspace{0.1cm}
-    
+
+    \vspace{0.3cm}
+
     {\LARGE \scshape Composite Knot.}
-    
-    % \vspace{0.4cm}
-    
-    % \rule{0.4\textwidth}{0.4pt}
-    
-    % \vspace{0.4cm}
-    
-    % {\Large \scshape Kevin Yeh}
-    
-    % \vspace{0.1cm}
-    
-    % {\large \itshape Boston College}
-    
-    % \vspace{0.4cm}
-    
-    % {\large \scshape 2026}
+
+    \vspace*{\fill}
+
 \end{titlepage}
+
+% Return to the document-default BC margins.
+\restoregeometry

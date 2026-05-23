@@ -18,10 +18,6 @@ The \texttt{autofolder} algorithm provides a complete, finite classification of 
 Let $K \subset S^3$ be a knot with $\widehat{HFK}(K) \cong \widehat{HFK}(C_{2,1}(T_{2,3}))$ as bigraded vector spaces. Then either $K \cong C_{2,1}(T_{2,3})$, or $K$ is hyperbolic and the disk braid $\beta \in \mathrm{Mod}(D_6)$ associated to the monodromy of $K$ via the Birman-Hilden correspondence (capping off to $\Sigma_2^0$, descent to $S^2_{0,6}$, blowup at the canonical fixed point) belongs to one of finitely many parametric families enumerated in Appendix \ref{app:cable_residual_families}. In particular, $\widehat{HFK}$ detects $C_{2,1}(T_{2,3})$ among non-hyperbolic knots.
 \end{theorem}
 
-\begin{corollary}[Corollary \ref{cor:chirality}]
-Knot Floer homology distinguishes the homochiral connect-sum of trefoils ($T_{2,3}\#T_{2,3}$) from the heterochiral connect-sum ($T_{2,3}\#\overline{T}_{2,3}$) and from the mirror granny knot ($\overline{T}_{2,3}\#\overline{T}_{2,3}$).
-\end{corollary}
-
 The proof strategy throughout combines three threads. First, the genus and fiberedness detection results of Ozsv\'{a}th-Szab\'{o}, Ni, and Juh\'{a}sz translate the topological classification problem into a problem about surface monodromies. Second, the Birman-Hilden correspondence descends the genus-two monodromy to a 6-braid on the disk, where train track methods become applicable. Third, the explicit machinery developed in this dissertation — the \texttt{autofolder}, tight splitting, the Trace Lemma, the Absorption Obstruction, and the homological filtering pipeline — exhaustively eliminates candidate mapping classes within each topological stratum.
 
 \section{Direct Consequences}
@@ -40,7 +36,7 @@ For the cable, our partial result already establishes detection within the non-h
 Among non-hyperbolic knots in $S^3$, the cable $C_{2,1}(T_{2,3})$ is uniquely identified by its bigraded knot Floer homology.
 \end{corollary}
 
-These results contribute to the program of using $\widehat{HFK}$ as a fingerprint for distinguished knot classes, complementing Reinoso's classification of genus-two L-space knots \sidecite{Reinoso2023}, from which $\widehat{HFK}$-detection of $T(2,5)$ follows, and Baldwin-Hu-Sivek's Khovanov-homology detection of $T(2,5)$ \sidecite{baldwin2025khovanov}.
+These results contribute to the program of using $\widehat{HFK}$ as a detector of certain distinguished knot classes, complementing Reinoso's classification of genus-two L-space knots \sidecite{Reinoso2023}, from which $\widehat{HFK}$-detection of $T(2,5)$ follows, and Baldwin-Hu-Sivek's Khovanov-homology detection of $T(2,5)$ \sidecite{baldwin2025khovanov}.
 
 \subsection{The autofolder as a stand-alone contribution}
 
@@ -48,19 +44,26 @@ The \texttt{autofolder} algorithm, while developed here in service of Theorem \r
 
 We anticipate that the algorithm will be a useful tool for future detection problems on genus-two and higher fibered knots, for the explicit construction of pseudo-Anosov braids of small dilatation, and for the experimental investigation of singularity strata that have not yet been analyzed by hand.
 
-\section{Future Directions}
+\section{Future Directions}\label{sec:future_directions}
 
 \subsection{Closing the cable detection gap}
+\label{sec:closing_cable_gap}
 
-The most immediate open problem left by this dissertation is closing the gap in Theorem \ref{thm:cable_detection_partial}: eliminating the residual finite list of candidate braid families that pass both the homology-sphere filter and the Alexander polynomial filter at non-negative integer parameter values. Three avenues are discussed in Section \ref{sec:cable_residual_discussion}:
+The most immediate open problem left by this dissertation is closing the gap in Theorem \ref{thm:cable_detection_partial}: eliminating the residual finite list of candidate braid families that pass both the homology-sphere filter and the Alexander polynomial filter at non-negative integer parameter values. The six families isolated in Proposition \ref{prop:cable_filter_outcome} represent precisely this gap. Closing it requires obstructions beyond polynomial equality at the level of the reduced homological action. We outline two complementary avenues.
 
-\begin{itemize}
-    \item Refining the homological filter from the characteristic polynomial of $A_{\text{red}}$ to the full $\mathbb{Z}$-conjugacy class within $\mathrm{Sp}(4, \mathbb{Z})$, capturing the symplectic structure;
-    \item Verifying pseudo-Anosov-ness of each candidate braid at the surviving parameter values, since some parameter values may correspond to reducible or periodic mapping classes outside the scope of the topological enumeration;
-    \item Comparing the bigraded structure of $\widehat{HFK}$ rather than just the Alexander polynomial, which captures Maslov-grading information beyond what the Euler characteristic detects.
-\end{itemize}
+\paragraph{(A) Pseudo-Anosov degeneration at boundary parameter values.}
+The candidate train track maps in the residual families are parametrized by integer twists. At certain parameter values --- particularly $k = 0$ or $m = 0$ --- the corresponding braid may degenerate into a non-pseudo-Anosov mapping class (periodic or reducible), in which case the topological enumeration assumption is violated. A direct check of the dilatation (Perron-Frobenius eigenvalue of the train track transition matrix) at each surviving parameter value would either confirm the braid is pseudo-Anosov or exclude that parameter from consideration. This is a strictly local refinement to the existing case analysis and would yield a smaller residual list.
 
-Any one of these avenues, if it successfully eliminates all residual candidates, would close the gap and yield a complete cable detection theorem.
+\paragraph{(B) Direct knot reconstruction and $\widehat{HFK}$ comparison.}
+A more ambitious avenue is to bypass the homological filter entirely and directly compute the knot corresponding to each surviving braid family, then compute its knot Floer homology and compare against the cable target. The pipeline is:
+\begin{enumerate}
+    \item For each candidate braid word $\beta$ and parameter assignment, close up the braid lift on $\Sigma_2^2$ to obtain a fibered three-manifold, and identify the knot component $K_\beta$ that plays the role of the candidate for our knot $K$;
+    \item Use SnapPy \sidecite{SnapPy} (which handles braid closures, computes hyperbolic structures, and identifies knots from their hyperbolic invariants) to recognize $K_\beta$ as a specific knot in $S^3$;
+    \item Compute $\widehat{HFK}(K_\beta)$ directly --- either from known catalogues if $K_\beta$ is identified as a tabulated knot, or via dedicated knot Floer software for novel knots --- and compare against the target $\widehat{HFK}(C_{2,1}(T_{2,3}))$, including the full bigraded structure rather than just the Alexander polynomial.
+\end{enumerate}
+This is in principle a complete obstruction: if $K_\beta$ is not isotopic to $C_{2,1}(T_{2,3})$, the comparison will detect it. The practical challenge is the computational handling of step (1) --- mapping from a train-track-map braid word on the disk through the Birman-Hilden lift to a concrete knot in $S^3$ that SnapPy can ingest --- which requires either careful manual reconstruction or further automation built on top of the \texttt{autofolder} infrastructure. The bigraded comparison in step (3) captures Maslov-grading information beyond the Alexander polynomial and would, in principle, resolve any residual ambiguity that the polynomial filter misses.
+
+Either avenue, if it successfully eliminates all residual candidates, would close the gap and yield a complete cable detection theorem.
 
 \subsection{Detection beyond genus two}
 
@@ -73,10 +76,6 @@ In genus two, the hyperelliptic involution $\iota$ is central in the mapping cla
 is a \emph{proper} subgroup of $\mathrm{Mod}(\Sigma_g)$, and Birman-Hilden descent applies only to monodromies in $\mathcal{H}_g$ --- the so-called \textbf{hyperelliptic} (or \textbf{symmetric}) monodromies. Consequently, the framework developed here generalizes naturally to fibered knots of genus $g \geq 3$ \emph{whose monodromy is hyperelliptic}, but not directly to general genus-$g$ fibered knots. For non-hyperelliptic monodromies, an analogous theory would need to operate on closed-surface train tracks directly (see the discussion of \emph{Generalizing the autofolder} below).
 
 Even within the hyperelliptic class, the principal computational obstruction in genus three is the rapid growth in complexity of the train-track state space: the Euler-Poincar\'{e} stratum analysis admits substantially more strata, and the \texttt{autofolder}'s output graphs grow correspondingly. Natural genus-three targets include the torus knot $T_{2,7}$ (whose torus-knot monodromy is hyperelliptic) and the composite knot $T_{2,3} \# T_{2,5}$ (the unique composite genus-three fibered knot of the form $T_{2,p} \# T_{2,q}$); both are amenable to the framework developed here, modulo computational scaling and the verification that the relevant monodromies indeed lie in $\mathcal{H}_3$.
-
-\subsection{Prime detection for satellite operators}
-
-A natural generalization of the cable detection result is the question: for which satellite patterns $P$ is $P(T_{2,3})$ detected by $\widehat{HFK}$? The framework of Schubert's formula combined with the \texttt{autofolder} should apply to a wide range of cabling, doubling, and Mazur-type patterns. We expect that the same machinery, with the homological filter retargeted appropriately, will yield detection results (or partial-detection results in the spirit of Theorem \ref{thm:cable_detection_partial}) for many of the standard pattern families.
 
 \subsection{Khovanov detection of the granny knot}
 
@@ -105,19 +104,66 @@ Let $K \subset S^3$ be a knot whose reduced Khovanov homology over $\mathbb{Q}$ 
 
 The principal subtlety in this strategy is the extension of Theorem \ref{thm:main_detection} from $\mathbb{F}_2$ to $\mathbb{Q}$ coefficients, which requires verifying that the fixed-point obstructions used in the proof remain valid in characteristic zero. We do not pursue this in the present work.
 
-\subsection{$\widehat{HFK}$ and Khovanov homology on the Wang family}
+A natural further question is whether the strategy above could be adapted to detect the \emph{square knot} $T_{2,3} \# \overline{T}_{2,3}$, which is the most prominent composite knot with the same Alexander polynomial as the granny. Here Step 3 fails: $\tau(T_{2,3} \# \overline{T}_{2,3}) = 0 \neq g(T_{2,3} \# \overline{T}_{2,3}) = 2$, so the square knot is not strongly quasipositive, and the strong-quasipositive simplifications used in the granny case fail. The square knot in fact lies in an infinite $\widehat{HFK}$-equivalence class (Subsection \ref{subsec:hfk_kh_pretzel} below), placing it genuinely beyond the reach of $\widehat{HFK}$-driven detection. Khovanov detection of the square knot would therefore require a different mechanism, and would yield the first Khovanov detection result for a composite knot.
 
-The square knot $T_{2,3} \# \overline{T}_{2,3}$ is a band sum of the split link $T_{2,3} \sqcup \overline{T}_{2,3}$ along a trivial band. By a construction of Hedden-Watson \sidecite{HeddenWatson2018}, generalized by Wang \sidecite{Wang2020}, adding $n$ half-twists to such a band produces an infinite family $\{K_n\}_{n\in\mathbb{Z}}$ of distinct knots, all sharing the same knot Floer homology (and the same instanton knot Floer homology), of which $K_0$ is the square knot. The Khovanov homology of the knots $K_n$ are mutually distinct.
+\subsection{Knot Floer homology and Khovanov homology on the Hedden-Watson pretzel family}
+\label{subsec:hfk_kh_pretzel}
 
-This picture suggests two complementary detection questions:
+The square knot $T_{2,3} \# \overline{T}_{2,3}$ is the central member of the infinite Hedden-Watson pretzel family $\{P(3,-3,2n)\}_{n\in\mathbb{Z}}$ shown in Figure \ref{fig:hedden_watson_family}. All members of this family share the same knot Floer homology and the same instanton knot Floer homology \sidecite{HeddenWatson2018,Wang2020}, with $P(3,-3,0)$ being the square knot. In the geography/botany framework of \S\ref{sec:applications}, this family is a negative botany result for genus two: the bigraded $\widehat{HFK}$ profile of the square knot is realized by infinitely many distinct knots, and consequently no positive botany result --- no detection theorem --- can ever be obtained for the square knot via $\widehat{HFK}$ alone. The natural follow-up question is whether the family itself is detectable as a collection.
 
-\begin{enumerate}
-    \item \emph{Does Khovanov homology distinguish each $K_n$ from all knots outside the Wang family?} The Wang family is precisely the family of obstructions to $\widehat{HFK}$-detection of the square knot, so a positive answer for the square knot ($n=0$) would yield the first Khovanov detection result for a composite knot. The strategy outlined for the granny knot in the previous subsection does not directly apply to the square knot, since $\tau(T_{2,3} \# \overline{T}_{2,3}) = 0 \neq g(T_{2,3} \# \overline{T}_{2,3}) = 2$, and the strong-quasipositive simplifications used in the granny case fail.
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+  % Top-left: n = -1
+  \begin{scope}[shift={(-4.5, 4.5)}]
+    \bandhighlight
+    \pretzel{3}{-3}{-2}{thesisblue}
+    \node[font=\bfseries] at (0, 3.45) {$P(3,\,-3,\,-2)$};
+    \node[font=\itshape\small, text=black!60] at (0, -3.9) {$n=-1$};
+  \end{scope}
 
-    \item \emph{Does Khovanov homology detect membership in the Wang family?} That is: if $\widetilde{Kh}(K) \cong \widetilde{Kh}(K_n)$ for some $n$, must $K = K_m$ for some $m$? An affirmative answer would establish a striking complementarity between $\widehat{HFK}$ and Khovanov homology: $\widehat{HFK}$ identifies the family as an isomorphism class, while Khovanov resolves membership within the family. To our knowledge, no knot invariant is currently known to detect a non-trivial infinite family of knots in this sense, so such a result would be a first.
-\end{enumerate}
+  % Top-right: n = 0 (square knot)
+  \begin{scope}[shift={(4.5, 4.5)}]
+    \bandhighlight
+    \pretzel{3}{-3}{0}{thesisred}
+    \node[font=\bfseries] at (0, 3.45)
+      {$P(3,\,-3,\,0)=T_{2,3}\,\#\,\overline{T}_{2,3}$};
+    \node[font=\itshape\small, text=black!60] at (0, -3.9)
+      {$n=0$ \ (square knot)};
+  \end{scope}
 
-The first question is the natural Khovanov analog of the square knot detection problem, which lies beyond the scope of $\widehat{HFK}$. The second is a structural question about the relationship between $\widehat{HFK}$ and Khovanov homology that is naturally raised by, but does not obviously follow from, the techniques developed in this dissertation.
+  % Bottom-left: n = 1
+  \begin{scope}[shift={(-4.5, -4.5)}]
+    \bandhighlight
+    \pretzel{3}{-3}{2}{thesisblue}
+    \node[font=\bfseries] at (0, 3.45) {$P(3,\,-3,\,2)$};
+    \node[font=\itshape\small, text=black!60] at (0, -3.9) {$n=1$};
+  \end{scope}
+
+  % Bottom-right: n = 2
+  \begin{scope}[shift={(4.5, -4.5)}]
+    \bandhighlight
+    \pretzel{3}{-3}{4}{thesisblue}
+    \node[font=\bfseries] at (0, 3.45) {$P(3,\,-3,\,4)$};
+    \node[font=\itshape\small, text=black!60] at (0, -3.9) {$n=2$};
+  \end{scope}
+\end{tikzpicture}
+\caption[The Hedden-Watson pretzel family $P(3,-3,2n)$]{%
+The Hedden-Watson pretzel family $P(3,-3,2n)$, due to an unpublished observation of Rasmussen and formalized in \sidecite{HeddenWatson2018}. All four members shown above have isomorphic knot Floer homology. The member $P(3,-3,0)$ (top right) is the square knot $T_{2,3}\,\#\,\overline{T}_{2,3}$; twisting the third tangle (highlighted) by $n$ full twists yields the further members $P(3,-3,2n)$, each carrying the same $\widehat{HFK}$. This infinite family is the canonical obstruction to $\widehat{HFK}$ detection of the square knot. The analogous construction with two right-handed trefoils, $P(3,3,2n)$, fails to produce a $\widehat{HFK}$-equivalent family for the granny knot: the four-ball genus bound $|\tau(K)| \leq g_4(K)$ gives $g_4(T_{2,3} \# T_{2,3}) \geq 2$, so the granny is not slice and hence not a band sum of two unknots.}
+\label{fig:hedden_watson_family}
+\end{figure}
+
+This picture raises two complementary conjectures about how $\widehat{HFK}$ and Khovanov homology interact with the family:
+
+\begin{quote}
+\textbf{Conjecture (Coarse HFK detection of the family).} \emph{If $\widehat{HFK}(K) \cong \widehat{HFK}(P(3,-3,2n))$ for some (equivalently, every) $n$, then $K = P(3,-3,2m)$ for some $m \in \mathbb{Z}$.}
+\end{quote}
+
+\begin{quote}
+\textbf{Conjecture (Khovanov refinement).} \emph{The members of the family $\{P(3,-3,2n)\}_{n\in\mathbb{Z}}$ have pairwise non-isomorphic Khovanov homology.}
+\end{quote}
+
+If both conjectures hold, $\widehat{HFK}$ and Khovanov homology together detect each $P(3,-3,2n)$ as a knot: $\widehat{HFK}$ identifies membership in the family, and Khovanov refines that identification to a specific member. This would be a clean complementarity between the two invariants on a family where $\widehat{HFK}$ alone cannot suffice, being constant on the family. Both conjectures are structural questions about the interaction of $\widehat{HFK}$ and Khovanov homology, naturally raised by the existence of the Hedden-Watson pretzel family but not directly addressed by the techniques of this dissertation.
 
 \subsection{Generalizing the autofolder}
 

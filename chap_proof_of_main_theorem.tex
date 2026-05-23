@@ -2,7 +2,7 @@
 
 Having developed in the preceding chapters all of the topological, dynamical, and homological machinery required to constrain the monodromy of a hypothetical knot sharing the knot Floer homology of $T_{2,3}\# T_{2,3}$, we now assemble these results into a proof of the primary result of this dissertation, Theorem \ref{thm:main_detection}.
 
-The argument proceeds along the Nielsen-Thurston trichotomy: any genus-two fibered knot in $S^3$ has monodromy that is periodic, pseudo-Anosov, or reducible, corresponding respectively to a torus knot, a hyperbolic knot, or a satellite knot. We eliminate the first two cases entirely and use the satellite analysis of Chapter \ref{chap:satellite} to identify the third with the connect-sum of two trefoils. Finally, we discharge the chirality question that remains after this identification, distinguishing the granny knot $T_{2,3}\# T_{2,3}$ from its chiral relatives via Corollary \ref{cor:chirality}.
+The argument proceeds along the Nielsen-Thurston trichotomy: any genus-two fibered knot in $S^3$ has monodromy that is periodic, pseudo-Anosov, or reducible, corresponding respectively to a torus knot, a hyperbolic knot, or a satellite knot. We eliminate the first two cases entirely and use the satellite analysis of Chapter \ref{chap:satellite} to identify the third with the connect-sum of two trefoils, with the residual chirality question resolved inline by inspection of the Maslov-grading support of $\widehat{HFK}$.
 
 \section{Proof of Theorem \ref{thm:main_detection}}
 \label{sec:proof_main_detection}
@@ -54,7 +54,7 @@ We have eliminated all five strata across Chapters \ref{chap:stratoriented} and 
 \begin{itemize}
     \item By Theorem \ref{thm:orientable_strata_elimination}, the orientable strata $(2; 1^4, 2^2; \emptyset)$, $(4; 1^6; \emptyset)$, and $(2; 1^6; 4)$ are eliminated by an Alexander polynomial obstruction: any such stratum forces the lifted invariant foliations on $\Sigma_2^2$ to be orientable, but $\Delta_K(t) = (t^2 - t + 1)^2$ has no real roots, contradicting Thurston's identification of the dilatation with a real eigenvalue of the homological action.
     \item By Theorem \ref{thm:candelabra_stratum_classification}, the non-orientable stratum $(3; 1^6; 3)$ is eliminated: the \texttt{autofolder} algorithm together with tight splitting reduces the candidate train tracks to the Candelabra, and exhaustive enumeration via the Trace Lemma and the Absorption Obstruction produces 34 candidate braid families. Homological filtering---requiring both $|\det(I - A_{\text{red}})| = 1$ (so that the underlying 3-manifold of the open book is an integer homology sphere) and $\det(tI - A_{\text{red}}) = (t^2-t+1)^2$ (matching $\Delta_K$)---eliminates all 34 (Appendix \ref{app:granny_verdict_tables}).
-    \item By Theorem \ref{thm:two_triangle_stratum_classification}, the non-orientable stratum $(2; 1^6; 3^2)$ is eliminated by the parallel analysis: tight splitting reduces the 20 candidate jointless tracks to six (one of which, Track 12, admits no surviving train track maps), exhaustive enumeration produces a finite list of candidate braid families, and the same homological filters eliminate them all (Appendix \ref{app:granny_verdict_tables}).
+    \item By Theorem \ref{thm:two_triangle_stratum_classification}, the non-orientable stratum $(2; 1^6; 3^2)$ is eliminated by the parallel analysis: tight splitting reduces the 20 candidate jointless tracks to six (one of which, Track 12, admits no surviving train track maps), exhaustive enumeration on the remaining five tracks produces 49 candidate braid families in total (13 for Track 0, 17 for Track 1, 9 for Track 8, 4 for Track 13, and 6 for Track 17), and the same homological filters eliminate them all (Appendix \ref{app:granny_verdict_tables}).
 \end{itemize}
 
 These results combine to establish the obstruction theorem promised in the introduction:
@@ -76,94 +76,44 @@ Having ruled out the periodic and pseudo-Anosov cases, $h$ must be reducible, so
 A parallel detection question for the $(2,1)$-cable $C_{2,1}(T_{2,3})$ --- which is itself a fibered genus-two satellite knot --- is taken up separately in Chapter \ref{chap:cable_detection}, where we establish a partial detection theorem for that knot. Note that the $(2,1)$-cable is not a candidate for $K$ in the present proof, because Lemma \ref{lem:satellite_trefoils_windingnumber_1} excludes it (its winding number is $2$, not $1$, and its pattern $P(U) = T_{2,1}$ is the unknot rather than a trefoil).
 \end{remark}
 
-The remaining configuration is the connect-sum of two trefoils. The detailed argument of Chapter \ref{chap:satellite} proceeds as follows. Schubert's formula (Theorem \ref{thm:schubert}) and the explicit factorization of $\Delta_K(t) = (t^2-t+1)^2 = t^2 - 2t + 3 - 2t^{-1} + t^{-2}$ force the algebraic winding number to equal $1$ and identify both the pattern $P(U)$ and the companion $C$ as trefoils (Lemma \ref{lem:satellite_trefoils_windingnumber_1}). The classification of canonical reducing systems (Lemma \ref{lem:satellite_CaseACaseB}) presents two non-trivial geometric configurations: Case A (the outer surface $\Sigma_0$ is a pair of pants) and Case B (the outer surface is genus one). The pair-of-pants case admits no pseudo-Anosov outer map, forcing the outer map to be periodic; combined with Baldwin-Sivek's Proposition \ref{prop:knottracesprop} and the genus-two constraint, this yields the connect-sum of two genus-one knots, of which only the trefoil-trefoil connect sum has the correct Alexander polynomial. The genus-one case is eliminated by a fractional Dehn twist coefficient analysis: the Hedden-Mark bound $|c(K)| \le 1$ forces $|c(K)| = 1$, but the contact-invariant argument via Honda-Kazez-Mati\'{c} rules out integer twist coefficients.
+The remaining configuration is the connect-sum of two trefoils. The detailed argument of Chapter \ref{chap:satellite} proceeds as follows. Schubert's formula (Theorem \ref{thm:schubert}) and the explicit factorization of $\Delta_K(t) = (t^2-t+1)^2 = t^2 - 2t + 3 - 2t^{-1} + t^{-2}$ force the algebraic winding number to equal $1$ and identify both the pattern $P(U)$ and the companion $C$ as trefoils (Lemma \ref{lem:satellite_trefoils_windingnumber_1}). The classification of canonical reducing systems (Lemma \ref{lem:satellite_CaseACaseB}) presents two non-trivial geometric configurations: Case A (the outer surface $\Sigma_0$ is a pair of pants) and Case B (the outer surface is genus one). The pair-of-pants case admits no pseudo-Anosov outer map, forcing the outer map to be periodic; combined with Baldwin-Sivek's Proposition \ref{prop:knottracesprop} and the genus-two constraint, this yields the connect-sum of two genus-one knots, of which only the trefoil-trefoil connect sum (up to chirality of the two factors) has the correct Alexander polynomial. The genus-one case is eliminated by a fractional Dehn twist coefficient analysis: the Hedden-Mark bound $|c(K)| \le 1$ forces $|c(K)| = 1$, but the contact-invariant argument via Honda-Kazez-Mati\'{c} rules out integer twist coefficients.
 
-Therefore, $K$ is the connect-sum of two right-handed trefoils:
+Therefore, $K$ is isotopic to a connect-sum of two trefoils, taken with some choice of chirality. The three candidates are $T_{2,3} \# T_{2,3}$ (the granny knot, homochiral), $T_{2,3} \# \overline{T}_{2,3}$ (the square knot, heterochiral), and $\overline{T}_{2,3} \# \overline{T}_{2,3}$ (the mirror granny), shown in Figure \ref{fig:three_candidates}.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+  \begin{scope}[shift={(-5, 0)}]
+    \trefoilcs{1}{1}{thesisblue}
+    \node[font=\bfseries] at (0, 3.0) {Granny $T_{2,3} \# T_{2,3}$};
+    \node[font=\itshape\small, text=black!60] at (0, -3.2) {$\tau = 2$};
+  \end{scope}
+  \begin{scope}[shift={(0, 0)}]
+    \trefoilcs{1}{-1}{thesisred}
+    \node[font=\bfseries] at (0, 3.0) {Square $T_{2,3} \# \overline{T}_{2,3}$};
+    \node[font=\itshape\small, text=black!60] at (0, -3.2) {$\tau = 0$};
+  \end{scope}
+  \begin{scope}[shift={(5, 0)}]
+    \trefoilcs{-1}{-1}{thesisblue}
+    \node[font=\bfseries] at (0, 3.0) {Mirror granny $\overline{T}_{2,3} \# \overline{T}_{2,3}$};
+    \node[font=\itshape\small, text=black!60] at (0, -3.2) {$\tau = -2$};
+  \end{scope}
+\end{tikzpicture}
+\caption[Three connect-sums of trefoils with Alexander polynomial $(t^2-t+1)^2$]{%
+The three candidate connect-sums of trefoils consistent with $\Delta_K(t)=(t^2-t+1)^2$: the granny knot $T_{2,3} \# T_{2,3}$ (left), the square knot $T_{2,3} \# \overline{T}_{2,3}$ (centre), and the mirror granny $\overline{T}_{2,3} \# \overline{T}_{2,3}$ (right). The three knots have identical total $\widehat{HFK}$ rank but distinct Maslov-grading supports in the top Alexander grading; the values of the Ozsv\'{a}th-Szab\'{o} tau invariant are $\tau = 2, 0, -2$ respectively. The bigraded hypothesis of Theorem \ref{thm:main_detection} selects the granny.}
+\label{fig:three_candidates}
+\end{figure}
+
+All three share the Alexander polynomial $(t^2-t+1)^2$ and the total $\widehat{HFK}$-rank of $9$, so the unbigraded $\widehat{HFK}$ does not distinguish them. However, the K\"{u}nneth formula combined with the mirror duality $\widehat{HFK}_M(\overline{K}, A) \cong \widehat{HFK}_{-M}(K, -A)$ \cite{OS04Knot} shows that the top Alexander grading $A = 2$ is supported in Maslov grading $0$ for $T_{2,3}\# T_{2,3}$, in Maslov grading $2$ for $T_{2,3}\#\overline{T}_{2,3}$, and in Maslov grading $4$ for $\overline{T}_{2,3}\#\overline{T}_{2,3}$; equivalently, the Ozsv\'{a}th-Szab\'{o} concordance invariant $\tau$ takes the values $2$, $0$, and $-2$ respectively. Since the bigraded isomorphism $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3}\# T_{2,3})$ matches Maslov gradings, only the homochiral case is compatible with the hypothesis. Therefore
 \[
 K \cong T_{2,3} \# T_{2,3}.
 \]
 This concludes the proof.
 \end{proof}
 
-\section{Distinguishing the Granny Knot from the Square Knot}
-\label{sec:chirality}
-
-The argument of Section \ref{sec:proof_main_detection} establishes that any knot $K$ with $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3}\# T_{2,3})$ as bigraded vector spaces is isotopic to the connect-sum of two trefoils. However, there are three distinct knots which arise as a connect-sum of two trefoils: the homochiral connect-sum $T_{2,3}\# T_{2,3}$ (the granny knot), the heterochiral connect-sum $T_{2,3}\# \overline{T_{2,3}}$ (the square knot), and the mirror granny knot $\overline{T_{2,3}}\# \overline{T_{2,3}}$. Each shares the same Alexander polynomial,
-\[
-\Delta_{T_{2,3}\#T_{2,3}}(t) = \Delta_{T_{2,3}\#\overline{T_{2,3}}}(t) = \Delta_{\overline{T_{2,3}}\#\overline{T_{2,3}}}(t) = (t^2-t+1)^2,
-\]
-and the same total rank of $\widehat{HFK}$. The argument of Section \ref{sec:proof_main_detection} a priori does not distinguish among these three. The purpose of this section is to verify that the bigraded structure of $\widehat{HFK}$ is sufficient to do so, completing the proof of Theorem \ref{thm:main_detection}.
-
-\begin{corollary}\label{cor:chirality}
-Knot Floer homology distinguishes the granny knot $T_{2,3} \# T_{2,3}$ from both the square knot $T_{2,3} \# \overline{T_{2,3}}$ and the mirror granny knot $\overline{T_{2,3}} \# \overline{T_{2,3}}$ as bigraded vector spaces over $\mathbb{F} = \mathbb{Z}/2\mathbb{Z}$.
-\end{corollary}
-
-\begin{proof}
-Recall the K\"{u}nneth formula for the connect-sum of knots, due to Ozsv\'{a}th-Szab\'{o} \cite{OS04Knot}:
-\[
-\widehat{HFK}(K_1 \# K_2; \mathbb{F}) \cong \widehat{HFK}(K_1; \mathbb{F}) \otimes_{\mathbb{F}} \widehat{HFK}(K_2; \mathbb{F}),
-\]
-with bigradings adding under the tensor product. The trefoil $T_{2,3}$ has knot Floer homology supported in three bigradings:
-\[
-\widehat{HFK}(T_{2,3}) \cong \mathbb{F}_{(0,1)} \oplus \mathbb{F}_{(-1,0)} \oplus \mathbb{F}_{(-2,-1)},
-\]
-where the subscript $(M, A)$ records the Maslov and Alexander gradings respectively. The mirror trefoil $\overline{T_{2,3}}$ has bigradings reflected across the origin in both directions: by the standard duality
-\[
-\widehat{HFK}_M(\overline{K}, A) \cong \widehat{HFK}_{-M}(K, -A),
-\]
-we obtain
-\[
-\widehat{HFK}(\overline{T_{2,3}}) \cong \mathbb{F}_{(0,-1)} \oplus \mathbb{F}_{(1,0)} \oplus \mathbb{F}_{(2,1)}.
-\]
-
-We now compute the bigraded support of each candidate connect-sum.
-
-\paragraph{The granny knot $T_{2,3}\# T_{2,3}$.}
-Tensoring the trefoil's bigraded structure with itself, we obtain the bigraded support
-\[
-\{(M_1+M_2, A_1+A_2) \mid (M_1, A_1), (M_2, A_2) \text{ supports of } \widehat{HFK}(T_{2,3})\}.
-\]
-A direct computation yields the support
-\[
-(0,2),\ (-1,1),\ (-1,1),\ (-2,1),\ (-2,0),\ (-2,0),\ (-3,-1),\ (-3,-1),\ (-4,-2),
-\]
-where multiplicities indicate ranks. In particular, the next-to-top Alexander grading $A=1$ supports rank $2$ entirely in $(-1,1)$ and $(-2,1)$, and the bottom grading $A=-2$ supports a single class in Maslov grading $-4$.
-
-\paragraph{The square knot $T_{2,3}\# \overline{T_{2,3}}$.}
-The bigraded support is computed by adding bigradings from the trefoil and its mirror:
-\[
-(M_1, A_1) + (M_2, A_2)
-\]
-where $(M_1, A_1)$ ranges over $\{(0,1), (-1,0), (-2,-1)\}$ and $(M_2, A_2)$ over $\{(0,-1), (1,0), (2,1)\}$. Direct computation yields the support
-\[
-(0,0),\ (1,1),\ (2,2),\ (-1,-1),\ (0,0),\ (1,1),\ (-2,-2),\ (-1,-1),\ (0,0).
-\]
-In particular, the support is symmetric about the origin, the $A=2$ grading is supported in Maslov grading $2$, and the $A=-2$ grading is supported in Maslov grading $-2$.
-
-\paragraph{The mirror granny knot $\overline{T_{2,3}}\# \overline{T_{2,3}}$.}
-By the mirror duality, this is obtained from the granny knot by negating both gradings:
-\[
-(0,-2),\ (1,-1),\ (1,-1),\ (2,-1),\ (2,0),\ (2,0),\ (3,1),\ (3,1),\ (4,2).
-\]
-The top Alexander grading $A=2$ is supported in Maslov grading $4$.
-
-\paragraph{Distinguishing the three.}
-For the granny knot, the top Alexander grading $A=2$ is supported in Maslov grading $0$; for the square knot, in Maslov grading $2$; for the mirror granny knot, in Maslov grading $4$. These three Maslov gradings are pairwise distinct, so the bigraded vector spaces are pairwise non-isomorphic. 
-
-Equivalently, the Ozsv\'{a}th-Szab\'{o} concordance invariant $\tau$, which for these thin connect-sums equals the Alexander grading of the unique class in Maslov grading $0$, takes the values
-\[
-\tau(T_{2,3}\#T_{2,3}) = 2, \quad \tau(T_{2,3}\#\overline{T_{2,3}}) = 0, \quad \tau(\overline{T_{2,3}}\#\overline{T_{2,3}}) = -2.
-\]
-The bigraded structure of $\widehat{HFK}$ thus distinguishes all three connect-sums.
-\end{proof}
-
-\begin{remark}
-The argument above relies essentially on the bigraded structure rather than the total rank. Indeed, the total ranks of $\widehat{HFK}$ for the three connect-sums are all equal to $9$, and their unbigraded Alexander polynomials all coincide. The chirality information is recovered specifically from the Maslov-grading support, which is the additional data that the bigraded vector space carries beyond the Alexander polynomial.
-\end{remark}
-
 \section{Summary}
 
-Combining Section \ref{sec:proof_main_detection} with Section \ref{sec:chirality}, we have established the full strength of Theorem \ref{thm:main_detection}: any knot $K \subset S^3$ whose knot Floer homology agrees with that of the granny knot $T_{2,3}\# T_{2,3}$ as a bigraded vector space over $\mathbb{F} = \mathbb{Z}/2\mathbb{Z}$ is isotopic to $T_{2,3}\# T_{2,3}$ itself. The proof rests on the following structural pillars:
+We have established the full strength of Theorem \ref{thm:main_detection}: any knot $K \subset S^3$ whose knot Floer homology agrees with that of the granny knot $T_{2,3}\# T_{2,3}$ as a bigraded vector space over $\mathbb{F} = \mathbb{Z}/2\mathbb{Z}$ is isotopic to $T_{2,3}\# T_{2,3}$ itself. The proof rests on the following structural pillars:
 
 \begin{enumerate}
     \item The genus-and-fiberedness detection results of Ozsv\'{a}th-Szab\'{o}, Ni, and Juh\'{a}sz, which transfer the question from three-dimensional topology to surface dynamics.

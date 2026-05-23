@@ -75,7 +75,7 @@ By assumption $K$ has the following symmetrized Alexander polynomial:
 \Delta_K(t) = t^2 - 2t + 3 - 2t^{-1} + t^{-2}.
 \]
 
-Since $K$ is fibered, the algebraic winding number is non-zero, so we may assume $|w| \geq 1$. Furthermore, both the companion $C$ and the pattern in the unknot $P(U)$ must also be fibered \cite[Corollary 4.15, Proposition 5.5]{BZ03}. The Alexander polynomials of these knots are related by the formula from Theorem \ref{thm:schubert}:
+Since $K$ is fibered, the algebraic winding number is non-zero, so we may assume $|w| \geq 1$. (Indeed, if $w = 0$, then Schubert's formula gives $\Delta_K(t) \doteq \Delta_{P(U)}(t) \cdot \Delta_C(1) \doteq \pm \Delta_{P(U)}(t)$, so $\Delta_K$ degenerates to depend only on the pattern. By Hirasawa, Murasugi, and Silver \sidecite[Theorem 1]{HirasawaMurasugiSilver2008}, a satellite knot with winding number zero and non-trivial companion is not fibered, contradicting our hypothesis.) Furthermore, both the companion $C$ and the pattern in the unknot $P(U)$ must also be fibered \cite[Corollary 4.15, Proposition 5.5]{BZ03}. The Alexander polynomials of these knots are related by the formula from Theorem \ref{thm:schubert}:
 \[
 \Delta_K(t) = \Delta_{P(U)}(t) \cdot \Delta_C(t^w).
 \]
@@ -117,8 +117,7 @@ Thus $P(U)$ must either be genus zero or genus one. If it were genus zero, it wo
 \section{Thurston Reducing System}
 The previously mentioned Thurston's classification of surface homeomorphisms (Theorem \ref{theorem:nielsen-thruston classification}) has in fact a more refined statement in terms of ``reducing systems''. Wherein the surface can be divided into pieces by a finite set of curves, and the map restricted to each piece can be classified. More precisely:
 
-\begin{theorem}[Thurston]\label{theorem:thurston_reducing_system}
-\sidenote{\fullcite{Thurston1988}}
+\begin{theorem}[Thurston \cite{Thurston1988}]\label{theorem:thurston_reducing_system}
 Let $h \colon \Sigma \to \Sigma$ be a homeomorphism of a compact oriented surface with possibly empty boundary. The map $h$ is isotopic rel boundary to a map $\phi_h \colon \Sigma \to \Sigma$ such that
 \begin{enumerate}
     \item there exists a possibly empty reducing system $\Gamma \subset \Sigma$ consisting of a finite disjoint union of simple closed curves which is fixed setwise by $\phi_h$;
@@ -240,9 +239,9 @@ We shall need one more proposition before we are ready to prove the main result 
     \]
     The only remaining boundary of this new surface is the knot $K$.
 
-    Geometrically, capping off $\gamma$ corresponds to a change in the ambient space. The curve $\gamma$ runs exactly once longitudinally along the solid torus $V$. Attaching a disk to $\gamma$ is equivalent to replacing the knotted companion exterior $S^3 \setminus \mathring{V}$ with an unknotted solid torus.
+    Capping off $\gamma$ in this abstract way corresponds, geometrically, to changing the ambient 3-manifold. The curve $\gamma$ is a longitude of $V$ --- it lies on $T = \partial V$ and runs once longitudinally around the solid torus. Inside $V$, the curve $\gamma$ does not bound a disk (it is essential in $\pi_1 V$), so the capping disk cannot live inside the original $S^3$. Instead, the capping operation corresponds to \emph{unknotting} the companion: we replace the knotted complement $S^3 \setminus \mathring{V}$ with a standardly embedded solid torus, which has a meridional disk whose boundary is precisely the relevant longitude. Equivalently, this is the change of ambient space that takes the satellite knot $K = P(C)$ to the pattern-in-the-unknot $P(U)$.
 
-    Under this operation, the embedding of $V$ becomes standard, and the satellite knot $K = P(C)$ is transformed into the pattern knot in the unknot, $P(U)$. Therefore, the capped-off surface $\widehat{\Sigma}_0$ is a Seifert surface for $P(U)$. Since $\gamma$ is separating, the genus is additive, so $g(\widehat{\Sigma}_0) = g(\Sigma_0) = 1$. Because $P(U)$ is a trefoil, this means $\widehat{\Sigma}_0$ is exactly its minimal-genus fiber.
+    Under this change of ambient space, the embedding of $V$ becomes standard, and the satellite knot $K = P(C)$ is transformed into the pattern knot in the unknot, $P(U)$. Therefore, the capped-off surface $\widehat{\Sigma}_0$ is a Seifert surface for $P(U)$. Since $\gamma$ is separating, the genus is additive, so $g(\widehat{\Sigma}_0) = g(\Sigma_0) = 1$. Because $P(U)$ is a trefoil, this means $\widehat{\Sigma}_0$ is exactly its minimal-genus fiber.
 
     The global monodromy $h$ preserves the JSJ torus $T$ and thus restricts to an automorphism
     \[
@@ -280,7 +279,7 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
 
     Hence $\Gamma \neq \emptyset$, and this can be either Case A or Case B, by Lemma \ref{lem:satellite_CaseACaseB}.
 
-    Suppose the fiber $\Sigma_2^1$ and its reducing system is of Type A. Then $\Sigma_0$ is homeomorphic to a pair of pants, which is known to not support pseudo-Anosov homeomorphisms (see, e.g., Farb-Margalit\sidecite{farb2012primer}). This follows from the observation that every essential simple closed curve on the pair of pants is boundary-parallel; thus, every homeomorphism preserves a multicurve (the boundary itself) and is therefore reducible. Hence in this case $\phi_0 \colon \Sigma_0 \to \Sigma_0$ must be periodic, thus Proposition \ref{prop:knottracesprop} applies, specifically the case for when $\Gamma \neq \emptyset$.
+    Suppose the fiber $\Sigma_2^1$ and its reducing system is of Case A. Then $\Sigma_0$ is homeomorphic to a pair of pants, which is known to not support pseudo-Anosov homeomorphisms (see, e.g., Farb-Margalit\sidecite{farb2012primer}). This follows from the observation that every essential simple closed curve on the pair of pants is boundary-parallel; thus, every homeomorphism preserves a multicurve (the boundary itself) and is therefore reducible. Hence in this case $\phi_0 \colon \Sigma_0 \to \Sigma_0$ must be periodic, thus Proposition \ref{prop:knottracesprop} applies, specifically the case for when $\Gamma \neq \emptyset$.
 
     Consider first the cable knot sub-case, i.e., that $K$ is a $(p,q)$-cable knot with $\Sigma_0$ of genus $g(T_{p,q})$. Since under our assumption of Case A, $\Sigma_0$ is of genus zero,
     \[
@@ -302,7 +301,7 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
     \]
     as bigraded vector spaces.
 
-    Now suppose that the fiber $\Sigma_2^1$ and its reducing system is of Type B. There are two possibilities: either the outermost map $\phi_0$ is periodic, or it is pseudo-Anosov.
+    Now suppose that the fiber $\Sigma_2^1$ and its reducing system is of Case B. There are two possibilities: either the outermost map $\phi_0$ is periodic, or it is pseudo-Anosov.
 
     Suppose $\phi_0$ is periodic. Then since $\Gamma \neq \emptyset$ and $\Sigma_0$ is not planar, Proposition \ref{prop:knottracesprop} implies that $K$ is a $(p,q)$-cable knot of a knot in $S^3$ and $\Sigma_0$ has genus $g(T_{p,q})$, where $q\geq 2$ and $\gcd(p,q) = 1$. Since $\Sigma_0$ of Case B has genus one, we have
     \[

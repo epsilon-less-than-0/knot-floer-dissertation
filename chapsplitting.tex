@@ -9,6 +9,8 @@ Crucially, a tight splitting guarantees that the resultant train track carries t
 
 We utilize this strategy to reduce the number of standard train tracks to consider from the \texttt{autofolder} output. We demonstrate that for the majority of standard train tracks in the list, a finite sequence of tight splittings leads to a select subset of tracks. Consequently, up to conjugation, any pseudo-Anosov braid is carried by this smaller set of train tracks. Furthermore, for the purpose of identifying the knot monodromy $h$ associated with the braid via the Birman-Hilden correspondence, we may consider braids up to mirroring. This allows for a further reduction by identifying pairs of standard jointless train tracks that are mirror images of one another and selecting a single representative from each pair.
 
+\paragraph{Notation reminder.} Throughout this chapter we fix a pseudo-Anosov braid $\beta \in \mathrm{Mod}(D_n)$ with geometric data $(\beta, \phi_\beta, \tau, f_\beta)$, in the sense of Chapter \ref{chap:train tracks}: $\beta$ is the braid (mapping class), $\phi_\beta \colon D_n \to D_n$ is its pseudo-Anosov representative, $\tau$ is a standard train track carrying $\phi_\beta$, and $f_\beta \colon \tau \to \tau$ is the induced train-track map. This is the data on which all of the splitting operations below act. The associated lift $(\Phi, \phi_\Phi)$ to $\Sigma_2^2$ via the Birman-Hilden correspondence (Chapter \ref{chap:preliminaries}) is what ultimately matters for the knot-detection argument, but the train-track operations themselves take place entirely on the disk level.
+
 \section{Splitting Standard Train Tracks}
 \label{sec:splitting-standard}
 
@@ -86,34 +88,39 @@ where the folding operation maps the edge $\alpha$ onto $l(v)$ and $r(v_l)$ (eff
 
 The primary utility of tight splitting is encapsulated in the following results, which ensure that the dynamic properties of the map (such as the dilatation) are preserved.
 
-\begin{prop}
-    Let $(\tau, \psi, f)$ be the data of a pseudo-Anosov map $\psi$ on $D_n$, where $\tau$ is a standard train track. Suppose $\tau$ splits tightly to the left at a switch $v$ to produce the train track $\tau_v^l$. Then, up to conjugacy by a braid, $\psi$ is carried by $\tau_v^l$. We denote the associated train track map on $\tau_v^l$ by
+\begin{prop}[{\cite[Proposition~6.1.7]{reinoso2024pseudo}}]
+\label{prop:carrying_preserved_under_split}
+    Retain the notation $(\beta, \phi_\beta, \tau, f_\beta)$ from above, with $\tau$ a standard train track carrying the pseudo-Anosov $\phi_\beta$. Suppose $\tau$ splits tightly to the left at a switch $v$ to produce the train track $\tau_v^l$. Then, up to conjugacy by a braid, $\phi_\beta$ is carried by $\tau_v^l$. We denote the associated train track map on $\tau_v^l$ by
     \[
-    f_{v}^{l} \colon \tau_{v}^{l} \to \tau_{v}^{l}.
+    f_{\beta, v}^{l} \colon \tau_{v}^{l} \to \tau_{v}^{l}.
     \]
     An analogous result holds if $\tau$ splits tightly to the right.
 \end{prop}
 
 In the language of folding automata, a tight splitting implies that traversing a cycle representing a pseudo-Anosov map corresponds to a reverse traversal of elementary foldings. The transition matrices of the split and original tracks are related by conjugation via the folding matrix.
 
-\begin{prop}
+\begin{prop}[{\cite[Proposition~6.1.8]{reinoso2024pseudo}}]
 \label{prop:transition_matrix_split}
-Suppose that $\tau$ \textit{l}-splits at $v$. Let $M$ and $M_{v}$ be the transition matrices of $f \colon \tau \to \tau$ and $f_{v}^{l} \colon \tau_{v}^{l} \to \tau_{v}^{l}$ respectively. Then the transition matrices satisfy the relation
+Retain the notation of Proposition \ref{prop:carrying_preserved_under_split}. Suppose that $\tau$ \textit{l}-splits at $v$, and let $M$ and $M_{v}$ be the transition matrices of $f_\beta \colon \tau \to \tau$ and $f_{\beta, v}^{l} \colon \tau_{v}^{l} \to \tau_{v}^{l}$ respectively. Then
 \[
-MP = PM_v
+M_v = P^{-1}MP,
 \]
-(or equivalently $M_v = P^{-1}MP$ if $P$ is invertible on the relevant subspace), where $P$ is the transition matrix of the elementary folding map
+where $P$ is the transition matrix of the elementary folding map
 \[
 p \colon \tau_{v}^{l} \to \tau
 \]
-associated with the inverse of the tight splitting.
+associated with the inverse of the tight splitting. Concretely, if $l(v)$ is the $j$th real edge of $\tau$ and $r(v_l)$ is the $i$th real edge, then
+\[
+P = I_n + D_{i,j},
+\]
+where $D_{i,j}$ is the elementary matrix with a $1$ in entry $(i,j)$ and zeros elsewhere.
 \end{prop}
 
 The tight splitting condition imposes a strict inequality on the invariant measure (the weights) of the branches involved.
 
-\begin{prop}
+\begin{prop}[{\cite[Corollary~6.1.9]{reinoso2024pseudo}}]
 \label{prop:weight_inequality}
-Let $(\tau, \psi, f)$ be the data of a pseudo-Anosov map carried by a standardly embedded train track. Let $M$ be the transition matrix for $f \colon \tau \to \tau$, and let $\lambda$ be the dilatation of $f$. Fix a positive right $\lambda$-eigenvector $\mu$ of $M$ representing the transverse measure. If $v$ \textit{l}-splits, then $\mu_{v}=P^{-1}\mu$ is a positive right $\lambda$-eigenvector of $M_{v}$. Consequently, the weights satisfy the inequality:
+Retain the notation $(\beta, \phi_\beta, \tau, f_\beta)$ for a pseudo-Anosov braid carried by a standardly embedded train track. Let $M$ be the transition matrix for $f_\beta \colon \tau \to \tau$, and let $\lambda$ be the dilatation of $f_\beta$. Fix a positive right $\lambda$-eigenvector $\mu$ of $M$ representing the transverse measure. If $v$ \textit{l}-splits, then $\mu_{v}=P^{-1}\mu$ is a positive right $\lambda$-eigenvector of $M_{v}$. Consequently, the weights satisfy the inequality:
 \[
 \mu(l(v)) < \mu(r(v_l)).
 \]
@@ -124,7 +131,7 @@ The utility of Proposition \ref{prop:weight_inequality} becomes apparent when an
 
 \begin{corollary}
 \label{cor:weight_reduction}
-    Suppose a switch $v$ of a standard train track $\tau$ carrying a pseudo-Anosov $\psi$ \textit{l}-splits, such that the resulting train track $\tau_v^l$ is isomorphic to $\tau$. Let $\varphi \colon \tau_v^l \to \tau$ be the isomorphism (given by a braid). Then the weight of the branch corresponding to $r(v_l)$ strictly decreases. That is, if $\mu$ is the invariant measure on $\tau$ and $\mu_v$ is the measure on $\tau_v^l$, then:
+    Suppose a switch $v$ of a standard train track $\tau$ carrying a pseudo-Anosov $\phi_\beta$ \textit{l}-splits, such that the resulting train track $\tau_v^l$ is isomorphic to $\tau$. Let $\varphi \colon \tau_v^l \to \tau$ be the isomorphism (given by a braid). Then the weight of the branch corresponding to $r(v_l)$ strictly decreases. That is, if $\mu$ is the invariant measure on $\tau$ and $\mu_v$ is the measure on $\tau_v^l$, then:
     \[
     \mu_v(r(v_l)_{new}) < \mu(r(v_l)_{old}).
     \]
@@ -153,26 +160,27 @@ The utility of Proposition \ref{prop:weight_inequality} becomes apparent when an
 
 \begin{corollary}
 \label{cor:termination}
-    Let $\tau$ be a standard train track and $f \colon \tau \to \tau$ a train track map induced by a pseudo-Anosov map $\psi$. Suppose a switch $v$ of $\tau$ \textit{l}-splits (or \textit{r}-splits) to a track $\tau_v^t$ that is isomorphic to $\tau$. Then this same splitting cannot be repeated infinitely many times.
+    Let $\tau$ be a standard train track and $f_\beta \colon \tau \to \tau$ a train track map induced by a pseudo-Anosov $\phi_\beta$. Suppose
+    \[
+    \tau = \tau_0 \to \tau_1 \to \tau_2 \to \cdots
+    \]
+    is a sequence of tight splittings of $\tau$, each step being either an $l$-split or an $r$-split. Then $\tau$ cannot reappear in this sequence infinitely many times; that is, the set $\{ i \ge 0 : \tau_i \cong \tau \}$ is finite. More generally, no isomorphism class of standard tracks can be visited infinitely often in any sequence of tight splittings.
 \end{corollary}
+\begin{proof}
+    Suppose, for contradiction, that there are infinitely many indices $i_1 < i_2 < \cdots$ with $\tau_{i_k} \cong \tau$. By Proposition \ref{prop:weight_inequality} and the additivity calculation in the proof of Corollary \ref{cor:weight_reduction}, each tight splitting strictly decreases the transverse weight on at least one real edge (the $r(v_l)$ or $l(v_r)$ edge of the split switch), while leaving all other weights non-increased. Tracking the maximum weight on the edge corresponding to $r(v_l)$ (or $l(v_r)$) along the subsequence $\{\tau_{i_k}\}$ under the iso-class identification with $\tau$, we obtain a strictly decreasing sequence of positive real numbers, hence converging to $0$. But the transverse measure of a pseudo-Anosov is everywhere strictly positive on real edges, a contradiction. The same argument applies to any other isomorphism class visited infinitely often: cycles of splits returning to a fixed iso class strictly decrease some weight, and that weight cannot converge to $0$ while staying positive.
+\end{proof}
 
 \begin{theorem}[Termination of Tight Splitting]
 \label{thm:splitting_termination}
-    Let $(\tau, \psi, f)$ be a pseudo-Anosov map on $D_n$ carried by a standard train track $\tau$. There exists no infinite sequence of tight splittings starting from $\tau$.
+    Let $(\beta, \phi_\beta, \tau, f_\beta)$ be the geometric data of a pseudo-Anosov braid carried by a standard train track $\tau$. There exists no infinite sequence of tight splittings starting from $\tau$.
 \end{theorem}
 
 \begin{proof}
-    Suppose, for the sake of contradiction, that there exists an infinite sequence of tight splittings
+    Suppose, for contradiction, that there exists an infinite sequence of tight splittings
     \[
-    \tau = \tau_0 \to \tau_1 \to \tau_2 \to \dots
+    \tau = \tau_0 \to \tau_1 \to \tau_2 \to \cdots
     \]
-    starting from $\tau$, and let $\mu_i$ denote the invariant transverse measure on $\tau_i$.
-
-    By Theorem~\ref{thm:autofolder_main}, the set of isomorphism classes of standard train tracks in a fixed stratum on $D_n$ is finite. Since each $\tau_i$ lies in the same stratum as $\tau$ (tight splitting preserves singularity data), the pigeonhole principle yields indices $k < m$ with $\tau_k \cong \tau_m$ as standard tracks.
-
-    Fix such a pair $(k, m)$, and let $P_i$ denote the elementary folding matrix associated to each splitting $\tau_{i-1} \to \tau_i$, so that $\mu_{i-1} = P_i \mu_i$ via the pullback identification of edges. Composing along the cycle, we obtain $\mu_k = P\mu_m$, where $P = P_{k+1} \cdots P_m$ is a product of elementary folding matrices. Each $P_i$ has the form $I + E_i$, where $E_i$ is a non-negative integer matrix with a single nonzero entry (the elementary fold). Hence $P$ has all the entries of $I$ together with non-negative integer contributions; under the isomorphism $\tau_m \cong \tau_k$ identifying edges, $P$ acts on the weight vector and produces $\mu_k$ from $\mu_m$. Because the cycle has $m > k$, at least one $E_i$ contributes nontrivially, so under this isomorphism the weight vector $\mu_m$ has at least one entry strictly smaller than the corresponding entry of $\mu_k$. (This is the content of Corollary~\ref{cor:weight_reduction} applied to the composite of splittings around the cycle.)
-
-    Now iterate the cycle indefinitely: because $\tau_m \cong \tau_k$, the same sequence of splittings can be performed again starting from $\tau_m$, yielding tracks $\tau_{2m-k} \cong \tau_m \cong \tau_k$ with $\mu_{2m-k}$ further reduced on the same distinguished edge orbit. Tracking this orbit through successive iterations, its weight forms a strictly decreasing sequence of positive numbers bounded below by $0$, hence converging to $0$. But the invariant measure of a pseudo-Anosov map is everywhere strictly positive on the real edges of any carrying train track, contradicting this limit.
+    starting from $\tau$. By Theorem~\ref{thm:autofolder_main}, the set of isomorphism classes of standard train tracks in a fixed stratum on $D_n$ is finite. Since each $\tau_i$ lies in the same stratum as $\tau$ (tight splitting preserves singularity data), the pigeonhole principle forces at least one isomorphism class $[\tau^\ast]$ to be visited infinitely often along the sequence. But this contradicts Corollary \ref{cor:termination}, which forbids any isomorphism class from being visited infinitely often in any sequence of tight splittings.
 
     Thus, no infinite sequence of tight splittings starting from $\tau$ exists.
 \end{proof}
@@ -191,10 +199,12 @@ For our purposes, the result provides a sufficient condition to guarantee a swit
 
 \subsection*{Splitting Diagram}
 
+We now illustrate how Proposition \ref{prop:reinoso_6.2.9_splittable} (existence of a splittable switch) and Corollary \ref{cor:termination} (no isomorphism class is visited infinitely often) combine in practice to constrain which train tracks must carry a given pseudo-Anosov map. The following diagram traces all possible tight splittings emanating from a particular standard jointless train track labeled (1.) in the stratum $(3; 1^6; 3)$. The upshot is that any train track map carried by (1.) must, after a finite sequence of tight splittings, be carried by one of two specific terminal tracks --- labeled (12.) and (0.) in the diagram.
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{figures_splitting/1 Splitting-2.jpg}
-    \sidecaption{This splitting diagram shows that train track (1.) eventually splits to train track (12.) or (0.).}
+    \sidecaption{This splitting diagram shows that any train track map carried by train track (1.) must also be carried by train track (12.) or (0.), up to the action of a braid.}
     \label{fig:split_diagram_example}
 \end{figure}
 
@@ -210,8 +220,8 @@ We call a diagram such as Figure \ref{fig:split_diagram_example} a \textbf{split
 
 \section{Conclusion}
 
-In this chapter, we addressed the massive proliferation of redundant states inherent in the unrestricted folding automaton. Because the \texttt{autofolder} algorithm exhaustively executes every valid elementary fold at every available cusp, it generates a state space that grows exponentially, populated by valid but topologically redundant standard train tracks---specifically those burdened by joints. By deploying the tight splitting operation to systematically identify and split loop switches of maximal real valence, we established a rigorous reduction procedure to mathematically prune this overgrown state space for our non-orientable strata.
+In this chapter, we addressed the proliferation of redundant states inherent in the unrestricted folding automaton. Because the \texttt{autofolder} algorithm exhaustively executes every valid elementary fold at every available cusp, it generates a state space that contains many valid but topologically redundant standard train tracks --- specifically those burdened by joints. By deploying the tight splitting operation, we established a rigorous reduction procedure to mathematically prune this state space for our non-orientable strata. The first stage of this reduction, the elimination of joints at loop switches (i.e., switches incident to a marked monogon), was established by Reinoso in his thesis \sidecite{reinoso2024pseudo}; we then go further, applying tight splittings at non-loop switches (e.g., the switches of maximal real valence on infinitesimal triangles) to prune the resulting list of jointless tracks even more.
 
-As guaranteed by the termination of tight splitting (Theorem \ref{thm:splitting_termination}), this reduction process is both finite and exhaustive. In Chapter \ref{chap:stratatraintrackanalysis}, we will execute this procedure, utilizing comprehensive splitting diagrams to systematically collapse the raw output of our \texttt{autofolder} algorithm.
+As guaranteed by the termination of tight splitting (Theorem \ref{thm:splitting_termination}), this reduction process is finite. In Chapter \ref{chap:stratatraintrackanalysis}, we will execute this procedure, utilizing the splitting diagrams introduced above to systematically collapse the raw output of our \texttt{autofolder} algorithm.
 
-Through this exhaustive reduction, we will demonstrate that any pseudo-Anosov mapping class belonging to the strata $(3;1^6;3)$ or $(2;1^6;3^2)$ on $D_6$ must, up to braid conjugation and mirroring, be carried by a small, manageable number of jointless standard train tracks. Once this finite collection is established, we will apply the Trace Lemma. By explicitly computing their transition matrices, we will algebraically restrict their possible dilatations, thereby eliminating the final candidates and completing the proof of our main detection theorem.
+Through this reduction, we will demonstrate that any pseudo-Anosov mapping class belonging to the strata $(3;1^6;3)$ or $(2;1^6;3^2)$ on $D_6$ must, up to braid conjugation and mirroring, be carried by a small, manageable number of jointless standard train tracks. Once this finite collection is established, we will explicitly enumerate, by hand, all possible train track maps carried by each such track, and apply the Trace Lemma (Lemma \ref{lem:trace_lemma}) and its jointless-monogon corollary (Corollary \ref{cor:trace_lemma_jointless}) directly to each candidate train-track map to rule out the existence of a fixed-point-free lift, thereby completing the proof of our main detection theorem.

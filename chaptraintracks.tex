@@ -20,7 +20,7 @@ Let $S$ be a compact surface, possibly with non-empty boundary, and containing a
         \item The branch points of $\tau$, referred to as \textit{switches}, have valence at least $3$.
         \item \textbf{Tangency:} At every switch $v$, the tangent vectors of the incident branches are collinear. Consequently, there is a well-defined tangent line $T_v \tau$ in the tangent space $T_v S$.
         \item \textbf{Cusps:} If two branches incident to a switch $v$ share the same ray of the tangent line (i.e., their tangent vectors point in the same direction), we say they form a \textit{cusp}.
-        \item \textbf{Complementary Regions:} Every component of the complement $S \setminus \tau$ is either an unpunctured polygon with $k \geq 3$ sides or a once-punctured polygon with $k \geq 1$ sides (where ``sides'' are branches of $\tau$ and ``vertices'' are switches).
+        \item \textbf{Complementary Regions:} Every component of the complement $S \setminus \tau$ is either an unmarked polygon with $k \geq 3$ sides or a marked polygon (containing exactly one marked point) with $k \geq 1$ sides (where ``sides'' are branches of $\tau$ and ``vertices'' are switches).
     \end{enumerate}
 \end{definition}
 
@@ -72,7 +72,7 @@ Now we are ready to define what it means for a train track to ``carry'' a surfac
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/traintrack_neighborhood.png}
-    \caption{A fibered neighborhood $F(\tau)$ of a train track $\tau$, with vertical fibers shown transverse to the branches.}
+    \caption[An example fibered neighborhood, and transversality of a train track map]{An example fibered neighborhood, and transversality of a train track map. Left: A switch of a train track $\tau$ (black) inside its fibered neighborhood $F(\tau)$ (blue), with the vertical fibers (blue, transverse to the branches) singular at the switch. Center, Right: The image of a train path (red) on a train track, drawn first transverse to the vertical fibers and then collapsed back onto $\tau$. The middle panel shows the carrying condition: $\phi_h(\tau) \subset F(\tau)$ is transverse to the vertical fibers; the rightmost panel shows the resulting train track map $f_h: \tau \to \tau$ obtained by projecting along fibers. Image courtesy of Braeden Reinoso \cite{reinoso2024pseudo}.}
     \label{fig:fibered_neighborhood}
 \end{figure}
 
@@ -91,7 +91,7 @@ When $\phi_h$ is carried by $\tau$, we can project the image $\phi_h(\tau)$ alon
     \end{enumerate}
 \end{definition}
 
-This definition ensures that the map $f$ does not ``fold'' the track back onto itself arbitrarily; it preserves the smooth directionality of the branches.
+This definition ensures that the map $f$ does not ``fold'' the track back onto itself arbitrarily; it preserves the smooth directionality of the branches. The geometric content of the carrying definition --- the transverse fiber structure of $F(\tau)$ and the requirement that $\phi_h(\tau)$ lie transverse to the vertical fibers --- is illustrated in Figure \ref{fig:fibered_neighborhood}.
 
 When $\phi_h$ is carried by a train track $\tau$, there is naturally an induced train track map $f_h \colon \tau \to \tau$, determined by the image $\phi_h(\tau)$ under $\phi_h$. For an edge $e$ of $\tau$, we define $f_h(e)$ to be the train path that the image $\phi_h(e) \subset F(\tau)$ collapses onto under the natural deformation retraction $F(\tau) \to \tau$.
 
@@ -158,6 +158,8 @@ While a single mapping class may be carried by a variety of distinct train track
 Let $h$ be a pseudo-Anosov mapping class carried by $\tau$. If $N$ is a connected interior (resp. peripheral) component of $S \setminus \tau$, then $\tau$ has $p$ cusps along $\partial N$ if and only if $\phi_h$ has a $p$-pronged singularity in the interior of $N$ (resp. a $p$-pronged boundary in $N$).
 \end{prop}
 
+For an illustration of Proposition \ref{prop:B-H train track polygon enclosure}, consider once again the train track $\tau$ shown on the left of Figure \ref{fig:traintrack_map}. This is the \emph{candelabra} track on $D_6$: six $1$-cusped monogons each enclosing a marked point, plus one $3$-cusped interior infinitesimal triangle. If this track carries a pseudo-Anosov braid (which it does --- the map shown on the right of Figure \ref{fig:traintrack_map} is precisely such a train-track map), then by the proposition the singularity type is forced. The six marked monogons each contribute one $1$-pronged singularity at a marked point. The interior triangle contributes one $3$-pronged interior singularity. The remaining peripheral region adjacent to $\partial D^2$ must absorb the remaining prong structure; the Euler-Poincar\'{e} count for the disk shows that it has exactly three cusps, contributing a $3$-pronged boundary singularity. Thus the candelabra carries pseudo-Anosov braids in precisely the stratum $(3; 1^6; 3)$, one of the five admissible disk strata enumerated in Chapter \ref{chap:preliminaries}.
+
 \begin{remark}[Terminology in the literature]
     We note that in the broader literature on surface dynamics (e.g., Penner-Harer \cite{penner1992combinatorics}, Bestvina-Handel \cite{bestvina1995train}), a train track $\tau$ satisfying the condition that $f_h(\tau)$ is carried by $\tau$ in an efficient manner (specifically, with a non-negative transition matrix) is typically referred to as an \textit{invariant train track}.
 
@@ -189,18 +191,42 @@ On the other hand, given a train track $\tau$ that carries $\phi_h$, one can rec
 Since the details of the Bestvina-Handel construction are not of central importance to our work, it suffices for us to take the following equivalent notion of \emph{infinitesimal edges} and \emph{real edges}. For us, it is merely a matter of combinatorial convenience in distinguishing those edges of a train track that enclose an interior singularity to form polygons, from those edges which connect these polygons.
 
 \begin{itemize}
-    \item \textbf{Infinitesimal Edges ($E_{\text{inf}}$):} Edges that lie on the boundary of the connected regions of $S\setminus \tau$ containing the marked points and interior non-marked singularities. In the context of the invariant foliation, these correspond to the separatrices near these singularities and carry zero transverse measure. We refer to the polygons they make up as \emph{marked/unmarked infinitesimal polygons}, depending on whether they enclose a marked point or a non-marked interior singularity.
+    \item \textbf{Infinitesimal Edges ($E_{\text{inf}}$):} Edges that lie on the boundary of the connected regions of $S\setminus \tau$ containing the marked points and interior non-marked singularities. In the context of the invariant foliation, these correspond to the separatrices near these singularities and carry zero transverse measure. We refer to the polygons they make up as \emph{marked infinitesimal polygons} or \emph{unmarked infinitesimal polygons}, depending on whether they enclose a marked point or a non-marked interior singularity.
     \item \textbf{Real Edges ($E_{\text{real}}$):} All edges of $\tau$ not in $E_{\text{inf}}$. These edges connect the infinitesimal regions and carry the dynamics of the map.\footnote{Ham and Song \cite{HamSong2007} refer to these as ``expanding edges,'' a term highlighting their role in the Markov partition. We retain Reinoso's terminology for consistency.}
 \end{itemize}
 
-% FIGURE PLACEHOLDER
+These two edge types are illustrated by the candelabra track of Figure \ref{fig:traintrack_map} (left). The six colored edges $\{b, o, s, i, p, r\}$ are the real edges; the unlabeled black edges are the infinitesimal edges. There are seven infinitesimal polygons: six marked monogons (each enclosing one marked point) and one unmarked triangle in the interior (enclosing a $3$-pronged interior singularity).
+
+\begin{remark}[Marked points versus punctures]
+We pause to fix terminology. Following Farb and Margalit \cite[Chapter 1]{FarbMargalit2012}, a \emph{puncture} is a point removed from a compact surface; the resulting surface is non-compact, with an end at the missing point. A \emph{marked point} is a distinguished interior point of a compact surface that is preserved (as a point) by all homeomorphisms and isotopies under consideration. The two carry the same topological information for purposes of mapping class groups, and the literature is generally cavalier about the distinction. In this dissertation we work with the \emph{closed disk} $D_n = D^2$ together with $n$ marked points, since the train-track framework requires the compact disk with its true boundary $\partial D^2$. Hence we use \emph{marked point} throughout and reserve \emph{puncture} for cases where we genuinely need to refer to a removed point (as in the discussion of puncturing versus real blow-up in Chapter \ref{chap:preliminaries}, Remark \ref{rem:puncture_vs_blowup}).
+\end{remark}
 
 \subsection*{The Transition Matrix}
-Using the terminology of real and infinitesimal edges, we can define the \emph{transition matrix} of a train track map, in which the combinatorial dynamics are encoded. Since the infinitesimal edges carry zero measure, they are ignored in dynamical calculations and so their image under the train track map does not appear in the matrix. For full details, see the work of Bestvina-Handel \sidecite{bestvina1995train}.
+With the distinction between real and infinitesimal edges in place, we can encode the combinatorial dynamics of a train-track map in a single matrix. The idea is that a train-track map $f_h: \tau \to \tau$ sends each edge to a train path traversing a sequence of edges, and we record how many times each edge is traversed. Because the infinitesimal edges carry zero transverse measure --- they contribute nothing to the lengths used by the pseudo-Anosov to compute its dilatation --- we ignore them and track only the real edges. This gives a square matrix indexed by the real edges, whose $(i,j)$ entry counts the number of times $f_h(e_j)$ traverses the real edge $e_i$. The matrix encodes all the dynamical content of the map at the level of real edges: its spectral radius is the dilatation of $\phi_h$, and its trace bounds the fixed-point count via the Perron-Frobenius theorem stated below. For full details, see Bestvina-Handel \sidecite{bestvina1995train}.
 
 \begin{definition}[Transition Matrix]
     Let $E_{\text{real}}(\tau) = \{e_1, \dots, e_m\}$ be the set of \textit{real edges} of a train track $\tau$. The \textit{transition matrix} $M(f_h)$ is the $m \times m$ non-negative integer matrix where the entry $M_{ij}$ records the number of times the image $f_h(e_j)$ traverses the edge $e_i$ in either direction.
 \end{definition}
+
+\begin{eg}[Transition matrix of the candelabra]\label{ex:transition_matrix_candelabra}
+Returning to Figure \ref{fig:traintrack_map}, with the labeling $E_{\text{real}}(\tau) = \{b, o, s, i, p, r\}$ in this order, the train-track map is recorded by
+\[
+f(b) = s, \quad f(o) = i, \quad f(s) = pr, \quad f(i) = bo, \quad f(p) = b, \quad f(r) = obp.
+\]
+The transition matrix $M(f)$ in this basis is
+\[
+M(f) =
+\begin{pmatrix}
+0 & 0 & 0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 1 & 0 & 1 \\
+1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 & 0 & 0
+\end{pmatrix},
+\]
+where the row indexed by an edge $e_i$ records, across the columns, how many times each $f(e_j)$ passes over $e_i$. Note that $\mathrm{tr}(M(f)) = 0$ --- no real edge appears in its own image. By the Trace Lemma (Section \ref{sec:lifting train tracks}), this is consistent with the lifted surface map being fixed-point-free, a necessary condition for this train-track map to arise from the lift of a hyperbolic genus-two fibered knot satisfying our hypotheses.
+\end{eg}
 
 \begin{theorem}[Perron-Frobenius \cite{bestvina1995train, reinoso2024pseudo}]
     Let $h$ be a pseudo-Anosov mapping class carried by $\tau$, with geometric representative $\phi_h$, inducing the train track map $f_h: \tau \to \tau$. Then the transition matrix $M(f_h)$ is a Perron-Frobenius matrix. The spectral radius of $M(f_h)$ is exactly the dilatation $\lambda(\phi_h)$ of the pseudo-Anosov map. In this case, the dilatation $\lambda (\phi_h )$ is the largest eigenvalue of $M(f_h)$, and the number of fixed points of $\phi_h$ is bounded in terms of the trace of $M(f_h)$:
@@ -229,7 +255,9 @@ We now restrict our attention to the unit disk $D_n$ with $n$ marked points $Q =
     \end{enumerate}
 \end{definition}
 
-Condition 4 is essential for identifying the mapping class group of the punctured disk with the braid group $B_n$. It ensures the track is ``pinned'' in a canonical way relative to the standard braid generator positions.
+Condition 4 is essential for identifying the mapping class group of the marked disk with the braid group $B_n$. It ensures the track is ``pinned'' in a canonical way relative to the standard braid generator positions.
+
+The candelabra track of Figure \ref{fig:traintrack_map} (left) is an example of a standard train track on $D_6$. Every interior complementary region (the six monogons and the central triangle) is infinitesimal --- bounded entirely by infinitesimal edges; every switch sits on one of these polygons; the tangency structure is exactly the cusp/smooth pattern required by condition 3; and each marked point sits below exactly one infinitesimal edge of its enclosing monogon, satisfying the vertical-marking condition.
 
 \begin{prop}[{\cite{SongEntropy}}]\label{prop:every_pA_carried_by_standard_track}
     Every pseudo-Anosov map on a marked disk is carried by a standard train track.
@@ -245,6 +273,15 @@ While Proposition \ref{prop:every_pA_carried_by_standard_track} ensures that eve
     Let $\tau$ be a standard train track. A \textit{joint} is a switch $v$ located on an infinitesimal monogon (a region surrounding a single marked point) such that $v$ is incident to at least two real edges.
 \end{definition}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/jointless_standard_example.png}
+    \caption[Some train tracks in the stratum $(3;1^6;3)$]{Some train tracks in the stratum $(3;1^6;3)$ on $D_6$. \textbf{Left:} a standard track with a joint --- the red edge forms a real arc between two adjacent marked monogons, and the switch from the second monogon from the right is incident to two real edges (the purple and red edges entering the same monogon). \textbf{Center:} a non-standard track (with no joints) --- the red edge meets the rest of the track away from a switch on an infinitesimal polygon, violating the tangency and switch-location conditions for a standard track. \textbf{Right:} a standard, jointless track, the \emph{candelabra} of Figure \ref{fig:traintrack_map}, in which every marked monogon has exactly one real edge incident to its single switch.}
+    \label{fig:jointless_standard_example}
+\end{figure}
+
+Figure \ref{fig:jointless_standard_example} illustrates the joint condition and contrasts it with two other types of track in the same stratum. The left panel is a standard track with a joint at the marked monogon on the right; the center panel is jointless but fails the standard-track conditions; the right panel is the candelabra of Figure \ref{fig:traintrack_map}, which is both standard and jointless, and serves as the running example throughout the dissertation.
+
 Reinoso \sidecite{reinoso2024pseudo} showed that for a broad class of pseudo-Anosov maps, these joints can be systematically eliminated through a graph-refinement operation known as \textit{tight splitting}.
 
 The formal mechanics of tight splitting will be rigorously defined and utilized in Chapter \ref{chap:tight_splitting} to systematically reduce the list of train tracks to consider. For the purposes of our foundational setup, it suffices to rely on the following guarantee by Reinoso, which assures us that tight splitting will always successfully yield a jointless representative for the maps we care about:
@@ -255,10 +292,10 @@ Let $\phi_\beta$ be a pseudo-Anosov representative of a braid $\beta$ on the mar
 
 \begin{corollary}[{\cite[Corollary~6.2.9]{reinoso2024pseudo}}]
 \label{cor:jointless_track}
-    Let $\phi_\beta$ be a pseudo-Anosov homeomorphism on the $n$-punctured disk $D_n$. Suppose that the invariant foliations of $\phi_\beta$ have at least one $k$-pronged singularity in the interior of $D_n$ (away from the boundary) with $k \geq 2$. Then $\phi_\beta$ is carried by a standard train track $\tau$ that has no joints.
+    Let $\phi_\beta$ be a pseudo-Anosov homeomorphism on the $n$-marked disk $D_n$. Suppose that the invariant foliations of $\phi_\beta$ have at least one $k$-pronged singularity in the interior of $D_n$ (away from the boundary) with $k \geq 2$. Then $\phi_\beta$ is carried by a standard train track $\tau$ that has no joints.
 \end{corollary}
 
-Because the monodromy of our hypothetical genus-two knot necessarily involves $3$-pronged or $4$-pronged interior singularities (as classified in Table \ref{tab:prong_configurations}), we safely satisfy the hypothesis of Corollary \ref{cor:jointless_track}. Consequently, we may strictly restrict our attention to jointless standard train tracks moving forward. In such tracks, every marked point is enclosed by a monogon incident to exactly one real edge, or is part of a larger polygon.
+Because the monodromy of our hypothetical genus-two knot necessarily involves $3$-pronged or $4$-pronged interior singularities (as classified in Table \ref{tab:prong_configurations}), we safely satisfy the hypothesis of Corollary \ref{cor:jointless_track}. Consequently, we may strictly restrict our attention to jointless standard train tracks moving forward. In such tracks, every marked point is enclosed by a monogon incident to exactly one real edge, or is part of a larger polygon (cf. Figure \ref{fig:jointless_standard_example}, right).
 
 \section{Lifting Train Track Maps}
 \label{sec:lifting train tracks}
@@ -268,14 +305,16 @@ To bridge the gap between the combinatorial dynamics of braids on the disk and t
 \subsection{Geometric Lifting of Standard Tracks}
 To analyze the fixed-point properties of the surface map $\phi_\Phi \colon \Sigma_2^2 \to \Sigma_2^2$, we lift standard train tracks from the disk to the surface $\Sigma_2^2$ via the branched double covering map $\pi$. Let $\tau \subset D^2$ be a standard train track carrying the pseudo-Anosov braid $\beta$. Since $\tau$ is embedded in $D^2$, its full preimage $\tilde{\tau} = \pi^{-1}(\tau)$ yields a graph embedded in $\Sigma_2^2$ which is inherently invariant under the hyperelliptic involution $\iota$.
 
-The geometric construction of the lifted track $\tilde{\tau}$ is strictly dictated by the local behavior of the covering map, which we illustrate in Figure \ref{fig:reinoso_lift_visual}. The components lift as follows:
+The geometric construction of the lifted track $\tilde{\tau}$ is strictly dictated by the local behavior of the covering map, which we illustrate in Figure \ref{fig:reinoso_lift_visual}. There are two regimes to consider: away from the branch points, $\pi$ is a local diffeomorphism, and components lift in duplicate; at the branch points (the marked points $q_1, \ldots, q_6$ where the involution $\iota$ has fixed-point preimages), $\pi$ behaves locally like $w = z^2$, which doubles the cone angle. The components of $\tau$ lift as follows:
 \begin{enumerate}
     \item \textbf{Real Edges:} Each real edge of $\tau$ avoids the branch points and therefore lifts to two distinct real edges in $\tilde{\tau}$, which are interchanged by $\iota$.
-    \item \textbf{Interior Singularities:} An infinitesimal polygon with $k$ sides in the interior of $D^2$ (away from the marked points) lies in the unbranched region of the cover. It therefore lifts to a pair of disjoint $k$-sided polygons in $\tilde{\tau}$, swapped by $\iota$.
+    \item \textbf{Interior Singularities (away from branch points):} An infinitesimal polygon with $k$ sides in the interior of $D^2$ that does \emph{not} enclose a marked point (i.e., it surrounds a non-marked interior pseudo-Anosov singularity, away from the branch locus of $\pi$) lies in the unbranched region of the cover. It therefore lifts to a pair of disjoint $k$-sided polygons in $\tilde{\tau}$, swapped by $\iota$.
     \item \textbf{Boundary Behavior:} The boundary of the disk $\partial D^2$ lifts to the two boundary components of $\Sigma_2^2$, denoted $\partial_z$ and $\partial_p$, which are swapped by $\iota$. An infinitesimal $k$-gon adjacent to $\partial D^2$ lifts to a $2k$-gon bounding $\partial_z$ and a $2k$-gon bounding $\partial_p$, reflecting the local doubling of the cone angle.
 \end{enumerate}
 
-\begin{figure}[ht]
+The remaining case --- infinitesimal polygons enclosing the \emph{marked} points (the branch locus of $\pi$) --- requires a separate analysis, since here the cover is branched. We treat this in the next subsection.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/lifting.png}
     \caption[Visual lift of a train track under the Birman-Hilden correspondence]{Lifting a train track and train track map from $D_6$ to $\Sigma_2^2$. Dashed edges indicate the back side of the surface.}
@@ -285,43 +324,55 @@ The geometric construction of the lifted track $\tilde{\tau}$ is strictly dictat
 \subsection{Smoothing Infinitesimal Polygons at Branch Points}
 A necessary local modification to the lifted train track occurs at the branch points themselves. In a standard track on the disk, a marked point $q_i$ may be surrounded by an infinitesimal $k$-gon (where $k \ge 1$), which represents a $k$-pronged singularity in the invariant foliation. Because the branched covering map $\pi$ behaves locally like the complex map $w = z^2$ at the branch points, the strict topological preimage of this $k$-gon is an infinitesimal $2k$-gon enclosing the lifted Weierstrass point in $\Sigma_2^2$.
 
-While this $2k$-gon correctly captures the doubled cone angle of the lifted foliation, the raw geometric lift retains ``pinched'' internal cusps where the lifted infinitesimal edges meet. To ensure the lifted track efficiently carries the pseudo-Anosov map $\phi_\Phi$ and correctly acts as a $C^1$ smoothing of the unstable foliation, we must apply a local \emph{smoothing} operation to these regions. This operation flattens the inward-pointing cusps, merging the infinitesimal edges into a continuous boundary. We illustrate this in Figure \ref{fig:reinoso_smoothing}, which demonstrates the two distinct geometric outcomes of this operation:
-
-\begin{enumerate}
-    \item \textbf{The $k=1$ Case (Top):} If the original marked point was enclosed by a monogon, it lifts to a 2-cusped bigon. In the theory of measured foliations, a 2-pronged singularity is geometrically degenerate; it corresponds merely to a regular, smooth point. Smoothing flattens the two cusps, merging the incident real edges into a single continuous line and entirely deleting the switches associated with the branch point.
-    \item \textbf{The $k \ge 2$ Case (Bottom):} If the original marked point was enclosed by a higher-order polygon (e.g., a bigon lifting to a 4-gon, as shown), the $2k$-pronged singularity is retained. The smoothing operation flattens the internal cusps, ``opening up'' the center to form a standard smooth polygonal complementary region with $2k$ sides, accurately bounding the $2k$-pronged saddle.
-\end{enumerate}
-
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/smoothing.png}
     \caption[Local smoothing of lifted polygons]{The local smoothing operation at branch points. Top: An infinitesimal monogon ($k=1$) lifts to a bigon, which is smoothed into a regular real edge. Bottom: An infinitesimal bigon ($k=2$) at a branch point lifts to a 4-gon with pinched internal cusps, which is smoothed into a proper 4-sided polygonal complementary region. Image courtesy of Braeden Reinoso \cite{reinoso2024pseudo}.}
     \label{fig:reinoso_smoothing}
 \end{figure}
 
+While this $2k$-gon correctly captures the doubled cone angle of the lifted foliation, the raw geometric lift retains ``pinched'' internal cusps where the lifted infinitesimal edges meet. To ensure the lifted track efficiently carries the pseudo-Anosov map $\phi_\Phi$ and correctly acts as a $C^1$ smoothing of the unstable foliation, we must apply a local \emph{smoothing} operation to these regions. This operation flattens the inward-pointing cusps, merging the infinitesimal edges into a continuous boundary. We illustrate the two distinct geometric outcomes of this operation in Figure \ref{fig:reinoso_smoothing}:
+
+\begin{enumerate}
+    \item \textbf{The $k=1$ Case (Top):} If the original marked point was enclosed by a monogon, it lifts to a 2-cusped bigon. In the theory of measured foliations, a 2-pronged singularity is geometrically degenerate; it corresponds merely to a regular, smooth point. Smoothing flattens the two cusps, merging the incident real edges into a single continuous line and entirely deleting the switches associated with the branch point.
+    \item \textbf{The $k \ge 2$ Case (Bottom):} If the original marked point was enclosed by a higher-order polygon (e.g., a bigon lifting to a 4-gon, as shown), the $2k$-pronged singularity is retained. The smoothing operation flattens the internal cusps, ``opening up'' the center to form a standard smooth polygonal complementary region with $2k$ sides, accurately bounding the $2k$-pronged saddle.
+\end{enumerate}
+
 \subsection{The Trace Lemma}
-Suppose the braid $\beta$ is carried by $\tau$ via the train track map $f_\beta: \tau \to \tau$. While the lifted track $\tilde{\tau}$ is uniquely determined by the geometry described above, the map $f_\beta$ does not lift uniquely. There are exactly two fiber-preserving train track maps
+Suppose the braid $\beta$ is carried by $\tau$ via the train track map $f_\beta: \tau \to \tau$. While the lifted track $\tilde{\tau}$ is uniquely determined by the geometry described above, the map $f_\beta$ does not lift uniquely as a train-track map on $\tilde\tau$. There are exactly two train-track maps
 \[
 \tilde{f}, \tilde{g} \colon \tilde{\tau} \to \tilde{\tau}
 \]
 satisfying the covering relation $\pi \circ \tilde{f} = \pi \circ \tilde{g} = f_\beta \circ \pi$. These two lifts are related by the covering involution: $\tilde{g} = \iota \circ \tilde{f}$.
 
-To study the knot monodromy, we must identify the \textbf{canonical lift}. Recall from Proposition \ref{prop:capping off} that the hyperelliptic involution swaps the two fixed points $z$ and $p$, and thus swaps the corresponding boundary components $\partial_z$ and $\partial_p$ of $\Sigma_2^2$. However, the geometric monodromy $\phi_h$ corresponds to a map that fixes the boundary of the knot exterior pointwise. Identifying $\partial_p$ with the boundary of the knot complement, the canonical lift $\tilde{f}_h$ is the unique lift that preserves the component $\partial_p$ (mapping it to itself), whereas the non-canonical lift $\tilde{g}$ swaps $\partial_p$ and $\partial_z$.
+To carry out the trace-lemma analysis, we must single out one of these two lifts as the geometrically meaningful one --- the one whose dynamics actually correspond to the surface monodromy $\phi_\Phi$. Following Reinoso \cite[Section 2.3.2]{reinoso2024pseudo}, the construction is as follows. The edges of $\tilde\tau$ come in pairs $\{e_1, e_2\}$ with $\iota(e_1) = e_2$, the two lifts of a single real edge $e$ of $\tau$. A standard track on $D_n$ has a unique infinitesimal edge above each marked point inside the enclosing monogon; we call these the \emph{side-swapping edges}, because a train path that crosses one switches between the two ``sides'' of $\tilde\tau$ (i.e., between $e_1$-type and $e_2$-type edges). Given $f_\beta(e) = e(1) \cdots e(n)$, the lift $\tilde{f}_h$ is the unique lift for which, on each $e_i$, the image $\tilde{f}_h(e_i) = e(1)_{i_1} \cdots e(n)_{i_n}$ is the lift of $f_\beta(e)$ that starts on the same side of $\tilde\tau$ as the surface monodromy $\phi_\Phi(e_i)$ does. We refer to this as the \textbf{canonical lift} of $f_\beta$.
 
-A key utility of this construction is the ability to relate the fixed points of the surface homeomorphism $\phi_\Phi$ to the combinatorial properties of the disk map $f_\beta$. In particular, the presence of fixed points for $\phi_\Phi$ can often be detected strictly by the trace of the transition matrix of the disk map. We encapsulate this relationship in the following lemma, which is essential for our detection arguments.
+\begin{remark}[Equivalent characterization via $\partial_p$]
+The canonical lift admits a useful equivalent description in our setting. The two boundary components $\partial_z, \partial_p$ of $\Sigma_2^2$ are swapped by $\iota$ (Proposition \ref{prop:capping off}), so the two lifts $\tilde{f}_h, \iota \circ \tilde{f}_h$ differ on the boundary: one preserves the pair $\{\partial_z, \partial_p\}$ component by component, while the other swaps them. The geometric monodromy $\phi_h$ of the knot fixes its boundary $\partial \Sigma_2^1$ pointwise; identifying $\partial_p$ with this boundary, the canonical lift is the one that preserves $\partial_p$ as a set. This boundary-preserving formulation agrees with Reinoso's same-side formulation after tracing side-information through the smoothing operation. We use the boundary-preserving formulation in the rest of the dissertation.
+\end{remark}
 
-\begin{lemma}[The Trace Lemma, \cite{reinoso2024pseudo}]
+A key utility of the canonical lift is the ability to relate the fixed points of the surface homeomorphism $\phi_\Phi$ to the combinatorial properties of the disk map $f_\beta$. In particular, the presence of fixed points for $\phi_\Phi$ can often be detected strictly by the trace of the transition matrix of the disk map. We encapsulate this relationship in the following lemma, due to Reinoso, which is essential for our detection arguments.
+
+\begin{lemma}[The Trace Lemma, {\cite[Lemma~2.3.2]{reinoso2024pseudo}}]
 \label{lem:trace_lemma}
-Let $\beta \in \mathrm{Mod}(D_n)$ be a pseudo-Anosov braid carried by a standard train track $\tau$, and let $f_\beta: \tau \to \tau$ be the induced train track map. Let $\tilde{f}_h$ be the canonical symmetric lift of $\beta$ to the surface $\Sigma_2^2$ (the lift preserving the boundary component $\partial_p$). If the pseudo-Anosov representative $\phi_\Phi$ is fixed-point free (FPF) in the interior of $\Sigma_2^2$, then the trace of the transition matrix $M(f_\beta)$ must be zero.
+Let $\beta \in \mathrm{Mod}(D_n)$ be a pseudo-Anosov braid carried by a standard train track $\tau$, with induced train-track map $f_\beta: \tau \to \tau$ and canonical lift $\tilde{f}_h$. If the pseudo-Anosov representative $\phi_\Phi$ is fixed-point free in the interior of $\Sigma_2^2$, then for any real edge $e$ of $\tau$, between any two occurrences of $e$ in $f_\beta(e)$ the image path $f_\beta(e)$ contains an even number of side-swapping edges. In particular, $\mathrm{tr}(M(f_\beta)) = 0$.
 \end{lemma}
-\begin{proof}[Proof Sketch]
-The fixed points of $\phi_\Phi$ are contained in the preimage of the fixed points of $\phi_\beta$. For an efficient train track map, fixed points of the map on the graph correspond to fixed points of the homeomorphism (singularities or regular fixed points).
+
+For the train tracks used in this dissertation, the marked points are always enclosed by jointless monogons (Corollary \ref{cor:jointless_track}), and in this case the trace lemma admits a much cleaner form.
+
+\begin{corollary}[Trace Lemma for jointless monogons, {\cite[Corollary~2.3.3]{reinoso2024pseudo}}]
+\label{cor:trace_lemma_jointless}
+Retain the same notation and assumptions as Lemma \ref{lem:trace_lemma}. If $e$ is a real edge of $\tau$ incident to a jointless monogon at a marked point, then $e$ does not appear in $f_\beta(e)$.
+\end{corollary}
+
+\begin{proof}[Proof sketch of Lemma \ref{lem:trace_lemma}]
+The fixed points of $\phi_\Phi$ are contained in the preimage of the fixed points of $\phi_\beta$. For an efficient train-track map, fixed points of the map on the graph correspond to fixed points of the homeomorphism.
 
 Suppose $\mathrm{tr}(M(f_\beta)) > 0$. Then $f_\beta$ has a fixed point on the interior of some real edge $e \in \tau$. This edge lifts to a pair of edges $e_1, e_2$ in $\tilde{\tau}$ which are swapped by $\iota$. A fixed point $x \in e$ lifts to a pair $\{y, \iota(y)\}$ in $\tilde{\tau}$, and the canonical lift $\tilde{f}_h$ must map this fiber to itself.
 
-The two lifts $\tilde{f}_h$ and $\iota \circ \tilde{f}_h$ act differently on this fiber: one fixes each point individually, while the other swaps them. The canonical lift $\tilde{f}_h$ is distinguished by the requirement that it preserves the boundary component $\partial_p$, while $\iota \circ \tilde{f}_h$ swaps $\partial_p$ and $\partial_z$. Tracking the boundary-preserving condition through the local geometry near $x$ (specifically, comparing the orientations of the lifted real edges at the boundary), one finds that the canonical lift $\tilde{f}_h$ fixes each point of the fiber $\{y, \iota(y)\}$ individually rather than swapping them. Consequently, both $y$ and $\iota(y)$ are fixed points of $\tilde{f}_h$, and they correspond to fixed points of the geometric representative $\phi_\Phi$ in the interior of $\Sigma_2^2$.
+The two lifts $\tilde{f}_h$ and $\iota \circ \tilde{f}_h$ act differently on this fiber: one fixes each point individually, while the other swaps them. By the canonical-lift condition (equivalently, by the same-side characterization or the $\partial_p$-preservation), the canonical lift fixes each point of the fiber individually. Consequently, both $y$ and $\iota(y)$ are fixed points of $\tilde{f}_h$, and they correspond to fixed points of the geometric representative $\phi_\Phi$ in the interior of $\Sigma_2^2$.
 
-Thus, if the trace is non-zero, $\phi_\Phi$ retains an interior fixed point, contradicting the FPF hypothesis. The vanishing of the trace is therefore necessary for $\phi_\Phi$ to be FPF.
+Thus, if the trace is non-zero, $\phi_\Phi$ retains an interior fixed point, contradicting the FPF hypothesis. The vanishing of the trace --- equivalently, the no-self-appearance condition for real edges --- is therefore necessary for $\phi_\Phi$ to be FPF. The full ``even number of side-swapping edges between adjacent occurrences'' refinement is Reinoso's strengthening of this no-self-appearance condition, which we will use in the case analysis of Chapter \ref{chap:stratatraintrackanalysis}.
 \end{proof}
 
 We will use the Trace Lemma to rule out pseudo-Anosov candidates for the monodromy of our knot. Because Heegaard Floer homology constraints imply that our hypothetical knot must have exactly one fixed point corresponding to the original un-capped surface (which we factored out into the boundary of $\Sigma_2^2$), we can immediately eliminate any braid $\beta$ for which $M(f_\beta)$ has non-zero trace.

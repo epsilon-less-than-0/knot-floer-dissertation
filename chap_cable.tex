@@ -79,6 +79,18 @@ in Maslov grading $0$ along the $\delta = 2$ diagonal.}
 
 The knot $C$ is an almost L-space knot in the sense of Baldwin and Sivek \cite{BaldwinSivek2024}.
 
+\begin{remark}[Derivation of $\tau(C_{2,1}(T_{2,3})) = 2$]\label{rem:tau_cable_derivation}
+The value $\tau(C_{2,1}(T_{2,3})) = 2$ asserted above can be read directly from the bigraded rank table of Figure~\ref{fig:hfk_cable}, but it also admits a structural derivation independent of the explicit computation. Hom's cabling formula for the $\tau$-invariant \sidecite{HomCabling2014} gives
+\[
+\tau(K_{p,q}) \;=\; p \cdot \tau(K) \;+\; \frac{(p-1)(q-1)}{2}
+\]
+whenever the companion $K$ satisfies $\varepsilon(K) = 1$, where $\varepsilon$ denotes Hom's epsilon invariant. The right-handed trefoil $T_{2,3}$ is an L-space knot, and every L-space knot satisfies $\varepsilon = 1$; combined with $\tau(T_{2,3}) = 1$, the formula gives
+\[
+\tau(C_{2,1}(T_{2,3})) \;=\; 2 \cdot \tau(T_{2,3}) \;+\; \frac{(2-1)(1-1)}{2} \;=\; 2 \cdot 1 \;+\; 0 \;=\; 2.
+\]
+In particular, $\tau(C_{2,1}(T_{2,3})) = g(C_{2,1}(T_{2,3})) = 2$, so by Hedden's characterization of strong quasipositivity for fibered knots \sidecite{Hedden2010}, the cable $C_{2,1}(T_{2,3})$ is strongly quasipositive. This identity $\tau = g$ is used in Section~\ref{subsec:cable_hyperbolic} to invoke the right-veering monodromy property in the hyperbolic case.
+\end{remark}
+
 \begin{theorem}[Partial cable detection]\label{thm:cable_detection_partial}
 Let $K \subset S^3$ be a knot such that
 \[
@@ -151,6 +163,8 @@ This concludes the proof: the only allowable satellite structure is Case 1, givi
 
 Suppose $h$ is pseudo-Anosov, so that $K$ is hyperbolic. The rank table of Figure~\ref{fig:hfk_cable} shows $\dim_{\mathbb{F}} \widehat{HFK}(K, 1) = \dim_{\mathbb{F}} \widehat{HFK}(C, 1) = 2$, so by the theorem of Ni-Ghiggini-Spano (Theorem~\ref{theorem:ni-fibered}), the pseudo-Anosov representative $\phi_h$ has at most $1$ interior fixed point on $\Sigma_2^1$. The Farber-Reinoso-Wang classification \sidecite{farber2024fixed} then rules out the case of zero interior fixed points: the only hyperbolic fibered knot in $S^3$ whose monodromy is pseudo-Anosov with no interior fixed points is the cinquefoil $T_{2,5}$, whose Alexander polynomial $t^2 - t + 1 - t^{-1} + t^{-2}$ differs from $\Delta_C(t) = t^2 - 1 + t^{-2}$. Hence $\phi_h$ has exactly one interior fixed point.
 
+Before invoking the capping-off construction, we verify that its hypotheses are met for $K$, even though $K$ is not thin. The cable $C = C_{2,1}(T_{2,3})$ has $\tau(C) = 2 = g(C)$ (see Figure~\ref{fig:hfk_cable}); since $\tau$ and $g$ are read off from the bigraded $\widehat{HFK}$ structure, the isomorphism $\widehat{HFK}(K) \cong \widehat{HFK}(C)$ forces $\tau(K) = 2 = g(K)$ as well. By Hedden \sidecite{Hedden2010}, a fibered knot $K \subset S^3$ satisfying $\tau(K) = g(K)$ is strongly quasipositive, and its open book decomposition supports the standard tight contact structure $\xi_{\mathrm{std}}$ on $S^3$. By Honda-Kazez-Mati\'{c} \sidecite{honda2007right}, the monodromy of an open book supporting a tight contact structure is right-veering. Hence $\phi_h$ is right-veering and the fractional Dehn twist coefficient satisfies $c(\phi_h) \geq 0$; since $\phi_h$ is pseudo-Anosov (in particular, irreducible), Honda-Kazez-Mati\'{c} further yield $c(\phi_h) > 0$. This is the hypothesis on the monodromy required by the capping-off construction, and so the construction applies to $K$ in the same form as it does in the granny case --- the absence of thinness (in the sense of $\widehat{HFK}$ supported on a single diagonal) plays no role in the capping-off argument.
+
 By the capping-off construction (Proposition \ref{prop:capping off}) and the Birman-Hilden correspondence (Section \ref{section:Birman-Hilden}), this monodromy descends to a 6-braid mapping class $\beta \in \mathrm{Mod}(D_6)$ on the marked disk, whose canonical lift to the genus-two surface with two boundary components $\Sigma_2^2$ is fixed-point-free in its interior. The Euler-Poincar\'{e} stratum analysis from Chapter \ref{chap:preliminaries} then restricts $\beta$ to one of the five admissible strata
 \[
 (2; 1^4, 2^2; \emptyset),\quad (4; 1^6; \emptyset),\quad (2; 1^6; 4),\quad (3; 1^6; 3),\quad (2; 1^6; 3^2).
@@ -215,20 +229,7 @@ The complete computation, performed via the implementation of the homological fi
 
 \section{Discussion of the Residual Hyperbolic Candidates}\label{sec:cable_residual_discussion}
 
-The six families isolated in Proposition \ref{prop:cable_filter_outcome} represent the gap between Theorem \ref{thm:cable_detection_partial} and a complete detection result.  Closing this gap requires invoking obstructions beyond the simple polynomial equality at the level of the reduced homological action.
-
-We outline three avenues by which the residual list may be eliminated:
-
-\paragraph{(A) The integer module structure on $A_{\text{red}}$.}
-For a matrix with characteristic polynomial $\Phi_{12}(t)$, which is irreducible over $\mathbb{Z}$, the action of $A_{\text{red}}$ on $\mathbb{Z}^4$ realizes $\mathbb{Z}^4$ as a $\mathbb{Z}[\zeta_{12}]$-module of rank $1$.  Since $\mathbb{Z}[\zeta_{12}]$ is a principal ideal domain, all such modules are isomorphic, and so any obstruction at this level must come from refinements of $A_{\text{red}}$ that capture the symplectic structure or the intersection pairing on $H_1(\Sigma_2)$ — for example, by checking $\mathbb{Z}$-conjugacy in $\mathrm{Sp}(4, \mathbb{Z})$ rather than in $\mathrm{GL}(4, \mathbb{Z})$.
-
-\paragraph{(B) Pseudo-Anosov degeneration at boundary parameter values.}
-The candidate train track maps in the residual families are parametrized by integer twists. At certain parameter values—particularly $k = 0$ or $m = 0$—the corresponding braid may degenerate into a non-pseudo-Anosov mapping class (periodic or reducible), in which case the topological enumeration assumption is violated.  A direct check of the dilatation (Perron-Frobenius eigenvalue of the train track transition matrix) at each surviving parameter value would either confirm the braid is pseudo-Anosov or exclude that parameter from consideration.
-
-\paragraph{(C) Bigraded refinement of the homological filter.}
-The polynomial filter compares only the Alexander polynomial, which records the bigraded Euler characteristic of $\widehat{HFK}$. The full bigraded vector space carries strictly more information, encoded by the Maslov-grading distribution of the homology classes. For each residual family, computing the lifted symplectic action $\Phi$ on $H_*(\Sigma_2^2)$ together with its boundary action provides a finer invariant whose match with the cable's bigraded structure may rule out additional candidates.
-
-A complete cable detection theorem along these lines is the subject of ongoing work and is not included in this dissertation.
+The six families isolated in Proposition \ref{prop:cable_filter_outcome} represent the gap between Theorem \ref{thm:cable_detection_partial} and a complete detection result. Closing this gap requires invoking obstructions beyond the simple polynomial equality at the level of the reduced homological action. Several concrete approaches to eliminating the residual list are discussed in the Conclusion (Section \ref{sec:future_directions}, ``Closing the cable detection gap''), where they are framed alongside related future-work directions. A complete cable detection theorem along these lines is the subject of ongoing work and is not included in this dissertation.
 
 \section{Implications for Almost L-Space Knots}\label{sec:cable_implications}
 

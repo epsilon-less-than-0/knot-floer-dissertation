@@ -1,0 +1,41 @@
+% =====================================================================
+% BC-compliant abstract page.
+% Conforms to GSAS_Template.docx:
+%   [TITLE OF THE DISSERTATION]   (bold, centered)
+%   [Author's name]               (centered)
+%   Advisor: [Full name, with suffix]   (centered)
+%
+%   [Abstract text]               (justified, double-spaced)
+%
+% Page is unnumbered.
+% =====================================================================
+\thispagestyle{empty}
+
+\begin{center}
+    {\bfseries Knot Floer Homology, Folding Automata,\\
+     and the Connect-Sum of Trefoils}
+
+    \vspace{0.4em}
+
+    Kevin Yeh
+
+    \vspace{0.4em}
+
+    Advisor: Prof. Dr. John A. Baldwin
+\end{center}
+
+\vspace{1.5em}
+
+We prove that knot Floer homology detects the connect-sum of two right-handed trefoil knots, $T_{2,3} \# T_{2,3}$ (the granny knot). This is the first detection result in knot Floer homology for a composite knot, and the second detection result for a knot of genus greater than one.
+
+The proof proceeds by ruling out, in turn, each of the three Nielsen-Thurston classes that the monodromy of a hypothetical knot $K$ with $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3}\#T_{2,3})$ could occupy. The torus knot case is dispatched by a direct Alexander polynomial comparison. The bulk of the work is devoted to the hyperbolic case, which requires the systematic study of pseudo-Anosov maps on the six-marked disk via the theory of train tracks and folding automata.
+
+To facilitate this analysis, we introduce the \texttt{autofolder} algorithm, a computational framework that, given a stratum of mapping classes on the $n$-punctured disk, exhaustively generates the complete directed graph of standard train tracks connected by elementary folding operations. The algorithm answers a call of Los for a generalized, algorithmic method to construct folding automata, and serves as an independent contribution to low-dimensional topology and topological dynamics.
+
+Using the \texttt{autofolder} output, together with tight splitting, the Trace Lemma, and the Absorption Obstruction, we enumerate all candidate pseudo-Anosov mapping classes carried by the jointless standard train tracks in the relevant non-orientable strata $(3;1^6;3)$ and $(2;1^6;3^2)$. We then apply two homological filters --- the zero-surgery condition and the Alexander polynomial condition --- to eliminate every candidate. This rules out the possibility that $K$ is hyperbolic.
+
+The remaining satellite case is handled by Schubert's formula and the classification of Thurston reducing systems, which restrict the pattern and companion of $K$ to trefoil knots and the algebraic winding number to one. A short case analysis on the canonical reducing system, together with the fractional Dehn twist coefficient bound of Hedden--Mark and the right-veering criterion of Honda--Kazez--Mati\'c, eliminates every remaining configuration except the connect-sum of two right-handed trefoils, completing the proof.
+
+As a second result, the same toolkit applied to the cable target Alexander polynomial $\Phi_{12}(t) = t^4 - t^2 + 1$ yields a partial detection theorem for the $(2,1)$-cable of the right-handed trefoil, $C_{2,1}(T_{2,3})$: any knot with the same knot Floer homology is isotopic to $C_{2,1}(T_{2,3})$ unless it is hyperbolic and the disk braid associated to its monodromy belongs to one of an explicitly enumerated finite list of candidate braid families.
+
+\cleardoublepage

@@ -1,0 +1,186 @@
+% =====================================================================
+% TikZ macros for drawing pretzel knot diagrams.
+%
+% USAGE: \input{tikz_pretzel_macros} in your dissertation preamble.
+%
+% Requires the following packages and libraries to be loaded:
+%   \usepackage{tikz}
+%   \usepackage{xcolor}
+%   \usetikzlibrary{calc}
+%
+% Defines:
+%   \crossing{x}{y}{w}{h}{sign}{color}    -- single crossing
+%   \tangle{xc}{ytop}{ybot}{k}{color}     -- vertical tangle of k crossings
+%   \pretzel{p1}{p2}{p3}{color}           -- 3-tangle pretzel P(p1,p2,p3)
+%   \bandhighlight                        -- dashed pink box on third tangle
+%
+% These also define the colours \thesisblue, \thesisred, \bandfill
+% (used in the dissertation's banner/highlight scheme).
+% =====================================================================
+
+% --- Colours ---------------------------------------------------------
+\providecolor{thesisblue}{HTML}{1F4E79}
+\providecolor{thesisred}{HTML}{C00000}
+\providecolor{bandfill}{HTML}{FFE5E5}
+
+% ---------------------------------------------------------------------
+% \crossing{x}{y}{w}{h}{sign}{color}
+%   A single crossing centred at (x, y), of width w and height h.
+%   sign > 0: right-handed (SW->NE strand over NW->SE strand).
+%   sign < 0: left-handed  (NW->SE strand over SW->NE strand).
+% ---------------------------------------------------------------------
+\newcommand{\crossing}[6]{%
+  \pgfmathsetmacro{\eps}{0.08*#3}%
+  \pgfmathsetmacro{\hw}{0.5*#3}%
+  \pgfmathsetmacro{\hh}{0.5*#4}%
+  \ifnum#5>0\relax
+    \draw[#6, line width=1.1pt, line cap=round]
+      ({#1-\hw},{#2+\hh}) -- ({#1-\eps},{#2+\eps*#4/#3});
+    \draw[#6, line width=1.1pt, line cap=round]
+      ({#1+\eps},{#2-\eps*#4/#3}) -- ({#1+\hw},{#2-\hh});
+    \draw[#6, line width=1.1pt, line cap=round]
+      ({#1-\hw},{#2-\hh}) -- ({#1+\hw},{#2+\hh});
+  \else
+    \draw[#6, line width=1.1pt, line cap=round]
+      ({#1-\hw},{#2-\hh}) -- ({#1-\eps},{#2-\eps*#4/#3});
+    \draw[#6, line width=1.1pt, line cap=round]
+      ({#1+\eps},{#2+\eps*#4/#3}) -- ({#1+\hw},{#2+\hh});
+    \draw[#6, line width=1.1pt, line cap=round]
+      ({#1-\hw},{#2+\hh}) -- ({#1+\hw},{#2-\hh});
+  \fi
+}
+
+% ---------------------------------------------------------------------
+% \tangle{xc}{ytop}{ybot}{k}{color}
+%   A vertical tangle of |k| crossings of sign(k) between y = ytop
+%   and y = ybot, centred horizontally at x = xc. k = 0 gives two
+%   parallel vertical strands.
+% ---------------------------------------------------------------------
+\newcommand{\tangle}[5]{%
+  \pgfmathsetmacro{\tanglew}{0.55}%
+  \pgfmathsetmacro{\hw}{0.5*\tanglew}%
+  \ifnum#4=0\relax
+    \draw[#5, line width=1.1pt, line cap=round]
+      ({#1-\hw},#2) -- ({#1-\hw},#3);
+    \draw[#5, line width=1.1pt, line cap=round]
+      ({#1+\hw},#2) -- ({#1+\hw},#3);
+  \else
+    \ifnum#4>0\relax
+      \def\sgnval{1}%
+      \pgfmathtruncatemacro{\absk}{#4}%
+    \else
+      \def\sgnval{-1}%
+      \pgfmathtruncatemacro{\absk}{-(#4)}%
+    \fi
+    \pgfmathsetmacro{\totalh}{#2-(#3)}%
+    \pgfmathsetmacro{\hper}{\totalh/\absk}%
+    \foreach \i in {1,...,\absk} {%
+      \pgfmathsetmacro{\cy}{#2-(\i-0.5)*\hper}%
+      \crossing{#1}{\cy}{\tanglew}{\hper*0.85}{\sgnval}{#5}%
+    }%
+  \fi
+}
+
+% ---------------------------------------------------------------------
+% \pretzel{p1}{p2}{p3}{color}
+%   The standard diagram of the 3-tangle pretzel P(p1, p2, p3),
+%   centred at (0, 0) and approximately 7 x 8 units in size.
+% ---------------------------------------------------------------------
+\newcommand{\pretzel}[4]{%
+  \pgfmathsetmacro{\tanglew}{0.55}%
+  \pgfmathsetmacro{\hw}{0.5*\tanglew}%
+  \def\ytop{1.6}%
+  \def\ybot{-1.6}%
+  \def\xleft{-2.0}%
+  \def\xmid{0.0}%
+  \def\xright{2.0}%
+  \tangle{\xleft}{\ytop}{\ybot}{#1}{#4}%
+  \tangle{\xmid}{\ytop}{\ybot}{#2}{#4}%
+  \tangle{\xright}{\ytop}{\ybot}{#3}{#4}%
+  \draw[#4, line width=1.1pt, line cap=round]
+    ({\xleft+\hw}, \ytop)
+      arc[start angle=180, end angle=0, x radius=0.725, y radius=0.32];
+  \draw[#4, line width=1.1pt, line cap=round]
+    ({\xmid+\hw}, \ytop)
+      arc[start angle=180, end angle=0, x radius=0.725, y radius=0.32];
+  \draw[#4, line width=1.1pt, line cap=round]
+    ({\xleft+\hw}, \ybot)
+      arc[start angle=-180, end angle=0, x radius=0.725, y radius=0.32];
+  \draw[#4, line width=1.1pt, line cap=round]
+    ({\xmid+\hw}, \ybot)
+      arc[start angle=-180, end angle=0, x radius=0.725, y radius=0.32];
+  \draw[#4, line width=1.1pt, line cap=round]
+    ({\xleft-\hw}, \ytop) -- ({\xleft-\hw}, {\ytop+0.4})
+      arc[start angle=180, end angle=0,
+          x radius={(\xright-\xleft)/2+\hw}, y radius=0.85]
+      -- ({\xright+\hw}, \ytop);
+  \draw[#4, line width=1.1pt, line cap=round]
+    ({\xleft-\hw}, \ybot) -- ({\xleft-\hw}, {\ybot-0.4})
+      arc[start angle=-180, end angle=0,
+          x radius={(\xright-\xleft)/2+\hw}, y radius=0.85]
+      -- ({\xright+\hw}, \ybot);
+  \node[anchor=north, font=\bfseries, fill=white, inner sep=2pt]
+    at (\xleft,  {\ybot-1.4}) {$#1$};
+  \node[anchor=north, font=\bfseries, fill=white, inner sep=2pt]
+    at (\xmid,   {\ybot-1.4}) {$#2$};
+  \node[anchor=north, font=\bfseries, fill=white, inner sep=2pt]
+    at (\xright, {\ybot-1.4}) {$#3$};
+}
+
+% ---------------------------------------------------------------------
+% \bandhighlight
+%   A dashed pink box around the third tangle of \pretzel, highlighting
+%   it as the parametric "twisting band" of the Hedden-Watson construction.
+% ---------------------------------------------------------------------
+\newcommand{\bandhighlight}{%
+  \draw[thesisred, dashed, line width=0.8pt,
+        fill=bandfill, fill opacity=0.35]
+    (1.55, -1.75) rectangle (2.45, 1.75);
+}
+
+% ---------------------------------------------------------------------
+% \trefoilcs{s1}{s2}{color}
+%   The standard diagram of the connect-sum T(s1) # T(s2) of two
+%   trefoils, where s1, s2 in {+1, -1} indicate the chirality of each
+%   summand (+1 = right-handed, -1 = left-handed).
+%
+%   Drawn as two side-by-side closed 2-braids joined by the trivial
+%   connect-sum band. Centred at (0, 0).
+% ---------------------------------------------------------------------
+\newcommand{\trefoilcs}[3]{%
+  \pgfmathsetmacro{\tanglew}{0.55}%
+  \pgfmathsetmacro{\hw}{0.5*\tanglew}%
+  \def\ytop{1.5}%
+  \def\ybot{-1.5}%
+  \def\xL{-1.5}%
+  \def\xR{1.5}%
+  % Pre-evaluate the crossing counts (3 with the sign of s1, s2)
+  \pgfmathtruncatemacro{\trefL}{(#1)*3}%
+  \pgfmathtruncatemacro{\trefR}{(#2)*3}%
+  % Two trefoil tangles (each = 3 crossings of given chirality)
+  \tangle{\xL}{\ytop}{\ybot}{\trefL}{#3}%
+  \tangle{\xR}{\ytop}{\ybot}{\trefR}{#3}%
+  % Closure of left trefoil: top arc from left-of-tangle going up-and-over to
+  % right-of-tangle. This is the "outside" closure of the 2-braid.
+  \draw[#3, line width=1.1pt, line cap=round]
+    ({\xL-\hw}, \ytop) -- ({\xL-\hw}, {\ytop+0.35})
+      arc[start angle=180, end angle=0, x radius=\hw, y radius=0.32]
+      -- ({\xL+\hw}, \ytop);
+  % Closure of right trefoil: same on the right side
+  \draw[#3, line width=1.1pt, line cap=round]
+    ({\xR-\hw}, \ytop) -- ({\xR-\hw}, {\ytop+0.35})
+      arc[start angle=180, end angle=0, x radius=\hw, y radius=0.32]
+      -- ({\xR+\hw}, \ytop);
+  % Connect-sum band at the bottom: trivial band joining the two trefoils.
+  % It loops from the bottom-right of the left tangle to the bottom-left
+  % of the right tangle, dipping down. Then we close off the two outer
+  % bottom strands with a large arc going around.
+  \draw[#3, line width=1.1pt, line cap=round]
+    ({\xL+\hw}, \ybot)
+      arc[start angle=180, end angle=360, x radius={(\xR-\xL-\tanglew)/2}, y radius=0.55];
+  % Outer bottom closure: leftmost-bottom to rightmost-bottom around the underside.
+  \draw[#3, line width=1.1pt, line cap=round]
+    ({\xL-\hw}, \ybot) -- ({\xL-\hw}, {\ybot-0.45})
+      arc[start angle=180, end angle=360, x radius={(\xR-\xL)/2+\hw}, y radius=0.85]
+      -- ({\xR+\hw}, \ybot);
+}

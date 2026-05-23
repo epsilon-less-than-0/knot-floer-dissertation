@@ -1,14 +1,11 @@
 \documentclass[11pt,oneside]{book}
-
 \input{preamble.tex}
 \input{symbols.tex}
-
 % Document-specific packages and commands
 \usepackage{lipsum}
 \usepackage{parskip}
 \usepackage{titletoc}
 \usepackage{bm}
-
 % Circled numbers for figure callouts
 \newcommand\circled[1]{%
     \begin{tikzpicture}[baseline=(char.base)]%
@@ -16,42 +13,34 @@
     \end{tikzpicture}%
 }
 \newcommand\mc[1]{\footnotesize\circled{#1}}  % minicircle for figures
-
-\title{Folding Automata, Knot Floer Homology, and the Connect-Sum of Trefoils}
+\title{Knot Floer Homology, Folding Automata, and the Connect-Sum of Trefoils}
 \date{Academic year 2025--2026}
-
 \begin{document}
-
 % =====================================================
 % Front matter (roman page numbering)
 % =====================================================
 \renewcommand{\thepage}{\roman{page}}
-
 \input{bc_title.tex}
-
 \thispagestyle{empty}
 \input{copyright.tex}
-
 \pagestyle{plain}
 \setcounter{page}{0}
-\input{preface.tex}
-
+\input{abstract.tex}
 \cleardoublepage
-\input{renaissance_title.tex}
-
 \listofsymbols
 \tableofcontents
 \input{acknowledgements}
-
 \cleardoublepage
-
 % =====================================================
 % Main matter (arabic page numbering)
 % =====================================================
 \renewcommand{\thepage}{\arabic{page}}
 \setcounter{page}{1}
 \pagestyle{normal}
-
+% Renaissance frontispiece: serves as a decorative title page for the
+% main body, immediately before Chapter 1.
+\input{renaissance_title.tex}
+\cleardoublepage
 \input{chap_introduction}
 \input{chap_preliminaries}
 \input{chaptraintracks}
@@ -63,7 +52,6 @@
 \input{chap_proof_of_main_theorem}
 \input{chap_cable}
 \input{conclusion.tex}
-
 % =====================================================
 % Appendices
 % =====================================================
@@ -85,8 +73,5 @@
 \input{appendix_braid_track_17}
 \input{granny_verdict_tables}
 \input{cable_residual_families}
-
 \printbibliography
-\includepdf[pages=2, fitpaper=true]{./kuleuven-template/covers.pdf}
-
 \end{document}

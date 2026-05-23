@@ -31,7 +31,13 @@ To rigorously define the folding operation, we adopt the terminology of Reinoso 
     \end{enumerate}
 \end{definition}
 
-In this context, \textit{smoothness} implies that $p$ preserves the tangent structure at the switches, mapping cusps to cusps or smoothing them into arcs, strictly preserving the train track embedding. The transition matrix $M_p$ for such a map is $P + E$, where $P$ is a permutation matrix and $E$ is an elementary matrix representing the single edge elongation.
+In this context, \textit{smoothness} implies that $p$ preserves the tangent structure at the switches, mapping cusps to cusps or smoothing them into arcs, strictly preserving the train track embedding.
+
+The transition matrix $M_p$ of an elementary folding map (with respect to the basis of real edges, in the convention of Section \ref{sec:traintrack_maps}) has a simple structure. All real edges except $\alpha$ map to a single real edge under $p$, contributing a single $1$ to their column. The distinguished edge $\alpha$ maps to a real-edge word of length two, namely $p(\alpha) = p(\beta) \cdot a$ (where $a$ is the real edge joined to $p(\beta)$ by an intermediate infinitesimal edge), contributing a $1$ in the row of $p(\beta)$ and a $1$ in the row of $a$. We may therefore write
+\[
+M_p = P + E,
+\]
+where $P$ is a permutation matrix (the column of $\alpha$ assigns it to the destination real edge $a$, and all other columns implement the bijection $p$ acts on the remaining real edges) and $E$ is an elementary matrix --- zero except for a single $1$ in position $(p(\beta), \alpha)$ --- recording the extra traversal of $p(\beta)$ in the image of $\alpha$.
 
 \paragraph{Geometric Description.}
 \begin{figure}[h]
@@ -54,7 +60,7 @@ To fold $a$ onto $b$, we slide the vertex $v$ along the edge $b$. This action id
 
 While an elementary folding map $p: \tau \to \tau'$ preserves the foliation data, the resulting graph $\tau'$ often fails to satisfy the vertical marking condition of a standard train track. For example, the folding operation in Figure \ref{fig:folding} produces a non-standard train track. Recall from Definition \ref{def:standard_track}, the vertical marking condition requires that for each marked point, there is exactly one infinitesimal edge of $\tau$ passing vertically above it. In practice, this infinitesimal edge belongs to the infinitesimal polygon surrounding the marked point.
 
-After an elementary fold, the folded track $\tau'$ often violates this condition; however, Ko-Los-Song \sidecite{SongEntropy} show that $\tau'$ is at most \emph{almost standard}. That is, $\tau'$ has at most one offending infinitesimal edge. In other words, there is at most one marked point having two infinitesimal edges lying above it. We can perform a homeomorphism of the disk to transform the embedding of the folded train track so that it becomes standard. This choice of homeomorphism fixes the boundary pointwise, is orientation-preserving, and respects the marked points (permutes them), and thus can be thought of as a braid. We call such a braid a \textit{standardizing braid}. This standardizing braid is non-unique for a given almost standard train track. However, it can be taken to be of a certain form\footnote{Recall that braid words are read from left to right.}:
+After an elementary fold starting from a standard train track $\tau$, the folded track $\tau'$ often violates the vertical marking condition; however, Ko-Los-Song \sidecite{SongEntropy} show that $\tau'$ is at most \emph{almost standard}. That is, $\tau'$ has at most one offending infinitesimal edge. In other words, there is at most one marked point having two infinitesimal edges lying above it. We can perform a homeomorphism of the disk to transform the embedding of the folded train track so that it becomes standard. This choice of homeomorphism fixes the boundary pointwise, is orientation-preserving, and respects the marked points (permutes them), and thus can be thought of as a braid. We call such a braid a \textit{standardizing braid}. This standardizing braid is non-unique for a given almost standard train track. However, it can be taken to be of a certain form\footnote{Recall that braid words are read from left to right.}:
 
 \begin{lemma}[{\cite[Lemma~1]{SongEntropy}}]
     Let $\tau'$ be an almost standard train track on $D_n$. Then there exists an $n$-braid $\beta \in B_n$ of the form
@@ -110,7 +116,7 @@ We are now ready to give the formal definition of the folding automaton:
 \end{definition}
 
 \paragraph{Stratum Specificity}
-It is important to emphasize that in our context, an automaton is constructed for a \textbf{single, fixed stratum} of the space of measured foliations $\mathcal{PMF}(D_n)$. The stratum is determined by the number and type of singularities of the foliations carried by the tracks. This restriction to a single stratum is a natural consequence of the folding operation itself. Geometrically, the complementary regions of a standard train track correspond precisely to the singularities of the measured foliations it carries. Because an elementary folding map $p: \tau \to \tau'$ is a homotopy equivalence that preserves the cusp structure of the boundary, it cannot alter the topological type of these complementary regions. Therefore, folding naturally preserves the set of polygons: if a track $\tau$ decomposes the disk into a specific configuration of $k$-gons, every track reachable from $\tau$ via folding will decompose the disk into exactly the same set of $k$-gons.
+It is important to emphasize that in our context, an automaton is constructed for a \textbf{single, fixed stratum} of the space of measured foliations $\mathcal{PMF}(D_n)$. The stratum is determined by the number and type of singularities of the foliations carried by the tracks. This restriction to a single stratum is a natural consequence of the folding operation itself. Geometrically, the complementary regions of a standard train track correspond precisely to the singularities of the measured foliations it carries; the cusps along the boundary of each complementary region count the prongs of the corresponding singularity (Proposition \ref{prop:B-H train track polygon enclosure}). An elementary folding map modifies the embedding of $\tau$ only locally near the folded edge $\alpha$, replacing $\alpha$ with a path that forms a bigon with the original edge inside its enclosing complementary region. This local modification fixes the boundary of every complementary region setwise and preserves the cusp count along each boundary. Therefore folding leaves the singularity stratum invariant: if a track $\tau$ decomposes the disk into a specific configuration of $k$-gons, every track reachable from $\tau$ via folding decomposes the disk into exactly the same set of $k$-gons.
 
 \begin{corollary}
     Let $(\beta, \phi_\beta, \tau, f_\beta)$ be geometric data of a pseudo-Anosov $n$-braid. Then $\tau$ appears as a vertex in the folding automaton associated to the particular stratum $\phi_\beta$ belongs to.
@@ -177,18 +183,20 @@ In the Introduction, we stated Theorem \ref{thm:autofolder_main}, asserting that
 
 \begin{myproof}
 \textbf{Exhaustiveness.}
-By the work of Penner and Harer \sidecite{penner1992combinatorics}, the space of measured laminations $\mathcal{ML}_0(D_n)$ admits a cellular decomposition whose cells correspond to standard train tracks. The key connectivity result is \cite[Theorem~2.3.1]{penner1992combinatorics}: any two equivalent positively measured standard tracks $(\tau_1, \mu_1)$ and $(\tau_2, \mu_2)$ admit a common refinement $(\tau, \mu)$, in the sense that each $(\tau_i, \mu_i)$ splits (and isotopes) to $(\tau, \mu)$. Consequently, any two standard tracks in the same stratum are related by a finite sequence of splits and inverse splits (modulo isotopy).
+The exhaustiveness argument relies on a connectivity result of Penner and Harer phrased in terms of \emph{splitting}, the topological inverse of folding. We will define splitting more carefully and use it heavily in Chapter \ref{chap:stratatraintrackanalysis}; for the present proof, it suffices to know that a split is a local move on a train track that reverses an elementary fold --- if a track $\tau$ folds to $\tau'$, then $\tau'$ splits to $\tau$. A split is permitted at a switch where the local geometry admits an inverse-fold configuration; not every switch can be split, but every fold can be undone by a split.
+
+With this, we may state the relevant Penner-Harer connectivity result \sidecite{penner1992combinatorics}: the space of measured laminations $\mathcal{ML}_0(D_n)$ admits a cellular decomposition whose cells correspond to standard train tracks, and any two equivalent positively measured standard tracks $(\tau_1, \mu_1)$ and $(\tau_2, \mu_2)$ admit a common refinement $(\tau, \mu)$, in the sense that each $(\tau_i, \mu_i)$ splits (and isotopes) to $(\tau, \mu)$ \cite[Theorem~2.3.1]{penner1992combinatorics}. Consequently, any two standard tracks in the same stratum are related by a finite sequence of splits and inverse splits (i.e., folds) modulo isotopy.
 
 To translate this geometric statement into the combinatorial language of folding automata:
 \begin{itemize}
-    \item \textbf{Splitting is inverse folding:} The operation of \emph{splitting} a train track (as defined in Penner-Harer) is the topological inverse of the elementary folding operation. If a track $\tau$ folds to $\tau'$, then $\tau'$ splits to $\tau$. A splitting move thus corresponds to traversing a directed edge of the automaton backwards.
+    \item \textbf{Splitting is inverse folding:} As stated above, splitting and folding are mutually inverse local moves. A splitting move corresponds to traversing a directed edge of the automaton backwards.
     \item \textbf{Connectivity of the automaton:} Since any two tracks in the stratum are related by a sequence of splits and folds, the folding automaton is connected as an \emph{undirected} graph.
 \end{itemize}
 
 The \texttt{genauto} algorithm performs a breadth-first search on the directed automaton starting from $\tau_{seed}$. Because the underlying undirected graph is connected, every vertex is reachable from $\tau_{seed}$ by some directed path: any sequence of splits and folds connecting $\tau_{seed}$ to a target $\tau'$ may be rewritten as a sequence of folds (possibly through intermediate vertices not on the shortest path). Hence the BFS exhausts every isomorphism class of standard tracks in the stratum.
 
 \textbf{Finiteness.}
-A standard train track on the $n$-punctured disk is a finite trivalent graph $G$ whose vertex and edge counts are determined by the stratum's singularity data via the Euler-Poincar\'{e} formula. The total number of switches and real edges admits a uniform bound depending only on $n$ and the singularity profile, and the cyclic ordering at each switch admits only finitely many configurations. Therefore the set of isomorphism classes of standard tracks in a fixed stratum is finite.
+A standard train track on the $n$-marked disk is a finite graph $G$ whose switches have valence at least $3$ (Definition \ref{def:train_track_general}), and whose vertex and edge counts are bounded by the stratum's singularity data via the Euler-Poincar\'{e} formula. The number of switches and real edges admits a uniform bound depending only on $n$ and the singularity profile (specifically, the sum of cusp counts $\sum b_i + \sum m_j + \sum k_l$, which determines the total switch valence and hence both the switch and edge counts up to the polygon structure). The cyclic ordering at each switch admits only finitely many configurations, and only finitely many labelings of edges as real or infinitesimal are compatible with a given polygon structure. Therefore the set of isomorphism classes of standard tracks in a fixed stratum is finite.
 
 The algorithm checks each newly generated track against the registry of previously discovered isomorphism classes (Algorithm \ref{alg:autofolder_enum}). If a fold yields an isomorphism class already in the registry, it is not enqueued for further exploration. Since the state space is finite, the BFS frontier must eventually empty, and the algorithm terminates.
 
@@ -244,18 +252,20 @@ We now prove that checking combinatorial equivalence is sufficient to establish 
 
     $(\Leftarrow)$ Suppose $\phi: \mathcal{C}(\tau_1) \to \mathcal{C}(\tau_2)$ is a combinatorial equivalence. We construct the required braid $\beta$ in three steps.
 
-    \textbf{Step 1: Constructing the Surface Homeomorphism.}
-    The tuple $(G, \mathcal{O})$ defines a unique ribbon graph structure. Following Penner and Harer \sidecite[Section 1.1]{penner1992combinatorics}, this combinatorial data uniquely determines an oriented surface with boundary $N(\tau)$ obtained by thickening the graph. Since $\phi$ preserves the cyclic ordering $\mathcal{O}$, it induces an orientation-preserving homeomorphism $h': N(\tau_1) \to N(\tau_2)$ between the regular neighborhoods of the tracks.
+    \textbf{Step 1: Constructing a homeomorphism between fibered neighborhoods.}
+    The tuple $(G, \mathcal{O})$ defines a unique ribbon graph structure. Following Penner and Harer \sidecite[Section 1.1]{penner1992combinatorics}, this combinatorial data uniquely determines an oriented surface with boundary $N(\tau_i)$ obtained by thickening the ribbon graph; in our setting, $N(\tau_i)$ is the fibered neighborhood of $\tau_i$. Since $\phi$ preserves the cyclic ordering $\mathcal{O}$, it induces an orientation-preserving homeomorphism $h': N(\tau_1) \to N(\tau_2)$ that carries $\tau_1$ onto $\tau_2$ and respects the vertical-fiber structure.
 
-    \textbf{Step 2: Extending to the Disk.}
-    The complement $D_n \setminus N(\tau)$ consists of a set of disjoint polygons. The isomorphism $\phi$ induces a boundary-preserving map between these complementary regions. We extend $h'$ to a homeomorphism $h: D_n \to D_n$ by mapping the interiors of the regions of $\tau_1$ to those of $\tau_2$ using the Alexander trick.
+    \textbf{Step 2: Extending across the complementary regions.}
+    The complement $D_n \setminus N(\tau_i)$ is a disjoint union of polygons: marked infinitesimal polygons (containing one marked point each), unmarked infinitesimal polygons (containing one non-marked singularity each), and a single peripheral region (adjacent to $\partial D_n$). The combinatorial equivalence $\phi$ induces a bijection between these polygons preserving cusp counts and edge labels, so it sends each polygon of $\tau_1$ to a polygon of $\tau_2$ of the same combinatorial type. We extend $h'$ across each polygon by the Alexander trick (any orientation-preserving homeomorphism of the boundary of a disk extends to a homeomorphism of the disk; the extension is unique up to isotopy rel boundary).
 
-    Crucially, we must address the marked points. By the definition of a standard track, the boundary of each punctured region contains a unique ``vertical'' infinitesimal edge. Since $\phi$ preserves edge labels, it maps the vertical edge of $\tau_1$ to the corresponding vertical edge of $\tau_2$. We extend $h$ radially from the boundary to the marked point $q_i$, ensuring that $h(q_i)$ is mapped to the corresponding marked point in $\tau_2$.
+    \emph{Marked polygons.} For a marked $k$-gon enclosing the marked point $q_i \in \tau_1$, the boundary map specified by $h'$ extends to a homeomorphism sending $q_i$ to the corresponding marked point $q_{\phi(i)} \in \tau_2$ (since the vertical infinitesimal edge above each marked point is preserved by $\phi$, the marked point is determined by the polygon structure).
 
-    \textbf{Step 3: Defining the Braid.}
-    The map $h$ constructed above is an orientation-preserving homeomorphism of $D_n$. It fixes the boundary $\partial D_n$ pointwise (due to the rigidity of the outer infinitesimal edges) and permutes the set of marked points $Q$. Therefore, $h$ defines an element of the mapping class group $\mathrm{Mod}(D_n) \cong B_n$. Let $\beta = [h]$ be the braid class represented by $h$.
+    \emph{Peripheral region.} For the peripheral region $P$ (adjacent to $\partial D_n$), the boundary $\partial P$ consists of $\partial D_n$ together with a portion of $\tau_i$. We choose the Alexander-trick extension on $P$ to be the identity on $\partial D_n$. This is permissible because $\partial D_n \subset \partial P$ is one of the boundary components of $P$, and the Alexander extension is free to be the identity on any single boundary component.
 
-    By construction, $h(\tau_1) = \tau_2$ as embedded graphs. Since the action of the braid $\beta$ is defined by applying a diffeomorphism isotopic to $h$, it follows that $\beta(\tau_1)$ is isotopic to $\tau_2$.
+    The composite map $h: D_n \to D_n$ is an orientation-preserving homeomorphism, satisfying $h(\tau_1) = \tau_2$ as embedded subsets of $D_n$, fixing $\partial D_n$ pointwise, and permuting the marked points.
+
+    \textbf{Step 3: Defining the braid.}
+    Since $h$ is an orientation-preserving homeomorphism of $D_n$ fixing $\partial D_n$ pointwise and permuting the marked points, it represents an element $\beta = [h] \in \mathrm{Mod}(D_n) \cong B_n$. The action of $\beta$ on isotopy classes of embedded subsets of $D_n$ sends $[\tau_1]$ to $[h(\tau_1)] = [\tau_2]$. That is, $\beta(\tau_1)$ is isotopic to $\tau_2$ as embedded train tracks, so $\tau_1$ and $\tau_2$ are isomorphic in the sense of the chapter.
 \end{myproof}
 
 \subsection{Data Structures}
@@ -303,6 +313,15 @@ The procedure executes the following algorithmic steps, modifying the track data
 \end{enumerate}
 
 The method returns a mutated \texttt{StandardTrainTrack} object representing the folded track.
+
+See Figure \ref{fig:folding_automaton} for an example.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/Automaton Folding-1.jpg}
+    \caption{Left: A left-to-right folding at the cusp located at $v_cusp$. Right: The equivalent operation performed by the algorithm on a \texttt{StandardTrainTrack} object. The algorithm deletes $e_L$, then attach a new edge between $v_L$ and $v_far$ at the appropriate position in the cyclic ordering. The graph information, cyclic ordering, and cusp informations are updated for the newly created \texttt{StandardTrainTrack} object.}
+    \label{fig:folding_automaton}
+\end{figure}
 
 \subsection{Extended Automaton Capabilities}
 \label{subsec:extended_capabilities}
@@ -513,7 +532,7 @@ We now present the detailed pseudo-code for our full graph implementation. Unlik
 
 In this chapter, we formalized the theory of folding automata and provided a complete algorithmic realization of the enumeration framework originally theorized by Ko, Los, and Song \sidecite{SongEntropy}. As noted by Los \sidecite{Los2008}, a systematic study of all pseudo-Anosov homeomorphisms within a given stratum requires the rigorous development of its specific train-track automata theory. Furthermore, Los anticipated that because such automata are practically immense, an explicit algorithmic description is strictly necessary to make the state space tractable.
 
-For the remaining non-orientable strata on the disk---specifically $(2; 1^6; 3^2)$ and $(3; 1^6; 3)$---our \texttt{autofolder} implementation fulfills this exact requirement. It provides the exhaustive combinatorial foundation required to systematically hunt for valid train track maps, ensuring no candidate track is missed.
+For the remaining non-orientable strata on the disk---specifically $(2; 1^6; 3^2)$ and $(3; 1^6; 3)$---our \texttt{autofolder} implementation fulfills this exact requirement. It provides a sufficient list of standard train tracks within each stratum, from which we can systematically hunt for valid train track maps.
 
 However, executing this algorithmic enumeration reveals an immediate practical challenge: just as Los predicted, the raw topological output of the automaton is massive. The unrestricted state space contains a vast number of standard tracks, many of which possess localized, topologically redundant complexities known as \textit{joints}. Attempting to manually construct maps and apply the Trace Lemma across this entire, unpruned space would remain analytically intractable.
 

@@ -19,7 +19,38 @@
 \usepackage{textcomp}
 \usepackage{url}
 
-\usepackage[letterpaper, margin=1in, includehead, includefoot]{geometry}
+% BC GSAS margin requirements:
+%   Left and right margins must be 1.25 inches.
+%   Top and bottom margins must be 1 inch.
+%   Page numbers must be 1 inch from paper edge.
+\usepackage[
+    letterpaper,
+    left=1.25in,
+    right=1.25in,
+    top=1in,
+    bottom=1in,
+    includehead, includefoot
+]{geometry}
+
+% setspace: provides \singlespacing, \onehalfspacing, \doublespacing.
+% Used by renaissance_title.tex to locally set single-line spacing on
+% the frontispiece. Body text is double-spaced per BC GSAS / ProQuest
+% dissertation formatting requirements.
+\usepackage{setspace}
+\doublespacing
+
+% BC GSAS allows single-spacing for footnotes, block quotes, long tables,
+% bibliography, and captions. Apply these exceptions:
+% Note: footnotes are single-spaced by default with setspace, no fix needed.
+% Note: \captionsetup{font={singlespacing}} is applied later, after
+% the caption package is loaded.
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\singlespacing}
+\AtBeginEnvironment{quotation}{\singlespacing}
+\AtBeginEnvironment{longtable}{\singlespacing}
+\AtBeginEnvironment{tabular}{\singlespacing}
+\AtBeginEnvironment{verbatim}{\singlespacing}
+\AtBeginEnvironment{thebibliography}{\singlespacing}
 
 % microtype: provides \textls (letter-spacing), used in chapter title format
 \usepackage{microtype}
@@ -66,6 +97,8 @@
 
 % caption: provides \ContinuedFloat for split figures across pages
 \usepackage{caption}
+% Single-spaced captions per BC GSAS (body is double-spaced)
+\captionsetup{font={stretch=1}}
 
 % ============================================================
 % Sectioning depth & ToC
@@ -150,7 +183,12 @@
 % ============================================================
 \usepackage{tikz}
 \usepackage{tikz-cd}
-\usetikzlibrary{shapes, positioning}
+\usetikzlibrary{shapes, positioning, calc}
+
+% Pretzel knot drawing macros (defines \crossing, \tangle, \pretzel,
+% \bandhighlight and the colors thesisblue, thesisred, bandfill).
+% Used for Figure \ref{fig:hedden_watson_family} in the introduction.
+\input{tikz_pretzel_macros}
 
 % ============================================================
 % Theorems
@@ -206,7 +244,7 @@
 ]{todo}
 \declaretheorem[numbered=no, style=todo, name=TODO]{TODO}
 
-\usepackage{etoolbox}
+% etoolbox is already loaded near the top for single-spacing exceptions.
 \AtEndEnvironment{vb}{\null\hfill$\diamond$}%
 \AtEndEnvironment{intermezzo}{\null\hfill$\diamond$}%
 
@@ -247,7 +285,7 @@
 
 \pdfsuppresswarningpagegroup=1
 
-\author{Gilles Castel}
+\author{Kevin Yeh}
 
 % ============================================================
 % Custom proof environment
