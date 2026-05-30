@@ -207,6 +207,25 @@ If $\phi_0$ is periodic, then either
     In each case above, $q \geq 2$ and $\gcd(p, q) = 1$.
 \end{prop}
 
+We isolate one further fact, relating the genus of the outermost piece to the genus of the pattern in the unknot. It underlies both the granny analysis below and the cable detection of Chapter \ref{chap:cable_detection}, and it is the hinge that determines which reducing-system configuration a given satellite occupies.
+
+\begin{lemma}\label{lem:outer_genus_equals_pattern_genus}
+Let $K = P(C)$ be a fibered satellite knot with companion solid torus $V$ and satellite torus $T = \partial V$, and suppose the pattern-in-the-unknot $P(U)$ is fibered. Let $\Sigma$ be the fiber of $K$, isotoped so as to meet $T$ in the minimal number of curves, which is then the wrapping number $m$ of $K$, and let $\Sigma_0 = \Sigma \cap V$ be the outermost piece, with boundary $\partial \Sigma_0 = K \cup (\Sigma \cap T)$. Then capping off the $m$ curves of $\Sigma \cap T$ with disks in the standardly embedded solid torus yields the fiber of $P(U)$, and this operation preserves genus, so
+\[
+g(\Sigma_0) = g(P(U)).
+\]
+\end{lemma}
+
+\begin{proof}
+Embed $V$ standardly in $S^3$, so that its core is unknotted. This is precisely the change of ambient space that carries the satellite $K = P(C)$ to the pattern-in-the-unknot $P(U)$, and it leaves the piece $\Sigma_0 \subset V$ unchanged. Under the standard embedding the curves $\Sigma \cap T$ bound meridional disks of the complementary solid torus; attaching these $m$ disks to $\Sigma_0$ produces a surface $\widehat{\Sigma}_0$ whose only boundary component is $K$. Since $K$ and $P(U)$ are fibered and the global monodromy preserves $T$, the surface $\widehat{\Sigma}_0$ is the fiber of $P(U)$.
+
+Capping a surface with $m$ disks raises the Euler characteristic by $m$ while removing $m$ boundary components. Writing $\chi = 2 - 2g - b$ for a surface of genus $g$ with $b$ boundary components, and noting that $\Sigma_0$ has $b = m+1$ boundary components while $\widehat{\Sigma}_0$ has one,
+\[
+1 - 2g(\widehat{\Sigma}_0) = \chi(\widehat{\Sigma}_0) = \chi(\Sigma_0) + m = \bigl(1 - 2g(\Sigma_0) - m\bigr) + m = 1 - 2g(\Sigma_0),
+\]
+so $g(\widehat{\Sigma}_0) = g(\Sigma_0)$. Hence $g(\Sigma_0) = g(\widehat{\Sigma}_0) = g(P(U))$.
+\end{proof}
+
 We shall need one more proposition before we are ready to prove the main result of this chapter.
 
 \begin{prop}\label{prop:capping_trefoil}
@@ -241,7 +260,7 @@ We shall need one more proposition before we are ready to prove the main result 
 
     Capping off $\gamma$ in this abstract way corresponds, geometrically, to changing the ambient 3-manifold. The curve $\gamma$ is a longitude of $V$ --- it lies on $T = \partial V$ and runs once longitudinally around the solid torus. Inside $V$, the curve $\gamma$ does not bound a disk (it is essential in $\pi_1 V$), so the capping disk cannot live inside the original $S^3$. Instead, the capping operation corresponds to \emph{unknotting} the companion: we replace the knotted complement $S^3 \setminus \mathring{V}$ with a standardly embedded solid torus, which has a meridional disk whose boundary is precisely the relevant longitude. Equivalently, this is the change of ambient space that takes the satellite knot $K = P(C)$ to the pattern-in-the-unknot $P(U)$.
 
-    Under this change of ambient space, the embedding of $V$ becomes standard, and the satellite knot $K = P(C)$ is transformed into the pattern knot in the unknot, $P(U)$. Therefore, the capped-off surface $\widehat{\Sigma}_0$ is a Seifert surface for $P(U)$. Since $\gamma$ is separating, the genus is additive, so $g(\widehat{\Sigma}_0) = g(\Sigma_0) = 1$. Because $P(U)$ is a trefoil, this means $\widehat{\Sigma}_0$ is exactly its minimal-genus fiber.
+    Under this change of ambient space, the embedding of $V$ becomes standard, and the satellite knot $K = P(C)$ is transformed into the pattern knot in the unknot, $P(U)$. Therefore, the capped-off surface $\widehat{\Sigma}_0$ is a Seifert surface for $P(U)$. By Lemma \ref{lem:outer_genus_equals_pattern_genus}, $g(\Sigma_0) = g(P(U)) = 1$, so $\widehat{\Sigma}_0$ is exactly the minimal-genus fiber of the trefoil $P(U)$.
 
     The global monodromy $h$ preserves the JSJ torus $T$ and thus restricts to an automorphism
     \[
@@ -281,11 +300,7 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
 
     Suppose the fiber $\Sigma_2^1$ and its reducing system is of Case A. Then $\Sigma_0$ is homeomorphic to a pair of pants, which is known to not support pseudo-Anosov homeomorphisms (see, e.g., Farb-Margalit\sidecite{farb2012primer}). This follows from the observation that every essential simple closed curve on the pair of pants is boundary-parallel; thus, every homeomorphism preserves a multicurve (the boundary itself) and is therefore reducible. Hence in this case $\phi_0 \colon \Sigma_0 \to \Sigma_0$ must be periodic, thus Proposition \ref{prop:knottracesprop} applies, specifically the case for when $\Gamma \neq \emptyset$.
 
-    Consider first the cable knot sub-case, i.e., that $K$ is a $(p,q)$-cable knot with $\Sigma_0$ of genus $g(T_{p,q})$. Since under our assumption of Case A, $\Sigma_0$ is of genus zero,
-    \[
-    g(\Sigma_0) = g(T_{p,q}) = 0.
-    \]
-    But the only genus zero torus knot is the unknot, which means $K$ is necessarily a satellite knot with trivial pattern. This is a contradiction as $K$ is assumed to be a non-trivial satellite knot.
+    Consider first the cable knot sub-case, i.e., that $K$ is a $(p,q)$-cable knot. A cable knot has winding number at least $2$: its pattern is a non-trivial torus knot on $\partial V$, whose longitudinal wrapping is the parameter $q \geq 2$ of Proposition \ref{prop:knottracesprop}. This contradicts Lemma \ref{lem:satellite_trefoils_windingnumber_1}, which forces the winding number of $K$ to be $1$. Hence the cable sub-case cannot occur. (We note for contrast that this is precisely the configuration occupied by the $(2,1)$-cable $C_{2,1}(T_{2,3})$ of Chapter \ref{chap:cable_detection}, whose winding number is $2$; it is excluded here only because the granny target forces winding number $1$.)
 
     Thus it must be the sub-case that $K$ is a composite knot. In other words, $K$ is a genus-two satellite knot that is a connect-sum of two genus-one knots. The only genus-one knots are the trefoils and the figure-eight knot. The Alexander polynomial of the connect-sum of one of the trefoils (either the left- or right-handed) and the figure-eight knot is the product of their respective Alexander polynomials:
     \begin{align*}
@@ -321,10 +336,10 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
     \[
     |c(K)| \geq 1, \quad |c(K)| \in \mathbb{Z}.
     \]
-    On the other hand, Hedden and Mark\sidecite{hedden2018floer} showed that for any fibered knot $K$ in an $L$-space, we must have
-   \[
-   |c(K)| \leq 1.
-   \]
+    On the other hand, since $K$ is a fibered knot in $S^3$ and $S^3$ is an L-space, the theorem of Hedden and Mark\sidecite{hedden2018floer} bounds the fractional Dehn twist coefficient by
+    \[
+    |c(K)| \leq 1.
+    \]
     Therefore, the only possibility is
     \[
     |c(K)| = 1.
@@ -337,44 +352,65 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
     \[
     -Y = -Y_{(\Sigma_2^1,\phi_h)} \cong S^3.
     \]
-    Let $-Y_1(K)$ denote the result of performing $1$-surgery along the binding $K$ on $-Y$; while $-Y_0(K)$ denotes the result of performing $0$-surgery along the binding $K$.
-
-    The triple $(-Y,-Y_0(K), -Y_1(K))$ fit into a surgery exact triangle in the sense of Ozv\'{a}th-Szab\'{o}:
-    \[
-    \dots \longrightarrow HF^+(-Y) \xlongrightarrow{j} HF^+(-Y_0(K)) \xlongrightarrow{k} HF^+(-Y_1(K)) \longrightarrow \dots
-    \]
-    Recall that the algebraic structure of $HF^+$ of a three-manifold is that of an $\mathbb{F}[U]$-module, where $U$ is a formal variable of degree $-2$.
-    Ozv\'{a}th and Szab\'{o} defined the contact invariant
-    \[
-    c(\xi) \in HF^+(-Y_1(K))
-    \]
-    to be the image of a particular class in
-    \[
-    HF^+(-Y_0(K)) \cong \mathbb{F}.
-    \]
-    Since $K$ is an L-space knot, $-Y_1(K)$ is an L-space. Thus $HF^+(-Y_1(K)) \cong \mathcal{T}^+$, the tower module. The contact invariant
-    \[
-    c(\xi_1) \in HF^+(S^3_1(K))
-    \]
-    associated with the canonical contact structure on the fibered surgery is non-zero (see work of Ozv\'{a}th-Szab\'{o}\sidecite{ozsvath2004holomorphic}).
-
-    On the other hand, the 1-surgery $-Y_1(K)$ is equivalent to the open book decomposition defined by the monodromy $\phi_h$ composed with a right-handed Dehn twist along the boundary:
+    Let $-Y_1(K)$ denote the result of performing $1$-surgery along the binding $K$ on $-Y$, and let $-Y_0(K)$ denote the result of performing $0$-surgery. The $1$-surgery is equivalent to the open book decomposition obtained by composing $\phi_h$ with a right-handed Dehn twist along the boundary:
     \[
     -Y_1(K) \cong -Y_{(\Sigma_2^1,\phi_h \circ T_\partial)}.
     \]
-    By assumption the fractional Dehn twist coefficient of $\phi_h$ is $1$, hence its composition with a right-handed Dehn twist has fractional Dehn twist coefficient zero:
+    Let $\xi_1$ denote the contact structure on $-Y_1(K)$ supported by this open book.
+
+    The triple $(-Y_1(K),-Y,-Y_0(K))$ fits into a surgery exact triangle of Ozv\'{a}th-Szab\'{o}, with twisted coefficients on the $0$-surgery term (cf.\ Hedden-Mark\sidecite{hedden2018floer}, Section 5):
+    \[
+    \dots \longrightarrow HF^+(-Y_1(K);\mathbb{F}) \xlongrightarrow{H} HF^+(-Y;\mathbb{F}) \xlongrightarrow{G} HF^+(-Y_0(K);\mathbb{F}[C_1]) \xlongrightarrow{F} HF^+(-Y_1(K);\mathbb{F}) \longrightarrow \dots
+    \]
+    All maps in this triangle are $\mathbb{F}[U]$-equivariant, where $U$ is the formal variable of degree $-2$ in the $\mathbb{F}[U]$-module structure on $HF^+$.
+
+    We focus on the canonical spin$^c$ structure $\mathfrak{s}_{1-g}$ on $-Y_0(K)$, namely the one cobordant through the surgery cobordism to $\mathfrak{s}_{\xi_1}$ and satisfying $\langle c_1(\mathfrak{s}_{1-g}), [\widehat{S}]\rangle = 2-2g$ on the capped-off fiber. By Lemma 2.1 of Hedden-Mark\sidecite{hedden2018floer}, the corresponding summand satisfies
+    \[
+    HF^+(-Y_0(K), \mathfrak{s}_{1-g}; \mathbb{F}[C_1]) \cong \mathbb{F}[C_1] \cong \mathbb{F},
+    \]
+    on which $U$ acts as zero.
+
+    Let $G_{1-g}$ and $F_{1-g}$ denote the components of $G$ and $F$ corresponding to this summand:
+    \[
+    HF^+(-Y; \mathbb{F}) \xlongrightarrow{G_{1-g}} \mathbb{F} \xlongrightarrow{F_{1-g}} HF^+(-Y_1(K), \mathfrak{s}_{\xi_1};\mathbb{F}).
+    \]
+
+    \textbf{Claim:} The map $G_{1-g}$ is zero.
+
+    \textit{Proof of claim.} Since $-Y \cong S^3$ is an L-space (indeed, the simplest one),
+    \[
+    HF^+(-Y; \mathbb{F}) \cong \mathcal{T}^+ := \mathbb{F}[U, U^{-1}]\big/U \cdot \mathbb{F}[U],
+    \]
+    the tower module. On $\mathcal{T}^+$, the action of $U$ is \emph{surjective}: for every $U^{-k} \in \mathcal{T}^+$ with $k \geq 0$, we have $U \cdot U^{-(k+1)} = U^{-k}$. Therefore, every element $x \in HF^+(-Y)$ may be written as $x = U \cdot y$ for some $y \in HF^+(-Y)$. By $\mathbb{F}[U]$-equivariance of $G_{1-g}$ and the fact that $U$ acts as zero on the target $\mathbb{F}$,
+    \[
+    G_{1-g}(x) = G_{1-g}(U \cdot y) = U \cdot G_{1-g}(y) = 0.
+    \]
+    Hence $G_{1-g} \equiv 0$, as claimed. \hfill$\square$
+
+    By exactness of the surgery triangle restricted to the $\mathfrak{s}_{1-g}$ summand,
+    \[
+    \ker(F_{1-g}) = \operatorname{im}(G_{1-g}) = 0,
+    \]
+    so $F_{1-g}$ is injective. Since its source $\mathbb{F}$ is non-zero, $F_{1-g}$ is non-trivial.
+
+    By Proposition 2.4 of Hedden-Mark\sidecite{hedden2018floer}, non-triviality of $F$ on the $\mathfrak{s}_{1-g}$ summand implies that the contact invariant
+    \[
+    c(\xi_1) \in HF^+(-Y_1(K); \mathbb{F})
+    \]
+    is non-zero. By Theorem 1.4 of Ozv\'{a}th-Szab\'{o}\sidecite{ozsvath2004holomorphic}, this implies that $\xi_1$ is \emph{tight}.
+
+    On the other hand, by assumption $c(\phi_h) = 1$, so composition with a right-handed boundary Dehn twist gives
     \[
     c(\phi_h \circ T_\partial) = 0.
     \]
-    But this contradicts a result of Honda-Kazez-Matic\sidecite{honda2007right} that for a fibered knot in a three-manifold, the contact invariant is $0$ if and only if the open book monodromy is \emph{not} right-veering.
+    Since $\phi_h \circ T_\partial$ is pseudo-Anosov and has vanishing fractional Dehn twist coefficient on its (single) boundary component, Proposition 3.1 of Honda-Kazez-Mati\'c\sidecite{honda2007right} implies that $\phi_h \circ T_\partial$ is \emph{not} right-veering. By Theorem 1.1 of the same paper, the contact structure $\xi_1$ supported by $(\Sigma_2^1, \phi_h \circ T_\partial)$ is therefore \emph{overtwisted}, contradicting the tightness established above.
 
     For the case of
     \[
-    c(K) = -1
+    c(K) = -1,
     \]
-    the same argument works with $Y$ in place of $-Y$, and left-handed Dehn twist in place of the right-handed Dehn twist.
+    the same argument works with $Y$ in place of $-Y$, and a left-handed Dehn twist in place of the right-handed Dehn twist.
 \end{myproof}
-
 \begin{remark}
 The satellite analysis above eliminates every candidate for $K$, and we have not had occasion to consider the $(2,1)$-cable of the right-handed trefoil, $C_{2,1}(T_{2,3})$, as a candidate: Lemma \ref{lem:satellite_trefoils_windingnumber_1} already excludes it on two counts (its winding number is $2$, not $1$, and its pattern $P(U) = T_{2,1}$ is the unknot rather than a trefoil). Nevertheless, $C_{2,1}(T_{2,3})$ is itself a fibered satellite knot of genus two, and one may ask whether its knot Floer homology is detected by $\widehat{HFK}$ in the same spirit as our main theorem. We establish a corresponding detection result for $C_{2,1}(T_{2,3})$---namely, that any knot $K' \subset S^3$ with $\widehat{HFK}(K'; \mathbb{F}) \cong \widehat{HFK}(C_{2,1}(T_{2,3}); \mathbb{F})$ and satisfying additional hyperbolic-monodromy hypotheses must in fact be $C_{2,1}(T_{2,3})$---in Chapter \ref{chap:cable_detection}.
 \end{remark}

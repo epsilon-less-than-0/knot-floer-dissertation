@@ -1,20 +1,20 @@
-\chapter[Appendix: Splitting Sequences for the Stratum]{Appendix: Splitting Sequences for the Stratum}
+\chapter[Splitting Sequences for the Stratum $(2;1^6;3^2)$]{Splitting Sequences for the Stratum $(2;1^6;3^2)$}
 \label{app:splitting_big_stratum}
 
-This appendix collects the exhaustive tight splitting sequences for the 12 base train tracks of the stratum $(2; 1^6; 3^2)$ identified in the proof of Lemma \ref{lem:two_triangle_reduction} of Chapter \ref{chap:stratatraintrackanalysis}. These splitting sequences establish the second part of the reduction of the geometric state space from the full \texttt{autofolder} output to the six irreducible standard train tracks $(0), (1), (8), (12), (13), (17)$ recorded in Figure \ref{fig:final_six_tracks}.
+This appendix collects the exhaustive tight-splitting diagrams for the base train tracks of the stratum $(2; 1^6; 3^2)$ that arise in the proof of Lemma \ref{lem:two_triangle_reduction} of Chapter \ref{chap:stratatraintrackanalysis} (Figures \ref{fig:19_splitting}--\ref{fig:1_splitting}). Together with the mirror-pair identification carried out there, these diagrams establish the second stage of the reduction of the geometric state space, from the jointless \texttt{autofolder} output for this stratum to the six surviving standard train tracks $(0), (1), (8), (12), (13), (17)$ recorded in Figure \ref{fig:final_six_tracks}.
 
-\paragraph{What the diagrams show.} Each figure depicts a single train track $\tau$ (numbered by its label in the \texttt{autofolder} output for the stratum) together with the complete tree of tight splittings emanating from $\tau$. The root of each tree is $\tau$ itself; the leaves are the train tracks reached after a finite sequence of tight splittings. Two infinitesimal triangles ($3$-gons) are present in each base track, and an initial tight splitting can occur at either of the two corresponding loop switches; the diagrams branch accordingly. By Definition \ref{def:tight-splitting} and Proposition \ref{prop:transition_matrix_split}, a tight splitting preserves the carrying property and the dynamics of any pseudo-Anosov map carried by the original track (up to conjugation by a braid). Consequently, any pseudo-Anosov map carried by $\tau$ is also carried by every track appearing in the splitting tree of $\tau$.
+\paragraph{What the diagrams show.} Each figure depicts a single train track $\tau$ (numbered by its label in the \texttt{autofolder} output for the stratum) together with the tree of tight splittings emanating from $\tau$. The root of each tree is $\tau$ itself; the leaves are the tracks reached after a finite sequence of tight splittings. By Proposition \ref{prop:carrying_preserved_under_split}, a tight splitting preserves the carrying property: any pseudo-Anosov map carried by $\tau$ is carried, up to conjugation by a braid, by each track in the splitting tree; by Proposition \ref{prop:transition_matrix_split} the associated dynamics (transition matrix, and hence dilatation) are preserved as well. Consequently, classifying the pseudo-Anosov maps carried by $\tau$ reduces to classifying those carried by the leaves of its tree.
 
-\paragraph{How to read the splitting termination.} Each figure terminates when every leaf of the splitting tree is one of the six irreducible tracks $(0), (1), (8), (12), (13), (17)$. The captions record the specific set of irreducible tracks at the leaves. Reading across all twelve figures, every base track $(19), (17), (15), (13), (12), (9), (8), (7), (5), (2), (1)$ splits into a subset of the irreducible six. The track $(0)$ is already irreducible (no further tight splittings are available) and does not appear in this appendix.
+\paragraph{How to read the diagrams.} Each diagram is a splitting diagram in the sense of Section \ref{sec:switch-rigidity}: a finite directed graph of tight $l$- and $r$-splits rooted at $\tau$. A diagram may contain splitting loops, but by the analysis of that section every such loop is excluded. A loop returning to a jointless track carries the periodic loop braid $\delta^{-1} = \sigma_2^{-1}\sigma_1^{-1}$ (up to conjugacy and full twists) and is ruled out by Lemma \ref{lem:periodic_loop}; a loop retaining a joint is ruled out by Reinoso's Theorem~C (Lemma \ref{lem:jointed_loop}). The leaves recorded in each caption are therefore the tracks reached upon exiting every loop. Each such leaf is either one of the six surviving tracks $(0), (1), (8), (12), (13), (17)$, the root of another diagram in this appendix, or the vertical mirror image of such a track. Tracing the diagrams transitively and identifying mirror pairs (as in the proof of Lemma \ref{lem:two_triangle_reduction}), every base track of the stratum reduces to one of the six surviving tracks.
 
-\paragraph{Consequences for the enumeration.} Combined with the mirror-pair identification carried out in the proof of Lemma \ref{lem:two_triangle_reduction}, the splitting sequences collected here establish that, up to conjugation and mirroring, every pseudo-Anosov mapping class in the stratum $(2; 1^6; 3^2)$ is carried by one of the six irreducible tracks of Figure \ref{fig:final_six_tracks}. This is the geometric reduction underlying Proposition \ref{prop:two_triangle_braids} and the enumeration of candidate braid families that follows.
+\paragraph{Consequences for the enumeration.} Combined with the mirror-pair identification of Lemma \ref{lem:two_triangle_reduction}, the splitting diagrams collected here establish that, up to conjugation and mirroring, every pseudo-Anosov mapping class in the stratum $(2; 1^6; 3^2)$ is carried by one of the six surviving tracks of Figure \ref{fig:final_six_tracks}. This is the geometric reduction underlying Proposition \ref{prop:two_triangle_braids} and the enumeration of candidate braid families that follows.
 
 
 \begin{figure*}[p] % [p] forces this to be on its own page, which is often necessary for large figures
     \centering
     % Restrict height to 45% of the text block per image, maintaining aspect ratio
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/19 Splitting-1.jpg}
-    \caption{This splitting sequence shows train track (19.) eventually splits to the train tracks (18.) or (17.).} 
+    \caption{Tight-splitting diagram of train track $(19.)$. After excluding the splitting loops (Lemmas \ref{lem:periodic_loop} and \ref{lem:jointed_loop}), the diagram terminates at the tracks $(18.)$ and $(17.)$.}
     \label{fig:19_splitting}
 \end{figure*}
 
@@ -23,7 +23,7 @@ This appendix collects the exhaustive tight splitting sequences for the 12 base 
     % Restrict height to 45% of the text block per image, maintaining aspect ratio
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/17 Splitting-1.jpg}\\[0pt]
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/17 Splitting-2.jpg}
-    \caption{This splitting sequence shows train track (17.) eventually splits to the train tracks (19.), (13.), (16.), or (12.).}
+    \caption{Tight-splitting diagram of train track $(17.)$. After excluding the splitting loops (Lemmas \ref{lem:periodic_loop} and \ref{lem:jointed_loop}), the diagram terminates at the tracks $(19.)$, $(13.)$, $(16.)$, and $(12.)$.}
     \label{fig:17_splitting}
 \end{figure*}
 
@@ -32,7 +32,7 @@ This appendix collects the exhaustive tight splitting sequences for the 12 base 
     % Restrict height to 45% of the text block per image, maintaining aspect ratio
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/15 Splitting-1.jpg}\\[0pt]
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/15 Splitting-2.jpg}
-    \caption{This splitting sequence shows train track (15.) eventually splits to the train tracks (19.) or (8.).}
+    \caption{Tight-splitting diagram of train track $(15.)$. After excluding the splitting loops (Lemmas \ref{lem:periodic_loop} and \ref{lem:jointed_loop}), the diagram terminates at the tracks $(19.)$ and $(8.)$.}
     \label{fig:15_splitting}
 \end{figure*}
 
@@ -41,7 +41,7 @@ This appendix collects the exhaustive tight splitting sequences for the 12 base 
     % Restrict height to 45% of the text block per image, maintaining aspect ratio
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/13 Splitting-1.jpg}\\[0pt]
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/13 Splitting-2.jpg}
-    \caption{This splitting sequence shows train track (13.) eventually splits to the train tracks (8.), (6.), (10.), or (5.).}
+    \caption{Tight-splitting diagram of train track $(13.)$. After excluding the splitting loops (Lemmas \ref{lem:periodic_loop} and \ref{lem:jointed_loop}), the diagram terminates at the tracks $(8.)$, $(6.)$, $(10.)$, and $(5.)$.}
     \label{fig:13_splitting}
 \end{figure*}
 
@@ -50,7 +50,7 @@ This appendix collects the exhaustive tight splitting sequences for the 12 base 
     % Restrict height to 45% of the text block per image, maintaining aspect ratio
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/12 Splitting-1.jpg}\\[0pt]
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/12 Splitting-2.jpg}
-    \caption{This splitting sequence shows train track (12.) eventually splits to the train tracks (17.), (7.), or (5.).}
+    \caption{Tight-splitting diagram of train track $(12.)$. After excluding the splitting loops (Lemmas \ref{lem:periodic_loop} and \ref{lem:jointed_loop}), the diagram terminates at the tracks $(17.)$, $(7.)$, and $(5.)$.}
     \label{fig:12_splitting}
 \end{figure*}
 
@@ -59,7 +59,7 @@ This appendix collects the exhaustive tight splitting sequences for the 12 base 
     % Restrict height to 45% of the text block per image, maintaining aspect ratio
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/9 Splitting-1.jpg}\\[0pt]
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/9 Splitting-2.jpg}
-    \caption{This splitting sequence shows train track (9.) eventually splits to the train tracks (7.), (4.), or (1.).}
+    \caption{Tight-splitting diagram of train track $(9.)$. After excluding the splitting loops (Lemmas \ref{lem:periodic_loop} and \ref{lem:jointed_loop}), the diagram terminates at the tracks $(7.)$, $(4.)$, and $(1.)$.}
     \label{fig:9_splitting}
 \end{figure*}
 
@@ -68,7 +68,7 @@ This appendix collects the exhaustive tight splitting sequences for the 12 base 
     % Restrict height to 45% of the text block per image, maintaining aspect ratio
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/8 Splitting-1.jpg}\\[0pt]
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/8 Splitting-2.jpg}
-    \caption{This splitting sequence shows train track (8.) eventually splits to the train tracks (17.), (3.), (19.), or (1.).}
+    \caption{Tight-splitting diagram of train track $(8.)$. After excluding the splitting loops (Lemmas \ref{lem:periodic_loop} and \ref{lem:jointed_loop}), the diagram terminates at the tracks $(17.)$, $(3.)$, $(19.)$, and $(1.)$.}
     \label{fig:8_splitting}
 \end{figure*}
 
@@ -76,7 +76,7 @@ This appendix collects the exhaustive tight splitting sequences for the 12 base 
     \centering
     % Restrict height to 45% of the text block per image, maintaining aspect ratio
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/7 Splitting.jpg}
-    \caption{This splitting sequence shows train track (7.) eventually splits to the train tracks (12.) or (1.).}
+    \caption{Tight-splitting diagram of train track $(7.)$. After excluding the splitting loops (Lemmas \ref{lem:periodic_loop} and \ref{lem:jointed_loop}), the diagram terminates at the tracks $(12.)$ and $(1.)$.}
     \label{fig:7_splitting}
 \end{figure*}
 
@@ -84,7 +84,7 @@ This appendix collects the exhaustive tight splitting sequences for the 12 base 
     \centering
     % Restrict height to 45% of the text block per image, maintaining aspect ratio
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/5 Splitting.jpg}
-    \caption{This splitting sequence shows train track (5.) eventually splits to the train tracks (13.) or (1.).}
+    \caption{Tight-splitting diagram of train track $(5.)$. After excluding the splitting loops (Lemmas \ref{lem:periodic_loop} and \ref{lem:jointed_loop}), the diagram terminates at the tracks $(13.)$ and $(1.)$.}
     \label{fig:5_splitting}
 \end{figure*}
 
@@ -93,7 +93,7 @@ This appendix collects the exhaustive tight splitting sequences for the 12 base 
     % Restrict height to 45% of the text block per image, maintaining aspect ratio
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/2 Splitting-1.jpg}\\[0pt]
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/2 Splitting-2.jpg}
-    \caption{This splitting sequence shows train track (2.) eventually splits to the train tracks (18.) or (0.).}
+    \caption{Tight-splitting diagram of train track $(2.)$. After excluding the splitting loops (Lemmas \ref{lem:periodic_loop} and \ref{lem:jointed_loop}), the diagram terminates at the tracks $(18.)$ and $(0.)$.}
     \label{fig:2_splitting}
 \end{figure*}
 
@@ -102,6 +102,6 @@ This appendix collects the exhaustive tight splitting sequences for the 12 base 
     % Restrict height to 45% of the text block per image, maintaining aspect ratio
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/1 Splitting-1.jpg}\\[0pt]
     \includegraphics[width=\linewidth, height=0.45\textheight, keepaspectratio]{figures_splitting/1 Splitting-2.jpg}
-    \caption{This splitting sequence shows train track (1.) eventually splits to the train tracks (11.), (8.), (12.), or (0.).}
+    \caption{Tight-splitting diagram of train track $(1.)$. After excluding the splitting loops (Lemmas \ref{lem:periodic_loop} and \ref{lem:jointed_loop}), the diagram terminates at the tracks $(11.)$, $(8.)$, $(12.)$, and $(0.)$.}
     \label{fig:1_splitting}
 \end{figure*}

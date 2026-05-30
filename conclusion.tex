@@ -67,15 +67,15 @@ Either avenue, if it successfully eliminates all residual candidates, would clos
 
 \subsection{Detection beyond genus two}
 
-The strategy of this dissertation --- Ni-Juh\'{a}sz reduction to surface monodromy, Birman-Hilden descent to a braid on the disk, and exhaustive train-track elimination of candidate mapping classes --- extends to higher-genus fibered knots only under an important structural constraint.
+The strategy of this dissertation ---  Birman-Hilden descent to a braid on the disk, and exhaustive train-track elimination of candidate mapping classes --- extends to higher-genus fibered knots only under an important structural constraint.
 
 In genus two, the hyperelliptic involution $\iota$ is central in the mapping class group $\mathrm{Mod}(\Sigma_2)$, so \emph{every} monodromy of a genus-two fibered knot automatically commutes with $\iota$ and therefore descends to a $(2g+2) = 6$-braid on the disk via the Birman-Hilden correspondence. For genus $g \geq 3$, the picture changes: the hyperelliptic mapping class group
 \[
 \mathcal{H}_g \;=\; C_{\mathrm{Mod}(\Sigma_g)}(\iota)
 \]
-is a \emph{proper} subgroup of $\mathrm{Mod}(\Sigma_g)$, and Birman-Hilden descent applies only to monodromies in $\mathcal{H}_g$ --- the so-called \textbf{hyperelliptic} (or \textbf{symmetric}) monodromies. Consequently, the framework developed here generalizes naturally to fibered knots of genus $g \geq 3$ \emph{whose monodromy is hyperelliptic}, but not directly to general genus-$g$ fibered knots. For non-hyperelliptic monodromies, an analogous theory would need to operate on closed-surface train tracks directly (see the discussion of \emph{Generalizing the autofolder} below).
+is a \emph{proper} subgroup of $\mathrm{Mod}(\Sigma_g)$, and Birman-Hilden descent applies only to monodromies in $\mathcal{H}_g$ --- the so-called \textbf{hyperelliptic} (or \textbf{symmetric}) monodromies. Consequently, the framework developed here generalizes naturally to fibered knots of genus $g \geq 3$ \emph{whose monodromy is hyperelliptic}, but not directly to general genus-$g$ fibered knots. 
 
-Even within the hyperelliptic class, the principal computational obstruction in genus three is the rapid growth in complexity of the train-track state space: the Euler-Poincar\'{e} stratum analysis admits substantially more strata, and the \texttt{autofolder}'s output graphs grow correspondingly. Natural genus-three targets include the torus knot $T_{2,7}$ (whose torus-knot monodromy is hyperelliptic) and the composite knot $T_{2,3} \# T_{2,5}$ (the unique composite genus-three fibered knot of the form $T_{2,p} \# T_{2,q}$); both are amenable to the framework developed here, modulo computational scaling and the verification that the relevant monodromies indeed lie in $\mathcal{H}_3$.
+Even within the hyperelliptic class, the principal computational obstruction in genus three is the rapid growth in complexity of the train-track state space: the Euler-Poincar\'{e} stratum analysis admits substantially more strata, and the \texttt{autofolder}'s output graphs grow correspondingly. 
 
 \subsection{Khovanov detection of the granny knot}
 
@@ -170,7 +170,7 @@ If both conjectures hold, $\widehat{HFK}$ and Khovanov homology together detect 
 The \texttt{autofolder} as currently implemented enumerates standard train tracks on the marked disk. Two natural extensions are:
 
 \begin{itemize}
-    \item \textbf{Closed surfaces of higher genus.}  Train track theory on closed surfaces (rather than on the disk) is well-developed, but the algorithmic enumeration is more delicate due to the absence of a canonical embedding.  An autofolder operating directly on $\Sigma_g$ would bypass the Birman-Hilden descent step and could enable detection results for fibered knots in 3-manifolds other than $S^3$.
+    \item \textbf{Closed surfaces of higher genus.}  Train track theory on closed surfaces (rather than on the disk) is well-developed, but the algorithmic enumeration is more delicate due to the absence of a canonical embedding.  An autofolder operating directly on $\Sigma_g$ would give a valuable contribution.
     \item \textbf{Activating the edge data.} The current \texttt{autofolder} outputs the vertex set of the folding automaton; the edge set, encoding standardizing braids and transition matrices, is computed by the package but not utilized in our obstruction. The dilatation-enumeration applications of this edge data are discussed in the introduction (Section \ref{subsec:dilatation_enumeration_intro}); other potential uses include the study of finer dynamical invariants of pseudo-Anosov mapping classes within each stratum.
 \end{itemize}
 
