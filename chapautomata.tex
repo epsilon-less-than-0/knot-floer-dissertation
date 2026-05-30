@@ -3,21 +3,21 @@
 
 In Chapter \ref{chap:stratoriented}, we successfully eliminated the pseudo-Anosov strata $(2; 1^4, 2^2; \emptyset)$, $(4; 1^6; \emptyset)$, and $(2; 1^6; 4)$ by exploiting the global orientability of their lifted invariant foliations. The remaining possible strata for the disk monodromy---specifically those containing odd-pronged internal singularities, namely $(2; 1^6; 3^2)$ and $(3; 1^6; 3)$---do not admit orientable foliations. To eliminate these final candidates, we cannot rely on the Alexander polynomial. Instead, in Chapter \ref{chap:stratatraintrackanalysis} we will directly construct the valid train track maps within these strata and manually apply the Trace Lemma established in Chapter \ref{chap:train tracks}.
 
-This topological case analysis requires a finite, exhaustive list of candidate standard train tracks to serve as the starting point. While the existence of an invariant train track is guaranteed by the Bestvina-Handel algorithm \sidecite{bestvina1995train}, we require a systematic enumeration of all possible tracks within our specific strata.
+This topological case analysis requires a finite, exhaustive list of candidate standard train tracks to serve as the starting point. While the existence of an invariant train track is guaranteed by the Bestvina-Handel algorithm \cite{bestvina1995train}, we require a systematic enumeration of all possible tracks within our specific strata.
 
-To achieve this, we utilize the concept of the \textit{folding automaton}, introduced by Ko, Los, and Song \sidecite{SongEntropy}. A folding automaton is a directed graph where vertices represent isomorphism classes of train tracks and edges represent folding operations. For the purposes of this thesis, we utilize the automaton strictly as an \textbf{enumeration engine}. By generating the complete automaton for a given stratum, the set of vertices provides the exact, finite catalog of standard train tracks required for our subsequent analysis.
+To achieve this, we utilize the concept of the \textit{folding automaton}, introduced by Ko, Los, and Song \cite{SongEntropy}. A folding automaton is a directed graph where vertices represent isomorphism classes of train tracks and edges represent folding operations. For the purposes of this thesis, we utilize the automaton strictly as an \textbf{enumeration engine}. By generating the complete automaton for a given stratum, the set of vertices provides the exact, finite catalog of standard train tracks required for our subsequent analysis.
 
-In this chapter, we describe the theory of folding automata on the $n$-punctured disk $D_n$. We then present our computational implementation of the ``genauto'' algorithm proposed by Ham and Song \sidecite{HamSong2007}, which we have developed in the software package \texttt{autofolder} to systematically output the candidate tracks for our remaining strata.
+In this chapter, we describe the theory of folding automata on the $n$-punctured disk $D_n$. We then present our computational implementation of the ``genauto'' algorithm proposed by Ham and Song \cite{HamSong2007}, which we have developed in the software package \texttt{autofolder} to systematically output the candidate tracks for our remaining strata.
 
 \section{Folding and The Folding Automaton}
 \label{sec:automaton_definition}
 
-Ko, Los, and Song \sidecite{SongEntropy} defined the folding automaton $\mathcal{A}_n$ for the braid group $B_n$. This structure encodes all possible standard train tracks (of a fixed complexity) and the transitions between them. First, we must define the procedure of \emph{folding} a train track.
+Ko, Los, and Song \cite{SongEntropy} defined the folding automaton $\mathcal{A}_n$ for the braid group $B_n$. This structure encodes all possible standard train tracks (of a fixed complexity) and the transitions between them. First, we must define the procedure of \emph{folding} a train track.
 
 \subsection{Elementary Folding}
 \label{subsec:elementary_folding}
 
-To rigorously define the folding operation, we adopt the terminology of Reinoso \cite{reinoso2024pseudo}, who adapts the notion of elementary folding from Ham and Song \sidecite{HamSong2007}.
+To rigorously define the folding operation, we adopt the terminology of Reinoso \cite{reinoso2024pseudo}, who adapts the notion of elementary folding from Ham and Song \cite{HamSong2007}.
 
 \begin{definition}[Markov Map]
     Let $\tau$ and $\tau'$ be standardly embedded train tracks on $D_n$. A \textbf{Markov map} is a graph map $p: \tau \to \tau'$ that maps vertices to vertices and is locally injective away from the preimages of vertices.
@@ -60,7 +60,7 @@ To fold $a$ onto $b$, we slide the vertex $v$ along the edge $b$. This action id
 
 While an elementary folding map $p: \tau \to \tau'$ preserves the foliation data, the resulting graph $\tau'$ often fails to satisfy the vertical marking condition of a standard train track. For example, the folding operation in Figure \ref{fig:folding} produces a non-standard train track. Recall from Definition \ref{def:standard_track}, the vertical marking condition requires that for each marked point, there is exactly one infinitesimal edge of $\tau$ passing vertically above it. In practice, this infinitesimal edge belongs to the infinitesimal polygon surrounding the marked point.
 
-After an elementary fold starting from a standard train track $\tau$, the folded track $\tau'$ often violates the vertical marking condition; however, Ko-Los-Song \sidecite{SongEntropy} show that $\tau'$ is at most \emph{almost standard}. That is, $\tau'$ has at most one offending infinitesimal edge. In other words, there is at most one marked point having two infinitesimal edges lying above it. We can perform a homeomorphism of the disk to transform the embedding of the folded train track so that it becomes standard. This choice of homeomorphism fixes the boundary pointwise, is orientation-preserving, and respects the marked points (permutes them), and thus can be thought of as a braid. We call such a braid a \textit{standardizing braid}. This standardizing braid is non-unique for a given almost standard train track. However, it can be taken to be of a certain form\footnote{Recall that braid words are read from left to right.}:
+After an elementary fold starting from a standard train track $\tau$, the folded track $\tau'$ often violates the vertical marking condition; however, Ko-Los-Song \cite{SongEntropy} show that $\tau'$ is at most \emph{almost standard}. That is, $\tau'$ has at most one offending infinitesimal edge. In other words, there is at most one marked point having two infinitesimal edges lying above it. We can perform a homeomorphism of the disk to transform the embedding of the folded train track so that it becomes standard. This choice of homeomorphism fixes the boundary pointwise, is orientation-preserving, and respects the marked points (permutes them), and thus can be thought of as a braid. We call such a braid a \textit{standardizing braid}. This standardizing braid is non-unique for a given almost standard train track. However, it can be taken to be of a certain form\footnote{Recall that braid words are read from left to right.}:
 
 \begin{lemma}[{\cite[Lemma~1]{SongEntropy}}]
     Let $\tau'$ be an almost standard train track on $D_n$. Then there exists an $n$-braid $\beta \in B_n$ of the form
@@ -142,7 +142,7 @@ The dotted lines are standardizing operations and thus represent isomorphisms. C
 
 In general, the folding automaton of a particular stratum can become extremely complicated as soon as the disk under consideration has 5 or 6 marked points, making it impracticable to reproduce graphically.
 
-Ham and Song \sidecite{HamSong2007} proposed an algorithm for generating the folding automaton, which they termed \texttt{genauto}. The theoretical version of this algorithm, as described in the appendix of their work, is presented below. It requires a ``seed'' standard train track belonging to the stratum of interest. That is, suppose we would like to generate the folding automaton of the stratum
+Ham and Song \cite{HamSong2007} proposed an algorithm for generating the folding automaton, which they termed \texttt{genauto}. The theoretical version of this algorithm, as described in the appendix of their work, is presented below. It requires a ``seed'' standard train track belonging to the stratum of interest. That is, suppose we would like to generate the folding automaton of the stratum
 \[
 (b_1,\dots,b_r; m_1,\dots, m_n ; k_1,\dots, k_s),
 \]
@@ -185,7 +185,7 @@ In the Introduction, we stated Theorem \ref{thm:autofolder_main}, asserting that
 \textbf{Exhaustiveness.}
 The exhaustiveness argument relies on a connectivity result of Penner and Harer phrased in terms of \emph{splitting}, the topological inverse of folding. We will define splitting more carefully and use it heavily in Chapter \ref{chap:stratatraintrackanalysis}; for the present proof, it suffices to know that a split is a local move on a train track that reverses an elementary fold --- if a track $\tau$ folds to $\tau'$, then $\tau'$ splits to $\tau$. A split is permitted at a switch where the local geometry admits an inverse-fold configuration; not every switch can be split, but every fold can be undone by a split.
 
-With this, we may state the relevant Penner-Harer connectivity result \sidecite{penner1992combinatorics}: the space of measured laminations $\mathcal{ML}_0(D_n)$ admits a cellular decomposition whose cells correspond to standard train tracks, and any two equivalent positively measured standard tracks $(\tau_1, \mu_1)$ and $(\tau_2, \mu_2)$ admit a common refinement $(\tau, \mu)$, in the sense that each $(\tau_i, \mu_i)$ splits (and isotopes) to $(\tau, \mu)$ \cite[Theorem~2.3.1]{penner1992combinatorics}. Consequently, any two standard tracks in the same stratum are related by a finite sequence of splits and inverse splits (i.e., folds) modulo isotopy.
+With this, we may state the relevant Penner-Harer connectivity result \cite{penner1992combinatorics}: the space of measured laminations $\mathcal{ML}_0(D_n)$ admits a cellular decomposition whose cells correspond to standard train tracks, and any two equivalent positively measured standard tracks $(\tau_1, \mu_1)$ and $(\tau_2, \mu_2)$ admit a common refinement $(\tau, \mu)$, in the sense that each $(\tau_i, \mu_i)$ splits (and isotopes) to $(\tau, \mu)$ \cite[Theorem~2.3.1]{penner1992combinatorics}. Consequently, any two standard tracks in the same stratum are related by a finite sequence of splits and inverse splits (i.e., folds) modulo isotopy.
 
 To translate this geometric statement into the combinatorial language of folding automata:
 \begin{itemize}
@@ -253,7 +253,7 @@ We now prove that checking combinatorial equivalence is sufficient to establish 
     $(\Leftarrow)$ Suppose $\phi: \mathcal{C}(\tau_1) \to \mathcal{C}(\tau_2)$ is a combinatorial equivalence. We construct the required braid $\beta$ in three steps.
 
     \textbf{Step 1: Constructing a homeomorphism between fibered neighborhoods.}
-    The tuple $(G, \mathcal{O})$ defines a unique ribbon graph structure. Following Penner and Harer \sidecite[Section 1.1]{penner1992combinatorics}, this combinatorial data uniquely determines an oriented surface with boundary $N(\tau_i)$ obtained by thickening the ribbon graph; in our setting, $N(\tau_i)$ is the fibered neighborhood of $\tau_i$. Since $\phi$ preserves the cyclic ordering $\mathcal{O}$, it induces an orientation-preserving homeomorphism $h': N(\tau_1) \to N(\tau_2)$ that carries $\tau_1$ onto $\tau_2$ and respects the vertical-fiber structure.
+    The tuple $(G, \mathcal{O})$ defines a unique ribbon graph structure. Following Penner and Harer \cite[Section 1.1]{penner1992combinatorics}, this combinatorial data uniquely determines an oriented surface with boundary $N(\tau_i)$ obtained by thickening the ribbon graph; in our setting, $N(\tau_i)$ is the fibered neighborhood of $\tau_i$. Since $\phi$ preserves the cyclic ordering $\mathcal{O}$, it induces an orientation-preserving homeomorphism $h': N(\tau_1) \to N(\tau_2)$ that carries $\tau_1$ onto $\tau_2$ and respects the vertical-fiber structure.
 
     \textbf{Step 2: Extending across the complementary regions.}
     The complement $D_n \setminus N(\tau_i)$ is a disjoint union of polygons: marked infinitesimal polygons (containing one marked point each), unmarked infinitesimal polygons (containing one non-marked singularity each), and a single peripheral region (adjacent to $\partial D_n$). The combinatorial equivalence $\phi$ induces a bijection between these polygons preserving cusp counts and edge labels, so it sends each polygon of $\tau_1$ to a polygon of $\tau_2$ of the same combinatorial type. We extend $h'$ across each polygon by the Alexander trick (any orientation-preserving homeomorphism of the boundary of a disk extends to a homeomorphism of the disk; the extension is unique up to isotopy rel boundary).
@@ -319,7 +319,7 @@ See Figure \ref{fig:folding_automaton} for an example.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{figures/Automaton Folding-1.jpg}
-    \caption{Left: A left-to-right folding at the cusp located at $v_cusp$. Right: The equivalent operation performed by the algorithm on a \texttt{StandardTrainTrack} object. The algorithm deletes $e_L$, then attach a new edge between $v_L$ and $v_far$ at the appropriate position in the cyclic ordering. The graph information, cyclic ordering, and cusp informations are updated for the newly created \texttt{StandardTrainTrack} object.}
+    \caption{Left: A left-to-right folding at the cusp located at $v_{cusp}$. Right: The equivalent operation performed by the algorithm on a \texttt{StandardTrainTrack} object. The algorithm deletes $e_L$, then attaches a new edge between $v_L$ and $v_{far}$ at the appropriate position in the cyclic ordering. The graph information, cyclic ordering, and cusp information are updated for the newly created \texttt{StandardTrainTrack} object.}
     \label{fig:folding_automaton}
 \end{figure}
 
@@ -530,7 +530,7 @@ We now present the detailed pseudo-code for our full graph implementation. Unlik
 
 \section{Conclusion}
 
-In this chapter, we formalized the theory of folding automata and provided a complete algorithmic realization of the enumeration framework originally theorized by Ko, Los, and Song \sidecite{SongEntropy}. As noted by Los \sidecite{Los2008}, a systematic study of all pseudo-Anosov homeomorphisms within a given stratum requires the rigorous development of its specific train-track automata theory. Furthermore, Los anticipated that because such automata are practically immense, an explicit algorithmic description is strictly necessary to make the state space tractable.
+In this chapter, we formalized the theory of folding automata and provided a complete algorithmic realization of the enumeration framework originally theorized by Ko, Los, and Song \cite{SongEntropy}. As noted by Los \cite{Los2008}, a systematic study of all pseudo-Anosov homeomorphisms within a given stratum requires the rigorous development of its specific train-track automata theory. Furthermore, Los anticipated that because such automata are practically immense, an explicit algorithmic description is strictly necessary to make the state space tractable.
 
 For the remaining non-orientable strata on the disk---specifically $(2; 1^6; 3^2)$ and $(3; 1^6; 3)$---our \texttt{autofolder} implementation fulfills this exact requirement. It provides a sufficient list of standard train tracks within each stratum, from which we can systematically hunt for valid train track maps.
 

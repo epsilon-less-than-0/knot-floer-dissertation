@@ -40,7 +40,7 @@ The \textbf{winding number} of the satellite knot $P(C)$ is the winding number o
 We would like to sometimes consider the pattern $P$ as a knot in $S^3$, by which we mean the image of $P$ under the natural embedding of $S^1 \times D^2$ into $S^3$. We will denote this knot as $P(U)$. The notation is indicative of the fact that this knot is equivalent to a satellite knot construction with pattern $P$, and $f$ is the embedding that sends the core curve to the unknot.
 
 \section{Schubert's Formula on the Alexander polynomial of a Satellite Knot}
-A well-known formula originally due to Schubert\sidecite{schubert1953knoten} relates the Alexander polynomials of $K$ and that of $P(U)$ and $C$:
+A well-known formula originally due to Schubert\cite{schubert1953knoten} relates the Alexander polynomials of $K$ and that of $P(U)$ and $C$:
 
 
 \begin{theorem}[Schubert, 1953 \cite{schubert1953knoten}]\label{thm:schubert}
@@ -75,7 +75,7 @@ By assumption $K$ has the following symmetrized Alexander polynomial:
 \Delta_K(t) = t^2 - 2t + 3 - 2t^{-1} + t^{-2}.
 \]
 
-Since $K$ is fibered, the algebraic winding number is non-zero, so we may assume $|w| \geq 1$. (Indeed, if $w = 0$, then Schubert's formula gives $\Delta_K(t) \doteq \Delta_{P(U)}(t) \cdot \Delta_C(1) \doteq \pm \Delta_{P(U)}(t)$, so $\Delta_K$ degenerates to depend only on the pattern. By Hirasawa, Murasugi, and Silver \sidecite[Theorem 1]{HirasawaMurasugiSilver2008}, a satellite knot with winding number zero and non-trivial companion is not fibered, contradicting our hypothesis.) Furthermore, both the companion $C$ and the pattern in the unknot $P(U)$ must also be fibered \cite[Corollary 4.15, Proposition 5.5]{BZ03}. The Alexander polynomials of these knots are related by the formula from Theorem \ref{thm:schubert}:
+Since $K$ is fibered, the algebraic winding number is non-zero, so we may assume $|w| \geq 1$. (Indeed, if $w = 0$, then Schubert's formula gives $\Delta_K(t) \doteq \Delta_{P(U)}(t) \cdot \Delta_C(1) \doteq \pm \Delta_{P(U)}(t)$, so $\Delta_K$ degenerates to depend only on the pattern. By Hirasawa, Murasugi, and Silver \cite[Theorem 1]{HirasawaMurasugiSilver2008}, a satellite knot with winding number zero and non-trivial companion is not fibered, contradicting our hypothesis.) Furthermore, both the companion $C$ and the pattern in the unknot $P(U)$ must also be fibered \cite[Corollary 4.15, Proposition 5.5]{BZ03}. The Alexander polynomials of these knots are related by the formula from Theorem \ref{thm:schubert}:
 \[
 \Delta_K(t) = \Delta_{P(U)}(t) \cdot \Delta_C(t^w).
 \]
@@ -91,7 +91,7 @@ Since $\Delta_K(t)$ has degree $2$, $\Delta_C(t^w)$ must also have degree $2$, m
 
 If $|w|=2$, then $\Delta_C(t)$ has degree $1$, meaning $\Delta_C(t) = at + b + at^{-1}$. Substituting $t^2$ yields $\Delta_C(t^2) = at^2 + b + at^{-2}$, which has zero coefficients for the $t^{\pm 1}$ terms. This contradicts our explicit formula for $\Delta_K(t)$, which contains $-2t$ and $-2t^{-1}$. This strictly forces $|w|=1$.
 
-Since the winding number is one and $P(U)$ is the unknot, a result of Hirasawa, Murasugi, and Silver \sidecite[Corollary 1]{HirasawaMurasugiSilver2008} states that $K = P(C)$ can only be fibered if $P$ is isotopic to the core $S^1 \times \{0\} \subset S^1 \times D^2$. But this implies $K$ is isotopic to $C$, contradicting the assumption that $K$ is a non-trivial satellite knot.
+Since the winding number is one and $P(U)$ is the unknot, a result of Hirasawa, Murasugi, and Silver \cite[Corollary 1]{HirasawaMurasugiSilver2008} states that $K = P(C)$ can only be fibered if $P$ is isotopic to the core $S^1 \times \{0\} \subset S^1 \times D^2$. But this implies $K$ is isotopic to $C$, contradicting the assumption that $K$ is a non-trivial satellite knot.
 
 Thus, it must be that $\Delta_K(t)$ splits symmetrically, i.e.,
 \[
@@ -111,7 +111,7 @@ to the case at hand, we have
 \[
 2 \geq 1 \cdot 1 + g(P(U)).
 \]
-Thus $P(U)$ must either be genus zero or genus one. If it were genus zero, it would be the unknot, which has a trivial Alexander polynomial, contradicting $\Delta_{P(U)}(t) = t - 1 + t^{-1}$. Hence $P(U)$ must be a genus-one knot. By Hirasawa-Murasugi-Silver \sidecite{HirasawaMurasugiSilver2008}, both $C$ and $P(U)$ are fibered. The only fibered genus-one knots are the figure-eight knot and the trefoils. Since the figure-eight knot has $\Delta(t) = t - 3 + t^{-1}$, the Alexander polynomial restricts $P(U)$ to being one of the trefoils. Similarly, since $\Delta_C(t) = t - 1 + t^{-1}$ and $C$ is a genus-one fibered knot, the companion $C$ is also one of the trefoils.
+Thus $P(U)$ must either be genus zero or genus one. If it were genus zero, it would be the unknot, which has a trivial Alexander polynomial, contradicting $\Delta_{P(U)}(t) = t - 1 + t^{-1}$. Hence $P(U)$ must be a genus-one knot. By Hirasawa-Murasugi-Silver \cite{HirasawaMurasugiSilver2008}, both $C$ and $P(U)$ are fibered. The only fibered genus-one knots are the figure-eight knot and the trefoils. Since the figure-eight knot has $\Delta(t) = t - 3 + t^{-1}$, the Alexander polynomial restricts $P(U)$ to being one of the trefoils. Similarly, since $\Delta_C(t) = t - 1 + t^{-1}$ and $C$ is a genus-one fibered knot, the companion $C$ is also one of the trefoils.
 \end{proof}
 
 \section{Thurston Reducing System}
@@ -125,7 +125,7 @@ Let $h \colon \Sigma \to \Sigma$ be a homeomorphism of a compact oriented surfac
 \end{enumerate}
 \end{theorem}
 
-As explained in Thurston's work, we may, and will assume that $\Gamma$ is minimal with respect to inclusion, in which case it is unique up to isotopy \sidecite[Theorem C]{birman1983abelian} and is called the \textbf{canonical reducing system} for $h$. We refer to the pair $(\phi_h, \Gamma)$
+As explained in Thurston's work, we may, and will assume that $\Gamma$ is minimal with respect to inclusion, in which case it is unique up to isotopy \cite[Theorem C]{birman1983abelian} and is called the \textbf{canonical reducing system} for $h$. We refer to the pair $(\phi_h, \Gamma)$
 as the \textbf{Nielsen-Thurston form of $h$}.
 
 Let us now consider the case where
@@ -161,7 +161,7 @@ Case A and Case B are shown in Figure \ref{fig:two_satellite_cases}.
 \end{figure}
 
 \begin{myproof}
-    By a result of Baldwin and Sivek \sidecite{BaldwinSivekInPrep}, for a fibered knot in an L-space, every curve in the canonical reducing system $\Gamma$ is separating. Furthermore, by definition, $\Gamma$ is a minimal collection of disjoint, essential, and non-boundary-parallel simple closed curves.
+    By a result of Baldwin and Sivek \cite{BaldwinSivekInPrep}, for a fibered knot in an L-space, every curve in the canonical reducing system $\Gamma$ is separating. Furthermore, by definition, $\Gamma$ is a minimal collection of disjoint, essential, and non-boundary-parallel simple closed curves.
 
     The surface $\Sigma_2^1$ has genus $g=2$ and one boundary component $\partial \Sigma = K$. We analyze the possible components of $\Sigma_2^1 \setminus \Gamma$ based on the number of curves in $\Gamma$.
 
@@ -298,7 +298,7 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
 
     Hence $\Gamma \neq \emptyset$, and this can be either Case A or Case B, by Lemma \ref{lem:satellite_CaseACaseB}.
 
-    Suppose the fiber $\Sigma_2^1$ and its reducing system is of Case A. Then $\Sigma_0$ is homeomorphic to a pair of pants, which is known to not support pseudo-Anosov homeomorphisms (see, e.g., Farb-Margalit\sidecite{farb2012primer}). This follows from the observation that every essential simple closed curve on the pair of pants is boundary-parallel; thus, every homeomorphism preserves a multicurve (the boundary itself) and is therefore reducible. Hence in this case $\phi_0 \colon \Sigma_0 \to \Sigma_0$ must be periodic, thus Proposition \ref{prop:knottracesprop} applies, specifically the case for when $\Gamma \neq \emptyset$.
+    Suppose the fiber $\Sigma_2^1$ and its reducing system is of Case A. Then $\Sigma_0$ is homeomorphic to a pair of pants, which is known to not support pseudo-Anosov homeomorphisms (see, e.g., Farb-Margalit\cite{farb2012primer}). This follows from the observation that every essential simple closed curve on the pair of pants is boundary-parallel; thus, every homeomorphism preserves a multicurve (the boundary itself) and is therefore reducible. Hence in this case $\phi_0 \colon \Sigma_0 \to \Sigma_0$ must be periodic, thus Proposition \ref{prop:knottracesprop} applies, specifically the case for when $\Gamma \neq \emptyset$.
 
     Consider first the cable knot sub-case, i.e., that $K$ is a $(p,q)$-cable knot. A cable knot has winding number at least $2$: its pattern is a non-trivial torus knot on $\partial V$, whose longitudinal wrapping is the parameter $q \geq 2$ of Proposition \ref{prop:knottracesprop}. This contradicts Lemma \ref{lem:satellite_trefoils_windingnumber_1}, which forces the winding number of $K$ to be $1$. Hence the cable sub-case cannot occur. (We note for contrast that this is precisely the configuration occupied by the $(2,1)$-cable $C_{2,1}(T_{2,3})$ of Chapter \ref{chap:cable_detection}, whose winding number is $2$; it is excluded here only because the granny target forces winding number $1$.)
 
@@ -330,13 +330,13 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
     \[
     \widehat{\phi}_0 \colon \widehat{\Sigma}_0 \to \widehat{\Sigma}_0
     \]
-    of $\phi_0$. That is, capping off $\Sigma_0$ along $\Gamma = \gamma$ with a disk and extending $\phi_0$ to the identity along the capping disk to obtain $\widehat{\phi}_0$. This map is in fact the monodromy of $C$, the trefoil monodromy by Proposition \ref{prop:capping_trefoil}, which is known to be not pseudo-Anosov (since the trefoils are not hyperbolic). Consequently, the number of prongs on $\Sigma_0$ located at $\Gamma$ must be 1. Otherwise, the capped off map would still be pseudo-Anosov. We claim that on the other boundary component, which we denote by $\partial \Sigma$, there is also only one prong. Indeed, the map $\phi_0$ commutes with the hyperelliptic involution $\iota$. By construction, $\iota$ exchanges the two boundary components of $\Sigma_0$. Since $\iota$ is a diffeomorphism preserving the invariant foliation, it must map the singularity at $\Gamma$ to the singularity at $\partial \Sigma$. Consequently, the number of prongs at both boundaries must be identical.
+    of $\phi_0$. That is, capping off $\Sigma_0$ along $\Gamma = \gamma$ with a disk and extending $\phi_0$ to the identity along the capping disk to obtain $\widehat{\phi}_0$. This map is in fact the monodromy of the trefoil $P(U)$ by Proposition \ref{prop:capping_trefoil}, which is known to be not pseudo-Anosov (since the trefoils are not hyperbolic). Consequently, the number of prongs on $\Sigma_0$ located at $\Gamma$ must be 1. Otherwise, the capped off map would still be pseudo-Anosov. We claim that on the other boundary component, which we denote by $\partial \Sigma$, there is also only one prong. Indeed, the map $\phi_0$ commutes with the hyperelliptic involution $\iota$. By construction, $\iota$ exchanges the two boundary components of $\Sigma_0$. Since $\iota$ is a diffeomorphism preserving the invariant foliation, it must map the singularity at $\Gamma$ to the singularity at $\partial \Sigma$. Consequently, the number of prongs at both boundaries must be identical.
 
     This implies that the fractional Dehn twist coefficient $c(K)$ is at least one and an integer:
     \[
     |c(K)| \geq 1, \quad |c(K)| \in \mathbb{Z}.
     \]
-    On the other hand, since $K$ is a fibered knot in $S^3$ and $S^3$ is an L-space, the theorem of Hedden and Mark\sidecite{hedden2018floer} bounds the fractional Dehn twist coefficient by
+    On the other hand, since $K$ is a fibered knot in $S^3$ and $S^3$ is an L-space, the theorem of Hedden and Mark\cite{hedden2018floer} bounds the fractional Dehn twist coefficient by
     \[
     |c(K)| \leq 1.
     \]
@@ -358,13 +358,13 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
     \]
     Let $\xi_1$ denote the contact structure on $-Y_1(K)$ supported by this open book.
 
-    The triple $(-Y_1(K),-Y,-Y_0(K))$ fits into a surgery exact triangle of Ozv\'{a}th-Szab\'{o}, with twisted coefficients on the $0$-surgery term (cf.\ Hedden-Mark\sidecite{hedden2018floer}, Section 5):
+    The triple $(-Y_1(K),-Y,-Y_0(K))$ fits into a surgery exact triangle of Ozv\'{a}th-Szab\'{o}, with twisted coefficients on the $0$-surgery term (cf.\ Hedden-Mark\cite{hedden2018floer}, Section 5):
     \[
     \dots \longrightarrow HF^+(-Y_1(K);\mathbb{F}) \xlongrightarrow{H} HF^+(-Y;\mathbb{F}) \xlongrightarrow{G} HF^+(-Y_0(K);\mathbb{F}[C_1]) \xlongrightarrow{F} HF^+(-Y_1(K);\mathbb{F}) \longrightarrow \dots
     \]
     All maps in this triangle are $\mathbb{F}[U]$-equivariant, where $U$ is the formal variable of degree $-2$ in the $\mathbb{F}[U]$-module structure on $HF^+$.
 
-    We focus on the canonical spin$^c$ structure $\mathfrak{s}_{1-g}$ on $-Y_0(K)$, namely the one cobordant through the surgery cobordism to $\mathfrak{s}_{\xi_1}$ and satisfying $\langle c_1(\mathfrak{s}_{1-g}), [\widehat{S}]\rangle = 2-2g$ on the capped-off fiber. By Lemma 2.1 of Hedden-Mark\sidecite{hedden2018floer}, the corresponding summand satisfies
+    We focus on the canonical spin$^c$ structure $\mathfrak{s}_{1-g}$ on $-Y_0(K)$, namely the one cobordant through the surgery cobordism to $\mathfrak{s}_{\xi_1}$ and satisfying $\langle c_1(\mathfrak{s}_{1-g}), [\widehat{S}]\rangle = 2-2g$ on the capped-off fiber. By Lemma 2.1 of Hedden-Mark\cite{hedden2018floer}, the corresponding summand satisfies
     \[
     HF^+(-Y_0(K), \mathfrak{s}_{1-g}; \mathbb{F}[C_1]) \cong \mathbb{F}[C_1] \cong \mathbb{F},
     \]
@@ -393,17 +393,17 @@ We are now ready to prove the main result of this chapter, Theorem \ref{theorem:
     \]
     so $F_{1-g}$ is injective. Since its source $\mathbb{F}$ is non-zero, $F_{1-g}$ is non-trivial.
 
-    By Proposition 2.4 of Hedden-Mark\sidecite{hedden2018floer}, non-triviality of $F$ on the $\mathfrak{s}_{1-g}$ summand implies that the contact invariant
+    By Proposition 2.4 of Hedden-Mark\cite{hedden2018floer}, non-triviality of $F$ on the $\mathfrak{s}_{1-g}$ summand implies that the contact invariant
     \[
     c(\xi_1) \in HF^+(-Y_1(K); \mathbb{F})
     \]
-    is non-zero. By Theorem 1.4 of Ozv\'{a}th-Szab\'{o}\sidecite{ozsvath2004holomorphic}, this implies that $\xi_1$ is \emph{tight}.
+    is non-zero. By Theorem 1.4 of Ozv\'{a}th-Szab\'{o}\cite{ozsvath2004holomorphic}, this implies that $\xi_1$ is \emph{tight}.
 
     On the other hand, by assumption $c(\phi_h) = 1$, so composition with a right-handed boundary Dehn twist gives
     \[
     c(\phi_h \circ T_\partial) = 0.
     \]
-    Since $\phi_h \circ T_\partial$ is pseudo-Anosov and has vanishing fractional Dehn twist coefficient on its (single) boundary component, Proposition 3.1 of Honda-Kazez-Mati\'c\sidecite{honda2007right} implies that $\phi_h \circ T_\partial$ is \emph{not} right-veering. By Theorem 1.1 of the same paper, the contact structure $\xi_1$ supported by $(\Sigma_2^1, \phi_h \circ T_\partial)$ is therefore \emph{overtwisted}, contradicting the tightness established above.
+    Since $\phi_h \circ T_\partial$ is pseudo-Anosov and has vanishing fractional Dehn twist coefficient on its (single) boundary component, Proposition 3.1 of Honda-Kazez-Mati\'c\cite{honda2007right} implies that $\phi_h \circ T_\partial$ is \emph{not} right-veering. By Theorem 1.1 of the same paper, the contact structure $\xi_1$ supported by $(\Sigma_2^1, \phi_h \circ T_\partial)$ is therefore \emph{overtwisted}, contradicting the tightness established above.
 
     For the case of
     \[

@@ -3,11 +3,11 @@
 
 In this chapter, we introduce the theory of train tracks, which together with the folding automata of Chapter \ref{chap:folding_automata} serve as the primary combinatorial engines for resolving the hyperbolic case of our main result. The ultimate goal of developing this machinery is to rigorously classify the pseudo-Anosov maps that can inhabit the singularity strata identified in Chapter \ref{chap:preliminaries}. By translating the continuous topological dynamics of a surface homeomorphism into a discrete train track map, we can algorithmically constrain its behavior. Specifically, in Chapter \ref{chap:folding_automata} we will construct and utilize train track automata---directed graphs where paths correspond to sequences of valid folding operations---to systematically output the complete, finite list of standard train tracks that must be considered within each stratum.
 
-Historically, the theory of train tracks was originally introduced by Thurston \sidecite{Thurston1988} to study the dynamics of surface homeomorphisms and the classification of mapping classes. This geometric framework was later formalized combinatorially by Penner and Harer \sidecite{penner1992combinatorics}, providing a rigorous calculus for studying laminations on surfaces. Specifically, they formalized the notion of \textit{carrying}, by which they proved that measured laminations can be identified with non-negative weight systems on a train track.
+Historically, the theory of train tracks was originally introduced by Thurston \cite{Thurston1988} to study the dynamics of surface homeomorphisms and the classification of mapping classes. This geometric framework was later formalized combinatorially by Penner and Harer \cite{penner1992combinatorics}, providing a rigorous calculus for studying laminations on surfaces. Specifically, they formalized the notion of \textit{carrying}, by which they proved that measured laminations can be identified with non-negative weight systems on a train track.
 
-The problem of effectively constructing a train track representative for a given pseudo-Anosov map was subsequently solved by Bestvina and Handel \sidecite{bestvina1995train}. They introduced an algorithm that computes the invariant train track by iteratively folding a graph carried by the surface, a method that serves as the basis for the computational techniques used in this work.
+The problem of effectively constructing a train track representative for a given pseudo-Anosov map was subsequently solved by Bestvina and Handel \cite{bestvina1995train}. They introduced an algorithm that computes the invariant train track by iteratively folding a graph carried by the surface, a method that serves as the basis for the computational techniques used in this work.
 
-We follow the conventions established by Reinoso \sidecite{reinoso2024pseudo}, who derived them from the work of Song, Ko, and Los \sidecite{SongEntropy} and Ham and Song \sidecite{HamSong2007}.
+We follow the conventions established by Reinoso \cite{reinoso2024pseudo}, who derived them from the work of Song, Ko, and Los \cite{SongEntropy} and Ham and Song \cite{HamSong2007}.
 
 \section{Train Tracks on a Compact Surface}
 
@@ -95,7 +95,7 @@ This definition ensures that the map $f$ does not ``fold'' the track back onto i
 
 When $\phi_h$ is carried by a train track $\tau$, there is naturally an induced train track map $f_h \colon \tau \to \tau$, determined by the image $\phi_h(\tau)$ under $\phi_h$. For an edge $e$ of $\tau$, we define $f_h(e)$ to be the train path that the image $\phi_h(e) \subset F(\tau)$ collapses onto under the natural deformation retraction $F(\tau) \to \tau$.
 
-Figure \ref{fig:traintrack_map} shows an example of an illustration of a train track map. On the left is a train track $\tau$, where we have named seven of the edges: $b,o,s,i,p,r$ and given them (arbitrary) orientations, all oriented toward the monogons. The image of each of these colored edges is the following:
+Figure \ref{fig:traintrack_map} shows an example of an illustration of a train track map. On the left is a train track $\tau$, where we have named six of the edges: $b,o,s,i,p,r$ and given them (arbitrary) orientations, all oriented toward the monogons. The image of each of these colored edges is the following:
 \[
 \fbb = s
 \]
@@ -103,16 +103,16 @@ Figure \ref{fig:traintrack_map} shows an example of an illustration of a train t
 \fbo = i
 \]
 \[
-\fbs = p r
+\fbs = p p r
 \]
 \[
-\fbi = bo
+\fbi = b b o
 \]
 \[
 \fbp = b
 \]
 \[
-\fbr = o b p
+\fbr = b b o o s p
 \]
 
 The image of the black edges making up the polygons can be inferred from the image of the above edges.
@@ -172,7 +172,7 @@ For an illustration of Proposition \ref{prop:B-H train track polygon enclosure},
 
 The utility of train tracks in studying pseudo-Anosov homeomorphisms arises from their relationship with the invariant measured foliations. Recall from the definition of a pseudo-Anosov map $\phi \colon \Sigma \to \Sigma$, that it preserves a pair of transverse measured singular foliations: the unstable foliation $\mathcal{F}^u$ (which is expanded by a factor $\lambda > 1$) and the stable foliation $\mathcal{F}^s$ (which is contracted by $1/\lambda$).
 
-Following Thurston \sidecite{Thurston1988} and the formalization by Penner and Harer \sidecite{penner1992combinatorics}, a train track $\tau$ carrying a pseudo-Anosov $\phi$ can be understood as a $C^1$ \textit{smoothing} of the singular foliation $\mathcal{F}^u$. This creates a correspondence between the invariant foliations of a pseudo-Anosov $\phi_h$ and a train track that carries it. This is made explicit in the construction of Bestvina and Handel \sidecite{bestvina1995train} (also see Reinoso \sidecite{reinoso2024pseudo}), and is rigorous in the following sense:
+Following Thurston \cite{Thurston1988} and the formalization by Penner and Harer \cite{penner1992combinatorics}, a train track $\tau$ carrying a pseudo-Anosov $\phi$ can be understood as a $C^1$ \textit{smoothing} of the singular foliation $\mathcal{F}^u$. This creates a correspondence between the invariant foliations of a pseudo-Anosov $\phi_h$ and a train track that carries it. This is made explicit in the construction of Bestvina and Handel \cite{bestvina1995train} (also see Reinoso \cite{reinoso2024pseudo}), and is rigorous in the following sense:
 
 The algorithm developed by Bestvina and Handel provides a systematic method for constructing a train track $\tau$ that carries a pseudo-Anosov homeomorphism $\phi_h$. Central to this construction is the concept of an \emph{efficient fibered surface} $F \subset S$, which acts as a deformation retract of the surface $S$. The surface $F$ admits a decomposition into rectangular \emph{strips} and disk-like \emph{junctions}, where the strips connect the junctions and are foliated by arcs parallel to the junction boundaries.
 
@@ -198,11 +198,11 @@ Since the details of the Bestvina-Handel construction are not of central importa
 These two edge types are illustrated by the candelabra track of Figure \ref{fig:traintrack_map} (left). The six colored edges $\{b, o, s, i, p, r\}$ are the real edges; the unlabeled black edges are the infinitesimal edges. There are seven infinitesimal polygons: six marked monogons (each enclosing one marked point) and one unmarked triangle in the interior (enclosing a $3$-pronged interior singularity).
 
 \begin{remark}[Marked points versus punctures]
-We pause to fix terminology. Following Farb and Margalit \cite[Chapter 1]{FarbMargalit2012}, a \emph{puncture} is a point removed from a compact surface; the resulting surface is non-compact, with an end at the missing point. A \emph{marked point} is a distinguished interior point of a compact surface that is preserved (as a point) by all homeomorphisms and isotopies under consideration. The two carry the same topological information for purposes of mapping class groups, and the literature is generally cavalier about the distinction. In this dissertation we work with the \emph{closed disk} $D_n = D^2$ together with $n$ marked points, since the train-track framework requires the compact disk with its true boundary $\partial D^2$. Hence we use \emph{marked point} throughout and reserve \emph{puncture} for cases where we genuinely need to refer to a removed point (as in the discussion of puncturing versus real blow-up in Chapter \ref{chap:preliminaries}, Remark \ref{rem:puncture_vs_blowup}).
+We pause to fix terminology. Following Farb and Margalit \cite[Chapter 1]{FarbMargalit2012}, a \emph{puncture} is a point removed from a compact surface; the resulting surface is non-compact, with an end at the missing point. A \emph{marked point} is a distinguished interior point of a compact surface that is preserved (as a point) by all homeomorphisms and isotopies under consideration. The two carry the same topological information for purposes of mapping class groups, and the literature is generally cavalier about the distinction. In this dissertation we work with the \emph{closed disk} $D_n = D^2$ together with $n$ marked points, since the train-track framework requires the compact disk with its true boundary $\partial D^2$. Hence we use \emph{marked point} throughout and reserve \emph{puncture} for cases where we genuinely need to refer to a removed point (as in the discussion of puncturing versus real blow-up in Chapter \ref{chap:preliminaries}, Section \ref{section:Birman-Hilden}).
 \end{remark}
 
 \subsection*{The Transition Matrix}
-With the distinction between real and infinitesimal edges in place, we can encode the combinatorial dynamics of a train-track map in a single matrix. The idea is that a train-track map $f_h: \tau \to \tau$ sends each edge to a train path traversing a sequence of edges, and we record how many times each edge is traversed. Because the infinitesimal edges carry zero transverse measure --- they contribute nothing to the lengths used by the pseudo-Anosov to compute its dilatation --- we ignore them and track only the real edges. This gives a square matrix indexed by the real edges, whose $(i,j)$ entry counts the number of times $f_h(e_j)$ traverses the real edge $e_i$. The matrix encodes all the dynamical content of the map at the level of real edges: its spectral radius is the dilatation of $\phi_h$, and its trace bounds the fixed-point count via the Perron-Frobenius theorem stated below. For full details, see Bestvina-Handel \sidecite{bestvina1995train}.
+With the distinction between real and infinitesimal edges in place, we can encode the combinatorial dynamics of a train-track map in a single matrix. The idea is that a train-track map $f_h: \tau \to \tau$ sends each edge to a train path traversing a sequence of edges, and we record how many times each edge is traversed. Because the infinitesimal edges carry zero transverse measure --- they contribute nothing to the lengths used by the pseudo-Anosov to compute its dilatation --- we ignore them and track only the real edges. This gives a square matrix indexed by the real edges, whose $(i,j)$ entry counts the number of times $f_h(e_j)$ traverses the real edge $e_i$. The matrix encodes all the dynamical content of the map at the level of real edges: its spectral radius is the dilatation of $\phi_h$, and its trace bounds the fixed-point count via the Perron-Frobenius theorem stated below. For full details, see Bestvina-Handel \cite{bestvina1995train}.
 
 \begin{definition}[Transition Matrix]
     Let $E_{\text{real}}(\tau) = \{e_1, \dots, e_m\}$ be the set of \textit{real edges} of a train track $\tau$. The \textit{transition matrix} $M(f_h)$ is the $m \times m$ non-negative integer matrix where the entry $M_{ij}$ records the number of times the image $f_h(e_j)$ traverses the edge $e_i$ in either direction.
@@ -211,17 +211,17 @@ With the distinction between real and infinitesimal edges in place, we can encod
 \begin{eg}[Transition matrix of the candelabra]\label{ex:transition_matrix_candelabra}
 Returning to Figure \ref{fig:traintrack_map}, with the labeling $E_{\text{real}}(\tau) = \{b, o, s, i, p, r\}$ in this order, the train-track map is recorded by
 \[
-f(b) = s, \quad f(o) = i, \quad f(s) = pr, \quad f(i) = bo, \quad f(p) = b, \quad f(r) = obp.
+f(b) = s, \quad f(o) = i, \quad f(s) = ppr, \quad f(i) = bbo, \quad f(p) = b, \quad f(r) = bboosp.
 \]
 The transition matrix $M(f)$ in this basis is
 \[
 M(f) =
 \begin{pmatrix}
-0 & 0 & 0 & 1 & 1 & 1 \\
-0 & 0 & 0 & 1 & 0 & 1 \\
-1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 2 & 1 & 2 \\
+0 & 0 & 0 & 1 & 0 & 2 \\
+1 & 0 & 0 & 0 & 0 & 1 \\
 0 & 1 & 0 & 0 & 0 & 0 \\
-0 & 0 & 1 & 0 & 0 & 1 \\
+0 & 0 & 2 & 0 & 0 & 1 \\
 0 & 0 & 1 & 0 & 0 & 0
 \end{pmatrix},
 \]
@@ -238,7 +238,7 @@ where the row indexed by an edge $e_i$ records, across the columns, how many tim
 \section{Standard Train Tracks on the Marked Disk}
 \label{sec:standard_tracks}
 
-We now restrict our attention to the unit disk $D_n$ with $n$ marked points $Q = \{q_1, \dots, q_n\}$. We utilize the subclass of \emph{standard train tracks} defined by Ko-Los-Song \sidecite{SongEntropy}, Farber-Reinoso-Wang \sidecite{farber2024fixed}, and Reinoso \sidecite{reinoso2024pseudo}. A result of Ko-Los-Song ensures that every pseudo-Anosov map on $D_n$ is carried by such a track.
+We now restrict our attention to the unit disk $D_n$ with $n$ marked points $Q = \{q_1, \dots, q_n\}$. We utilize the subclass of \emph{standard train tracks} defined by Ko-Los-Song \cite{SongEntropy}, Farber-Reinoso-Wang \cite{farber2024fixed}, and Reinoso \cite{reinoso2024pseudo}. A result of Ko-Los-Song ensures that every pseudo-Anosov map on $D_n$ is carried by such a track.
 
 \begin{definition}[Standard Train Track]\label{def:standard_track}
     A train track $\tau \subset D_n$ is \textit{standard} if:
@@ -282,7 +282,7 @@ While Proposition \ref{prop:every_pA_carried_by_standard_track} ensures that eve
 
 Figure \ref{fig:jointless_standard_example} illustrates the joint condition and contrasts it with two other types of track in the same stratum. The left panel is a standard track with a joint at the marked monogon on the right; the center panel is jointless but fails the standard-track conditions; the right panel is the candelabra of Figure \ref{fig:traintrack_map}, which is both standard and jointless, and serves as the running example throughout the dissertation.
 
-Reinoso \sidecite{reinoso2024pseudo} showed that for a broad class of pseudo-Anosov maps, these joints can be systematically eliminated through a graph-refinement operation known as \textit{tight splitting}.
+Reinoso \cite{reinoso2024pseudo} showed that for a broad class of pseudo-Anosov maps, these joints can be systematically eliminated through a graph-refinement operation known as \textit{tight splitting}.
 
 The formal mechanics of tight splitting will be rigorously defined and utilized in Chapter \ref{chap:tight_splitting} to systematically reduce the list of train tracks to consider. For the purposes of our foundational setup, it suffices to rely on the following guarantee by Reinoso, which assures us that tight splitting will always successfully yield a jointless representative for the maps we care about:
 
