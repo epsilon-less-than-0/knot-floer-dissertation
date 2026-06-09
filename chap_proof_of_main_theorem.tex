@@ -2,7 +2,7 @@
 
 Having developed in the preceding chapters all of the topological, dynamical, and homological machinery required to constrain the monodromy of a hypothetical knot sharing the knot Floer homology of $T_{2,3}\# T_{2,3}$, we now assemble these results into a proof of the primary result of this dissertation, Theorem \ref{thm:main_detection}.
 
-The argument proceeds along the Nielsen-Thurston trichotomy: any genus-two fibered knot in $S^3$ has monodromy that is periodic, pseudo-Anosov, or reducible, corresponding respectively to a torus knot, a hyperbolic knot, or a satellite knot. We eliminate the first two cases entirely and use the satellite analysis of Chapter \ref{chap:satellite} to identify the third with the connect-sum of two trefoils, with the residual chirality question resolved inline by inspection of the Maslov-grading support of $\widehat{HFK}$.
+The argument proceeds along Thurston's classification of knots (Theorem \ref{theorem:thurston classification of knots}): the knot $K$ is a torus knot, a hyperbolic knot, or a satellite knot, and these three possibilities are mutually exclusive at the level of the knot exterior $E(K)$. The case division is by knot type throughout; the Nielsen-Thurston type of the monodromy is used only as a tool inside the hyperbolic and satellite cases, and at no point do we appeal to exclusivity among the periodic, reducible, and pseudo-Anosov surface classes. We eliminate the torus and hyperbolic cases entirely and use the satellite analysis of Chapter \ref{chap:satellite} to identify the remaining case with the connect-sum of two trefoils, with the residual chirality question resolved inline by inspection of the Maslov-grading support of $\widehat{HFK}$.
 
 \section{Proof of Theorem \ref{thm:main_detection}}
 \label{sec:proof_main_detection}
@@ -25,10 +25,10 @@ h \colon \Sigma_2^1 \to \Sigma_2^1
 \]
 denote its monodromy, defined up to isotopy fixing $\partial \Sigma_2^1$ pointwise.
 
-By Thurston's classification of knots (Theorem \ref{theorem:thurston classification of knots}), $K$ falls into exactly one of three geometric categories: torus, hyperbolic, or satellite. By the Nielsen-Thurston classification (Theorem \ref{theorem:nielsen-thruston classification}), these correspond respectively to monodromies that are periodic, pseudo-Anosov, or reducible. We treat each case in turn.
+By Thurston's classification of knots (Theorem \ref{theorem:thurston classification of knots}), $K$ is exactly one of three types: a torus knot, a hyperbolic knot, or a satellite knot. This exclusive partition is read off the geometry of the exterior $E(K)$ --- atoroidal Seifert-fibered, atoroidal non-Seifert-fibered, or toroidal --- and is the sole source of exclusivity in what follows. Within each case we will, where convenient, invoke the Nielsen-Thurston type of $h$ as a tool, via the correspondence between the geometry of the mapping torus $M_h = E(K)$ and the dynamics of $h$; but we never use the surface classification (Theorem \ref{theorem:nielsen-thruston classification}) to \emph{partition} the cases, and in particular we never assume the periodic, reducible, and pseudo-Anosov types to be mutually exclusive. We treat each knot type in turn.
 
 \paragraph{Case 1: $K$ is a torus knot.}
-Suppose $h$ is periodic, so that $K = T_{p,q}$ for some coprime integers $p, q$ with $|p|, |q| \ge 2$. Every torus knot in $S^3$ is an L-space knot (or the mirror of one), and a defining property of L-space knots is that their knot Floer homology has rank at most $1$ in every Alexander grading:
+Suppose $K$ is a torus knot, $K = T_{p,q}$ for some coprime integers $p, q$ with $|p|, |q| \ge 2$. Every torus knot in $S^3$ is an L-space knot (or the mirror of one), and a defining property of L-space knots is that their knot Floer homology has rank at most $1$ in every Alexander grading:
 \[
 \dim_{\mathbb{F}} \widehat{HFK}(T_{p,q}, a) \le 1 \quad \text{for all } a \in \mathbb{Z}.
 \]
@@ -39,7 +39,7 @@ However, an explicit calculation of $\widehat{HFK}(T_{2,3}\# T_{2,3})$ shows tha
 Since the bigraded isomorphism $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3}\# T_{2,3})$ would force $\dim_{\mathbb{F}} \widehat{HFK}(K, 1) = 2$, $K$ cannot be a torus knot.
 
 \paragraph{Case 2: $K$ is a hyperbolic knot.}
-Suppose $h$ is pseudo-Anosov, so that the knot exterior $S^3 \setminus K$ admits a complete hyperbolic metric of finite volume (Theorem \ref{theorem:Thurston hyperbolic iff pA}). Let $\phi_h$ denote the unique pseudo-Anosov representative of $h$.
+Suppose $K$ is hyperbolic, so that $S^3 \setminus K$ admits a complete hyperbolic metric of finite volume. Since $K$ is fibered, Thurston's fibered hyperbolization (Theorem \ref{theorem:Thurston hyperbolic iff pA}) then forces the monodromy $h$ to be pseudo-Anosov; let $\phi_h$ denote its unique pseudo-Anosov representative.
 
 By Lemma \ref{lemma:original monodromy has one fixed point}, $\phi_h$ has exactly one fixed point in the interior of $\Sigma_2^1$. By the capping-off construction (Proposition \ref{prop:capping off}) and the Birman-Hilden correspondence (Section \ref{section:Birman-Hilden}), this monodromy descends to a 6-braid mapping class $\beta \in \mathrm{Mod}(D_6)$ on the marked disk, whose canonical lift to the genus-two surface with two boundary components $\Sigma_2^2$ is fixed-point-free in its interior. Concretely, the data of $K$ thus assembles into the Birman-Hilden correspondence tuple
 \[
@@ -70,7 +70,9 @@ The orientable strata are dispatched by Theorem \ref{thm:orientable_strata_elimi
 Consequently, no pseudo-Anosov mapping class $\phi_\beta$ on $D_6$ with the required fixed-point structure can correspond to the monodromy of $K$. This contradicts the assumption that $h$ is pseudo-Anosov, so $K$ is not hyperbolic.
 
 \paragraph{Case 3: $K$ is a satellite knot.}
-Having ruled out the periodic and pseudo-Anosov cases, $h$ must be reducible, so $K$ is a satellite knot. By Theorem \ref{theorem:satellite}, established in Chapter \ref{chap:satellite}, the only allowable satellite configuration consistent with $\Delta_K(t) = (t^2-t+1)^2$ and the genus-two fiberedness constraint is the connect-sum of two trefoils.
+Having eliminated the torus and hyperbolic cases, Thurston's classification of knots (Theorem \ref{theorem:thurston classification of knots}), exclusive at the level of the knot exterior, leaves only the possibility that $K$ is a satellite knot. We stress that this conclusion uses the knot trichotomy directly, not any exclusivity among the surface Nielsen-Thurston types; we do \emph{not} argue that $h$ is reducible by eliminating the periodic and pseudo-Anosov classes.
+
+Being a satellite, $K$ is not a torus knot (Theorem \ref{theorem:thurston classification of knots}), so its monodromy $h$ is not periodic and the mapping torus $M_h = E(K)$ is not Seifert fibered. The essential torus furnished by the satellite structure is therefore isotopic to a vertical torus --- the suspension of an $h$-invariant essential multicurve --- so the canonical reducing system $\Gamma$ of $h$ is nonempty (the fibered correspondence: for aperiodic $h$, an essential torus in $M_h$ is equivalent to a nonempty canonical reducing system; see Theorem \ref{theorem:thurston_reducing_system} and Remark \ref{rem:global_NT_type}). With $\Gamma \neq \emptyset$ in hand, Theorem \ref{theorem:satellite}, established in Chapter \ref{chap:satellite}, shows that the only satellite configuration consistent with $\Delta_K(t) = (t^2-t+1)^2$ and the genus-two fiberedness constraint is the connect-sum of two trefoils.
 
 \begin{remark}
 A parallel detection question for the $(2,1)$-cable $C_{2,1}(T_{2,3})$ --- which is itself a fibered genus-two satellite knot --- is taken up separately in Chapter \ref{chap:cable_detection}, where we establish a partial detection theorem for that knot. Note that the $(2,1)$-cable is not a candidate for $K$ in the present proof, because Lemma \ref{lem:satellite_trefoils_windingnumber_1} excludes it (its winding number is $2$, not $1$, and its pattern $P(U) = T_{2,1}$ is the unknot rather than a trefoil).

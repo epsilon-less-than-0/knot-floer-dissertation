@@ -14,7 +14,7 @@ which after clearing denominators becomes the cyclotomic polynomial
 t^2 \cdot \Delta_C(t) = t^4 - t^2 + 1 = \Phi_{12}(t).
 \]
 
-The complete bigraded knot Floer homology of $C_{2,1}(T_{2,3})$ over $\mathbb{F} = \mathbb{Z}/2\mathbb{Z}$, computed using the SnapPy implementation of Sz\'{a}b\'{o}'s algorithm \cite{szabo2017knotfloercalculator}, is shown in Figure~\ref{fig:hfk_cable}. The total rank is $7$, with two Alexander gradings ($A = \pm 1$) carrying rank $2$ and the remaining three ($A = 0, \pm 2$) carrying rank $1$.
+The complete bigraded knot Floer homology of $C_{2,1}(T_{2,3})$ over $\mathbb{F} = \mathbb{Z}/2\mathbb{Z}$, computed using the SnapPy implementation of Sz\'{a}b\'{o}'s algorithm \cite{OzsvathSzabo2019}, is shown in Figure~\ref{fig:hfk_cable}. The total rank is $7$, with two Alexander gradings ($A = \pm 1$) carrying rank $2$ and the remaining three ($A = 0, \pm 2$) carrying rank $1$.
 
 \begin{figure}[ht]
 \centering
@@ -82,11 +82,11 @@ The knot $C$ is an almost L-space knot in the sense of Baldwin and Sivek \cite{B
 \begin{remark}[Derivation of $\tau(C_{2,1}(T_{2,3})) = 2$]\label{rem:tau_cable_derivation}
 The value $\tau(C_{2,1}(T_{2,3})) = 2$ asserted above can be read directly from the bigraded rank table of Figure~\ref{fig:hfk_cable}, but it also admits a structural derivation independent of the explicit computation. Hom's cabling formula for the $\tau$-invariant \cite{HomCabling2014} gives
 \[
-\tau(K_{p,q}) \;=\; p \cdot \tau(K) \;+\; \frac{(p-1)(q-1)}{2}
+\tau(K_{p,q}) \;=\; \epsilon \cdot \tau(K) \;+\; \frac{(p-1)(q-1)}{2}
 \]
 whenever the companion $K$ satisfies $\varepsilon(K) = 1$, where $\varepsilon$ denotes Hom's epsilon invariant. The right-handed trefoil $T_{2,3}$ is an L-space knot, and every L-space knot satisfies $\varepsilon = 1$; combined with $\tau(T_{2,3}) = 1$, the formula gives
 \[
-\tau(C_{2,1}(T_{2,3})) \;=\; 2 \cdot \tau(T_{2,3}) \;+\; \frac{(2-1)(1-1)}{2} \;=\; 2 \cdot 1 \;+\; 0 \;=\; 2.
+\tau(C_{2,1}(T_{2,3})) \;=\; 1 \cdot \tau(T_{2,3}) \;+\; \frac{(2-1)(1-1)}{2} \;=\; 1 \cdot 2 \;+\; 0 \;=\; 2.
 \]
 In particular, $\tau(C_{2,1}(T_{2,3})) = g(C_{2,1}(T_{2,3})) = 2$, so by Hedden's characterization of strong quasipositivity for fibered knots \cite{Hedden2010}, the cable $C_{2,1}(T_{2,3})$ is strongly quasipositive. This identity $\tau = g$ is used in Section~\ref{subsec:cable_hyperbolic} to invoke the right-veering monodromy property in the hyperbolic case.
 \end{remark}
@@ -194,7 +194,7 @@ The reduced homological action $A_{\text{red}}$ associated with the cable monodr
 \end{lemma}
 
 \begin{proof}
-Lemma \ref{lem:capping_invariance} relates $\det(tI - A)$ on the bordered surface $\Sigma_2^2$ to the closed-surface action via $\det(tI - A) = (t-1)^2 \det(tI - A_{\text{red}})$.  Since the standard Alexander polynomial of the closed monodromy on $\Sigma_2$ equals the (cleared-denominator) Alexander polynomial $t^2\Delta_C(t) = t^4 - t^2 + 1$ of $K$, the result follows.
+Since the standard Alexander polynomial of the closed monodromy on $\Sigma_2$ equals the (cleared-denominator) Alexander polynomial $t^2\Delta_C(t) = t^4 - t^2 + 1$ of $K$, the result follows.
 \end{proof}
 
 The zero-surgery Filter 1, requiring $|\det(I-A_{\text{red}})| = 1$, is unchanged. The Alexander polynomial Filter 2 now requires

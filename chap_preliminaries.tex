@@ -149,12 +149,13 @@ The Nielsen-Thurston Classification Theorem provides a fundamental structural tr
 % use n = 5 and n = 6 marked points for our braids, our disks strictly 
 % satisfy \chi < 0.
 \begin{theorem}[Nielsen-Thurston Classification \cite{Thurston1988}]\label{theorem:nielsen-thruston classification}
-Let $\Sigma$ be a compact, orientable surface with negative Euler characteristic. Every mapping class $[h] \in \mathrm{Mod}(\Sigma)$ satisfies exactly one of the following mutually exclusive conditions:
+Let $\Sigma$ be a compact, orientable surface with negative Euler characteristic. Every mapping class $[h] \in \mathrm{Mod}(\Sigma)$ is of at least one of the following three types:
 \begin{itemize}
     \item \textbf{Periodic:} There exists an integer $m > 0$ such that $[h]^m = [\id]$. Equivalently, by the Nielsen Realization Theorem, $[h]$ contains a representative homeomorphism $f$ such that $f^m = \id$ pointwise.
-    \item \textbf{Reducible:} The mapping class $[h]$ is not periodic, and there exists a multicurve $\Gamma = \{\gamma_1, \dots, \gamma_k\}$ on $\Sigma$ that is invariant under $[h]$. That is, $h(\Gamma)$ is isotopic to $\Gamma$.
+    \item \textbf{Reducible:} There exists a multicurve $\Gamma = \{\gamma_1, \dots, \gamma_k\}$ on $\Sigma$ that is invariant under $[h]$; that is, $h(\Gamma)$ is isotopic to $\Gamma$.
     \item \textbf{Pseudo-Anosov:} The mapping class $[h]$ contains a unique geometric representative $\phi_h$ (up to conjugacy by isometries) that preserves a pair of transverse, measured singular foliations: the stable foliation $(\mathcal{F}_s, \mu_s)$ and the unstable foliation $(\mathcal{F}_u, \mu_u)$. Furthermore, there exists a real number $\lambda > 1$, called the \emph{dilatation}, such that $\phi_h(\mathcal{F}_s, \mu_s) = (\mathcal{F}_s, \lambda^{-1} \mu_s)$ and $\phi_h(\mathcal{F}_u, \mu_u) = (\mathcal{F}_u, \lambda \mu_u)$.
 \end{itemize}
+A pseudo-Anosov class is neither periodic nor reducible. The periodic and reducible types, by contrast, are \emph{not} a priori disjoint: a periodic class may fix an essential multicurve and so also qualify as reducible in the sense above. The genuine trichotomy --- a partition of $\mathrm{Mod}(\Sigma)$ into three pairwise-disjoint types --- is recovered only after refining the reducible class by means of the \emph{canonical reducing system}, which we develop in Chapter \ref{chap:satellite} (Theorem \ref{theorem:thurston_reducing_system}): there the reducible type is characterized by a nonempty canonical reducing system and the periodic and pseudo-Anosov types by an empty one. We make no use of disjointness among these surface types in the present chapter.
 \end{theorem}
 
 We will refer to the mapping class $[h]$ as periodic, reducible, or pseudo-Anosov according to the geometric type of its representative. More details on pseudo-Anosov maps will be provided in Section \ref{sec:pA}.
@@ -165,17 +166,23 @@ The \emph{Thurston classification of knots} is the three-dimensional counterpart
 The dynamical properties of the mapping class $[h]$ directly dictate the three-dimensional topology and geometry of $M_h$. Thurston demonstrated that every knot $K \subset S^3$ falls into exactly one of three categories, which perfectly mirror the two-dimensional classification:
 
 \begin{theorem}[Thurston's Classification of Knots \cite{Thurston1982}] \label{theorem:thurston classification of knots}
-    Every knot $K \subset S^3$ is exactly one of the following: a torus knot, a satellite knot, or a hyperbolic knot.
+    Every knot $K \subset S^3$ is exactly one of the following three types, according to the geometry of its exterior $E(K)$:
+    \begin{itemize}
+        \item a \textbf{torus knot}, for which $E(K)$ is atoroidal and Seifert fibered;
+        \item a \textbf{satellite knot}, for which $E(K)$ is toroidal --- it contains an essential (incompressible, non-boundary-parallel) torus;
+        \item a \textbf{hyperbolic knot}, for which $E(K)$ is atoroidal and not Seifert fibered, and so admits a complete hyperbolic metric of finite volume.
+    \end{itemize}
+    These three types are mutually exclusive and exhaustive: the trichotomy is a genuine partition of all knots, read directly off the geometric decomposition of the knot exterior, and it requires no analysis of the surface dynamics of any monodromy.
 \end{theorem}
 
-For fibered knots, this three-dimensional geometric trichotomy is in bijective correspondence with the two-dimensional dynamical trichotomy of the monodromy:
+For a fibered knot, the geometry of the mapping torus $M_h = E(K)$ is governed by the Nielsen-Thurston type of the monodromy $h$, and this is the bridge we use as a tool within each knot-level case. The dictionary is as follows; we caution that the three knot types are exclusive (Theorem \ref{theorem:thurston classification of knots}), whereas the surface types on the right are taken in the genuine sense fixed by the canonical reducing system $\Gamma$ (Chapter \ref{chap:satellite}), so that ``reducible'' means $\Gamma \neq \emptyset$:
 \begin{itemize}
     \item \textbf{Torus Knots (Periodic):} If $[h]$ is periodic, the mapping torus $M_h$ admits a Seifert fibered structure. In $S^3$, the only fibered knots with Seifert fibered complements are the torus knots $T_{p,q}$, which can be embedded on the surface of an unknotted torus.
-    \item \textbf{Satellite Knots (Reducible):} If $[h]$ is reducible, the invariant multicurve $\Gamma \subset \Sigma_g^1$ sweeps out a finite union of incompressible, non-boundary-parallel tori $\Gamma \times S^1$ in the mapping torus $M_h$. The existence of an incompressible, non-boundary-parallel torus in the knot exterior $E(K)$ is the defining condition for $K$ to be a satellite knot; we provide more details in Chapter \ref{chap:satellite}.
+    \item \textbf{Satellite Knots (reducible, $\Gamma \neq \emptyset$):} If $h$ is reducible in the genuine sense --- equivalently, its canonical reducing system $\Gamma$ is nonempty --- the invariant multicurve $\Gamma \subset \Sigma_g^1$ sweeps out a finite union of incompressible, non-boundary-parallel tori $\Gamma \times S^1$ in the mapping torus $M_h$. The existence of such a torus in the knot exterior $E(K)$ is the defining condition for $K$ to be a satellite knot; we provide more details in Chapter \ref{chap:satellite}.
     \item \textbf{Hyperbolic Knots (Pseudo-Anosov):} If $[h]$ is pseudo-Anosov, the invariant measured foliations on $\Sigma_g^1$ can be suspended to construct a complete Riemannian metric of constant negative curvature on the interior of $M_h$. Thus, $S^3 \setminus K$ is a hyperbolic 3-manifold of finite volume.
 \end{itemize}
 
-The proof strategy for Theorem \ref{thm:main_detection} relies entirely on this geometric bridge. We will systematically assume the hypothetical knot $K$ belongs to each of Thurston's three geometric categories: torus, satellite, and hyperbolic. We will then eliminate all distinct knot candidates in each category. The torus knot case is immediate: the Alexander polynomials of torus knots are completely classified, and none coincides with the observed polynomial $\Delta_K(t) = (t^2 - t + 1)^2$. Thus the remaining proof rests on eliminating the satellite and hyperbolic cases.
+The proof of Theorem \ref{thm:main_detection} is organized by the \emph{knot} trichotomy of Theorem \ref{theorem:thurston classification of knots}, which is exclusive at the level of the knot exterior; the dictionary above is invoked only as a tool inside the individual cases, and the argument makes no use of any exclusivity among the periodic, reducible, and pseudo-Anosov surface classes. We assume in turn that $K$ is a torus knot, a hyperbolic knot, or a satellite knot, and eliminate all distinct candidates in each. The torus case is immediate: the Alexander polynomials of torus knots are completely classified, and none coincides with the observed polynomial $\Delta_K(t) = (t^2 - t + 1)^2$. Thus the remaining work rests on eliminating the hyperbolic and satellite cases.
 
 \section{Pseudo-Anosov Maps}\label{sec:pA}
 The case where $K$ is assumed to be a hyperbolic knot will be the most technically involved and will constitute the bulk of this thesis. As established by the trichotomy correspondence above:
@@ -266,7 +273,7 @@ Hence $\phi_h$ has at most one fixed point. The work of Farber, Reinoso, and Wan
     Let $K$ be a hyperbolic, fibered knot with monodromy $h$, and suppose $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$. Then $\phi_h$ has exactly one fixed point in the interior of $\Sigma_2^1$.
 \end{lemma}
 \begin{proof}
-    Farber, Reinoso, and Wang \cite{farber2024fixed} showed that the cinquefoil $T(2,5)$ is the only fibered genus-two knot in $S^3$ whose monodromy is fixed-point-free. The cinquefoil has a completely different knot Floer homology from $T_{2,3} \# T_{2,3}$, as is immediate from the fact that $\Delta_{T(2,5)}(t) = t^4 - t^3 + t^2 - t + 1 \neq (t^2 - t + 1)^2$. Hence $K$ is not the cinquefoil, so $\phi_h$ is not fixed-point-free; combined with the bound of at most one interior fixed point, $\phi_h$ has exactly one.
+    Farber, Reinoso, and Wang \cite{farber2024fixed} showed that the cinquefoil $T(2,5)$ is the only fibered genus-two knot in $S^3$ whose monodromy (is freely isotopic to a representative that is) fixed-point-free. The cinquefoil has a completely different knot Floer homology from $T_{2,3} \# T_{2,3}$, as is immediate from the fact that $\Delta_{T(2,5)}(t) = t^4 - t^3 + t^2 - t + 1 \neq (t^2 - t + 1)^2$. Hence $K$ is not the cinquefoil, so $\phi_h$ is not fixed-point-free; combined with the bound of at most one interior fixed point, $\phi_h$ has exactly one.
 \end{proof}
 
 \subsection*{Capping Off}\label{subsec:capping_off}
@@ -305,11 +312,11 @@ Since $0 < c(h) < 1$, the coefficient is strictly non-integer, meaning the singu
 
 In this section, we establish the geometric machinery required to relate the monodromy of the knot $K$ to a braid on the sphere, and subsequently to a braid on the disk. This relationship relies on the geometric symmetries of the closed genus-two surface, which, as in the capping-off construction of Section \ref{section:fibered hyperblic}, should be thought of as arising from capping off the monodromy of the hyperbolic knot $K$.
 
-Recall that for the closed genus-two surface $\Sigma_2^0$, the mapping class group $\mathrm{Mod}(\Sigma_2^0)$ contains a distinguished element $[\iota]$, known as the \textbf{hyperelliptic involution}. Algebraically, $[\iota]$ is the unique non-trivial element in the center of $\mathrm{Mod}(\Sigma_2^0)$. Consequently, for any mapping class $[\hat{\phi}_h] \in \mathrm{Mod}(\Sigma_2^0)$, we have the commutation relation:
+Recall that for the closed genus-two surface $\Sigma_2^0$, the mapping class group $\mathrm{Mod}(\Sigma_2^0)$ contains a distinguished element $[\iota]$, known as the \textbf{hyperelliptic involution}. Algebraically, $[\iota]$ is the unique non-trivial element in the center of $\mathrm{Mod}(\Sigma_2^0)$. Consequently, for any mapping class $[h] \in \mathrm{Mod}(\Sigma_2^0)$, we have the commutation relation:
 \begin{equation}\label{equation:symmetric hyperelliptic involution}
-    [\hat{\phi}_h][\iota] = [\iota][\hat{\phi}_h].
+    [h][\iota] = [\iota][h].
 \end{equation}
-We call a geometric representative $\iota \colon \Sigma_2^0 \to \Sigma_2^0$ a hyperelliptic involution if it belongs to the class $[\iota]$.
+We call a representative $\iota \colon \Sigma_2^0 \to \Sigma_2^0$ a hyperelliptic involution if it belongs to the class $[\iota]$.
 
 The geometric utility of this involution is captured by the Birman-Hilden correspondence. Broadly speaking, this classical correspondence establishes an algebraic relationship between the subgroup of mapping classes that commute with a branched covering involution (the \textit{symmetric} mapping class group) and the mapping class group of the quotient surface marked by the branch data.
 
@@ -341,7 +348,7 @@ After this adjustment, $\hat{\phi}_h$ descends through the quotient map $\pi$ to
 
 \subsection{Fixed Point Dynamics of the Capped Monodromy}
 
-Recall that our hypothetical knot $K$ is fibered of genus two. Let $h \in \mathrm{Mod}(\Sigma_2^1)$ denote its monodromy class on the surface with one boundary component, and let $\phi_h \colon \Sigma_2^1 \to \Sigma_2^1$ be its unique pseudo-Anosov geometric representative.
+Recall that our hypothetical knot $K$ is fibered of genus two. Let $h \in \mathrm{Mod}(\Sigma_2^1)$ denote its monodromy class on the surface with one boundary component, and let $\phi_h \colon \Sigma_2^1 \to \Sigma_2^1$ be its pseudo-Anosov geometric representative.
 
 By Lemma \ref{lemma:original monodromy has one fixed point}, we know that the original monodromy $\phi_h$ possesses exactly one fixed point in the interior of the surface, which we shall denote by $z$.
 
@@ -373,7 +380,7 @@ still branched along the five remaining points $q_1, \ldots, q_5$. We identify t
 
 Let $\sigma_\beta \in S_5$ denote the permutation of the indices $\{1,\ldots,5\}$ induced by $\phi_\beta$ on the marked points. Under our assumption, $z \in \Sigma_2^0$ descends to the branch point $q_5 \in S^2$, and $z$ is fixed by $\hat{\phi}_h$, so $q_5$ is fixed by $\phi_\beta$. Hence $\sigma_\beta$ fixes the index $5$. Consequently, the fifth strand of the braid forms a distinct link component $L_1$ of the closure $\hat{\beta}$, while the remaining strands form at least one other component. Thus, the closure $B = \hat{\beta}$ is a link with $\mu(B) \ge 2$ components.
 
-The braid $\beta$ specifies an open book decomposition of $S^3$ whose branch set is $B$. The covering map $\bar\pi$ extends to a branched double covering between the manifolds $M_h \to M_\beta$. Since $K$ is a knot in $S^3$, we have $M_h \cong \Sigma(S^3,B) \cong S^3$. However, $b_1(\Sigma(S^3, B)) \ge \mu(B) - 1 \ge 1$, which implies $M_h$ cannot be $S^3$, a contradiction.
+The braid $\beta$ specifies an open book decomposition of $S^3$ whose branch set is $B$. The covering map $\bar\pi$ extends to a branched double covering between the manifolds $M_h \to M_\beta$. Since $K$ is a knot in $S^3$, we have $M_h \cong \Sigma(S^3,B) \cong S^3$. However, $b_1(\Sigma(S^3, B)) \ge \mu(B) - 1 > 1$, which implies $M_h$ cannot be $S^3$, a contradiction.
 
 Therefore, the involution $\iota$ cannot fix $z$ and $p$. It must swap them: $\iota(z) = p$ and $\iota(p) = z$.
 \end{proof}
@@ -551,7 +558,7 @@ If $z$ and $p$ are 4-pronged, there are no additional singularities. This is str
 
 We close this chapter by recording the framework that the rest of the dissertation will inhabit.
 
-Starting from a knot $K \subset S^3$ with $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$, the genus and fiberedness detection results of Ozsv\'{a}th-Szab\'{o} and Ni place $K$ in the class of genus-two fibered knots. Thurston's trichotomy then partitions the remaining possibilities into torus, satellite, and hyperbolic. The torus case is eliminated at once by the Alexander polynomial; the satellite case is treated separately in Chapter \ref{chap:satellite}; the bulk of this dissertation is devoted to ruling out a distinct hyperbolic representative.
+Starting from a knot $K \subset S^3$ with $\widehat{HFK}(K) \cong \widehat{HFK}(T_{2,3} \# T_{2,3})$, the genus and fiberedness detection results of Ozsv\'{a}th-Szab\'{o} and Ni place $K$ in the class of genus-two fibered knots. Thurston's classification of knots (Theorem \ref{theorem:thurston classification of knots}) then partitions the remaining possibilities into torus, satellite, and hyperbolic, exclusively at the level of the knot exterior. The torus case is eliminated at once by the Alexander polynomial; the satellite case is treated separately in Chapter \ref{chap:satellite}; the bulk of this dissertation is devoted to ruling out a distinct hyperbolic representative.
 
 In the hyperbolic case, the monodromy class $h \in \mathrm{Mod}(\Sigma_2^1)$ has a unique pseudo-Anosov representative $\phi_h$. The thinness and signature input force $\tau(K) = g(K) = 2$, which by Hedden's theorem characterizes $K$ as strongly quasipositive, hence the associated open book supports the tight contact structure; Honda-Kazez-Mati\'{c} then yields $0 < c(h) < 1$, and the fractional Dehn twist coefficient analysis shows the boundary singularity of $\phi_h$ has at least two prongs. The Ghiggini-Spano fixed-point bound combined with the Farber-Reinoso-Wang classification of zero-fixed-point monodromies then forces $\phi_h$ to have exactly one interior fixed point $z$.
 

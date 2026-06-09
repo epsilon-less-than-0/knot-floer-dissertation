@@ -128,6 +128,16 @@ Let $h \colon \Sigma \to \Sigma$ be a homeomorphism of a compact oriented surfac
 As explained in Thurston's work, we may, and will assume that $\Gamma$ is minimal with respect to inclusion, in which case it is unique up to isotopy \cite[Theorem C]{birman1983abelian} and is called the \textbf{canonical reducing system} for $h$. We refer to the pair $(\phi_h, \Gamma)$
 as the \textbf{Nielsen-Thurston form of $h$}.
 
+\begin{remark}[The global Nielsen-Thurston type is read off $\Gamma$]\label{rem:global_NT_type}
+The canonical reducing system $\Gamma$ records the \emph{global} Nielsen-Thurston type of $h$: it is empty precisely when $h$ is periodic or pseudo-Anosov, and nonempty precisely when $h$ is reducible in the genuine (infinite-order) sense. Thus, for the monodromy of a fibered knot,
+\[
+h \text{ is reducible} \iff \Gamma \neq \emptyset,
+\]
+and this is the only sense of ``reducible'' used in the proof; in particular we never invoke disjointness among the periodic, reducible, and pseudo-Anosov classes of the surface classification (Theorem \ref{theorem:nielsen-thruston classification}).
+
+It is worth recording how the granny knot itself sits inside this framework, since at first sight it appears to straddle the periodic and reducible types. Its monodromy is reducible with two \emph{periodic} pieces --- the order-six monodromies of the two trefoil summands, carried by the once-punctured tori that $\Gamma$ cuts off --- and yet the \emph{global} class $[h]$ is non-periodic. This is forced geometrically: were $[h]$ periodic, the mapping torus $M_h = E(T_{2,3}\# T_{2,3})$ would be Seifert fibered and hence atoroidal, contradicting the essential swallow-follow torus that exhibits the granny as a satellite. Consequently $[h]$ has infinite order, $\Gamma \neq \emptyset$, and the granny lands in the satellite case purely at the level of the knot exterior --- consistent with its periodic pieces and requiring no appeal to surface-level exclusivity.
+\end{remark}
+
 Let us now consider the case where
 \[
 h \colon \Sigma_2^1 \to \Sigma_2^1
